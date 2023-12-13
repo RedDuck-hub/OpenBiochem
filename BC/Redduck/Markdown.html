@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+
+    <title>Open-Biochem</title>
+    <link href="ico.ico" rel="SHORTCUT ICON"/>
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/">
+
+
+
+
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas-navbar.css" rel="stylesheet">
+  </head>
+
+
+    <script>
+        // 检查本地存储中是否有登录信息
+        var loggedInUser = localStorage.getItem('loggedInUser');
+        if (!loggedInUser) {
+            // 重定向到登录页面
+            window.location.href = 'http://43.143.164.107';
+        }
+
+
+        var logoutBtn = document.getElementById('logout-btn');
+        logoutBtn.onclick = function() {
+            // 清空本地存储的登录信息
+            localStorage.removeItem('loggedInUser');
+
+            // 重定向到登录页面
+            window.location.href = 'http://43.143.164.107';
+        };
+    </script>
+
+
+  <body class="bg-light">
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+  <div class="container-fluid">
+    <a href="Biochem.html"><img src="http://43.143.164.107/picture/redduck.jpg" width="35" style="border-radius: 50%;"></a>
+    <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="resource.html">资源整合</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="tool.html">实用工具</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">开发者信息</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="message.html">站长留言</a></li>
+            <li><a class="dropdown-item" href="prepare.html">开发工作</a></li>
+            <li><a class="dropdown-item" href="Joinus.html">加入我们</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">学科资料</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://43.143.164.107/lesson/micro/micro.html">微生物学</a></li>
+              <li><a class="dropdown-item disabled" href="#">分子生物学</a></li>
+              <li><a class="dropdown-item disabled" href="#">生物信息学</a></li>
+              <li><a class="dropdown-item disabled" href="#">计算生物学</a></li>
+              <li><a class="dropdown-item disabled" href="#">合成生物学</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://43.143.164.107">退出登录</a>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="正在开发" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="nav-scroller bg-body shadow-sm">
+  <nav class="nav" aria-label="Secondary navigation">
+          <a class="nav-link active" aria-current="page" href="Biochem.html">
+      Home
+    </a>
+    <a class="nav-link active" aria-current="page" href="biochemistry.html">
+      Biochemistry
+      <span class="badge text-bg-light rounded-pill align-text-bottom">15</span>
+    </a>
+
+    <a class="nav-link active" aria-current="page" href="#">
+      Markdown
+      <span class="badge text-bg-light rounded-pill align-text-bottom">1</span>
+    </a>
+
+    <a class="nav-link" href="#">
+      Python
+      <span class="badge text-bg-light rounded-pill align-text-bottom">0</span>
+    </a>
+  </nav>
+</div>
+
+<main class="container">
+  <div class="d-flex align-items-center p-3 my-3 text-black bg-light rounded shadow-sm">
+
+    <div class="lh-1">
+      <h1 class="h6 mb-0 text-black lh-1" style="font-size: 24px;">🧮Markdown📔</h1>
+      <br>
+      <small>一种超好用的富文本语言，科研神器</small>
+    </div>
+  </div>
+
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h5 class="border-bottom pb-2 mb-0">📑Chapter</h5>
+
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark">Markdown绘图</strong>
+          <a href="Markdown/mermaid.html">Show</a>
+        </div>
+        <span class="d-block"></span>
+      </div>
+    </div>
+
+
+    <small class="d-block text-end mt-3">
+      <a>By Redduck🦆</a>
+    </small>
+  </div>
+</main><!--Team-->
+
+<div class="container py-3">
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+
+        <small class="d-block mb-3 text-muted">&copy; 2023–2027 Redduck</small>
+        <small class="d-block mb-3 text-muted">2286165496@qq.com</small>
+      </div>
+      <!--
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+        </ul>
+      </div>
+      -->
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="resource.html">Resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="tool.html">Tool</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="Markdown.html">Markdown</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#"></a>Python</li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Me</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div> <!--footer-->
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="offcanvas-navbar.js"></script>
+
+  <script>
+    var expandBtn = document.querySelector('.expand-btn');
+    var subMenu = document.querySelector('.sub-menu');
+
+    expandBtn.addEventListener('click', function() {
+      subMenu.classList.toggle('active');
+    });
+</script>
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ed38f6d2bda5881f1e32b079fec99636";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+     <script type="text/javascript">
+    document.body.oncontextmenu =
+    document.body.ondragstart =
+    document.body.onselectstart =
+    document.body.onbeforecopy =
+    function () { return false; };
+    document.body.onselect =
+    document.body.oncopy =
+    document.body.onmouseup =
+    function () { document.selection.empty(); };
+</script>
+
+  </body>
+</html>

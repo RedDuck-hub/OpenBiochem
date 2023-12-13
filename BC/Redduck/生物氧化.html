@@ -1,0 +1,757 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<link href="ico.ico" rel="SHORTCUT ICON">
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+/** ported from https://codemirror.net/theme/material.css **/
+/*
+
+    Name:       material
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+
+    Original material color scheme by Mattia Astorino (https://github.com/equinusocio/material-theme)
+
+*/
+
+.cm-s-inner {
+  background-color: black;
+  color: rgba(233, 237, 237, 1);
+}
+.cm-s-inner .CodeMirror-gutters {
+  background: #263238;
+  color: rgb(83,127,126);
+  border: none;
+}
+.cm-s-inner .CodeMirror-guttermarker, .cm-s-inner .CodeMirror-guttermarker-subtle, .cm-s-inner .CodeMirror-linenumber { color: rgb(83,127,126); }
+.cm-s-inner .CodeMirror-cursor { border-left: 1px solid #f8f8f0; }
+.cm-s-inner div.CodeMirror-selected { background: rgba(255, 255, 255, 0.15); }
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
+.cm-s-inner .CodeMirror-line::selection, .cm-s-inner .CodeMirror-line > span::selection, .cm-s-inner .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-inner .CodeMirror-line::-moz-selection, .cm-s-inner .CodeMirror-line > span::-moz-selection, .cm-s-inner .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+
+.cm-s-inner .CodeMirror-activeline-background { background: rgba(0, 0, 0, 0); }
+.cm-s-inner .cm-keyword { color: rgba(199, 146, 234, 1); }
+.cm-s-inner .cm-operator { color: rgba(233, 237, 237, 1); }
+.cm-s-inner .cm-variable-2 { color: #80CBC4; }
+.cm-s-inner .cm-variable-3 { color: #82B1FF; }
+.cm-s-inner .cm-builtin { color: #DECB6B; }
+.cm-s-inner .cm-atom { color: #F77669; }
+.cm-s-inner .cm-number { color: #F77669; }
+.cm-s-inner .cm-def { color: rgba(233, 237, 237, 1); }
+.cm-s-inner .cm-string { color: #C3E88D; }
+.cm-s-inner .cm-string-2 { color: #80CBC4; }
+.cm-s-inner .cm-comment { color: #546E7A; }
+.cm-s-inner .cm-variable { color: #82B1FF; }
+.cm-s-inner .cm-tag { color: #80CBC4; }
+.cm-s-inner .cm-meta { color: #80CBC4; }
+.cm-s-inner .cm-attribute { color: #FFCB6B; }
+.cm-s-inner .cm-property { color: #80CBAE; }
+.cm-s-inner .cm-qualifier { color: #DECB6B; }
+.cm-s-inner .cm-variable-3 { color: #DECB6B; }
+.cm-s-inner .cm-tag { color: rgba(255, 83, 112, 1); }
+.cm-s-inner .cm-error {
+  color: rgba(255, 255, 255, 1.0);
+  background-color: #EC5F67;
+}
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+
+/**apply to code fences with plan text**/
+.md-fences {
+  background-color: #263238;
+  color: rgba(233, 237, 237, 1);
+  border: none;
+}
+
+.md-fences .code-tooltip {
+  background-color: #263238;
+}
+
+</style><title>生物氧化</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#生物氧化">生物氧化</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#名词解释">名词解释</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#重点">重点</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一）代谢总论与生物氧化">（一）代谢总论与生物氧化</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二）呼吸链">（二）呼吸链</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三）化学渗透偶联假说">（三）化学渗透偶联假说</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三）呼吸链与氧化磷酸化抑制作用">（三）呼吸链与氧化磷酸化抑制作用</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四）atp的生理作用与能荷调节的机制">（四）ATP的生理作用与能荷调节的机制</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#五）细胞内物质转运途径汇总">（五）细胞内物质转运途径汇总</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#六）糖脂蛋白质核酸的代谢互变机制">（六）糖、脂、蛋白质、核酸的代谢互变机制</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='生物氧化'><span>生物氧化</span></h1><p><a href='Biochem.html'><font size="6"><span>🔙</span></font></a></p><h3 id='名词解释'><span>名词解释</span></h3><ul><li><p><strong><span>新陈代谢（metabolism）</span></strong><span>：指机体内所有生化反应的统称，包括合成代谢和分解代谢，是生命体的基本特征，是维持生命活动所必须</span></p></li><li><p><strong><span>生物氧化（bio-oxidation）</span></strong><span>：指糖、脂、蛋白等有机物在细胞内经过一系列分解代谢过程，形成其相应的碳骨架，并将释放出来的化学能转化为生物能的过程。根据底物脱去的[H]的受体不同可分为有氧氧化和无氧发酵</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="195.20001220703125" style="max-width: 628px;" viewBox="0 0 628 195.20001220703125"><style>#mermaidChart0 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart0 .error-icon{fill:#552222;}#mermaidChart0 .error-text{fill:#552222;stroke:#552222;}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#333333;stroke:#333333;}#mermaidChart0 .marker.cross{stroke:#333333;}#mermaidChart0 svg{font-family:sans-serif;font-size:16px;}#mermaidChart0 g.classGroup text{fill:#9370DB;fill:#131300;stroke:none;font-family:sans-serif;font-size:10px;}#mermaidChart0 g.classGroup text .title{font-weight:bolder;}#mermaidChart0 .nodeLabel,#mermaidChart0 .edgeLabel{color:#131300;}#mermaidChart0 .edgeLabel .label rect{fill:#ECECFF;}#mermaidChart0 .label text{fill:#131300;}#mermaidChart0 .edgeLabel .label span{background:#ECECFF;}#mermaidChart0 .classTitle{font-weight:bolder;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart0 .divider{stroke:#9370DB;stroke:1;}#mermaidChart0 g.clickable{cursor:pointer;}#mermaidChart0 g.classGroup rect{fill:#ECECFF;stroke:#9370DB;}#mermaidChart0 g.classGroup line{stroke:#9370DB;stroke-width:1;}#mermaidChart0 .classLabel .box{stroke:none;stroke-width:0;fill:#ECECFF;opacity:0.5;}#mermaidChart0 .classLabel .label{fill:#9370DB;font-size:10px;}#mermaidChart0 .relation{stroke:#333333;stroke-width:1;fill:none;}#mermaidChart0 .dashed-line{stroke-dasharray:3;}#mermaidChart0 #compositionStart,#mermaidChart0 .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #compositionEnd,#mermaidChart0 .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #dependencyStart,#mermaidChart0 .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #dependencyStart,#mermaidChart0 .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #extensionStart,#mermaidChart0 .extension{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #extensionEnd,#mermaidChart0 .extension{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #aggregationStart,#mermaidChart0 .aggregation{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 #aggregationEnd,#mermaidChart0 .aggregation{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaidChart0 .edgeTerminals{font-size:11px;}#mermaidChart0 :root{--mermaid-font-family:sans-serif;}#mermaidChart0 :root{--mermaid-alt-font-family:sans-serif;}</style><g transform="translate(0, 0)"><defs><marker id="classDiagram-aggregationStart" class="marker aggregation classDiagram" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="classDiagram-aggregationEnd" class="marker aggregation classDiagram" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="classDiagram-extensionStart" class="marker extension classDiagram" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 1,7 L18,13 V 1 Z"></path></marker></defs><defs><marker id="classDiagram-extensionEnd" class="marker extension classDiagram" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 1,1 V 13 L18,7 Z"></path></marker></defs><defs><marker id="classDiagram-compositionStart" class="marker composition classDiagram" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="classDiagram-compositionEnd" class="marker composition classDiagram" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="classDiagram-dependencyStart" class="marker dependency classDiagram" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 5,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="classDiagram-dependencyEnd" class="marker dependency classDiagram" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M73.82111749194503,72.5999984741211L66.76759790995419,76.76666514078777C59.71407832796336,80.93333180745442,45.607039163981675,89.26666514078777,38.553519581990834,97.5999984741211C31.5,105.93333180745442,31.5,114.26666514078777,31.5,118.43333180745442L31.5,122.5999984741211" id="id1" class="  edge-pattern-solid relation" style="fill:none" marker-start="url(#classDiagram-extensionStart)"></path><path d="M128.5,72.5999984741211L128.5,76.76666514078777C128.5,80.93333180745442,128.5,89.26666514078777,128.5,97.5999984741211C128.5,105.93333180745442,128.5,114.26666514078777,128.5,118.43333180745442L128.5,122.5999984741211" id="id2" class="  edge-pattern-solid relation" style="fill:none" marker-start="url(#classDiagram-extensionStart)"></path><path d="M184,70.58714169093541L192.25,75.08928448813303C200.5,79.59142728533064,217,88.59571287972587,225.25,97.26452234359014C233.5,105.93333180745442,233.5,114.26666514078777,233.5,118.43333180745442L233.5,122.5999984741211" id="id3" class="  edge-pattern-solid relation" style="fill:none" marker-start="url(#classDiagram-extensionStart)"></path><path d="M428,64.95232449021451L415.75,70.39360348753227C403.5,75.83488248485004,379,86.71744047948556,366.75,96.32538614347C354.5,105.93333180745442,354.5,114.26666514078777,354.5,118.43333180745442L354.5,122.5999984741211" id="id4" class="  edge-pattern-solid relation" style="fill:none" marker-start="url(#classDiagram-extensionStart)"></path><path d="M483.5,72.5999984741211L483.5,76.76666514078777C483.5,80.93333180745442,483.5,89.26666514078777,483.5,97.5999984741211C483.5,105.93333180745442,483.5,114.26666514078777,483.5,118.43333180745442L483.5,122.5999984741211" id="id5" class="  edge-pattern-solid relation" style="fill:none" marker-start="url(#classDiagram-extensionStart)"></path><path d="M539,68.4429192163248L548.5833333333334,73.30243242595752C558.1666666666666,78.16194563559023,577.3333333333334,87.88097205485566,586.9166666666666,96.90715193115504C596.5,105.93333180745442,596.5,114.26666514078777,596.5,118.43333180745442L596.5,122.5999984741211" id="id6" class="  edge-pattern-solid relation" style="fill:none" marker-start="url(#classDiagram-extensionStart)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="classid-生物氧化方式-0" transform="translate(128.5, 40.29999923706055)"><rect class="outer title-state" x="-55.5" y="-32.30000019073486" width="111" height="64.60000038146973"></rect><line class="divider" x1="-55.5" x2="55.5" y1="5.300000190734863" y2="5.300000190734863"></line><line class="divider" x1="-55.5" x2="55.5" y1="21.300000190734863" y2="21.300000190734863"></line><g class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel"></span></div></foreignObject><foreignObject class="classTitle" width="96" height="25.600000381469727" transform="translate( -48, -24.800000190734863)"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">生物氧化方式</span></div></foreignObject></g></g><g class="node default" id="classid-加氧-1" transform="translate(31.5, 154.89999771118164)"><rect class="outer title-state" x="-23.5" y="-32.30000019073486" width="47" height="64.60000038146973"></rect><line class="divider" x1="-23.5" x2="23.5" y1="5.300000190734863" y2="5.300000190734863"></line><line class="divider" x1="-23.5" x2="23.5" y1="21.300000190734863" y2="21.300000190734863"></line><g class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel"></span></div></foreignObject><foreignObject class="classTitle" width="32" height="25.600000381469727" transform="translate( -16, -24.800000190734863)"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">加氧</span></div></foreignObject></g></g><g class="node default" id="classid-脱氢-2" transform="translate(128.5, 154.89999771118164)"><rect class="outer title-state" x="-23.5" y="-32.30000019073486" width="47" height="64.60000038146973"></rect><line class="divider" x1="-23.5" x2="23.5" y1="5.300000190734863" y2="5.300000190734863"></line><line class="divider" x1="-23.5" x2="23.5" y1="21.300000190734863" y2="21.300000190734863"></line><g class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel"></span></div></foreignObject><foreignObject class="classTitle" width="32" height="25.600000381469727" transform="translate( -16, -24.800000190734863)"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">脱氢</span></div></foreignObject></g></g><g class="node default" id="classid-脱电子-3" transform="translate(233.5, 154.89999771118164)"><rect class="outer title-state" x="-31.5" y="-32.30000019073486" width="63" height="64.60000038146973"></rect><line class="divider" x1="-31.5" x2="31.5" y1="5.300000190734863" y2="5.300000190734863"></line><line class="divider" x1="-31.5" x2="31.5" y1="21.300000190734863" y2="21.300000190734863"></line><g class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel"></span></div></foreignObject><foreignObject class="classTitle" width="48" height="25.600000381469727" transform="translate( -24, -24.800000190734863)"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">脱电子</span></div></foreignObject></g></g><g class="node default" id="classid-生物氧化种类-4" transform="translate(483.5, 40.29999923706055)"><rect class="outer title-state" x="-55.5" y="-32.30000019073486" width="111" height="64.60000038146973"></rect><line class="divider" x1="-55.5" x2="55.5" y1="5.300000190734863" y2="5.300000190734863"></line><line class="divider" x1="-55.5" x2="55.5" y1="21.300000190734863" y2="21.300000190734863"></line><g class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel"></span></div></foreignObject><foreignObject class="classTitle" width="96" height="25.600000381469727" transform="translate( -48, -24.800000190734863)"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">生物氧化种类</span></div></foreignObject></g></g><g class="node default" id="classid-有氧呼吸-5" transform="translate(354.5, 154.89999771118164)"><rect class="outer title-state" x="-39.5" y="-32.30000019073486" width="79" height="64.60000038146973"></rect><line class="divider" x1="-39.5" x2="39.5" y1="5.300000190734863" y2="5.300000190734863"></line><line class="divider" x1="-39.5" x2="39.5" y1="21.300000190734863" y2="21.300000190734863"></line><g class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel"></span></div></foreignObject><foreignObject class="classTitle" width="64" height="25.600000381469727" transform="translate( -32, -24.800000190734863)"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">有氧呼吸</span></div></foreignObject></g></g><g class="node default" id="classid-无氧呼吸-6" transform="translate(483.5, 154.89999771118164)"><rect class="outer title-state" x="-39.5" y="-32.30000019073486" width="79" height="64.60000038146973"></rect><line class="divider" x1="-39.5" x2="39.5" y1="5.300000190734863" y2="5.300000190734863"></line><line class="divider" x1="-39.5" x2="39.5" y1="21.300000190734863" y2="21.300000190734863"></line><g class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel"></span></div></foreignObject><foreignObject class="classTitle" width="64" height="25.600000381469727" transform="translate( -32, -24.800000190734863)"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">无氧呼吸</span></div></foreignObject></g></g><g class="node default" id="classid-发酵-7" transform="translate(596.5, 154.89999771118164)"><rect class="outer title-state" x="-23.5" y="-32.30000019073486" width="47" height="64.60000038146973"></rect><line class="divider" x1="-23.5" x2="23.5" y1="5.300000190734863" y2="5.300000190734863"></line><line class="divider" x1="-23.5" x2="23.5" y1="21.300000190734863" y2="21.300000190734863"></line><g class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel"></span></div></foreignObject><foreignObject class="classTitle" width="32" height="25.600000381469727" transform="translate( -16, -24.800000190734863)"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">发酵</span></div></foreignObject></g></g></g></g></g></svg></div><ul><li><p><strong><span>生物氧化的特点和与体外燃烧的不同</span></strong></p><ul><li><p><span>体外燃烧往往伴随着高温剧烈的生化反应，而体内的生物氧化过程由酶催化，反应条件温和，且酶易失活</span></p></li><li><p><span>体外燃烧形成的能量往往骤然放出，而机体内的生物氧化能量逐级释放，且以ATP形式携带、磷酸肌酸形式储存、或热能形式散失</span></p></li><li><p><span>体外燃烧形成的CO</span><sub><span>2</span></sub><span>和H</span><sub><span>2</span></sub><span>O是C、H元素与空气中O元素直接作用的结果，而细胞内生物氧化过程，CO</span><sub><span>2</span></sub><span>通过脱羧形成，底物氧化过程脱去的[H]通过呼吸链传递后被O</span><sub><span>2</span></sub><span>接受并合成H</span><sub><span>2</span></sub><span>O</span></p></li><li><p><span>生物氧化往往伴随复杂的代谢通路，但严格有序</span></p></li><li><p><span>生物氧化各反应有严格的细胞定位，如线粒体内三大生物氧化体系、细胞质中EMP、HMP等</span></p></li><li><p><span>生物体对生物氧化过程具有严格的调控作用和对环境的高度适应性，调控符合细胞经济</span></p><p>&nbsp;</p></li></ul></li></ul></li><li><p><strong><span>高能键</span></strong><span>：指结构不稳定，很容易发生水解或基团转移，同时释放出大量自由能的化学键。用&quot;~&quot;表示，重要的高能键有磷酸键、硫酯键</span></p></li><li><p><strong><span>高能磷酸化合物（energy rich phosphate compounds）</span></strong><span>：指一类分子中含有高能磷酸键，分解后产生大量能量的物质</span></p><ul><li><p><strong><span>磷氧键型</span></strong><span>：磷酸烯醇式丙酮酸、1,3-二磷酸甘油酸、乙酰磷酸、ATP、ADP、氨甲酰磷酸</span></p></li><li><p><strong><span>氮磷键型</span></strong><span>：</span></p><ul><li><p><span>磷酸肌酸——哺乳动物肌肉细胞内储能物质</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="157.20001220703125" style="max-width: 368px;" viewBox="0 0.0000019073486328125 368 157.20001220703125"><style>#mermaidChart1 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart1 .error-icon{fill:#552222;}#mermaidChart1 .error-text{fill:#552222;stroke:#552222;}#mermaidChart1 .edge-thickness-normal{stroke-width:2px;}#mermaidChart1 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart1 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart1 .marker{fill:#333333;stroke:#333333;}#mermaidChart1 .marker.cross{stroke:#333333;}#mermaidChart1 svg{font-family:sans-serif;font-size:16px;}#mermaidChart1 .label{font-family:sans-serif;color:#333;}#mermaidChart1 .cluster-label text{fill:#333;}#mermaidChart1 .cluster-label span{color:#333;}#mermaidChart1 .label text,#mermaidChart1 span{fill:#333;color:#333;}#mermaidChart1 .node rect,#mermaidChart1 .node circle,#mermaidChart1 .node ellipse,#mermaidChart1 .node polygon,#mermaidChart1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart1 .node .label{text-align:center;}#mermaidChart1 .node.clickable{cursor:pointer;}#mermaidChart1 .arrowheadPath{fill:#333333;}#mermaidChart1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart1 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart1 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart1 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart1 .cluster text{fill:#333;}#mermaidChart1 .cluster span{color:#333;}#mermaidChart1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart1 :root{--mermaid-font-family:sans-serif;}#mermaidChart1 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-ATP LE-磷酸肌酸激酶" id="L-ATP-磷酸肌酸激酶" style="opacity: 1;"><path class="path" d="M58.49374961853027,30.799999237060547L85,30.799999237060547L128.41004253387518,55.79999923706055" marker-end="url(#arrowhead25)" style="fill:none"></path><defs><marker id="arrowhead25" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-磷酸肌酸激酶 LE-ADP" id="L-磷酸肌酸激酶-ADP" style="opacity: 1;"><path class="path" d="M207.58995746612482,55.79999923706055L251,30.799999237060547L291.3812503814697,30.799999237060547" marker-end="url(#arrowhead26)" style="fill:none"></path><defs><marker id="arrowhead26" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-肌酸 LE-磷酸肌酸激酶" id="L-肌酸-磷酸肌酸激酶" style="opacity: 1;"><path class="path" d="M60,126.39999771118164L85,126.39999771118164L128.41004253387518,101.39999771118164" marker-end="url(#arrowhead27)" style="fill:none"></path><defs><marker id="arrowhead27" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-磷酸肌酸激酶 LE-磷酸肌酸" id="L-磷酸肌酸激酶-磷酸肌酸" style="opacity: 1;"><path class="path" d="M207.58995746612482,101.39999771118164L251,126.39999771118164L276,126.39999771118164" marker-end="url(#arrowhead28)" style="fill:none"></path><defs><marker id="arrowhead28" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-ATP-磷酸肌酸激酶" class="edgeLabel L-LS-ATP' L-LE-磷酸肌酸激酶"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-磷酸肌酸激酶-ADP" class="edgeLabel L-LS-磷酸肌酸激酶' L-LE-ADP"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-肌酸-磷酸肌酸激酶" class="edgeLabel L-LS-肌酸' L-LE-磷酸肌酸激酶"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-磷酸肌酸激酶-磷酸肌酸" class="edgeLabel L-LS-磷酸肌酸激酶' L-LE-磷酸肌酸"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-ATP-6" transform="translate(34,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-24.49375057220459" y="-22.800000190734863" width="48.98750114440918" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-14.49375057220459,-12.800000190734863)"><foreignObject width="28.98750114440918" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">ATP</div></foreignObject></g></g></g><g class="node default" id="flowchart-磷酸肌酸激酶-7" transform="translate(168,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-58" y="-22.800000190734863" width="116" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48,-12.800000190734863)"><foreignObject width="96" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">磷酸肌酸激酶</div></foreignObject></g></g></g><g class="node default" id="flowchart-ADP-8" transform="translate(318,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-26.618749618530273" y="-22.800000190734863" width="53.23749923706055" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16.618749618530273,-12.800000190734863)"><foreignObject width="33.23749923706055" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">ADP</div></foreignObject></g></g></g><g class="node default" id="flowchart-肌酸-9" transform="translate(34,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.800000190734863" width="52" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.800000190734863)"><foreignObject width="32" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">肌酸</div></foreignObject></g></g></g><g class="node default" id="flowchart-磷酸肌酸-11" transform="translate(318,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">磷酸肌酸</div></foreignObject></g></g></g></g></g></g></svg></div></li><li><p><span>磷酸Arg（无脊椎动物）</span></p></li></ul></li><li><p><strong><span>硫酯键型</span></strong><span>：琥珀酰CoA、乙酰CoA</span></p></li><li><p><strong><span>甲硫键型</span></strong><span>：SAM</span></p><p>&nbsp;</p></li></ul></li><li><p><strong><span>呼吸链（respiratory chain）</span></strong><span>：指由一系列氧化还原电位由低到高排列的电子传递体组成的体系，负责将底物脱去的[H]传递给末端的活性氧分子</span></p></li><li><p><strong><span>有氧呼吸（aerobic respiration）</span></strong><span>：指底物脱去的[H]经过完整呼吸链传递后被分子氧接受，并通过氧化磷酸化产生大量能量和H</span><sub><span>2</span></sub><span>O的过程，底物最终被彻底氧化为CO</span><sub><span>2</span></sub></p></li><li><p><strong><span>无氧呼吸（anaerobic respiration）</span></strong><span>：指底物脱去的[H]经过部分呼吸链传递后被氧化态的外源无机物或有机物接受，形成相应还原产物，产生部分能量的过程</span></p></li><li><p><strong><span>发酵（fermentation）</span></strong><span>：指无氧条件下，底物脱去的[H]不经过呼吸链的传递而直接被某些中间物接受（如丙酮酸及其衍生物），形成相应发酵产物和少量能量的过程，底物不完全氧化，能量大多储存在中间物中</span></p></li><li><p><strong><span>底物水平磷酸化（substrate-level phosphorylation）</span></strong><span>：指底物在分解代谢过程中，其分子内部能量发生重排，成为高能磷酸化合物，并在激酶的作用下，将磷酸基团直接转移到ADP并生成ATP的过程，是厌氧生物体内的唯一产能方式</span></p></li><li><p><strong><span>氧化磷酸化（oxidative phosphorylation）</span></strong><span>：指底物脱去的[H]呼吸链中传递的同时，释放出的能量使ADP磷酸化形成ATP的过程，因此底物氧化与ADP磷酸化相偶联起来，是好氧生物体内最主要的产能方式</span></p></li><li><p><span id='光合磷酸化'><strong><span>光合磷酸化（photophosphorylation）</span></strong></span><span>：细胞通过光合作用，利用光能驱动ADP磷酸化形成ATP的过程</span></p></li><li><p><strong><span>化学渗透偶联假说（chemiosmotic hypothesis）</span></strong><span>：底物脱去的[H]在呼吸链中传递时，链中部分复合体具有质子泵的作用，将质子泵出内膜外，形成一个H+电化学梯度差，其中释放的势能在驱动质子通过F</span><sub><span>O</span></sub><span>F</span><sub><span>1</span></sub><span>-ATP合酶回流时，ATP合酶利用回流时释放的能量驱动ADP磷酸化合成ATP，H</span><sup><span>+</span></sup><span>最终回到线粒体基质中</span></p></li><li><p><strong><span>P/O</span></strong><span>：指底物脱去的[H]在呼吸链中传递与氧化磷酸化时，每消耗1mol氧原子所生成的ATP摩尔数</span></p></li><li><p><strong><span>解偶联剂（uncoupler）</span></strong><span>：指一类能使电子传递的氧化过程与ADP磷酸化为ATP的过程分离的物质，如2,4-二硝基苯酚，由于解除了磷酸化的限制，底物氧化和电子传递过程加速，过程中释放的化学能全部以热能散失</span></p></li><li><p><strong><span>能荷（charge）</span></strong><span>：指细胞内高能磷酸状态的一种数量上的衡量，也指腺苷酸系统携带的高能磷酸基团数量</span></p></li><li><p><strong><span>能荷调节</span></strong><span>：指根据细胞所处的能量状态不同，细胞内腺苷酸系统（能荷）对代谢网络的不同调控机制。其本质是ATP、ADP、AMP对代谢途径中某些关键酶的别构调节</span></p></li><li><p><strong><span>分解代谢物阻遏（碳代谢物阻遏）</span></strong><span>：指优先利用的营养物（如G）在胞内的分解产物，会对利用其它非优先营养物的酶的合成产生阻遏作用的效应</span></p></li><li><p><span id='反馈抑制'><strong><span>反馈抑制（feedback inhibition）</span></strong></span><span>：指代谢途径的末端终产物积累过量时，会反过来抑制途径中第一个酶（关键限速酶）的活性，从而抑制代谢正常进行的效应</span></p></li><li><p><strong><span>反馈阻遏（feedback repression）</span></strong><span>：指末端终产物积累过量时，会作为辅阻遏物激活由调节蛋白编码的阻遏蛋白，后者通过作用于操纵基因，阻遏结构基因表达的现象</span></p></li></ul><p>&nbsp;</p><hr /><h3 id='重点'><span>重点</span></h3><h4 id='一）代谢总论与生物氧化'><span>（一）代谢总论与生物氧化</span></h4><ul><li><p><strong><span>细胞内的物质与能量交换过程</span></strong></p><ul><li><p><strong><span>能量</span></strong><span>：ATP（能量货币）、CTP（磷脂合成）、UTP（糖原合成）、GTP（蛋白合成）</span></p></li><li><p><strong><span>还原氢</span></strong><span>：NADH、NADPH</span></p><ul><li><span>氢受体若是呼吸链末端的氧：有氧呼吸</span></li><li><span>氢受体若是呼吸链中间外源的无机物或有机物：无氧呼吸</span></li><li><span>氢受体若是还原态中间代谢物：发酵</span></li></ul></li><li><p><strong><span>碳骨架</span></strong><span>：</span></p><ul><li><span>大分子物质分解后对应的小分子碳骨架：葡萄糖、脂肪酸、氨基酸、核苷酸</span></li><li><span>排出的废物：二氧化碳</span></li><li><span>中间的代谢物：各种有机酸、抗生素、活性物质等</span></li></ul></li></ul></li></ul><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart2" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="635.199951171875" style="max-width: 614px;" viewBox="0 0.0000019073486328125 614 635.199951171875"><style>#mermaidChart2 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart2 .error-icon{fill:#552222;}#mermaidChart2 .error-text{fill:#552222;stroke:#552222;}#mermaidChart2 .edge-thickness-normal{stroke-width:2px;}#mermaidChart2 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart2 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart2 .marker{fill:#333333;stroke:#333333;}#mermaidChart2 .marker.cross{stroke:#333333;}#mermaidChart2 svg{font-family:sans-serif;font-size:16px;}#mermaidChart2 .label{font-family:sans-serif;color:#333;}#mermaidChart2 .cluster-label text{fill:#333;}#mermaidChart2 .cluster-label span{color:#333;}#mermaidChart2 .label text,#mermaidChart2 span{fill:#333;color:#333;}#mermaidChart2 .node rect,#mermaidChart2 .node circle,#mermaidChart2 .node ellipse,#mermaidChart2 .node polygon,#mermaidChart2 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart2 .node .label{text-align:center;}#mermaidChart2 .node.clickable{cursor:pointer;}#mermaidChart2 .arrowheadPath{fill:#333333;}#mermaidChart2 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart2 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart2 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart2 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart2 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart2 .cluster text{fill:#333;}#mermaidChart2 .cluster span{color:#333;}#mermaidChart2 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart2 :root{--mermaid-font-family:sans-serif;}#mermaidChart2 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-新陈代谢 LE-同化作用" id="L-新陈代谢-同化作用" style="opacity: 1;"><path class="path" d="M59.34883702742256,294.7999954223633L117,154.1999969482422L142,161.66268351540637" marker-end="url(#arrowhead58)" style="fill:none"></path><defs><marker id="arrowhead58" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-同化作用 LE-环境物质转化为体内物质" id="L-同化作用-环境物质转化为体内物质" style="opacity: 1;"><path class="path" d="M194.6527194788368,151.39999771118164L251,30.799999237060547L276,30.799999237060547" marker-end="url(#arrowhead59)" style="fill:none"></path><defs><marker id="arrowhead59" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-新陈代谢 LE-同化作用" id="L-新陈代谢-同化作用" style="opacity: 1;"><path class="path" d="M92,298.7940245101701L117,287.5999946594238L170.5291007079762,196.99999618530273" marker-end="url(#arrowhead60)" style="fill:none"></path><defs><marker id="arrowhead60" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-同化作用 LE-小分子合成大分子" id="L-同化作用-小分子合成大分子" style="opacity: 1;"><path class="path" d="M215.9581584365104,151.39999771118164L251,126.39999771118164L300,126.39999771118164" marker-end="url(#arrowhead61)" style="fill:none"></path><defs><marker id="arrowhead61" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-新陈代谢 LE-同化作用" id="L-新陈代谢-同化作用" style="opacity: 1;"><path class="path" d="M92,328.7582031363872L117,335.3999938964844L174.52357333869222,196.99999618530273" marker-end="url(#arrowhead62)" style="fill:none"></path><defs><marker id="arrowhead62" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-同化作用 LE-吸能反应" id="L-同化作用-吸能反应" style="opacity: 1;"><path class="path" d="M215.9581584365104,196.99999618530273L251,221.99999618530273L332,221.99999618530273" marker-end="url(#arrowhead63)" style="fill:none"></path><defs><marker id="arrowhead63" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-新陈代谢 LE-异化作用" id="L-新陈代谢-异化作用" style="opacity: 1;"><path class="path" d="M90.41269787607138,340.3999938964844L117,355.3999938964844L169.5340911841261,438.1999931335449" marker-end="url(#arrowhead64)" style="fill:none"></path><defs><marker id="arrowhead64" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-异化作用 LE-放能反应" id="L-异化作用-放能反应" style="opacity: 1;"><path class="path" d="M194.6527194788368,438.1999931335449L251,317.5999946594238L332,317.5999946594238" marker-end="url(#arrowhead65)" style="fill:none"></path><defs><marker id="arrowhead65" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-新陈代谢 LE-异化作用" id="L-新陈代谢-异化作用" style="opacity: 1;"><path class="path" d="M76.42906520842271,340.3999938964844L117,375.3999938964844L166.15420588652364,438.1999931335449" marker-end="url(#arrowhead66)" style="fill:none"></path><defs><marker id="arrowhead66" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-异化作用 LE-大分子分解为小分子" id="L-异化作用-大分子分解为小分子" style="opacity: 1;"><path class="path" d="M215.9581584365104,438.1999931335449L251,413.1999931335449L292,413.1999931335449" marker-end="url(#arrowhead67)" style="fill:none"></path><defs><marker id="arrowhead67" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-新陈代谢 LE-异化作用" id="L-新陈代谢-异化作用" style="opacity: 1;"><path class="path" d="M59.34883702742256,340.3999938964844L117,480.99999237060547L142,473.5373058034413" marker-end="url(#arrowhead68)" style="fill:none"></path><defs><marker id="arrowhead68" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-异化作用 LE-体内物质转化为环境物质" id="L-异化作用-体内物质转化为环境物质" style="opacity: 1;"><path class="path" d="M215.9581584365104,483.799991607666L251,508.799991607666L276,508.799991607666" marker-end="url(#arrowhead69)" style="fill:none"></path><defs><marker id="arrowhead69" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-吸能反应 LE-能量代谢" id="L-吸能反应-能量代谢" style="opacity: 1;"><path class="path" d="M416,221.99999618530273L497,221.99999618530273L523.5873021239286,236.99999618530273" marker-end="url(#arrowhead70)" style="fill:none"></path><defs><marker id="arrowhead70" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-放能反应 LE-能量代谢" id="L-放能反应-能量代谢" style="opacity: 1;"><path class="path" d="M416,317.5999946594238L497,317.5999946594238L537.5709347915773,282.5999946594238" marker-end="url(#arrowhead71)" style="fill:none"></path><defs><marker id="arrowhead71" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-同化作用 LE-物质代谢" id="L-同化作用-物质代谢" style="opacity: 1;"><path class="path" d="M187.89296629114128,196.99999618530273L251,566.5999908447266L332,591.4926732691323" marker-end="url(#arrowhead72)" style="fill:none"></path><defs><marker id="arrowhead72" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-异化作用 LE-物质代谢" id="L-异化作用-物质代谢" style="opacity: 1;"><path class="path" d="M193.95827882448336,483.799991607666L251,614.3999900817871L332,607.8146242281285" marker-end="url(#arrowhead73)" style="fill:none"></path><defs><marker id="arrowhead73" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-新陈代谢-同化作用" class="edgeLabel L-LS-新陈代谢' L-LE-同化作用"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-同化作用-环境物质转化为体内物质" class="edgeLabel L-LS-同化作用' L-LE-环境物质转化为体内物质"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-新陈代谢-同化作用" class="edgeLabel L-LS-新陈代谢' L-LE-同化作用"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-同化作用-小分子合成大分子" class="edgeLabel L-LS-同化作用' L-LE-小分子合成大分子"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-新陈代谢-同化作用" class="edgeLabel L-LS-新陈代谢' L-LE-同化作用"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-同化作用-吸能反应" class="edgeLabel L-LS-同化作用' L-LE-吸能反应"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-新陈代谢-异化作用" class="edgeLabel L-LS-新陈代谢' L-LE-异化作用"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-异化作用-放能反应" class="edgeLabel L-LS-异化作用' L-LE-放能反应"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-新陈代谢-异化作用" class="edgeLabel L-LS-新陈代谢' L-LE-异化作用"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-异化作用-大分子分解为小分子" class="edgeLabel L-LS-异化作用' L-LE-大分子分解为小分子"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-新陈代谢-异化作用" class="edgeLabel L-LS-新陈代谢' L-LE-异化作用"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-异化作用-体内物质转化为环境物质" class="edgeLabel L-LS-异化作用' L-LE-体内物质转化为环境物质"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-吸能反应-能量代谢" class="edgeLabel L-LS-吸能反应' L-LE-能量代谢"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-放能反应-能量代谢" class="edgeLabel L-LS-放能反应' L-LE-能量代谢"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-同化作用-物质代谢" class="edgeLabel L-LS-同化作用' L-LE-物质代谢"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-异化作用-物质代谢" class="edgeLabel L-LS-异化作用' L-LE-物质代谢"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-新陈代谢-38" transform="translate(50,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">新陈代谢</div></foreignObject></g></g></g><g class="node default" id="flowchart-同化作用-39" transform="translate(184,174.1999969482422)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">同化作用</div></foreignObject></g></g></g><g class="node default" id="flowchart-环境物质转化为体内物质-40" transform="translate(374,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-98" y="-22.800000190734863" width="196" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-88,-12.800000190734863)"><foreignObject width="176" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">环境物质转化为体内物质</div></foreignObject></g></g></g><g class="node default" id="flowchart-小分子合成大分子-43" transform="translate(374,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-74" y="-22.800000190734863" width="148" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-64,-12.800000190734863)"><foreignObject width="128" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">小分子合成大分子</div></foreignObject></g></g></g><g class="node default" id="flowchart-吸能反应-46" transform="translate(374,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">吸能反应</div></foreignObject></g></g></g><g class="node default" id="flowchart-异化作用-48" transform="translate(184,460.99999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">异化作用</div></foreignObject></g></g></g><g class="node default" id="flowchart-放能反应-49" transform="translate(374,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">放能反应</div></foreignObject></g></g></g><g class="node default" id="flowchart-大分子分解为小分子-52" transform="translate(374,413.1999931335449)" style="opacity: 1;"><rect rx="0" ry="0" x="-82" y="-22.800000190734863" width="164" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-72,-12.800000190734863)"><foreignObject width="144" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">大分子分解为小分子</div></foreignObject></g></g></g><g class="node default" id="flowchart-体内物质转化为环境物质-55" transform="translate(374,508.799991607666)" style="opacity: 1;"><rect rx="0" ry="0" x="-98" y="-22.800000190734863" width="196" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-88,-12.800000190734863)"><foreignObject width="176" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">体内物质转化为环境物质</div></foreignObject></g></g></g><g class="node default" id="flowchart-能量代谢-57" transform="translate(564,259.7999954223633)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">能量代谢</div></foreignObject></g></g></g><g class="node default" id="flowchart-物质代谢-61" transform="translate(374,604.3999900817871)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">物质代谢</div></foreignObject></g></g></g></g></g></g></svg></div><ul><li><p><span>生物氧化特点</span></p><ul><li><p><strong><span>一阶段</span></strong><span>：细胞内大分子物质（糖原、蛋白、脂肪、核酸）在一系列酶催化下，快速合成相应小分子（葡萄糖、氨基酸、脂肪酸、核苷酸），该步骤通常不产ATP、还原氢</span></p></li><li><p><strong><span>二阶段</span></strong><span>：一阶段生成相应的小分子物质经过一系列分解代谢过程（EMP、HMP、ED、HK、PK、脱氨脱羧、β氧化...）生成几个相同的碳骨架（丙酮酸、乙酰CoA、草酰乙酸...）。过程中可通过</span><strong><a href='#底物水平磷酸化'><span>底物水平磷酸化</span></a><span>产生少量能量</span></strong><span>，释放出来的还原氢也可直接被一些中间代谢物（丙酮酸及其衍生物）接受，合成相应产物（发酵）</span></p></li><li><p><strong><span>三阶段</span></strong><span>：这些共同的小分子物质最终进入TCA循环，彻底氧化分解，过程中释放出大量还原氢，CO</span><sub><span>2</span></sub><span>，也通过底物水平磷酸化产生少量能量</span></p></li><li><p><strong><span>四阶段</span></strong><span>：二、三阶段脱下的游离的还原氢通过呼吸链的传递被末端O</span><sub><span>2</span></sub><span>接受，通过</span><strong><a href='#氧化磷酸化'><span>氧化磷酸化</span></a><span>产生大量能量</span></strong><span>，产生H</span><sub><span>2</span></sub><span>O。</span><strong><span>再生的辅酶继续参与生物氧化过程，ATP用于生物合成过程</span></strong></p><p>&nbsp;</p></li></ul></li><li><p><span>合成代谢</span></p><ul><li><p><span>小分子碳骨架来源：</span></p><ul><li><span>分解代谢产生</span></li><li><span>外界吸收</span></li></ul></li></ul></li></ul><p><img src="https://636c-cloudbase-baas-3gftldysd8e13c25-1320613606.tcb.qcloud.la/picture/%E5%90%88%E6%88%90%E4%BB%A3%E8%B0%A2.png?sign=605e85a3f371fa44d64a4b2fa6cf70ad&t=1698473584" style="zoom:67%;" /></p><p>&nbsp;</p><p>&nbsp;</p><hr /><h4 id='二）呼吸链'><span>（二）呼吸链</span></h4><ul><li><h5 id='呼吸链respiratory-chain）'><strong><span>呼吸链（respiratory chain）</span></strong><span>：</span></h5><p><span>定义：指由一系列氧化还原电位由低到高排列的电子传递体组成的电子传递体系，负责将底物脱去的还原氢传递给末端的活性氧</span></p><p><img src="http://43.143.164.107/bioicon/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E7%94%9F%E7%89%A9%E6%B0%A7%E5%8C%96/%E5%91%BC%E5%90%B8%E9%93%BE.png" referrerpolicy="no-referrer"></p><ul><li><span>典型的呼吸链：</span></li></ul></li></ul><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart3" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="157.20001220703125" style="max-width: 997.4312744140625px;" viewBox="0.000003814697265625 0.0000019073486328125 997.4312744140625 157.20001220703125"><style>#mermaidChart3 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart3 .error-icon{fill:#552222;}#mermaidChart3 .error-text{fill:#552222;stroke:#552222;}#mermaidChart3 .edge-thickness-normal{stroke-width:2px;}#mermaidChart3 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart3 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart3 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart3 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart3 .marker{fill:#333333;stroke:#333333;}#mermaidChart3 .marker.cross{stroke:#333333;}#mermaidChart3 svg{font-family:sans-serif;font-size:16px;}#mermaidChart3 .label{font-family:sans-serif;color:#333;}#mermaidChart3 .cluster-label text{fill:#333;}#mermaidChart3 .cluster-label span{color:#333;}#mermaidChart3 .label text,#mermaidChart3 span{fill:#333;color:#333;}#mermaidChart3 .node rect,#mermaidChart3 .node circle,#mermaidChart3 .node ellipse,#mermaidChart3 .node polygon,#mermaidChart3 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart3 .node .label{text-align:center;}#mermaidChart3 .node.clickable{cursor:pointer;}#mermaidChart3 .arrowheadPath{fill:#333333;}#mermaidChart3 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart3 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart3 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart3 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart3 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart3 .cluster text{fill:#333;}#mermaidChart3 .cluster span{color:#333;}#mermaidChart3 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart3 :root{--mermaid-font-family:sans-serif;}#mermaidChart3 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-NADH呼吸链 LE-NADH" id="L-NADH呼吸链-NADH" style="opacity: 1;"><path class="path" d="M126.7125015258789,30.799999237060547L202.00625228881836,30.799999237060547L275.4250030517578,30.799999237060547" marker-end="url(#arrowhead114)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead114" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-NADH LE-CoQ" id="L-NADH-CoQ" style="opacity: 1;"><path class="path" d="M344.2625045776367,30.799999237060547L369.2625045776367,30.799999237060547L396.4403615684646,55.79999923706055" marker-end="url(#arrowhead115)" style="fill:none"></path><defs><marker id="arrowhead115" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-CoQ LE-Cytb" id="L-CoQ-Cytb" style="opacity: 1;"><path class="path" d="M448.1906280517578,78.5999984741211L473.1906280517578,78.5999984741211L498.1906280517578,78.5999984741211" marker-end="url(#arrowhead116)" style="fill:none"></path><defs><marker id="arrowhead116" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Cytb LE-CytC1" id="L-Cytb-CytC1" style="opacity: 1;"><path class="path" d="M553.5906295776367,78.5999984741211L578.5906295776367,78.5999984741211L603.5906295776367,78.5999984741211" marker-end="url(#arrowhead117)" style="fill:none"></path><defs><marker id="arrowhead117" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-CytC1 LE-CytC" id="L-CytC1-CytC" style="opacity: 1;"><path class="path" d="M668.8656311035156,78.5999984741211L693.8656311035156,78.5999984741211L718.8656311035156,78.5999984741211" marker-end="url(#arrowhead118)" style="fill:none"></path><defs><marker id="arrowhead118" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-CytC LE-Cytaa3" id="L-CytC-Cytaa3" style="opacity: 1;"><path class="path" d="M774.7531318664551,78.5999984741211L799.7531318664551,78.5999984741211L824.7531318664551,78.5999984741211" marker-end="url(#arrowhead119)" style="fill:none"></path><defs><marker id="arrowhead119" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Cytaa3 LE-O2" id="L-Cytaa3-O2" style="opacity: 1;"><path class="path" d="M897.0031318664551,78.5999984741211L922.0031318664551,78.5999984741211L947.0031318664551,78.5999984741211" marker-end="url(#arrowhead120)" style="fill:none"></path><defs><marker id="arrowhead120" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-FADH2呼吸链 LE-琥珀酸" id="L-FADH2呼吸链-琥珀酸" style="opacity: 1;"><path class="path" d="M128.5875015258789,126.39999771118164L202.00625228881836,126.39999771118164L275.84375381469727,126.39999771118164" marker-end="url(#arrowhead121)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead121" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-琥珀酸 LE-CoQ" id="L-琥珀酸-CoQ" style="opacity: 1;"><path class="path" d="M343.84375381469727,126.39999771118164L369.2625045776367,126.39999771118164L396.4403615684646,101.39999771118164" marker-end="url(#arrowhead122)" style="fill:none"></path><defs><marker id="arrowhead122" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(202.00625228881836,30.799999237060547)" style="opacity: 1;"><g transform="translate(-48.41875076293945,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="96.8375015258789" height="25.600000381469727"></rect><foreignObject width="96.8375015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-NADH呼吸链-NADH" class="edgeLabel L-LS-NADH呼吸链' L-LE-NADH">NADH脱氢酶</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-NADH-CoQ" class="edgeLabel L-LS-NADH' L-LE-CoQ"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-CoQ-Cytb" class="edgeLabel L-LS-CoQ' L-LE-Cytb"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cytb-CytC1" class="edgeLabel L-LS-Cytb' L-LE-CytC1"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-CytC1-CytC" class="edgeLabel L-LS-CytC1' L-LE-CytC"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-CytC-Cytaa3" class="edgeLabel L-LS-CytC' L-LE-Cytaa3"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cytaa3-O2" class="edgeLabel L-LS-Cytaa3' L-LE-O2"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(202.00625228881836,126.39999771118164)" style="opacity: 1;"><g transform="translate(-48,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="96" height="25.600000381469727"></rect><foreignObject width="96" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-FADH2呼吸链-琥珀酸" class="edgeLabel L-LS-FADH2呼吸链' L-LE-琥珀酸">琥珀酸脱氢酶</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-琥珀酸-CoQ" class="edgeLabel L-LS-琥珀酸' L-LE-CoQ"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-NADH呼吸链-75" transform="translate(68.29375076293945,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-58.41875076293945" y="-22.800000190734863" width="116.8375015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48.41875076293945,-12.800000190734863)"><foreignObject width="96.8375015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NADH呼吸链</div></foreignObject></g></g></g><g class="node default" id="flowchart-NADH-76" transform="translate(309.84375381469727,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-34.41875076293945" y="-22.800000190734863" width="68.8375015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-24.418750762939453,-12.800000190734863)"><foreignObject width="48.837501525878906" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NADH</div></foreignObject></g></g></g><g class="node default" id="flowchart-CoQ-77" transform="translate(421.22656631469727,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-26.96406364440918" y="-22.800000190734863" width="53.92812728881836" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16.96406364440918,-12.800000190734863)"><foreignObject width="33.92812728881836" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">CoQ</div></foreignObject></g></g></g><g class="node default" id="flowchart-Cytb-78" transform="translate(525.8906288146973,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-27.700000762939453" y="-22.800000190734863" width="55.400001525878906" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-17.700000762939453,-12.800000190734863)"><foreignObject width="35.400001525878906" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Cytb</div></foreignObject></g></g></g><g class="node default" id="flowchart-CytC1-79" transform="translate(636.2281303405762,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-32.63750076293945" y="-22.800000190734863" width="65.2750015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-22.637500762939453,-12.800000190734863)"><foreignObject width="45.275001525878906" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">CytC1</div></foreignObject></g></g></g><g class="node default" id="flowchart-CytC-80" transform="translate(746.8093814849854,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-27.943750381469727" y="-22.800000190734863" width="55.88750076293945" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-17.943750381469727,-12.800000190734863)"><foreignObject width="35.88750076293945" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">CytC</div></foreignObject></g></g></g><g class="node default" id="flowchart-Cytaa3-81" transform="translate(860.8781318664551,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-36.125" y="-22.800000190734863" width="72.25" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-26.125,-12.800000190734863)"><foreignObject width="52.25" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Cytaa3</div></foreignObject></g></g></g><g class="node default" id="flowchart-O2-82" transform="translate(968.2171936035156,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-21.214062690734863" y="-22.800000190734863" width="42.42812538146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-11.214062690734863,-12.800000190734863)"><foreignObject width="22.428125381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">O2</div></foreignObject></g></g></g><g class="node default" id="flowchart-FADH2呼吸链-83" transform="translate(68.29375076293945,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-60.29375076293945" y="-22.800000190734863" width="120.5875015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-50.29375076293945,-12.800000190734863)"><foreignObject width="100.5875015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">FADH2呼吸链</div></foreignObject></g></g></g><g class="node default" id="flowchart-琥珀酸-84" transform="translate(309.84375381469727,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-34" y="-22.800000190734863" width="68" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-24,-12.800000190734863)"><foreignObject width="48" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">琥珀酸</div></foreignObject></g></g></g></g></g></g></svg></div><ul><li><p><span>呼吸链存在部位：</span></p><ul><li><span>原核生物——细胞质膜</span></li><li><span>真核生物——线粒体内膜</span></li></ul></li><li><p><span>呼吸链组分</span></p><ul><li><p><strong><span>复合体Ⅰ——NADH-CoA（氧化）还原酶</span></strong></p><ul><li><span>组分：NADH脱氢酶（FMN为辅基）、Fe-S蛋白（含Fe-S中心）、CoQ（不是维生素的辅酶）</span></li><li><strong><span>可作为质子泵：向膜间隙泵出4个H</span><sup><span>+</span></sup></strong></li><li><span>抑制剂：鱼藤酮、安密妥、杀粉蝶菌素（抑制NADH到CoQ的电子传递）</span></li></ul></li><li><p><strong><span>复合体Ⅱ——琥珀酸-CoA（氧化）还原酶</span></strong></p><ul><li><span>组分：琥珀酸脱氢酶（TCA中唯一一个在线粒体内膜上的酶，FAD作为辅基）、Fe-S蛋白、CoQ</span></li><li><strong><span>释放出的化学能不足以作为质子泵泵出H</span><sup><span>+</span></sup></strong></li><li><span>抑制剂：萎锈灵</span></li></ul></li><li><p><strong><span>复合体Ⅲ——CoQ-CytC（氧化）还原酶</span></strong></p><ul><li><span>组分：CoQH2（还原型CoQ）、Cytb（含血红素b） Cytc1（含血红素c1）</span></li><li><strong><span>可作为质子泵：向膜间隙泵出4个H</span><sup><span>+</span></sup></strong></li><li><span>抑制剂：抗霉素A（抑制Cytb向Cytc1的电子传递）</span></li></ul></li><li><p><strong><span>复合体Ⅳ——Cyt氧化酶</span></strong></p><ul><li><span>组分：Cytaa3（含血红素aa3）、O</span><sub><span>2</span></sub></li><li><strong><span>可作为质子泵：向膜间隙泵出2个H</span><sup><span>+</span></sup></strong></li><li><span>抑制剂：氰化物、叠氮化合物、CO、硫化物</span></li></ul></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><hr /><h4 id='三）化学渗透偶联假说'><span>（三）化学渗透偶联假说</span></h4><ul><li><p><span>化学偶联假说（✖）</span></p></li><li><p><span>构象偶联假说（✖）</span></p></li><li><p><strong><span>化学渗透偶联假说</span></strong></p><p><span>呼吸链中的部分组分可以作为质子泵（复合体Ⅰ、Ⅲ、Ⅳ），电子在呼吸链中传递时释放的能量，驱动质子泵将H</span><sup><span>+</span></sup><span>泵出内膜，形成H</span><sup><span>+</span></sup><span>电位差。其中释放出的电势能在促使H</span><sup><span>+</span></sup><span>回流时，释放的能量也驱动了ADP磷酸化形成ATP</span></p><ul><li><span>要求细胞膜完整，对H</span><sup><span>+</span></sup><span>、OH</span><sup><span>-</span></sup><span>、Na</span><sup><span>+</span></sup><span>等离子不具有通透性</span></li><li><span>H</span><sup><span>+</span></sup><span>要通过F</span><sub><span>o</span></sub><span>通道回流，过程中释放的能量用于ADP的磷酸化</span></li><li><span>ADP磷酸化过程被破坏，呼吸链不一定被破坏；但呼吸链被破坏，氧化磷酸化作用一定被破坏</span></li></ul><p>&nbsp;</p></li><li><p><span>F</span><sub><span>o</span></sub><span>-F</span><sub><span>1</span></sub><span>ATP合酶</span></p><p>&nbsp;</p><ul><li><p><span>F0——H+回流通道（</span><strong><span>会被缬氨霉素抑制活性</span></strong><span>）</span></p></li><li><p><span>F</span><sub><span>1</span></sub><span>-ATP合酶——催化ADP磷酸化为ATP的酶</span></p><p>&nbsp;</p></li></ul></li><li><p><strong><span>P/O</span></strong><span>：氧磷比——底物脱去的[H]在呼吸链中传递时，每消耗1mol氧原子所合成的ATP摩尔数</span></p><p><strong><span>回流时4个H</span><sup><span>+</span></sup><span>驱动一分子ATP形成</span></strong></p><ul><li><p><span>NADH呼吸链的P/O：2.5（也有说法是3）</span></p></li><li><p><span>FAHD2呼吸链的P/O：1.5（也有说法是2）</span></p><p>&nbsp;</p></li></ul></li></ul><hr /><h4 id='三）呼吸链与氧化磷酸化抑制作用'><span>（三）呼吸链与氧化磷酸化抑制作用</span></h4><ul><li><p><strong><span>（一）呼吸链与氧化磷酸化抑制剂</span></strong></p><ul><li><p><span>（1）呼吸链抑制剂</span></p><ul><li><p><span>鱼藤酮、安密妥、沙粉蝶菌素——抑制复合体Ⅰ中电子传递</span></p></li><li><p><span>萎锈灵——抑制复合体Ⅱ中电子传递</span></p></li><li><p><span>抗霉素A——抑制复合体Ⅲ中电子传递</span></p></li><li><p><span>CO、氟化物、重氮化合物、硫化物——抑制复合体Ⅳ（细胞色素氧化酶）中电子传递</span></p><p>&nbsp;</p></li></ul></li><li><p><span>（2）氧化磷酸化破坏剂</span></p><ul><li><p><span>寡霉素——直接使F</span><sub><span>O</span></sub><span>通道失活，抑制质子的回流，从而破坏了磷酸化作用；由于质子堆积，呼吸链中电子的传递也被破坏（可以通过加入解偶联剂使传递恢复）</span></p><p>&nbsp;</p></li></ul></li><li><p><span>（3）</span><strong><span>解偶联剂</span></strong><span>：指一类使电子传递与ADP磷酸化过程分离的物质，使ADP无法磷酸化为ATP。电子传递过程解除了磷酸化的抑制后，底物氧化与电子传递过程加快，呼吸链中释放出的化学能全部以热能形式散失</span></p><ul><li><p><span>2,4-二硝基苯酚（DNP）：是一种脂溶性带负电的物质，在线粒体内腔中结合H</span><sup><span>+</span></sup><span>后运输回线粒体内，破坏了H</span><sup><span>+</span></sup><span>电位差，因此ATP合酶无法正常驱动ADP磷酸化为ATP。同时呼吸链解除了磷酸化的限制作用，底物氧化消耗和电子传递过程加快，过程中的化学能全部以热能形式散失。所以常用于减肥药</span></p><p>&nbsp;</p></li></ul></li><li><p><span>（4）离子载体抑制剂</span></p><ul><li><span>缬氨霉素：从网腔中携带K</span><sup><span>+</span></sup><span>运输回线粒体，形成的K</span><sup><span>+</span></sup><span>电位差与H</span><sup><span>+</span></sup><span>电位差相抵消，因此也破坏了磷酸化过程</span></li></ul></li></ul></li><li><p><strong><span>（二）ADP的调控</span></strong></p><p><span>当机体能荷水平低，即ATP浓度低，ADP浓度高时，ADP会加速呼吸链中电子传递以及氧化磷酸化过程，从而提高产能</span></p></li><li><p><strong><span>（三）线粒体老化、受损</span></strong></p></li></ul><hr /><h4 id='四）atp的生理作用与能荷调节的机制'><span>（四）ATP的生理作用与能荷调节的机制</span></h4><p><img src="http://43.143.164.107/bioicon/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E7%94%9F%E7%89%A9%E6%B0%A7%E5%8C%96/ATP%E4%B8%8EADP%E7%9A%84%E4%BA%92%E5%8F%98.png" referrerpolicy="no-referrer"></p><p><strong><span>ATP生理作用</span></strong></p><ul><li><strong><span>偶联分解代谢与合成代谢中的能量代谢</span></strong><span>：分解代谢中释放出的能量除热量散失外，其余以ATP的形式携带（</span><strong><span>ATP不是能量储存形式</span></strong><span>），ATP可以直接参与合成反应提供能量，也可以转变为电能、光能、机械能、热能等其他形式的能量维持生命体基本的生理代谢过程</span></li><li><strong><span>通过磷酸化作用活化代谢物或酶分子</span></strong><span>：在激酶作用下，催化ATP的磷酸基团转移给途径中的代谢物或某些酶，如葡萄糖磷酸化为6-磷酸葡萄糖，之后进入EMP中分解氧化；使部分酶磷酸化激活，如糖原磷酸化酶、激素敏感脂肪酶，使部分酶磷酸化抑制，如糖原合酶、乙酰CoA羧化酶，从而调节的代谢的进行</span></li><li><strong><span>触发能荷调节</span></strong><span>：当机体内能荷水平高时，高浓度的ATP会别构抑制途径中某些关键酶的活性，如磷酸果糖激酶、丙酮酸激酶等，从而减弱分解代谢，加强合成代谢，降低能荷水平，防止产能浪费</span></li><li><strong><span>转化为其他活性物质</span></strong><span>：ATP可以转化为UTP用于糖原合成，转化为CTP用于磷脂合成，转化为GTP用于蛋白质合成；还可以转化为AMP，参与核酸形成，转化为第二信使（cAMP、cGMP），转化为某些辅酶（CoⅠ、CoⅡ、CoA），转化为某些活性物质，如UDPG、SAM等</span></li></ul><p>&nbsp;</p><p><strong><span>能荷调节机制</span></strong></p><ul><li><span>当机体能荷水平高时，高浓度的ATP会别构抑制分解代谢途径中某些关键酶的活性，如磷酸果糖激酶、丙酮酸激酶等，从而减弱分解代谢，加强合成代谢，降低能荷水平，防止产能浪费</span></li><li><span>当机体能荷水平低时，高浓度的ADP、AMP会别构激活分解代谢途径中某些酶的活性，如己糖激酶、磷酸果糖激酶、柠檬酸合成酶等活性，从而加强分解代谢，抑制合成代谢；同时还会促进辅酶再生，促进电子在呼吸链中的传递与氧化磷酸化，因此加速产能，提高了能荷</span></li></ul><p>&nbsp;</p><hr /><h4 id='五）细胞内物质转运途径汇总'><span>（五）细胞内物质转运途径汇总</span></h4><ul><li><p><strong><span>（1）胞质中NADH运输到线粒体的两大穿梭途径</span></strong></p><ul><li><p><span>α-磷酸甘油穿梭途径</span></p><ul><li><span>胞质的一分子NADH转变为一分子FADH</span><sub><span>2</span></sub><span>进入呼吸链</span></li></ul></li></ul><p><img src="http://43.143.164.107/bioicon/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E7%94%9F%E7%89%A9%E6%B0%A7%E5%8C%96/3-%E7%A3%B7%E9%85%B8%E7%94%98%E6%B2%B9%E7%A9%BF%E6%A2%AD.jpg" style="zoom: 33%;" /></p><ul><li><p><span>苹果酸-天冬氨酸穿梭途径</span></p><ul><li><span>胞质的一分子NADH转变为一分子NADH进入呼吸链</span></li></ul></li></ul><p><span>  </span><img src="http://43.143.164.107/bioicon/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E7%94%9F%E7%89%A9%E6%B0%A7%E5%8C%96/%E8%8B%B9%E6%9E%9C%E9%85%B8%E7%A9%BF%E6%A2%AD.jpg" style="zoom: 25%;" /></p><ul><li><span>胞质中NADPH进入线粒体的方式</span></li></ul></li></ul><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart4" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="157.20001220703125" style="max-width: 554.737548828125px;" viewBox="0 0.0000019073486328125 554.737548828125 157.20001220703125"><style>#mermaidChart4 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart4 .error-icon{fill:#552222;}#mermaidChart4 .error-text{fill:#552222;stroke:#552222;}#mermaidChart4 .edge-thickness-normal{stroke-width:2px;}#mermaidChart4 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart4 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart4 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart4 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart4 .marker{fill:#333333;stroke:#333333;}#mermaidChart4 .marker.cross{stroke:#333333;}#mermaidChart4 svg{font-family:sans-serif;font-size:16px;}#mermaidChart4 .label{font-family:sans-serif;color:#333;}#mermaidChart4 .cluster-label text{fill:#333;}#mermaidChart4 .cluster-label span{color:#333;}#mermaidChart4 .label text,#mermaidChart4 span{fill:#333;color:#333;}#mermaidChart4 .node rect,#mermaidChart4 .node circle,#mermaidChart4 .node ellipse,#mermaidChart4 .node polygon,#mermaidChart4 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart4 .node .label{text-align:center;}#mermaidChart4 .node.clickable{cursor:pointer;}#mermaidChart4 .arrowheadPath{fill:#333333;}#mermaidChart4 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart4 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart4 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart4 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart4 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart4 .cluster text{fill:#333;}#mermaidChart4 .cluster span{color:#333;}#mermaidChart4 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart4 :root{--mermaid-font-family:sans-serif;}#mermaidChart4 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-NADPH LE-转氢酶" id="L-NADPH-转氢酶" style="opacity: 1;"><path class="path" d="M86.625,30.799999237060547L111.625,30.799999237060547L142.4827410782968,55.79999923706055" marker-end="url(#arrowhead142)" style="fill:none"></path><defs><marker id="arrowhead142" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-转氢酶 LE-NADP+" id="L-转氢酶-NADP+" style="opacity: 1;"><path class="path" d="M198.7672589217032,55.79999923706055L229.625,30.799999237060547L254.625,30.799999237060547" marker-end="url(#arrowhead143)" style="fill:none"></path><defs><marker id="arrowhead143" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-NADP+ LE-辅酶再生" id="L-NADP+-辅酶再生" style="opacity: 1;"><path class="path" d="M332.7375030517578,30.799999237060547L357.7375030517578,30.799999237060547L422.7375030517578,30.799999237060547" marker-end="url(#arrowhead144)" style="fill:none"></path><defs><marker id="arrowhead144" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-NAD+ LE-转氢酶" id="L-NAD+-转氢酶" style="opacity: 1;"><path class="path" d="M81.47343826293945,126.39999771118164L111.625,126.39999771118164L142.4827410782968,101.39999771118164" marker-end="url(#arrowhead145)" style="fill:none"></path><defs><marker id="arrowhead145" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-转氢酶 LE-NADH" id="L-转氢酶-NADH" style="opacity: 1;"><path class="path" d="M198.7672589217032,101.39999771118164L229.625,126.39999771118164L259.26250076293945,126.39999771118164" marker-end="url(#arrowhead146)" style="fill:none"></path><defs><marker id="arrowhead146" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-NADH LE-穿梭途径进入线粒体" id="L-NADH-穿梭途径进入线粒体" style="opacity: 1;"><path class="path" d="M328.10000228881836,126.39999771118164L357.7375030517578,126.39999771118164L382.7375030517578,126.39999771118164" marker-end="url(#arrowhead147)" style="fill:none"></path><defs><marker id="arrowhead147" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-NADPH-转氢酶" class="edgeLabel L-LS-NADPH' L-LE-转氢酶"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-转氢酶-NADP+" class="edgeLabel L-LS-转氢酶' L-LE-NADP+"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-NADP+-辅酶再生" class="edgeLabel L-LS-NADP+' L-LE-辅酶再生"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-NAD+-转氢酶" class="edgeLabel L-LS-NAD+' L-LE-转氢酶"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-转氢酶-NADH" class="edgeLabel L-LS-转氢酶' L-LE-NADH"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-NADH-穿梭途径进入线粒体" class="edgeLabel L-LS-NADH' L-LE-穿梭途径进入线粒体"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-NADPH-94" transform="translate(47.3125,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-39.3125" y="-22.800000190734863" width="78.625" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29.3125,-12.800000190734863)"><foreignObject width="58.625" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NADPH</div></foreignObject></g></g></g><g class="node default" id="flowchart-转氢酶-95" transform="translate(170.625,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-34" y="-22.800000190734863" width="68" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-24,-12.800000190734863)"><foreignObject width="48" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">转氢酶</div></foreignObject></g></g></g><g class="node default" id="flowchart-NADP+-96" transform="translate(293.6812515258789,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-39.05624961853027" y="-22.800000190734863" width="78.11249923706055" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29.056249618530273,-12.800000190734863)"><foreignObject width="58.11249923706055" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NADP+</div></foreignObject></g></g></g><g class="node default" id="flowchart-辅酶再生-97" transform="translate(464.7375030517578,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.800000190734863" width="84" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.800000190734863)"><foreignObject width="64" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">辅酶再生</div></foreignObject></g></g></g><g class="node default" id="flowchart-NAD+-98" transform="translate(47.3125,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-34.16093826293945" y="-22.800000190734863" width="68.3218765258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-24.160938262939453,-12.800000190734863)"><foreignObject width="48.321876525878906" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NAD+</div></foreignObject></g></g></g><g class="node default" id="flowchart-NADH-100" transform="translate(293.6812515258789,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-34.41875076293945" y="-22.800000190734863" width="68.8375015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-24.418750762939453,-12.800000190734863)"><foreignObject width="48.837501525878906" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NADH</div></foreignObject></g></g></g><g class="node default" id="flowchart-穿梭途径进入线粒体-101" transform="translate(464.7375030517578,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-82" y="-22.800000190734863" width="164" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-72,-12.800000190734863)"><foreignObject width="144" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">穿梭途径进入线粒体</div></foreignObject></g></g></g></g></g></g></svg></div><p>&nbsp;</p><ul><li><p><strong><span>（2）乳酸循环（Cori）</span></strong></p><ul><li><p><span>剧烈运动的肌肉中，葡萄糖通过EMP途径生成的丙酮酸加氢合成乳酸，后者通过血液运输到肝脏中，再次异生为葡萄糖</span></p></li><li><p><span>意义：</span></p><ul><li><strong><span>辅酶再生</span></strong><span>，保证EMP持续进行</span></li><li><span>将消耗堆积的乳酸，防止酸中毒产生</span></li></ul></li></ul><p><img src="http://43.143.164.107/bioicon/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E4%B9%B3%E9%85%B8%E5%BE%AA%E7%8E%AF.png" style="zoom:33%;" /></p></li><li><p><strong><span>（3）葡萄糖-丙酮酸循环</span></strong></p><ul><li><span>类比Cori循环，各组织中葡萄糖经过EMP途径合成的丙酮酸，通过转氨合成Ala，后者通过血液运输至肝脏，再转氨合成丙酮酸，后者通过异生合成葡萄糖。肝脏中转氨合成的Glu通过脱氨基作用，可将游离的氨带入</span><strong><span>尿素循环</span></strong><span>，该循环是尿素循环前氨转运的两大途径之一</span></li></ul></li></ul><p>&nbsp;</p><ul><li><p><strong><span>（4）肉毒碱转运系统</span></strong></p><ul><li><span>在肉毒碱脂酰基转移酶Ⅰ和Ⅱ作用下，肉毒碱将脂酰基从线粒体外转移到线粒体内——详见《脂代谢》</span></li></ul></li><li><p><strong><span>（5）柠檬酸-丙酮酸穿梭系统</span></strong></p><ul><li><p><span>脂肪酸从头合成前，乙酰CoA从线粒体内转运到胞质中的穿梭途径——详见《脂代谢》</span></p><p>&nbsp;</p></li></ul></li></ul><h4 id='六）糖脂蛋白质核酸的代谢互变机制'><span>（六）糖、脂、蛋白质、核酸的代谢互变机制</span></h4><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart5" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="171.60000610351562" style="max-width: 342px;" viewBox="0 -36.10000038146973 342 171.60000610351562"><style>#mermaidChart5 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart5 .error-icon{fill:#552222;}#mermaidChart5 .error-text{fill:#552222;stroke:#552222;}#mermaidChart5 .edge-thickness-normal{stroke-width:2px;}#mermaidChart5 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart5 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart5 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart5 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart5 .marker{fill:#333333;stroke:#333333;}#mermaidChart5 .marker.cross{stroke:#333333;}#mermaidChart5 svg{font-family:sans-serif;font-size:16px;}#mermaidChart5 .label{font-family:sans-serif;color:#333;}#mermaidChart5 .cluster-label text{fill:#333;}#mermaidChart5 .cluster-label span{color:#333;}#mermaidChart5 .label text,#mermaidChart5 span{fill:#333;color:#333;}#mermaidChart5 .node rect,#mermaidChart5 .node circle,#mermaidChart5 .node ellipse,#mermaidChart5 .node polygon,#mermaidChart5 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart5 .node .label{text-align:center;}#mermaidChart5 .node.clickable{cursor:pointer;}#mermaidChart5 .arrowheadPath{fill:#333333;}#mermaidChart5 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart5 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart5 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart5 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart5 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart5 .cluster text{fill:#333;}#mermaidChart5 .cluster span{color:#333;}#mermaidChart5 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart5 :root{--mermaid-font-family:sans-serif;}#mermaidChart5 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-糖 LE-蛋白" id="L-糖-蛋白" style="opacity: 1;"><path class="path" d="M44,14.51627846651299L69,-8.100000381469727L120,-8.100000381469727L171,-8.100000381469727L201.88235334881256,26.899999618530273" marker-end="url(#arrowhead181)" style="fill:none"></path><defs><marker id="arrowhead181" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-蛋白 LE-糖" id="L-蛋白-糖" style="opacity: 1;"><path class="path" d="M201.88235334881256,72.49999809265137L171,107.49999809265137L120,107.49999809265137L69,107.49999809265137L38.78226834187417,53.599998474121094" marker-end="url(#arrowhead182)" style="fill:none"></path><defs><marker id="arrowhead182" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-糖 LE-脂" id="L-糖-脂" style="opacity: 1;"><path class="path" d="M42.645160841141404,8L69,-28.100000381469727L120,-28.100000381469727L171,-28.100000381469727L222,-28.100000381469727L273,-28.100000381469727L303.3984578816476,26.899999618530273" marker-end="url(#arrowhead183)" style="fill:none"></path><defs><marker id="arrowhead183" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-蛋白 LE-脂" id="L-蛋白-脂" style="opacity: 1;"><path class="path" d="M248,49.69999885559082L273,49.69999885559082L298,49.69999885559082" marker-end="url(#arrowhead184)" style="fill:none"></path><defs><marker id="arrowhead184" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-核酸 LE-糖" id="L-核酸-糖" style="opacity: 1;"><path class="path" d="M94,59.33529277876312L69,68.5999984741211L44,46.62325473164403" marker-end="url(#arrowhead185)" style="fill:none"></path><defs><marker id="arrowhead185" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-糖 LE-核酸" id="L-糖-核酸" style="opacity: 1;"><path class="path" d="M44,30.799999237060547L69,30.799999237060547L94,40.06470493241852" marker-end="url(#arrowhead186)" style="fill:none"></path><defs><marker id="arrowhead186" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-核酸 LE-脂" id="L-核酸-脂" style="opacity: 1;"><path class="path" d="M134.946015070604,72.49999809265137L171,127.49999809265137L222,127.49999809265137L273,127.49999809265137L303.3984578816476,72.49999809265137" marker-end="url(#arrowhead187)" style="fill:none"></path><defs><marker id="arrowhead187" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-核酸 LE-蛋白" id="L-核酸-蛋白" style="opacity: 1;"><path class="path" d="M146,49.69999885559082L171,49.69999885559082L196,49.69999885559082" marker-end="url(#arrowhead188)" style="fill:none"></path><defs><marker id="arrowhead188" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-糖-蛋白" class="edgeLabel L-LS-糖' L-LE-蛋白"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-蛋白-糖" class="edgeLabel L-LS-蛋白' L-LE-糖"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-糖-脂" class="edgeLabel L-LS-糖' L-LE-脂"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-蛋白-脂" class="edgeLabel L-LS-蛋白' L-LE-脂"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-核酸-糖" class="edgeLabel L-LS-核酸' L-LE-糖"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-糖-核酸" class="edgeLabel L-LS-糖' L-LE-核酸"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-核酸-脂" class="edgeLabel L-LS-核酸' L-LE-脂"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-核酸-蛋白" class="edgeLabel L-LS-核酸' L-LE-蛋白"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-糖-116" transform="translate(26,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-18" y="-22.800000190734863" width="36" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-8,-12.800000190734863)"><foreignObject width="16" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">糖</div></foreignObject></g></g></g><g class="node default" id="flowchart-蛋白-117" transform="translate(222,49.69999885559082)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.800000190734863" width="52" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.800000190734863)"><foreignObject width="32" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">蛋白</div></foreignObject></g></g></g><g class="node default" id="flowchart-脂-120" transform="translate(316,49.69999885559082)" style="opacity: 1;"><rect rx="0" ry="0" x="-18" y="-22.800000190734863" width="36" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-8,-12.800000190734863)"><foreignObject width="16" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">脂</div></foreignObject></g></g></g><g class="node default" id="flowchart-核酸-123" transform="translate(120,49.69999885559082)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.800000190734863" width="52" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.800000190734863)"><foreignObject width="32" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">核酸</div></foreignObject></g></g></g></g></g></g></svg></div><p>&nbsp;</p><ul><li><p><span>糖能转变为脂质：</span></p><ul><li><span>糖代谢过程中的中间物——3-磷酸甘油醛、乙酰CoA分别作为甘油、脂肪酸胆固醇的合成原料，当机体摄入糖过多时，脂质大量合成积累</span></li><li><span>糖代谢调控与脂代谢的调控密切相关：当机体因严重糖尿病或长期饥饿，糖代谢受阻，此时脂肪大量动员，产生大量能量供机体利用</span></li></ul></li><li><p><span>蛋白能转变为脂质：</span></p><ul><li><span>氨基酸转氨、脱氨后的碳骨架，基本都可以转变为乙酰CoA，后者合成脂肪酸、胆固醇</span></li><li><span>其中Ser可参与磷脂合成（磷脂酰丝氨酸）</span></li></ul></li><li><p><span>糖和蛋白能互相转变：</span></p><ul><li><span>糖代谢中的碳骨架进入TCA循环可以作为氨基酸合成的前体，如α-酮戊二酸合成Glu、Gln、Leu、Pro，草酰乙酸合成Asp、Asn、Thr、Lys、Met、Ile</span></li><li><span>生糖氨基酸脱氨后的碳骨架可以进入糖异生，合成葡萄糖、糖原、甘油</span></li></ul></li><li><p><span>脂与糖和蛋白的关系</span></p><ul><li><span>动物体内由于缺乏乙醛酸循环，脂肪酸β氧化后的碳骨架很难进入糖异生或合成案件思源（</span><strong><span>在没有外来碳骨架的情况下，TCA为保证稳定，其循环基本不会中断</span></strong><span>）</span></li><li><span>植物和部分微生物细胞内存在乙醛酸循环，途径会净生成一个琥珀酸，因此为糖异生和氨基酸合成提供途径</span></li></ul></li><li><p><span>核酸与另外三者的关系</span></p><ul><li><span>核苷酸可转变为能量载体，如ATP参与代谢供能，CTP参与磷脂合成，GTP参与蛋白合成，UTP参与糖原合成</span></li><li><span>核苷酸转变为第二信使，参与激素介导的代谢调控过程</span></li><li><span>核苷酸用于合成某些辅酶，如CoⅠ、CoⅡ、CoA、FAD等，是维持代谢所必须</span></li><li><span>糖和和核苷酸的关系：HMP途径的5-磷酸核糖合成的PRPP，是核苷酸从头合成、补救合成的原料，核酸分解后也要进入HMP代谢</span></li><li><span>氨基酸和核苷酸的关系：Ser、Thr、Gly、His代谢脱下的一碳单位，如甲基、亚甲基、次甲基等，被FH4携带后，用于核苷酸的代谢，如N10-甲酰FH4参与合成嘌呤环的C2和C8，N5,N10-亚甲基FH4用于dTMP的合成，N5-甲基FH4可用于FH4和Met的再生；因此一碳单位是联通氨基酸代谢和和核苷酸代谢的重要物质；Gln、Gly、Asp还可以参与碱基的从头合成过程，Gln参与PRPP合成，为UTP合成CTP、XMP合成GMP过程提供氨基</span></li></ul></li></ul><p>&nbsp;</p></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><script type="text/javascript">
+    document.body.oncontextmenu = 
+    document.body.ondragstart = 
+    document.body.onselectstart = 
+    document.body.onbeforecopy = 
+    function () { return false; };
+    document.body.onselect = 
+    document.body.oncopy = 
+    document.body.onmouseup = 
+    function () { document.selection.empty(); };
+</script></body>
+</html>
