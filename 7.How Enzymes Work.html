@@ -1,0 +1,760 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link href="gene.ico" rel="SHORTCUT ICON">
+    <title>Docs | 7.How Enzymes Work</title>
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar {background-color:#183055; width: 260px; font-size: 0.8rem; color:white; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content {background-color:#183055; position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 50px; width: 260px; }
+@media screen and (max-width: 1440px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 230px; }
+}
+@media screen and (max-width: 950px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+
+
+:root {
+    --side-bar-bg-color: #F5F5F5;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+
+}
+h2 {
+    font-size: 2em;
+    line-height: 1.225;
+
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Introduction</title>
+
+</head>
+
+
+
+<main class='container col-11'>
+<div class="my-3 p-3 bg-body rounded shadow-lg row" >
+
+
+<div class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#71profile-of-enzymes"><strong>7.1.Profile of enzymes</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#711common-features-and-individuality-of-enzymes"><strong>7.1.1.Common Features and Individuality of Enzymes</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-common-features-of-enzymes-relative-to-chemical-catalysts">(Ⅰ) Common Features of Enzymes Relative to Chemical Catalysts</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-individuality-of-enzymes-relative-to-chemical-catalysts">(Ⅱ) Individuality of Enzymes Relative to Chemical Catalysts</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#712enzyme-nomenclature-and-classification"><strong>7.1.2.Enzyme Nomenclature and Classification</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#713enzyme-structure-and-composition"><strong>7.1.3.Enzyme Structure and Composition</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-enzyme-structure">(Ⅰ) Enzyme Structure</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-enzyme-composition">(Ⅱ) Enzyme Composition</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#72enzyme-mechanism"><strong>7.2.Enzyme Mechanism</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#721modes-of-enzyme-substrate-binding"><strong>7.2.1.Modes of Enzyme-Substrate Binding</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#722reasons-for-the-high-catalytic-efficiency-of-enzymes"><strong>7.2.2.Reasons for the High Catalytic Efficiency of Enzymes</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#723-enzymatic-catalysis-example-serine-protease-family"><strong>7.2.3. Enzymatic Catalysis Example: Serine Protease Family</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#73enzyme-activity-assay"><strong>7.3.Enzyme Activity Assay</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#731enzyme-activity-assay-parameters"><strong>7.3.1.Enzyme Activity Assay Parameters</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#732principles-of-enzyme-activity-assay"><strong>7.3.2.Principles of Enzyme Activity Assay</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#733methods-for-enzyme-activity-assay"><strong>7.3.3.Methods for Enzyme Activity Assay</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#74enzyme-kinetics"><strong>7.4.Enzyme Kinetics</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#741enzyme-catalyzed-reaction-with-a-single-substrate"><strong>7.4.1.Enzyme-Catalyzed Reaction with a Single Substrate</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#742kinetic-parameters"><strong>7.4.2.Kinetic Parameters</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-v-and-vmax">(Ⅰ) V and V<sub>max</sub></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-km">(Ⅱ) K<sub>m</sub></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅲ-kcat--k2">(Ⅲ) K<sub>cat</sub> / K<sub>2</sub></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#743calculating-km-and-kcat"><strong>7.4.3.Calculating K<sub>m</sub> and K<sub>cat</sub></strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#744factors-influencing-the-rate-of-enzyme-catalyzed-reactions"><strong>7.4.4.Factors influencing the rate of enzyme-catalyzed reactions</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-substrate-concentration">(Ⅰ) Substrate concentration</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-enzyme-concentration">(Ⅱ) Enzyme concentration</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅲ-temperature">(Ⅲ) Temperature</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅳ-ph">(Ⅳ) pH</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅴ-activators-and-inhibitors">(Ⅴ) Activators and inhibitors</a></div><ul class="outline-children"></ul></li></ul></li></ul></li>
+<br><span style='margin-left:25px; font-size:16px;' >Previous</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='6.Amino Acid Metabolism.html'>6.Amino Acid Metabolism</a>
+<br><span style='margin-left:25px; font-size:16px;'>Next</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='8.Regulation of Enzymes.html'>8.Regulation of Enzymes</a>
+<br><br>
+</div></div>
+
+
+    <div id='write'  class=''><div style="background-color:whitesmoke">
+<details style="font-size:12px;">
+    <summary><strong>7.How Enzymes Work</strong></summary>
+    <a href="introduction.html">Return to Introduction</a><br><hr>
+    <strong>Previous</strong>:<a href="6.Amino Acid Metabolism.html">6.Amino Acid Metabolism</a><br>
+    <strong>Next</strong>:<a href="8.Regulation of Enzymes.html">8.Regulation of Enzymes</a>
+</details>
+</div><h2 id='71profile-of-enzymes'><strong><span>7.1.Profile of enzymes</span></strong></h2><p><span>Complex and precise catalytic processes exist in living organisms. For example, humans can obtain a large amount of sugar substances from food and drinks, and through a series of complex reactions, convert the carbon skeleton in sugar into CO</span><sub><span>2</span></sub><span>, while releasing a large amount of energy for the body&#39;s life activities to utilize. This process is called </span><strong><span>biological oxidation</span></strong><span>. However, the sugar molecules in foods stored in the external environment for a month, a year, or even decades are difficult to convert into CO</span><sub><span>2</span></sub><span> and H</span><sub><span>2</span></sub><span>O. Therefore, compared to this difficult extracellular chemical oxidation, biological oxidation inside the organism can be completed in a matter of seconds, mainly due to the presence of </span><strong><span>enzyme catalysis</span></strong><span>.</span></p><p><strong><span>Enzyme</span></strong><span> </span><span>	</span><span>refers to highly efficient and specific biocatalysts produced by living cells. </span><strong><span>The vast majority of enzymes are proteins</span></strong><span>, as both enzymes and protein consist of amino acid residues. Enzymes and proteins share similar properties: they cannot pass through semipermeable membranes, have similar color reactions, and exhibit maximum absorbance at OD</span><sub><span>280</span></sub><span>. Additionally, factors that denature proteins also denature enzymes.</span></p><p><strong><span>Ribozyme</span></strong><span> </span><span>	</span><span>refers to an RNA molecule with catalytic activity. Only a small fraction of enzymes are ribozymes, and these enzymes can participate in processes such as splicing and circularization after self-transcription, such as 23srRNA in the 50s large subunit.</span></p><p><img src="media\7\核酶.png" referrerpolicy="no-referrer" alt="核酶"></p><p><span>Enzymes play a crucial role in the biological system. </span><strong><span>Almost all biochemical reactions within the organism require enzyme catalysis</span></strong><span>, allowing large nutrient molecules to be rapidly broken down into small carbon skeletons, and chemical energy to be rapidly converted into biological energy. The onset of many diseases is due to the lack of certain enzymes or the overexpression of certain enzymes. Determining the enzyme activity of specific enzymes in blood or specific tissue samples is beneficial for disease diagnosis. In the field of biomedicine, the principles behind the design of many drugs depend on whether they can interact with specific sites on enzyme molecules (molecular docking). Meanwhile, enzymes also play important roles in the food industry, fermentation industry, and agriculture.</span></p><p>&nbsp;</p><h3 id='711common-features-and-individuality-of-enzymes'><strong><span>7.1.1.Common Features and Individuality of Enzymes</span></strong></h3><h4 id='ⅰ-common-features-of-enzymes-relative-to-chemical-catalysts'><span>(Ⅰ) Common Features of Enzymes Relative to Chemical Catalysts</span></h4><p><img src="media/7/活化能.png" style="zoom: 100%;" /></p><ol start='' ><li><span>Accelerate reaction rates and significantly reduce activation energy.</span></li><li><span>Do not change the equilibrium point (equilibrium constant) of the reaction, only shorten the time required to reach equilibrium.</span></li><li><span>The quantity is not consumed before and after the reaction, and the chemical nature does not change.</span></li><li><span>For reversible reactions, both forward and reverse directions can be catalyzed.</span></li></ol><p>&nbsp;</p><h4 id='ⅱ-individuality-of-enzymes-relative-to-chemical-catalysts'><span>(Ⅱ) Individuality of Enzymes Relative to Chemical Catalysts</span></h4><ol start='' ><li><p><span>After binding with substrates, enzymes form specific ES complexes.</span></p></li><li><p><span>Most enzymes are proteins and are prone to denaturation in high temperatures and extreme pH environments, thus requiring mild reaction conditions.</span></p></li><li><p><span>Enzyme catalytic activity is much higher, approximately 10</span><sup><span>7</span></sup><span>-10</span><sup><span>13</span></sup><span> times that of chemical catalysts.</span></p></li><li><p><span>Enzymes exhibit stronger specificity and can only catalyze a specific substrate or class of substrates, leading to specific reactions and products.</span></p><ul><li><p><strong><span>Structural Specificity</span></strong></p><ul><li><p><span>Relative Specificity</span></p><ul><li><span>Bond Specificity - Enzymes only act on certain chemical bonds</span></li><li><span>Group Specificity - Enzymes have specificity for both the chemical bond and the end groups</span></li></ul></li><li><p><span>Absolute Specificity - An enzyme catalyzes only one type of substrate</span></p></li></ul></li><li><p><strong><span>Stereo Specificity</span></strong></p><ul><li><p><span>Geometric Isomer Specificity - Berberine oxidase catalyzes only berberine (anti-butenyldioic acid), not cis-butenyldioic acid</span></p></li><li><p><span>Optical Isomer Specificity - L-Glu dehydrogenase catalyzes the oxidative deamination of L-Glu only.</span></p><p>&nbsp;</p></li></ul></li></ul></li><li><p><span>Enzyme activity can be regulated</span></p></li></ol><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="406.20001220703125" style="max-width: 985.5499877929688px;" viewBox="0 0.0000019073486328125 985.5499877929688 406.20001220703125"><style>#mermaidChart0 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart0 .error-icon{fill:#552222;}#mermaidChart0 .error-text{fill:#552222;stroke:#552222;}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#333333;stroke:#333333;}#mermaidChart0 .marker.cross{stroke:#333333;}#mermaidChart0 svg{font-family:sans-serif;font-size:16px;}#mermaidChart0 .label{font-family:sans-serif;color:#333;}#mermaidChart0 .cluster-label text{fill:#333;}#mermaidChart0 .cluster-label span{color:#333;}#mermaidChart0 .label text,#mermaidChart0 span{fill:#333;color:#333;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart0 .node .label{text-align:center;}#mermaidChart0 .node.clickable{cursor:pointer;}#mermaidChart0 .arrowheadPath{fill:#333333;}#mermaidChart0 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart0 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart0 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart0 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart0 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart0 .cluster text{fill:#333;}#mermaidChart0 .cluster span{color:#333;}#mermaidChart0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart0 :root{--mermaid-font-family:sans-serif;}#mermaidChart0 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Regulatory_Mechanisms LE-Animals" id="L-Regulatory_Mechanisms-Animals" style="opacity: 1;"><path class="path" d="M188.23641259731124,149.1999969482422L239.03750610351562,164.1999969482422L295.1125030517578,164.1999969482422" marker-end="url(#arrowhead26)" style="fill:none"></path><defs><marker id="arrowhead26" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Animals LE-Cellular_Regulation" id="L-Animals-Cellular_Regulation" style="opacity: 1;"><path class="path" d="M361.2566023042331,141.39999771118164L432.0625,78.5999984741211L498.44913888694475,53.599998474121094" marker-end="url(#arrowhead27)" style="fill:none"></path><defs><marker id="arrowhead27" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Animals LE-Hormonal_Regulation" id="L-Animals-Hormonal_Regulation" style="opacity: 1;"><path class="path" d="M375.9875030517578,168.38986885899442L432.0625,174.1999969482422L482.4320452729391,159.1999969482422" marker-end="url(#arrowhead28)" style="fill:none"></path><defs><marker id="arrowhead28" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Animals LE-Neural_Regulation" id="L-Animals-Neural_Regulation" style="opacity: 1;"><path class="path" d="M368.0055322781344,186.99999618530273L432.0625,231.99999618530273L478.5875015258789,231.99999618530273" marker-end="url(#arrowhead29)" style="fill:none"></path><defs><marker id="arrowhead29" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Regulatory_Mechanisms LE-Plants" id="L-Regulatory_Mechanisms-Plants" style="opacity: 1;"><path class="path" d="M141.55042165528448,103.5999984741211L239.03750610351562,30.799999237060547L302.4875030517578,30.799999237060547" marker-end="url(#arrowhead30)" style="fill:none"></path><defs><marker id="arrowhead30" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Plants LE-Cellular_Regulation" id="L-Plants-Cellular_Regulation" style="opacity: 1;"><path class="path" d="M368.6125030517578,30.799999237060547L432.0625,30.799999237060547L475.4812469482422,30.799999237060547" marker-end="url(#arrowhead31)" style="fill:none"></path><defs><marker id="arrowhead31" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Plants LE-Hormonal_Regulation" id="L-Plants-Hormonal_Regulation" style="opacity: 1;"><path class="path" d="M368.0055322781344,53.599998474121094L432.0625,98.5999984741211L482.4320452729391,113.5999984741211" marker-end="url(#arrowhead32)" style="fill:none"></path><defs><marker id="arrowhead32" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Regulatory_Mechanisms LE-Microorganisms" id="L-Regulatory_Mechanisms-Microorganisms" style="opacity: 1;"><path class="path" d="M125.52584806260106,149.1999969482422L239.03750610351562,327.5999946594238L264.0375061035156,327.5999946594238" marker-end="url(#arrowhead33)" style="fill:none"></path><defs><marker id="arrowhead33" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Microorganisms LE-Cell/Enzyme_Regulation" id="L-Microorganisms-Cell/Enzyme_Regulation" style="opacity: 1;"><path class="path" d="M407.0625,327.5999946594238L432.0625,327.5999946594238L457.0625,327.5999946594238" marker-end="url(#arrowhead34)" style="fill:none"></path><defs><marker id="arrowhead34" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Cell/Enzyme_Regulation LE-Enzyme_Localization_Regulation" id="L-Cell/Enzyme_Regulation-Enzyme_Localization_Regulation" style="opacity: 1;"><path class="path" d="M579.1752890721903,304.7999954223633L685.9250030517578,184.1999969482422L710.9250030517578,184.1999969482422" marker-end="url(#arrowhead35)" style="fill:none"></path><defs><marker id="arrowhead35" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Cell/Enzyme_Regulation LE-Enzyme_Activity_Regulation" id="L-Cell/Enzyme_Regulation-Enzyme_Activity_Regulation" style="opacity: 1;"><path class="path" d="M619.5383641648131,304.7999954223633L685.9250030517578,279.7999954223633L727.9937515258789,279.7999954223633" marker-end="url(#arrowhead36)" style="fill:none"></path><defs><marker id="arrowhead36" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Cell/Enzyme_Regulation LE-Enzyme_Synthesis_Regulation" id="L-Cell/Enzyme_Regulation-Enzyme_Synthesis_Regulation" style="opacity: 1;"><path class="path" d="M619.5383641648131,350.3999938964844L685.9250030517578,375.3999938964844L720.7250061035156,375.3999938964844" marker-end="url(#arrowhead37)" style="fill:none"></path><defs><marker id="arrowhead37" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Regulatory_Mechanisms-Animals" class="edgeLabel L-LS-Regulatory_Mechanisms' L-LE-Animals"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Animals-Cellular_Regulation" class="edgeLabel L-LS-Animals' L-LE-Cellular_Regulation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Animals-Hormonal_Regulation" class="edgeLabel L-LS-Animals' L-LE-Hormonal_Regulation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Animals-Neural_Regulation" class="edgeLabel L-LS-Animals' L-LE-Neural_Regulation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Regulatory_Mechanisms-Plants" class="edgeLabel L-LS-Regulatory_Mechanisms' L-LE-Plants"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Plants-Cellular_Regulation" class="edgeLabel L-LS-Plants' L-LE-Cellular_Regulation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Plants-Hormonal_Regulation" class="edgeLabel L-LS-Plants' L-LE-Hormonal_Regulation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Regulatory_Mechanisms-Microorganisms" class="edgeLabel L-LS-Regulatory_Mechanisms' L-LE-Microorganisms"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Microorganisms-Cell/Enzyme_Regulation" class="edgeLabel L-LS-Microorganisms' L-LE-Cell/Enzyme_Regulation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cell/Enzyme_Regulation-Enzyme_Localization_Regulation" class="edgeLabel L-LS-Cell/Enzyme_Regulation' L-LE-Enzyme_Localization_Regulation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cell/Enzyme_Regulation-Enzyme_Activity_Regulation" class="edgeLabel L-LS-Cell/Enzyme_Regulation' L-LE-Enzyme_Activity_Regulation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cell/Enzyme_Regulation-Enzyme_Synthesis_Regulation" class="edgeLabel L-LS-Cell/Enzyme_Regulation' L-LE-Enzyme_Synthesis_Regulation"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Regulatory_Mechanisms-23" transform="translate(111.01875305175781,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-103.01875305175781" y="-22.800000190734863" width="206.03750610351562" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-93.01875305175781,-12.800000190734863)"><foreignObject width="186.03750610351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Regulatory_Mechanisms</div></foreignObject></g></g></g><g class="node default" id="flowchart-Animals-24" transform="translate(335.5500030517578,164.1999969482422)" style="opacity: 1;"><rect rx="0" ry="0" x="-40.4375" y="-22.800000190734863" width="80.875" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-30.4375,-12.800000190734863)"><foreignObject width="60.875" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Animals</div></foreignObject></g></g></g><g class="node default" id="flowchart-Cellular_Regulation-26" transform="translate(558.9937515258789,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-83.51250457763672" y="-22.800000190734863" width="167.02500915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-73.51250457763672,-12.800000190734863)"><foreignObject width="147.02500915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Cellular_Regulation</div></foreignObject></g></g></g><g class="node default" id="flowchart-Hormonal_Regulation-28" transform="translate(558.9937515258789,136.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-93.20625305175781" y="-22.800000190734863" width="186.41250610351562" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-83.20625305175781,-12.800000190734863)"><foreignObject width="166.41250610351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Hormonal_Regulation</div></foreignObject></g></g></g><g class="node default" id="flowchart-Neural_Regulation-30" transform="translate(558.9937515258789,231.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-80.40625" y="-22.800000190734863" width="160.8125" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-70.40625,-12.800000190734863)"><foreignObject width="140.8125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Neural_Regulation</div></foreignObject></g></g></g><g class="node default" id="flowchart-Plants-32" transform="translate(335.5500030517578,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-33.0625" y="-22.800000190734863" width="66.125" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-23.0625,-12.800000190734863)"><foreignObject width="46.125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Plants</div></foreignObject></g></g></g><g class="node default" id="flowchart-Microorganisms-38" transform="translate(335.5500030517578,327.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.51250076293945" y="-22.800000190734863" width="143.0250015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.51250076293945,-12.800000190734863)"><foreignObject width="123.0250015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Microorganisms</div></foreignObject></g></g></g><g class="node default" id="flowchart-Cell/Enzyme_Regulation-39" transform="translate(558.9937515258789,327.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-101.9312515258789" y="-22.800000190734863" width="203.8625030517578" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-91.9312515258789,-12.800000190734863)"><foreignObject width="183.8625030517578" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Cell/Enzyme_Regulation</div></foreignObject></g></g></g><g class="node default" id="flowchart-Enzyme_Localization_Regulation-41" transform="translate(844.2375030517578,184.1999969482422)" style="opacity: 1;"><rect rx="0" ry="0" x="-133.3125" y="-22.800000190734863" width="266.625" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-123.3125,-12.800000190734863)"><foreignObject width="246.625" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Enzyme_Localization_Regulation</div></foreignObject></g></g></g><g class="node default" id="flowchart-Enzyme_Activity_Regulation-43" transform="translate(844.2375030517578,279.7999954223633)" style="opacity: 1;"><rect rx="0" ry="0" x="-116.2437515258789" y="-22.800000190734863" width="232.4875030517578" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-106.2437515258789,-12.800000190734863)"><foreignObject width="212.4875030517578" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Enzyme_Activity_Regulation</div></foreignObject></g></g></g><g class="node default" id="flowchart-Enzyme_Synthesis_Regulation-45" transform="translate(844.2375030517578,375.3999938964844)" style="opacity: 1;"><rect rx="0" ry="0" x="-123.51250457763672" y="-22.800000190734863" width="247.02500915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-113.51250457763672,-12.800000190734863)"><foreignObject width="227.02500915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Enzyme_Synthesis_Regulation</div></foreignObject></g></g></g></g></g></g></svg></div><ul><li><p><span>Significance of studying microbial cell regulation</span></p><ul><li><span>It helps to advance the research on metabolic regulation in higher organisms.</span></li><li><span>It helps people to deliberately change the cellular metabolic balance and control the direction and capacity of metabolism in microorganisms, in order to produce the desired metabolic products.</span></li></ul></li></ul><p>&nbsp;</p><h3 id='712enzyme-nomenclature-and-classification'><strong><span>7.1.2.Enzyme Nomenclature and Classification</span></strong></h3><p><span>For a long time, enzymes were named based on their substrate types and catalytic reaction types, such as DNA polymerase, which catalyzes the polymerization of four free deoxyribonucleotides to form DNA; hexokinase, which catalyzes the phosphorylation of glucose to form glucose-6-phosphate. This method is also known as customary nomenclature. However, as the number of discovered enzymes continues to increase, biochemists have adopted an internationally recognized nomenclature and classification method—the </span><strong><span>systematic nomenclature</span></strong><span>. This nomenclature method more clearly represents the mechanism of enzyme-catalyzed reactions and the types of substrates involved. The systematic nomenclature requires the catalyzed substrates to be separated by a colon, and if water (H</span><sub><span>2</span></sub><span>O) is involved, it can be omitted. The reaction formula for hexokinase is as follows:</span></p><p><img src="media/7/己糖激酶催化方程式.png" style="zoom: 80%;" /></p><p><span>The international systematic nomenclature for hexokinase is  </span><strong><span>ATP: glucose phosphotransferase</span></strong><span>, indicating the transfer of phosphate groups from ATP to glucose.</span></p><p><span>This system divides enzymes into six major classes:</span></p><figure><table><thead><tr><th><span>Class</span></th><th><span>Mechanism</span></th><th><span>Reaction Formula</span></th><th><span>Example</span></th></tr></thead><tbody><tr><td><span>1.Oxidoreductases</span></td><td><span>Catalyze oxidation-reduction reactions</span></td><td><span>AH</span><sub><span>2</span></sub><span>+B=A+BH</span><sub><span>2</span></sub><br><span>BH</span><sub><span>2</span></sub><span>+1/2O</span><sub><span>2</span></sub><span>=B+H</span><sub><span>2</span></sub><span>O</span></td><td><span>dehydrogenase, oxidase</span></td></tr><tr><td><span>2. Transferases</span></td><td><span>Catalyze group transfer reactions</span></td><td><span>AB+C=AC+B</span></td><td><span>transaminase, methyltransferase, kinase, Phosphatase, Phosphorylase</span></td></tr><tr><td><span>3. Hydrolases</span></td><td><span>Catalyze hydrolysis reactions</span></td><td><span>AB+H</span><sub><span>2</span></sub><span>O=AOH+BH</span></td><td><span>protease, nuclease, lipase, amylase, esterase</span></td></tr><tr><td><span>4. Lyases</span></td><td><span>Catalyze the removal of groups or atoms from substrates to form double bonds and their reverse reactions, </span><strong><span>often without energy consumption</span></strong></td><td><span>A+B=C</span></td><td><span>Aldolase, deaminase, decarboxylase, hydratase</span></td></tr><tr><td><span>5. Isomerases</span></td><td><span>Catalyze the interconversion of isomers</span></td><td><span>A=B</span></td><td><span>Phosphoglucose isomerase, racemase, epimerase</span></td></tr><tr><td><span>6. Ligases</span></td><td><span>Catalyze the polymerization of multiple substances into one substance </span><strong><span>using ATP as an energy source</span></strong></td><td><span>A+B+ATP=C+ADP</span></td><td><span>DNA ligase, carboxylase, aminoacyl tRNA synthetase</span></td></tr></tbody></table></figure><p><span>Therefore, each enzyme has an enzyme commission number, such as hexokinase—EC 2.7.1.1. Here, </span><strong><span>EC stands for Enzyme Commission</span></strong><span>, the first digit &quot;2&quot; represents the second major class of enzymes (transferase), the second digit &quot;7&quot; represents the seventh subclass (phosphotransferase), the third digit &quot;1&quot; represents the first sub-subclass (hydroxyl group as the acceptor of the phosphate group), and the fourth digit &quot;1&quot; represents the sequence number within the sub-subclass (glucose as the recipient of the phosphate group).</span></p><p>&nbsp;</p><h3 id='713enzyme-structure-and-composition'><strong><span>7.1.3.Enzyme Structure and Composition</span></strong></h3><h4 id='ⅰ-enzyme-structure'><span>(Ⅰ) Enzyme Structure</span></h4><p><span>Based on the characteristics of enzyme structure, enzymes can be classified into the following three categories:</span></p><p><strong><span>Monomeric Enzyme</span></strong><span> </span><span>	</span><span>Enzyme molecules composed of a single polypeptide chain or a single subunit, examples include lysozyme and bovine pancreatic ribonuclease (RNaseⅠ/A).</span></p><p><strong><span>Oligomeric Enzyme</span></strong><span> </span><span>	</span><span>Enzyme molecules formed by the condensation of two or more subunits via non-covalent bonds. Most key enzymes in metabolic pathways are oligomeric enzymes, such as hexokinase, phosphofructokinase, pyruvate kinase, glyceraldehyde-3-phosphate dehydrogenase, and aspartate aminotransferase.</span></p><p><strong><span>Multienzyme Complex</span></strong><span>	</span><span> A complex formed by multiple enzyme molecules aggregating and assembling via non-covalent bonds, responsible for catalyzing a series of continuous reactions, such as fatty acid synthase, pyruvate dehydrogenase complex, and α-ketoglutarate dehydrogenase complex.</span></p><p>&nbsp;</p><h4 id='ⅱ-enzyme-composition'><span>(Ⅱ) Enzyme Composition</span></h4><p><img src="media/7/酶活性部位.jpg" style="zoom: 20%;" /></p><p><span>The key to enzyme catalysis lies in the active center within the enzyme molecule. The </span><strong><span>active center</span></strong><span> consists of several closely connected amino acid residues in space and is responsible for binding substrates and catalyzing reactions. Mature enzymes are highly folded peptide chains, so several amino acid residues that may be far apart in the peptide chain can be closely connected in space after folding, forming the active center. Therefore, the active center only </span><strong><span>occupies a very small part</span></strong><span> of the enzyme molecule. The active center contains a </span><strong><span>catalytic site</span></strong><span> and a </span><strong><span>binding site</span></strong><span>, with the latter binding the substrate and determining substrate specificity, and the former catalyzing the reaction and determining the nature of the reaction. The active center is usually located in a </span><strong><span>hydrophobic cavity</span></strong><span>, where the interaction and binding forces between the catalytic group and the substrate are increased due to the low dielectric environment. The stable conformation of the active center maintains the catalytic activity of the enzyme, and if the active center is disrupted, the enzyme will become inactive.</span></p><p><strong><span>Essential Groups</span></strong><span> refer to the side chain groups on amino acid residues closely related to the </span><strong><span>catalytic activity</span></strong><span> and </span><strong><span>maintenance of the correct conformation</span></strong><span> of the enzyme molecule. These essential groups, when modified by certain chemical groups, can change or lose the enzyme&#39;s activity or function. Several common essential groups include:</span></p><ul><li><span>β-COOH (Asp), -OH (Ser, Tyr), -SH (Cys), imidazole group (His), ε-NH</span><sub><span>3</span></sub><span> (Lys)</span></li></ul><p><span>Additionally, some enzyme molecules exhibit </span><strong><span>allosteric effects</span></strong><span>, so there are </span><strong><span>regulatory sites</span></strong><span> in the molecule that bind allosteric effectors.</span></p><p>&nbsp;</p><p><span>Based on the characteristics of enzyme composition, enzymes can be divided into the following two categories:</span></p><ul><li><p><strong><span>Simple Enzyme</span></strong><span>	</span><span> Enzyme molecules composed solely of amino acids, and the catalytic reactions of these enzymes do not require the involvement of other chemical groups, such as RNaseⅠ and lysozyme.</span></p></li><li><p><strong><span>Conjugated Enzyme</span></strong><span>	</span><span> Enzyme molecules that, in addition to amino acids as structural components, also require the participation of an additional class of chemical groups during catalysis, known as </span><strong><span>cofactors</span></strong><span>. Such enzymes are also known as </span><strong><span>holoenzymes</span></strong><span>, and the protein portion after removing the cofactor is referred to as </span><strong><span>apoenzyme</span></strong><span>. In a holoenzyme, the apoenzyme is responsible for binding the substrate and catalyzing the reaction, while the cofactor helps to transfer electrons, atoms, or functional groups.</span></p><p><span>The full enzyme with the cofactor removed loses its activity. </span></p><p><span>These cofactors include some inorganic ions, such as Fe</span><sup><span>2+</span></sup><span>, Mg</span><sup><span>2+</span></sup><span>, Mn</span><sup><span>2+</span></sup><span>, Zn</span><sup><span>2+</span></sup><span>, or some non-protein small molecules called </span><strong><span>coenzymes</span></strong><span> or </span><strong><span>prosthetic groups</span></strong><span>, which play the role of transient carriers of functional groups during catalysis. Coenzymes loosely bind to the enzyme protein in a non-covalent manner and can be removed by physical methods such as ultrafiltration and dialysis; prosthetic groups bind tightly to the enzyme protein in a covalent manner and can only be removed through chemical methods. Removal of the cofactor renders the holoenzyme </span><strong><span>inactive</span></strong><span>. These coenzymes/prosthetic groups are typically the active forms of vitamins. The table below lists several common coenzymes/prosthetic groups and their functions. Please refer to </span><em><strong><span>9.vitamins</span></strong></em><span> for more details.</span></p></li></ul><figure><table><thead><tr><th><span>Type</span></th><th><span>Source</span></th><th><span>Function</span></th></tr></thead><tbody><tr><td><span>Thiamine pyrophosphate (TPP)</span></td><td><span>Vitamin B</span><sub><span>1</span></sub></td><td><span>Involved in (oxidative) decarboxylation reactions</span></td></tr><tr><td><span>Flavin adenine dinucleotide (FAD)</span></td><td><span>Vitamin B</span><sub><span>2</span></sub></td><td><span>Involved in transferring H and e</span><sup><span>-</span></sup></td></tr><tr><td><span>Nicotinamide adenine dinucleotide (NAD</span><sup><span>+</span></sup><span>)</span></td><td><span>Vitamin B</span><sub><span>3</span></sub></td><td><span>Involved in transferring H and e</span><sup><span>-</span></sup></td></tr><tr><td><span>Acetyl-CoA</span></td><td><span>Vitamin B</span><sub><span>5</span></sub></td><td><span>Transfers acetyl groups</span></td></tr><tr><td><span>Pyridoxal 5&#39;-phosphate</span></td><td><span>Vitamin B</span><sub><span>6</span></sub></td><td><span>Transamination, decarboxylation of amino acids</span></td></tr><tr><td><span>Biotin</span></td><td><span>Vitamin B</span><sub><span>7</span></sub></td><td><span>Involved in carboxylation reactions</span></td></tr><tr><td><span>Tetrahydrofolate</span></td><td><span>Vitamin B</span><sub><span>11</span></sub></td><td><span>Carries one-carbon units</span></td></tr></tbody></table></figure><p>&nbsp;</p><p>&nbsp;</p><h2 id='72enzyme-mechanism'><strong><span>7.2.Enzyme Mechanism</span></strong></h2><p><span>A simple, single-substrate enzyme-catalyzed reaction can be written in the following form:</span></p><p><img src="media\7\酶促反应.png" alt="酶促反应" style="zoom:45%;" /></p><p><span>Here, E represents the enzyme, S represents the substrate, and P represents the product. ES and EP are two transient unstable intermediate complex states.</span></p><p><strong><span>Intermediate Complex Theory</span></strong><span>	</span><span> After binding with the substrate, the enzyme first forms an unstable intermediate complex. Due to the change in reaction pathway, the activation energy of the reaction is greatly reduced, enabling more substrate molecules to be activated at the same energy level. Finally, the intermediate complex breaks down to form the product.</span></p><p><span>But why does changing the reaction pathway reduce activation energy? There are two explanations: The first explanation is the </span><strong><span>non-covalent interaction mechanism between the enzyme and the substrate</span></strong><span>. After the enzyme and the substrate interact to form the intermediate complex, there are non-covalent forces, such as hydrogen bonds, ionic bonds, and hydrophobic interactions, that maintain the structure of this interaction and the intermediate complex. Each weak non-covalent interaction of the intermediate complex is accompanied by the release of some free energy (G), which is also known as </span><strong><span>binding energy (ΔG</span><sub><span>B</span></sub><span>)</span></strong><span>. This energy is used to lower the activation energy of the reaction.</span></p><p><span>The second explanation is the </span><strong><span>covalent interaction mechanism between the enzyme and the substrate</span></strong><span>. In enzyme-catalyzed reactions, the catalytic groups of the enzyme can form a transient covalent bond with the substrate or transfer certain reactive groups of the substrate to the catalytic groups of the enzyme. Therefore, </span><strong><span>enzyme-catalyzed reactions mostly occur at the active site of the enzyme</span></strong><span>. This covalent interaction provides an alternative, lower-energy reaction pathway to lower the activation energy of the reaction.</span></p><p>&nbsp;</p><p>&nbsp;</p><h3 id='721modes-of-enzyme-substrate-binding'><strong><span>7.2.1.Modes of Enzyme-Substrate Binding</span></strong></h3><p><img src="media/7/过渡态互补.png" style="zoom: 74%;" /></p><p><strong><span>Lock and Key Theory</span></strong><span>	</span><span> One lock matches one key, and one substrate matches one enzyme. However, since enzymes can catalyze reversible reactions, </span><strong><span>this theory cannot explain why enzymes can bind to products with different structures</span></strong><span>.</span></p><p>&nbsp;</p><p><strong><span>Transition State Complementarity</span></strong><span>	</span><span> After the substrate binds to the enzyme, it undergoes a transition to its transition state under the action of the enzyme. When the substrate is completely converted to the transition state and forms the ES intermediate complex, weak interactions are formed between the enzyme and the substrate. These interactions provide the main driving force for enzyme catalysis. The transition state is not a stable state but rather the moment when the substrate reaches the energy peak during the transformation process. This peak is smaller than that of typical chemical catalytic reactions, allowing enzyme-catalyzed reactions to occur faster than non-enzymatic reactions.</span></p><p>&nbsp;</p><p><strong><span>Induced Fit Theory</span></strong><span>	</span><span> When the substrate binds to the enzyme molecule, it induces a conformational change in the active site of the enzyme. This change promotes the specific arrangement of functional groups in the enzyme to catalyze the reaction. At the same time, the substrate also undergoes corresponding conformational changes, increasing the affinity between the active site of the enzyme and the substrate and promoting the formation of the intermediate transition state complex and weak intermolecular interactions.</span></p><p>&nbsp;</p><p>&nbsp;</p><h3 id='722reasons-for-the-high-catalytic-efficiency-of-enzymes'><strong><span>7.2.2.Reasons for the High Catalytic Efficiency of Enzymes</span></strong></h3><p><strong><span>Proximity Effect</span></strong><span>	</span><span> After the enzyme binds to the substrate to form a complex, thermodynamic effects increase the concentration of the substrate in the active site of the enzyme, thereby increasing the catalytic efficiency of the enzyme.</span></p><p><strong><span>Orientation Effect</span></strong><span>	</span><span> When the enzyme binds to the substrate, there is correct orientation between the reactive groups of the substrate and the catalytic groups of the enzyme, which improves the catalytic efficiency.</span></p><p><strong><span>Strain Effect</span></strong><span>	</span><span> The enzyme induces strain in the sensitive bonds of the substrate molecule, making it easier for the substrate to deform into its transition state and increase the catalytic efficiency. For example, </span><strong><span>Zn</span><sup><span>2+</span></sup><span> in carboxypeptidase</span></strong><span>.</span></p><p><strong><span>Hydrophobic Microenvironment of the Active Site</span></strong><span>	</span><span> The active site of the enzyme is located in a low dielectric hydrophobic microenvironment, where the affinity and interaction forces between the substrate and the enzyme are greater than in a polar environment.</span></p><p>&nbsp;</p><p><strong><span>Acid-Base Catalysis</span></strong><span>	</span><span> Many weak organic acids can act as proton donors, and weak organic bases can act as proton acceptors. Some side chain groups of amino acid residues in the enzyme molecule can play the role of proton acceptor or donor. They can be precisely positioned in the active site of the enzyme and transiently provide or accept protons from the substrate to stabilize the intermediate transition state of the enzyme-substrate complex, thereby increasing the catalytic efficiency and facilitating the conversion of the substrate to product, such as Asp, Lys, Cys, His, Ser, Tyr.</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Common Proton Acceptors</span></th><th style='text-align:center;' ><span>Common Proton Donors</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="media/7/质子受体.png" style="zoom: 80%;" /></td><td style='text-align:center;' ><img src="media/7/质子供体.png" style="zoom: 80%;" /></td></tr></tbody></table></figure><p>&nbsp;</p><p><strong><span>Covalent Catalysis</span></strong><span>	</span><span> Let&#39;s assume an enzyme with a nucleophilic group X can participate in the hydrolysis reaction of compound A-B.</span></p><p><img src="media/7/共价催化方程式.jpg" style="zoom: 80%;" /></p><p><span>Although both reactions produce one A and one B, the enzyme-catalyzed reaction significantly alters the process compared to a normal chemical hydrolysis reaction. The activation energy in the new pathway is much lower than in the non-enzymatic reaction. Therefore, some side chain groups of amino acid residues in the enzyme molecule can act as nucleophilic groups, releasing e</span><sup><span>-</span></sup><span> and reacting with the reactive center of the substrate to form a highly active and unstable transition state intermediate, greatly reducing the reaction activation energy and increasing the catalytic efficiency. </span><strong><span>Several side chain groups that can perform acid-base catalysis can also participate in covalent catalysis</span></strong><span>.</span></p><p>&nbsp;</p><p><strong><span>Metal Ion Catalysis</span></strong><span>	</span><span> Metal ions that are tightly bound to enzymes or are absorbed by enzymes from solution can participate in catalytic reactions through several mechanisms: metal ions can help orient the substrate, promote the formation of transition states; metal ions can participate in redox reactions through changes in their oxidation states; metal ions can enhance the efficiency of enzyme-catalyzed reactions by shielding or stabilizing negative charges through electrostatic effects. Almost one-third of enzymes require metal ions for catalysis, and these enzymes can be classified into two categories based on their binding mode with metal ions:</span></p><ul><li><strong><span>Metalloenzymes</span></strong><span>	</span><span> Enzymes that tightly bind to certain metal ions (such as Ca, Fe, Zn, Mn, Co) through covalent bonds. The metal ions serve as cofactors for the enzymes, and the enzymes become inactive when the metal ions are lost.</span></li><li><strong><span>Metal-activated enzymes</span></strong><span>	</span><span> Enzymes that loosely bind to certain metal ions (such as Na, K, Ca, Mg) through non-covalent interactions. The metal ions act as activators, and the enzymes retain partial activity even after the metal ions are lost.</span></li></ul><p><span>Therefore, many enzymes become inactive after dialysis. On the one hand, coenzymes closely related to enzyme activity are removed. On the other hand, essential metal ions are removed by dialysis, leading to unfolding of the enzyme.</span></p><p>&nbsp;</p><h3 id='723-enzymatic-catalysis-example-serine-protease-family'><strong><span>7.2.3. Enzymatic Catalysis Example: Serine Protease Family</span></strong></h3><p><span>The serine protease family includes </span><strong><span>digestive enzymes (trypsin, chymotrypsin, elastase)</span></strong><span>, thrombin, subtilisin, and plasmin. These enzymes utilize a specific </span><strong><span>Ser</span></strong><span> as the catalytic group. Among them, the three proteases involved in digestion exhibit different substrate specificities due to differences in the &quot;pocket&quot; structure where the enzyme binds to the substrate: trypsin has an Asp</span><sup><span>189</span></sup><span> residue at the binding site, allowing it to accommodate positively charged Arg and Lys residues; chymotrypsin has a non-polar pocket that can accommodate aromatic amino acids; elastase&#39;s pocket blocks access to larger side chains of Val and Thr, allowing only small aliphatic amino acids like Ala to enter.</span></p><p><span>However, the catalytic mechanisms of these three enzymes are generally similar, involving a catalytic triad (charge relay network) consisting of </span><strong><span>His</span><sup><span>57</span></sup><span>, Asp</span><sup><span>102</span></sup><span>, Ser</span><sup><span>195</span></sup></strong><span>. These three amino acid residues are closely connected in space and interact through hydrogen bonding. The catalytic mechanism of chymotrypsin is described below:</span></p><figure><table><thead><tr><th style='text-align:left;' ><span>1.When substrate binds, the side chain of the residue adjacent to the peptide bond to be cleaved nestles in a hydrophobic pocket on the enzyme, positioning the peptide bond for attack.</span></th><th><span>2.Interaction of Ser</span><sup><span>195</span></sup><span> and His</span><sup><span>57</span></sup><span> generates a strongly nucleophilic alkoxide ion on Ser</span><sup><span>195</span></sup><span>; the ion attacks the peptide carbonyl group , forming a tetrahe-dral acyl-enzyme. This is accompanied by formation of a short-lived negative charge on the carbonyl oxygen of the substrate , which is stabilized by hydrogen bonding in the oxyanion hole.</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><img src="media/7/2.png" style="zoom: 77%;" /></td><td><img src="media/7/3.png" style="zoom: 82%;" /></td></tr><tr><td style='text-align:left;' ><strong><span>3.Instability of negative charge on the substrate carbonyl oxygen leads to collapse of the tetrahedral intermediate; re-formation of a double bond with carbon displaces the bond between carbon and the amino group of the peptide linkage, breaking the peptide bond. The amino leaving group is protonated by His</span><sup><span>57</span></sup><span>, facilitating its displacement.</span></strong></td><td><strong><span>4.An incoming water molecule is deprotonated by general base catalysis, generating a strongly nucleophilic hydroxide ion. Attack of hydroxide on the ester linkage of the acyl-enzyme generates a second tetrahedral intermediate, with oxygen in the oxyanion hole again taking on a negative charge.</span></strong></td></tr><tr><td style='text-align:left;' ><img src="media/7/4.png" style="zoom: 80%;" /></td><td><img src="media/7/5.png" style="zoom: 80%;" /></td></tr><tr><td style='text-align:left;' ><strong><span>5.Collapse of the tetrahedral intermediate forms the second product, a carboxylate anion, and displaces Ser</span><sup><span>195</span></sup><span>.</span></strong></td><td><strong><span>6.Dissociation of the second product from the active site regenerates free enzyme.</span></strong></td></tr><tr><td style='text-align:left;' ><img src="media/7/6.png" style="zoom: 76%;" /></td><td><img src="media/7/7.png" style="zoom: 80%;" /></td></tr></tbody></table></figure><p>&nbsp;</p><p>&nbsp;</p><h2 id='73enzyme-activity-assay'><strong><span>7.3.Enzyme Activity Assay</span></strong></h2><h3 id='731enzyme-activity-assay-parameters'><strong><span>7.3.1.Enzyme Activity Assay Parameters</span></strong></h3><p><strong><span>Enzyme activity</span></strong><span>	</span><span> refers to the ability of an enzyme to catalyze a specific chemical reaction. It is measured by the rate of the catalyzed reaction, which represents the amount of product generated or substrate consumed per unit of time.</span></p><p><strong><span>Units of enzyme activity</span></strong></p><ol start='' ><li><strong><span>IU</span></strong><span>	</span><span> The amount of enzyme required to convert 1μmol of substrate to product in 1min under optimal conditions.</span></li><li><strong><span>Kat</span></strong><span>	</span><span> The amount of enzyme required to convert 1mol of substrate to product in 1s under optimal conditions.</span></li></ol><p><strong><span>Specific activity</span></strong><span> </span><span>	</span><span>refers to the number of enzyme activity units present per mg or ml of enzyme.</span></p><p><strong><span>Total activity</span></strong><span> </span><span>	</span><span>refers to the total number of enzyme activity units in an enzyme sample.</span></p><p><strong><span>Purification fold</span></strong><span> </span><span>	</span><span>refers to the ratio of specific activity after enzyme purification to specific activity before purification, which is an important indicator of the effectiveness of enzyme purification.</span></p><p><strong><span>Recovery rate</span><span>	</span></strong><span> refers to the percentage of total enzyme activity after enzyme purification compared to total enzyme activity before purification (because the process of enzyme purification involves an increase in purification fold and a decrease in total enzyme amount).</span></p><p>&nbsp;</p><h3 id='732principles-of-enzyme-activity-assay'><strong><span>7.3.2.Principles of Enzyme Activity Assay</span></strong></h3><ul><li><strong><span>Excess substrate</span></strong><span> should be used to saturate the enzyme and prevent a decrease in reaction rate due to substrate depletion, which would lead to measurement errors.</span></li><li><strong><span>Enzyme activity should be measured when substrate consumption is less than 5%</span></strong><span>, to prevent measurement errors caused by substrate depletion, changes in the environment, and accumulation of toxic substances during the reaction.</span></li><li><strong><span>Substrate and enzyme should be stored in their respective buffer solutions under optimal conditions</span></strong><span> before mixing, to ensure that the enzyme catalyzes the substrate with maximum activity.</span></li><li><strong><span>The reaction rate should be calculated based on the increase in product</span></strong><span>, because it is difficult to accurately measure the consumption of excess substrate, while the increase in product is a process from 0 to 1, which is easier to calculate.</span></li></ul><p>&nbsp;</p><h3 id='733methods-for-enzyme-activity-assay'><strong><span>7.3.3.Methods for Enzyme Activity Assay</span></strong></h3><ul><li><p><strong><span>Spectrophotometric method</span></strong><span>: The product or its derivative exhibits maximum absorbance at a certain wavelength, and the increase in absorbance is used to measure the increase in reaction product.</span></p><ul><li><p><span>For dehydrogenases using NAD(P)</span><sup><span>+</span></sup><span> as substrate, the product NAD(P)H exhibits maximum absorbance at </span><strong><span>340nm</span></strong><span>, while NAD(P)</span><sup><span>+</span></sup><span> does not absorb at this wavelength.</span></p><p><img src="media/7/NADH紫外吸收.png" style="zoom: 70%;" /></p></li></ul></li><li><p><strong><span>Fluorescence method</span></strong><span>: The product is converted into a fluorescent substance, and the increase in fluorescence is used to determine the increase in product.</span></p></li><li><p><strong><span>Radioisotope method</span></strong><span>: The substrate is labeled with a radioactive marker, and after the reaction, the product also carries the corresponding radioactive marker, which is determined by detecting radioactivity to determine the increase in product.</span></p></li></ul><p>&nbsp;</p><h2 id='74enzyme-kinetics'><strong><span>7.4.Enzyme Kinetics</span></strong></h2><p><strong><span>Enzyme kinetics</span></strong><span> is a discipline that studies the rate of enzyme-catalyzed reactions and the factors that influence them.</span></p><p><img src="media/7/底物与酶.png" style="zoom: 80%;" /></p><p>&nbsp;</p><h3 id='741enzyme-catalyzed-reaction-with-a-single-substrate'><strong><span>7.4.1.Enzyme-Catalyzed Reaction with a Single Substrate</span></strong></h3><p><span>The reaction can be divided into two steps. In the first step, the enzyme reversibly binds with the substrate to form an enzyme-substrate (ES) complex, which then slowly decomposes to yield free enzyme and product (P). Since the second step is the </span><strong><span>rate-limiting step</span></strong><span>, the concentration of ES determines the overall reaction rate. In enzyme-catalyzed reactions, enzymes exist in two forms: the unbound form E and the bound form ES after binding with the substrate.</span></p><p><span>Initially, scientists proposed the </span><strong><span>Michaelis-Menten equation</span></strong><span> to describe the relationship between the substrate concentration [S] and the enzyme-catalyzed reaction rate V, using the concept of the ES complex derived from the </span><strong><span>rapid equilibrium method</span></strong><span>. The equilibrium constant K</span><sub><span>s</span></sub><span> is also known as the dissociation constant:</span></p><p><img src="media/7/快速平衡法.png" style="zoom: 80%;" /></p><p><span>However, later experiments revealed that when enzymes were mixed with an excess of substrate, the ES complex was formed. When the concentration of ES accumulated to a certain level, it entered a state of </span><strong><span>steady state</span></strong><span>, where the rate of consumption of ES equaled the rate of generation, resulting in nearly constant concentration. Therefore, scientists further derived a new version of the Michaelis-Menten equation based on the steady-state theory, known as the </span><strong><span>Michaelis constant (K</span><sub><span>m</span></sub><span>)</span></strong><span>. Three conditions must be met to reach a steady state:</span></p><ol start='' ><li><span>Excessive [S] leading to enzyme saturation</span></li><li><span>Disregard of the E+P--&gt;ES reaction</span></li><li><span>Rate of ES consumption equals rate of generation</span></li></ol><p><span>In comparison to K</span><sub><span>s</span></sub><span>, the formula for K</span><sub><span>m</span></sub><span> includes K</span><sub><span>2</span></sub><span> (K</span><sub><span>cat</span></sub><span>) in the numerator. K</span><sub><span>2</span></sub><span> can be ignored only when K</span><sub><span>2</span></sub><span> is much smaller than K</span><sub><span>-1</span></sub><span>. However, due to the transient nature of this state, the derivation of the Michaelis-Menten equation using the rapid equilibrium method has limitations:</span></p><p><img src="media/7/稳态法.png" style="zoom: 80%;" /></p><p>&nbsp;</p><h3 id='742kinetic-parameters'><strong><span>7.4.2.Kinetic Parameters</span></strong></h3><h4 id='ⅰ-v-and-vmax'><span>(Ⅰ) V and V</span><sub><span>max</span></sub></h4><p><img src="media/7/速度参数.png" style="zoom: 80%;" /></p><h4 id='ⅱ-km'><span>(Ⅱ) K</span><sub><span>m</span></sub></h4><p><span>By analyzing the Michaelis-Menten equation, when V=½V</span><sub><span>max</span></sub><span>, it can be deduced that K</span><sub><span>m</span></sub><span>=[S]. Therefore, the Michaelis constant K</span><sub><span>m</span></sub><span> is defined as the </span><strong><span>substrate concentration at which the enzyme-catalyzed reaction rate V reaches half of the maximum rate V</span><sub><span>max</span></sub></strong><span>. K</span><sub><span>m</span></sub><span> has the following implications:</span></p><ol start='' ><li><span>It is a characteristic constant of the enzyme, independent of the enzyme&#39;s concentration, and only related to the enzyme&#39;s properties, substrate type, and reaction environment.</span></li><li><span>1/K</span><sub><span>m</span></sub><span> represents the affinity of the enzyme for the substrate. A larger value indicates a smaller K</span><sub><span>m</span></sub><span> and greater affinity, and vice versa. Therefore, K</span><sub><span>m</span></sub><span> can be used to determine the optimal substrate and reaction direction for the enzyme.</span></li><li><span>The K</span><sub><span>m</span></sub><span> value of the rate-limiting enzyme in a pathway is relatively large, so lowering the K</span><sub><span>m</span></sub><span> can </span><strong><span>relieve pathway limitations</span></strong><span>.</span></li><li><span>The presence of inhibitors or activators will increase or decrease the K</span><sub><span>m</span></sub><span>.</span></li><li><span>Degree of enzyme saturation by the substrate: </span><em><span>f</span></em><sub><span>ES</span></sub><span>=V/V</span><sub><span>max</span></sub><span>=[S]/(K</span><sub><span>m</span></sub><span>+[S])</span></li><li><strong><span>When comparing the catalytic rates of different enzymes or the conversion of the same enzyme with different substrates, it is best to use k</span><sub><span>cat</span></sub><span>/K</span><sub><span>m</span></sub><span>. A larger value indicates higher catalytic efficiency.</span></strong></li></ol><p>&nbsp;</p><h4 id='ⅲ-kcat--k2'><span>(Ⅲ) K</span><sub><span>cat</span></sub><span> / K</span><sub><span>2</span></sub></h4><p><strong><span>Kcat (/s)</span></strong><span>	</span><span> also known as turnover number, refers to the amount of substrate molecules catalyzed by each mole of enzyme or the active site of the enzyme per second when the enzyme is saturated with the substrate. It represents the size of the enzyme&#39;s catalytic capacity.</span></p><blockquote><p><strong><span>Calculation Example of K</span><sub><span>cat</span></sub><span>:</span></strong></p><p><span>Given that an enzyme has a relative Mr of 80,000, composed of two identical subunits, each containing an active site, and under optimal conditions, 10 μg of the enzyme can catalyze the conversion of 4 μmol of substrate to product per minute. Calculate the turnover number K</span><sub><span>cat</span></sub><span>.</span></p><ul><li><span>The enzyme weighs 10 μg and has a total molecular weight of 80,000, consisting of two identical subunits, each with an active site. Therefore, the number of moles for each subunit as an active site is: 10/40000=0.00025 μmol.</span></li><li><span>With this amount of enzyme (active site), 4 μmol of substrate is converted in 60s, therefore 1μmol of substrate is converted in (4/60) μmol per second. Thus, the amount of substrate converted per second by each μmol of enzyme active site is (4/60)/0.00025=266.7/s.</span></li></ul></blockquote><p>&nbsp;</p><h3 id='743calculating-km-and-kcat'><strong><span>7.4.3.Calculating K</span><sub><span>m</span></sub><span> and K</span><sub><span>cat</span></sub></strong></h3><ul><li><span>Lineweaver-Burk double reciprocal method</span></li></ul><p><img src="media/7/双倒数法推导.png" style="zoom: 100%;" /></p><p><img src="http://43.143.164.107:8000/生物化学/酶的催化机理/双倒数法.png" style="zoom: 100%;" /></p><h3 id='744factors-influencing-the-rate-of-enzyme-catalyzed-reactions'><strong><span>7.4.4.Factors influencing the rate of enzyme-catalyzed reactions</span></strong></h3><h4 id='ⅰ-substrate-concentration'><span>(Ⅰ) Substrate concentration</span></h4><p><span>With a fixed enzyme concentration, the influence of different substrate concentrations [S] on V is shown in the graph below:</span></p><p><img src="media/7/底物浓度与催化速度.png" style="zoom: 80%;" /></p><p><strong><span>First order reaction(AB)</span></strong><span> </span><span>	</span><span>When the substrate concentration is low, i.e., [S] ≤ Km, the rate of the enzyme-catalyzed reaction V is directly proportional to the substrate concentration [S]. The Michaelis-Menten equation can be expressed as:</span></p><p><img src="media/7/一级反应.png" style="zoom: 80%;" /></p><p><strong><span>Mixed order reaction(BC)</span></strong><span> </span><span>	</span><span>This refers to the reaction stage when 0.1Km ≤ [S] ≤ 100Km. When V = 1/2 V</span><sub><span>max</span></sub><span> = 1/2 k</span><sub><span>cat</span></sub><span> [E</span><sub><span>0</span></sub><span>], Km is equal to [S].</span></p><p><img src="media/7/混合级反应.png" style="zoom: 80%;" /></p><p><strong><span>Zero order reaction(after C)</span></strong><span> </span><span>	</span><span>When the substrate saturates the enzyme and the reaction rate reaches its maximum, which does not change with increasing substrate concentration, the reaction stage is reached when [S] ≥ Km. In this stage, V = V</span><sub><span>max</span></sub><span> = k</span><sub><span>cat</span></sub><span> [E</span><sub><span>0</span></sub><span>], and the enzyme is saturated with the substrate. This stage is used to measure enzyme activity.</span></p><p><img src="media/7/零级反应.png" style="zoom: 80%;" /></p><p>&nbsp;</p><p>&nbsp;</p><h4 id='ⅱ-enzyme-concentration'><span>(Ⅱ) Enzyme concentration</span></h4><p><span>When the substrate saturates the enzyme, V reaches its maximum. Adding more substrate at this point will not change the enzyme-catalyzed reaction. The reaction becomes a </span><strong><span>zero order reaction</span></strong><span> with respect to the substrate concentration, but it remains a </span><strong><span>first order reaction</span></strong><span> with respect to the enzyme concentration. Therefore, by increasing the enzyme concentration, the rate of enzyme-catalyzed reaction can be increased.</span></p><ul><li><p><strong><span>This is also the period for measuring enzyme activity</span></strong></p><p><img src="https://www.hainmc.edu.cn/__local/1/A5/92/E7303F80410214425F5CBA491AA_72B45529_133E.png" style="zoom:67%;" /></p></li></ul><h4 id='ⅲ-temperature'><span>(Ⅲ) Temperature</span></h4><p><span>The typical curve showing the relationship between temperature and the rate of enzyme-catalyzed reaction is called a </span><strong><span>bell-shaped curve</span></strong></p><p><img src="media/7/温度与速度.png" style="zoom: 85%;" /></p><p><span>As the temperature increases, the enzyme activity rapidly increases, leading to an increase in the rate of enzyme-catalyzed reaction. When the temperature exceeds the optimal temperature for the enzyme, the enzyme starts to denature and become inactive, resulting in a decrease in the rate of enzyme-catalyzed reaction. </span><strong><span>The entire process of enzyme-catalyzed reaction is a balance between these two processes</span></strong><span>. Below the optimal temperature, the former effect dominates, while above the optimal temperature, the latter effect predominates.</span></p><p><span>The optimal temperature is </span><strong><span>not</span></strong><span> a characteristic constant of the enzyme and can vary depending on the reaction conditions. A higher optimal temperature leads to a faster enzyme-catalyzed reaction. Therefore, thermostable enzymes are commonly used in wastewater treatment, PCR, industrial fermentation processes, and biofuel production.</span></p><p>&nbsp;</p><h4 id='ⅳ-ph'><span>(Ⅳ) pH</span></h4><p><span>The typical curve showing the relationship between pH and the rate of enzyme-catalyzed reaction </span><strong><span>is not always a bell-shaped curve</span></strong></p><p><img src="media/7/ph.png" style="zoom: 60%;" /></p><p><span>Extremely high or low pH values can directly cause denaturation and inactivation of the enzyme. In addition, pH can affect substrate dissociation, as well as the dissociation of reaction groups in the enzyme. pH can also affect the dissociation of the intermediate complex ES. The optimal pH is </span><strong><span>not</span></strong><span> a characteristic constant of the enzyme and can vary depending on the reaction conditions.</span></p><p>&nbsp;</p><h4 id='ⅴ-activators-and-inhibitors'><span>(Ⅴ) Activators and inhibitors</span></h4><p><span>Refer to </span><em><strong><span>Section 8: Regulation of Enzymes</span></strong></em></p></div></div>
+</div>
+
+</div>
+</main>
+
+<script src="bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ed38f6d2bda5881f1e32b079fec99636";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    document.body.oncontextmenu = 
+    document.body.ondragstart = 
+    document.body.onselectstart = 
+    document.body.onbeforecopy = 
+    function () { return false; };
+    document.body.onselect = 
+    document.body.oncopy = 
+    document.body.onmouseup = 
+    function () { document.selection.empty(); };
+</script>
+
+<script>
+var navbar = document.querySelector('.navbar');
+// 初始滚动位置
+var prevScrollPos = window.pageYOffset;
+
+window.addEventListener('scroll', function() {
+  // 当前滚动位置
+  var currentScrollPos = window.pageYOffset;
+
+  // 判断滚动方向
+  if (prevScrollPos > currentScrollPos) {
+    // 上滑，显示导航栏
+    navbar.style.top = '0';
+  } else {
+    // 下滑，隐藏导航栏
+    navbar.style.top = '-100px'; // 根据实际导航栏高度进行调整
+  }
+
+  // 更新滚动位置
+  prevScrollPos = currentScrollPos;
+});
+</script>
+</html>

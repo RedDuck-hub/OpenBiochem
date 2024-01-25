@@ -1,0 +1,762 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link href="gene.ico" rel="SHORTCUT ICON">
+    <title>Docs | 4.Protein Structure and Function</title>
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar {background-color:#183055; width: 260px; font-size: 0.8rem; color:white; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content {background-color:#183055; position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 50px; width: 260px; }
+@media screen and (max-width: 1440px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 230px; }
+}
+@media screen and (max-width: 950px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+
+
+:root {
+    --side-bar-bg-color: #F5F5F5;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+
+}
+h2 {
+    font-size: 2em;
+    line-height: 1.225;
+
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Introduction</title>
+</head>
+
+
+
+<main class='container col-11'>
+<div class="my-3 p-3 bg-body rounded shadow-lg row" >
+
+
+<div class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#41protein-structure"><strong>4.1.Protein Structure</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#411primary-structure"><strong>4.1.1.Primary Structure</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#412secondary-structure"><strong>4.1.2.Secondary Structure</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#i-α-helix"><strong>(I) α-Helix</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ii-β-sheet"><strong>(II) β-Sheet</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#iii-β-turn"><strong>(III) β-Turn</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#iv-random-coil"><strong>(IV) Random Coil</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#413supersecondary-structure-and-domains"><strong>4.1.3.Supersecondary Structure and Domains</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#414tertiary-structure"><strong>4.1.4.Tertiary Structure</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#415quaternary-structure"><strong>4.1.5.Quaternary Structure</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#42protein-denaturation-renaturation-and-precipitation"><strong>4.2.Protein Denaturation, Renaturation, and Precipitation</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#421protein-denaturation"><strong>4.2.1.Protein Denaturation</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#422protein-renaturation"><strong>4.2.2.Protein Renaturation</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#423protein-precipitation"><strong>4.2.3.Protein Precipitation</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#i-reversible-precipitation"><strong>(I) Reversible Precipitation</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ii-irreversible-precipitation">(II) Irreversible Precipitation</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#43protein-functions"><strong>4.3.Protein Functions</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#431homologous-proteins"><strong>4.3.1.Homologous Proteins</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#432fibrous-proteins"><strong>4.3.2.Fibrous Proteins</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#433myoglobin"><strong>4.3.3.Myoglobin</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#434hemoglobin"><strong>4.3.4.Hemoglobin</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#i-positive-cooperative-interaction-of-o2"><strong>(I) Positive cooperative interaction of O<sub>2</sub></strong>:</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ii-bohr-effect"><strong>(II) Bohr effect</strong>:</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅲ-23-bpg-effect"><strong>(Ⅲ) 2,3-BPG effect</strong>:</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅳ--oxygen-saturation-curve"><strong>(Ⅳ)  Oxygen saturation curve</strong>:</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅴ-molecular-disease"><strong>(Ⅴ) Molecular Disease</strong>:</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#435immunoglobulin"><strong>4.3.5.Immunoglobulin</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#44relationship-between-protein-structure-and-function"><strong>4.4.Relationship between Protein Structure and Function</strong></a></div><ul class="outline-children"></ul></li>
+<br><span style='margin-left:25px; font-size:16px;' >Previous</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='3.Amino Acids and Peptides.html'>3.Amino Acids and Peptides</a>
+<br><span style='margin-left:25px; font-size:16px;'>Next</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='5.Protein Handling and Analysis.html'>5.Protein Handling and Analysis</a>
+<br><br>
+
+
+</div></div>
+
+    <div id='write'  class=''><div style="background-color:whitesmoke">
+<details style="font-size:12px;">
+    <summary><strong>4.Protein Structure and Function</strong></summary>
+    <a href="introduction.html">Return to Introduction</a><br><hr>
+    <strong>Previous</strong>:<a href="3.Amino Acids and Peptides.html">3.Amino Acids and Peptides</a><br>
+    <strong>Next</strong>:<a href="5.Protein Handling and Analysis.html">5.Protein Handling and Analysis</a>
+</details>
+</div><h2 id='41protein-structure'><strong><span>4.1.Protein Structure</span></strong></h2><p><img src="media/4/蛋白结构.jpg" style="zoom: 43%;" /></p><p><span>The basic covalent structure of a protein is formed by the arrangement and combination of 20 amino acids, storing all the information for the higher-order structure of the protein. Within a peptide chain, and between different peptide chains, proteins form more complex three-dimensional spatial structures through twisting and folding. The stability of protein structure is maintained by both </span><strong><span>covalent and non-covalent bonds</span></strong><span>. While a protein has nearly a unique structure, it does not mean that the conformation of a protein is immutable. Sometimes, a change in conformation can lead to a change in the physiological function of the protein, allowing it to adapt to the different metabolic needs of the body.</span></p><p><span>As mentioned in section </span><em><strong><span>2.Biological Molecules</span></strong></em><span>, </span><strong><span>configuration</span></strong><span> refers to the spatial arrangement of all atoms and substituents in a molecule, while </span><strong><span>conformation</span></strong><span> refers to all the relative spatial arrangements of some atoms and substituents in a molecule resulting from the free rotation about single bonds. It has been discussed earlier about the two types of covalent bonds (peptide bond, disulfide bond) and four types of non-covalent bonds (hydrophobic interactions, van der Waals forces, ionic bonds, hydrogen bonds). These six major types of chemical bonds (forces) are crucial for maintaining the stability of protein structures. Protein structures are divided into four levels: </span><strong><span>primary structure, secondary structure, tertiary structure, and quaternary structure.</span></strong></p><p>&nbsp;</p><h3 id='411primary-structure'><strong><span>4.1.1.Primary Structure</span></strong></h3><p><img src="media/4/多肽.jpg" style="zoom: 40%;" /></p><p><strong><span>The primary structure refers to the composition and sequence of amino acids in a polypeptide chain, as well as the number and association of polypeptide chains.</span></strong><span> It is the most basic structure of a protein, storing all the information needed for correct folding of higher structures. Twenty amino acids undergo dehydration condensation to form peptide bonds, constituting a peptide chain. Since the peptide bond is a covalent bond, the primary structure is also referred to as the </span><strong><span>covalent structure</span></strong><span>.</span></p><p>&nbsp;</p><h3 id='412secondary-structure'><strong><span>4.1.2.Secondary Structure</span></strong></h3><p><strong><span>The secondary structure refers to the regular conformation formed by the folding of a polypeptide chain under the action of hydrogen bonds.</span></strong><span> The secondary structure can also refer to local conformations within a polypeptide chain. The frequency and role of different secondary structures vary among different proteins. The most common secondary structures include four types, all stabilized by </span><strong><span>hydrogen bonds</span></strong><span>.</span></p><p>&nbsp;</p><h4 id='i-α-helix'><strong><span>(I) α-Helix</span></strong></h4><p><img src="media/4/α螺旋.jpg" style="zoom: 33%;" /></p><p><strong><span>α-helix</span></strong><span> </span><span>	</span><span>is the most common secondary structure. The polypeptide chain is tightly coiled around a central axis to form a helical structure. The R-groups of the amino acids forming the helix do not participate in the helical structure, causing them to protrude outward. The helix repeats every 3.6 amino acid residues, with a pitch of 0.54 nm. Importantly, the α-helix is a </span><strong><span>right-handed helix</span></strong><span>.</span></p><blockquote><p><span>In </span><em><span>biochemistry</span></em><span>, the α-helix and the B-form DNA double helix are right-handed helices, while collagen is a right-handed helix formed by twisting three left-handed helical peptide chains together. The Z-form DNA double helix and the sugar chains of amylose exhibit left-handed helices.</span></p></blockquote><p><span>Stabilization of the α-helix is achieved by </span><strong><span>hydrogen bonds</span></strong><span>: specifically, the hydrogen bond formed between the N-H bond in each amino acid residue and the C=O bond in the fourth amino acid residue ahead. This intramolecular hydrogen bond formation makes the α-helix a stable helical structure, which is prevalent in proteins, such as in alpha-keratin. Under heat, the α-helix can temporarily form a β-pleated sheet conformation, which then reverts back when cooled, explaining why wool garments shrink after washing.</span></p><p>&nbsp;</p><p><span>Factors affecting the stability of the α-helix:</span></p><ul><li><strong><span>Proline (Pro) effect</span></strong><span>: Proline is the only amino acid among the 20 amino acids that contains a pyrrolidine ring. After forming a peptide bond, there is no extra hydrogen available to form hydrogen bonds with other amino acids. Additionally, the C</span><sub><span>α</span></sub><span>-N bond cannot rotate, leading to the formation of kinks in the helix at Pro positions.</span></li><li><strong><span>Glycine (Gly) effect</span></strong><span>: Glycine has only a hydrogen atom as its R-group, making it highly flexible compared to other amino acids, and thus does not easily form a regular α-helix.</span></li></ul><blockquote><p><span>Pro and Gly are more frequently found at the turn regions of β-turns.</span></p></blockquote><ul><li><strong><span>Electrostatic repulsion</span></strong><span>: When multiple positively or negatively charged amino acids are arranged continuously, significant electrostatic repulsion occurs at pH 7, which is unfavorable for helix formation.</span></li><li><strong><span>Steric hindrance</span></strong><span>: Continuous arrangement of branched-chain amino acids like threonine, isoleucine, and valine results in significant steric hindrance, impeding helix formation. This explains why peptide chains prefer right-handed helical folding, as the side chains of left-handed helical amino acids have larger steric hindrance.</span></li></ul><p>&nbsp;</p><p><span>The formula to calculate the length of an α-helix (assuming the helix contains n amino acid residues):</span></p><ul><li><span>Total length between the two ends of the helix: (0.54 / 3.6)∙n = </span><strong><span>0.15∙n</span></strong></li><li><span>Fully extended length of the helix: </span><strong><span>0.36∙n</span></strong></li></ul><p>&nbsp;</p><h4 id='ii-β-sheet'><strong><span>(II) β-Sheet</span></strong></h4><p><strong><span>β-sheet</span></strong><span>	</span><span>is a common secondary structure. The main chain of the polypeptide adopts a zigzag shape, forming a fold similar to a crumpled structure. Adjacent peptide chains can be arranged in a </span><strong><span>parallel or antiparallel manner</span></strong><span>, and the stability of this structure is maintained by </span><strong><span>inter-chain hydrogen bonds</span></strong><span>. The antiparallel arrangement is </span><strong><span>more stable than</span></strong><span> the parallel arrangement.</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>The parallel manner (with an inter-residue axis distance of 0.325 nm)</span></th><th style='text-align:center;' ><span>antiparallel manner (with an inter-residue axis distance of 0.35 nm)</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="media/4/β平行.jpg" style="zoom: 33%;" /></td><td style='text-align:center;' ><img src="media/4/β反平行.jpg" style="zoom: 33%;" /></td></tr></tbody></table></figure><p><span>The β-sheet structure exhibits higher tensile strength, and fibroin proteins are predominantly composed of β-sheets. The Ala and Gly have the smallest side chains (R-groups) and are abundantly present in β-sheets, alternating with each other.</span></p><p><span>The length of the β-pleated sheet can be calculated using the following formulas (assuming the sheet contains n amino acid residues):</span></p><ul><li><span>Parallel manager: 0.325∙n</span></li><li><span>Antiparallel manager: 0.35∙n</span></li></ul><p>&nbsp;</p><h4 id='iii-β-turn'><strong><span>(III) β-Turn</span></strong></h4><figure><table><thead><tr><th style='text-align:center;' ><span>Gly is found at the turn regions</span></th><th style='text-align:center;' ><span>Pro is found at the turn regions</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="media/4/Gly转角.jpg" style="zoom: 33%;" /></td><td style='text-align:center;' ><img src="media/4/Pro转角.jpg" style="zoom: 33%;" /></td></tr></tbody></table></figure><p><strong><span>β-turn</span></strong><span> </span><span>	</span><span>is a common secondary structure composed of </span><strong><span>six amino acid residues</span></strong><span>. The polypeptide folds back by 180°, altering its direction, and is often found on the surface of globular proteins. The stability of β-turn is also maintained by hydrogen bonds between the first and fourth amino acid residues.</span></p><p>&nbsp;</p><h4 id='iv-random-coil'><strong><span>(IV) Random Coil</span></strong></h4><p><strong><span>Random coil</span></strong><span> </span><span>	</span><span>is a loose and irregular spatial structure formed by the random twisting and folding of a polypeptide chain. The active centers of enzymes are often found in coils. For globular proteins, a random coil-like polypeptide chain facilitates the formation of an approximately spherical three-dimensional structure.</span></p><p>&nbsp;</p><p>&nbsp;</p><h3 id='413supersecondary-structure-and-domains'><strong><span>4.1.3.Supersecondary Structure and Domains</span></strong></h3><p><span>Four modular protein secondary structures were introduced above. To assemble the puzzle into a three-dimensional structure, a large number of repeated secondary structures must be stacked and assembled. The two structures (or regions) mentioned below serve as &quot;bridges&quot; between the secondary and tertiary structures.</span></p><p><strong><span>Super-secondary structure</span></strong><span> </span><span>	</span><span>is a regular combination formed by the mutual arrangement of adjacent secondary structures within a polypeptide chain.</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>αα</span></th><th style='text-align:center;' ><span>βββ</span></th><th style='text-align:center;' ><span>βαβ</span></th><th style='text-align:center;' ><span>β桶</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="http://43.143.164.107:8000/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8A%9F%E8%83%BD/%CE%B1%CE%B1.png" referrerpolicy="no-referrer" alt="img"></td><td style='text-align:center;' ><img src="http://43.143.164.107:8000/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8A%9F%E8%83%BD/%CE%B2%CE%B2%CE%B2.jpg" referrerpolicy="no-referrer" alt="img"></td><td style='text-align:center;' ><img src="http://43.143.164.107:8000/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8A%9F%E8%83%BD/%CE%B2%CE%B1%CE%B2.jpg" referrerpolicy="no-referrer" alt="img"></td><td style='text-align:center;' ><img src="http://43.143.164.107:8000/%E7%94%9F%E7%89%A9%E5%8C%96%E5%AD%A6/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8A%9F%E8%83%BD/%CE%B2%E6%A1%B6.jpg" referrerpolicy="no-referrer" alt="img"></td></tr></tbody></table></figure><p><strong><span>Domain</span></strong><span> </span><span>	</span><span>is three-dimensional regions (units) formed by further twisting and folding of the polypeptide chain based on secondary and super-secondary structures. When a polypeptide chain folds, the folding of each domain is independent, and these domains come together and eventually form an approximately spherical protein molecule. Therefore, domains are the basic units of protein folding. </span></p><p><span>Domains are also referred to as </span><strong><span>functional domains</span></strong><span>, as the functional sites of proteins are often located within the gaps between structural domains. The active center of an enzyme is often formed by the combination of multiple structural domains, and the relative movement between domains is also conducive to the binding of the active site to the substrate.</span></p><p>&nbsp;</p><h3 id='414tertiary-structure'><strong><span>4.1.4.Tertiary Structure</span></strong></h3><p><strong><span>Tertiary structure</span></strong><span> </span><span>	</span><span>refers to the complete and complex spatial structure formed by further twisting and folding of a polypeptide chain based on secondary structure, super-secondary structure, and domains, aided by non-covalent bonds. The arrangement of α-helices and β-sheets, stacking, and aggregation constitute the tertiary structure of a protein. The arrangement is entirely determined by the amino acid sequence information in the primary structure.</span></p><p><span>Unlike the peptide bond in the primary structure and the hydrogen bond in the secondary structure, non-covalent forces such as hydrophobic interactions, hydrogen bonds, ionic bonds (also known as salt bridges), and van der Waals forces maintain the tertiary structure. Among them, </span><strong><span>the hydrophobic interaction is the most significant force</span></strong><span>, and there is also the effect of </span><strong><span>disulfide bonds</span></strong><span>.</span></p><p><span>All natural proteins have tertiary structures, which are often spherical. Due to hydrophobic interactions, most hydrophobic (nonpolar) amino acids are buried inside the protein molecule, while most hydrophilic (polar) amino acids are exposed on the outer surface, forming a hydrophilic protein shell. Therefore, spherical proteins often have high solubility.</span></p><blockquote><p><span>All the non-polar (hydrophobic) amino acids are:</span></p><p><span>Leu, Ile, Phe, Val, Trp, Met, Pro.  Ala is slightly polar, falling between polar and non-polar.</span></p></blockquote><p><span>From the tertiary structure onward, proteins exhibit their true activity. In contrast to the secondary structure, even amino acids that are far apart on the peptide chain can interact within a folded protein structure. Some proteins consist of only one polypeptide chain, and their highest structure is the tertiary structure, such as myoglobin, ribonuclease A, lysozyme, and cytochrome C.</span></p><p>&nbsp;</p><h3 id='415quaternary-structure'><strong><span>4.1.5.Quaternary Structure</span></strong></h3><p><img src="media/4/四级.jpg" style="zoom: 40%;" /></p><p><span>Before discussing the quaternary structure, it is important to introduce the concept of </span><strong><span>subunit</span></strong><span>, which refers to a polypeptide containing a complete </span><strong><span>tertiary structure</span></strong><span>. Subunits are usually composed of a single polypeptide chain, but in cases where multiple peptide chains are connected by disulfide bonds, such as the A and B chains of insulin, they can be considered a single subunit. These interconnected subunits, when assembled via </span><strong><span>non-covalent bonds</span></strong><span>, form a more complex complete spatial structure known as the protein&#39;s </span><strong><span>quaternary structure</span></strong><span>, and proteins exhibiting quaternary structure are also called oligomeric proteins.</span></p><p><span>Different subunits can carry out independent yet related functions. For instance, in enzyme molecules, regulatory and catalytic subunits exist. Most oligomeric protein structures are symmetric and are composed of repeated combinations of identical or different subunits, resulting in an even number of subunits. For example, hemoglobin has four subunits, triose phosphate isomerase has four subunits, and aspartate transaminase contains 12 subunits.</span></p><p><span>The quaternary structure of proteins carries several implications:</span></p><ul><li><span>Polypeptide chains are encoded based on genetic information in nucleic acid chains, and there is a linear correspondence between the amino acid sequence in the polypeptide chain and the nucleotide sequence in nucleic acids. Thus, </span><strong><span>it is more economical in terms of genetic capacity to encode a single polypeptide chain that will assemble into an oligomer than to encode the same relative molecular mass of individual polypeptide chains.</span></strong></li><li><span>The assembly of subunits reduces the ratio of protein surface area to volume, making the protein structure more stable.</span></li><li><span>Oligomeric proteins with multiple active sites often feature a unique type of regulation called </span><strong><span>allosteric regulation</span></strong><span>, where binding of effector molecules induces changes in the interaction between subunits, thereby altering the protein&#39;s activity.</span></li></ul><blockquote><p><span>In summary, while the quaternary structure forms the basis of allosteric effects, not all proteins with allosteric effects exhibit quaternary structure. For instance, cytochrome P450 is a monomeric protein but also exhibits allosteric effects.</span></p></blockquote><p>&nbsp;</p><p>&nbsp;</p><h2 id='42protein-denaturation-renaturation-and-precipitation'><strong><span>4.2.Protein Denaturation, Renaturation, and Precipitation</span></strong></h2><p><span>This section is placed in the chapter </span><em><span>Protein Structure and Function</span></em><span> because the underlying logic of protein denaturation, renaturation, and precipitation is the </span><strong><span>change in protein molecular structure</span></strong><span>.</span></p><p>&nbsp;</p><h3 id='421protein-denaturation'><strong><span>4.2.1.Protein Denaturation</span></strong></h3><p><strong><span>Protein denaturation</span></strong><span> </span><span>	</span><span>refers to the phenomenon where, under the influence of external physicochemical factors, the secondary bonds maintaining the spatial structure of a protein are disrupted, leading to the destruction of the protein conformation and causing the loss of biological activity and changes in physicochemical properties. Essentially, it is a process of </span><strong><span>protein unfolding</span></strong><span>.</span></p><p><span>Here are some common denaturation factors:</span></p><figure><table><thead><tr><th><span>Physical Factors</span></th><th><span>Mechanism</span></th></tr></thead><tbody><tr><td><span>Heat</span></td><td><span>When the temperature slowly rises, the protein conformation is usually stable. However, as the input energy to the system increases, enzyme-catalyzed reactions accelerate. When the temperature exceeds a certain value, the protein begins to unfold and denature. Different proteins (enzymes) have different temperature tolerances; for example, α-amylase can withstand temperatures up to 70°C, while </span><em><span>Taq</span></em><span> DNA polymerase can withstand temperatures as high as 100°C, making it suitable for PCR.</span></td></tr><tr><td><span>High Pressure</span></td><td><span>High pressures, such as several hundred MPa, are commonly used for microbial sterilization, where they disrupt various macromolecules inside the cell.</span></td></tr><tr><td><span>Vigorous Stirring or Vibration</span></td><td><span>The shear force produced can disrupt the protein structure.</span></td></tr><tr><td><span>Radiation</span></td><td><span>Common types of radiation include ultraviolet light and ionizing radiation (X-rays, γ-rays, etc.). On one hand, radiation can break DNA chains, thus disrupting protein synthesis. On the other hand, the free radicals produced by ionizing radiation acting on water molecules can damage the structure of proteins, nucleic acids, and other macromolecules.</span></td></tr><tr><td><span>Ultrasound</span></td><td><span>The mechanical effects and local temperature rise caused by ultrasound can disrupt protein structure.</span></td></tr></tbody></table></figure><figure><table><thead><tr><th><span>Chemical Factors</span></th><th><span>Mechanism</span></th></tr></thead><tbody><tr><td><span>Strong Acids and Bases</span></td><td><span>Extreme pH values alter the charge carried by the protein, leading to electrostatic repulsion and the breaking of certain hydrogen bonds.</span></td></tr><tr><td><span>Heavy Metal Ions</span></td><td><span>Heavy metal ions such as Hg</span><sup><span>+</span></sup><span> and Ag</span><sup><span>+</span></sup><span> modify certain essential groups in enzyme molecules, such as -SH, thus disrupting the enzyme&#39;s original folding and stability.</span></td></tr><tr><td><span>Denaturing Agents</span></td><td><span>Urea and guanidine hydrochloride can reduce the hydrophobic interactions that stabilize the tertiary structure, while competing with the </span><strong><span>peptide backbone for hydrogen bonds</span></strong><span>, thereby disrupting the protein&#39;s secondary structure.</span></td></tr><tr><td><span>Detergents</span></td><td><span>Sodium dodecyl sulfate (SDS) is an anionic detergent that disrupts the hydrophobic interactions, thus disrupting the spatial structure of the protein. This property has led to the development of SDS-PAGE.</span></td></tr><tr><td><span>Organic Solvents</span></td><td><span>Prolonged exposure to organic solvents such as ethanol and acetone can also lead to protein denaturation (hence, when precipitating proteins with organic solvents, the process should be conducted quickly at low temperatures).</span></td></tr></tbody></table></figure><p><span>After protein denaturation, the following characteristics often appear:</span></p><ul><li><strong><span>Loss of Biological Activity</span></strong><span>: Even minor changes in local structure can lead to the loss of activity.</span></li><li><strong><span>Destruction of Tertiary Structure while Preserving Primary Structure</span></strong><span>: This forms the basis of protein renaturation.</span></li><li><strong><span>Reduced Solubility</span></strong><span>: The destruction of the tertiary structure exposes hydrophobic groups, thus reducing solubility—</span><mark><span>reduced solubility ≠ precipitation</span></mark></li><li><strong><span>Increased Viscosity</span></strong></li><li><strong><span>Changes in Optical Properties</span></strong><span>: Optical rotation and UV absorption are altered.</span></li><li><strong><span>Loss of Crystallization Ability</span></strong></li><li><strong><span>Increased Susceptibility to Proteolytic Enzymes</span></strong><span>: After cooking food, proteins denature, causing the molecular structure to loosen and making them more susceptible to proteolytic enzymes in the stomach and intestines.</span></li></ul><p>&nbsp;</p><h3 id='422protein-renaturation'><strong><span>4.2.2.Protein Renaturation</span></strong></h3><p><strong><span>Protein renaturation</span></strong><span>	</span><span>refers to the spontaneous refolding of the primary structure of a protein back to its correct conformation after the physicochemical factors causing denaturation are removed from the external environment. This leads to the restoration of the biological function and physicochemical properties of the protein. For example, after urea, guanidine hydrochloride, or heavy metal salts are removed by dialysis, the randomly coiled, denatured peptide chain spontaneously folds back into its correct conformation, restoring catalytic activity. </span><strong><span>This is because protein denaturation only destroys the tertiary structure while preserving the primary structure, and all the information required for spontaneous folding into the correct conformation is stored in the amino acid sequence of the primary structure</span></strong><span>.</span></p><p><span>Proteins that undergo renaturation after denaturation are referred to as </span><strong><span>reversible denaturation</span></strong><span>. In general, in this type of denaturation, the tertiary and quaternary structures of the protein are disrupted, but the secondary and primary structures are preserved. However, in most cases, proteins cannot fully recover their original properties after denaturation, and this is referred to as </span><strong><span>irreversible denaturation</span></strong><span>, where both secondary and tertiary structures are disrupted.</span></p><p>&nbsp;</p><h3 id='423protein-precipitation'><strong><span>4.2.3.Protein Precipitation</span></strong></h3><p><strong><span>Protein precipitation</span></strong><span>	</span><span>refers to the phenomenon where changes in external conditions disrupt the </span><strong><span>double layer</span></strong><span> or </span><strong><span>hydration layer</span></strong><span> that stabilizes a protein solution, causing protein molecules to aggregate and precipitate. Not all protein denaturation leads to precipitation, and protein precipitation does not necessarily involve denaturation. Based on whether proteins can be resolubilized after precipitation, two types of precipitation can be distinguished:</span></p><h4 id='i-reversible-precipitation'><strong><span>(I) Reversible Precipitation</span></strong></h4><p><strong><span>Isoelectric Point Precipitation</span></strong><span>: At the isoelectric point, the net charge of protein molecules is 0, disrupting the double layer and making the protein molecules prone to collision, aggregation, and precipitation. Since different proteins have different isoelectric points, adjusting the solution pH can sequentially precipitate different proteins (applicable to amino acids as well). The precipitated protein retains its natural conformation and can be resolubilized by adjusting the pH away from the protein&#39;s pI. However, due to the strong hydration layer of some proteins, incomplete precipitation may occur even at the pI.</span></p><p><strong><span>Salting In and Salting Out</span></strong><span>:</span></p><ul><li><strong><span>Salting In</span></strong><span>: When a small amount of neutral salt (such as NaCl, Na</span><sub><span>2</span></sub><span>SO</span><sub><span>4</span></sub><span>, (NH</span><sub><span>4</span></sub><span>)</span><sub><span>2</span></sub><span>SO</span><sub><span>4</span></sub><span>) is present in the solution, protein molecules adsorb these salt ions, increasing the amount of like charges on the protein surface, enhancing electrostatic repulsion, promoting the formation of the double layer, and strengthening the interaction between the protein and water molecules, thus enhancing the protein&#39;s solubility.</span></li><li><strong><span>Salting Out</span></strong><span>: When a large amount of neutral salt is present in the solution, it neutralizes the surface charge of the protein, binds a large number of water molecules, and thus disrupts the hydration and double layers of the protein, causing the protein molecules to aggregate and precipitate, thereby reducing the protein&#39;s solubility. The precipitated protein does not denature, so by adjusting the salt concentration, different proteins can be sequentially precipitated and separated.</span></li></ul><p><strong><span>Precipitation by Polar Organic Solvents</span></strong><span>: Polar organic solvents (such as ethanol and acetone) compete for water molecules on the protein surface, reducing the dielectric constant of the solution, disrupting the protein&#39;s hydration and double layers. However, organic solvents also act as denaturing agents, so when precipitating proteins, the process must be carried out quickly at low temperatures.</span></p><p>&nbsp;</p><h4 id='ii-irreversible-precipitation'><span>(II) Irreversible Precipitation</span></h4><p><strong><span>Heavy Metal Salt Precipitation</span></strong><span>: When the solution pH &gt; pI, protein molecules deprotonate and carry a net negative charge, allowing them to bind with heavy metal ions (Hg</span><sup><span>2+</span></sup><span>, Ag</span><sup><span>+</span></sup><span>, Pb</span><sup><span>2+</span></sup><span>), forming insoluble salts and precipitating. As mentioned earlier, heavy metal ions are denaturing agents, so this process is irreversible.</span></p><blockquote><p><span>After accidental ingestion of heavy metal salts (such as consuming a large amount of pencil lead), the ions can be neutralized by consuming large quantities of high-protein foods like milk or egg whites, forming insoluble salts that can then be excreted from the body.</span></p></blockquote><p><strong><span>Biopolymer Precipitation</span></strong><span>: When the solution pH &lt; pI, protein molecules protonate and carry a net positive charge, enabling them to bind with biopolymers such as tannic acid, phytic acid, and tungstic acid to form insoluble salts and precipitate. This process also causes protein denaturation.</span></p><p><strong><span>Heat-Induced Precipitation</span></strong><span>: High temperatures disrupt the spatial structure of proteins, exposing hydrophobic groups, reducing solubility, and causing precipitation. Adding a small amount of salt accelerates the disruption of the hydration layer. When the pH is adjusted to the pI, the loss of intermolecular double layer further promotes precipitation and solidification. This principle is utilized in the culinary technique &quot;boiling tofu in brine&quot;.</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='43protein-functions'><strong><span>4.3.Protein Functions</span></strong></h2><p><span>The role of proteins in organisms is self-evident, as they participate in and maintain processes such as cell growth, renewal, and repair. The following summarizes several typical functions of proteins:</span></p><ul><li><strong><span>Energy Supply</span></strong><span>	</span><span>When the body&#39;s energy supply is insufficient (such as during severe hunger or fasting), proteins undergo decomposition metabolism to produce amino acids, which then enter the TCA cycle for complete oxidation, releasing a large amount of energy to maintain stable metabolic activity in the body.</span></li><li><strong><span>Catalytic Function</span></strong><span>	</span><span>The most important function of proteins is catalysis. The vast majority of </span><strong><span>enzymes</span></strong><span> are proteins with catalytic capabilities, and almost all biochemical reactions in metabolism are catalyzed by enzymes.</span></li><li><strong><span>Immune Protection</span></strong><span>	</span><span>Antibodies(Ig), which are proteins (immunoglobulins), can bind to specific antigen molecules to clear antigens and protect the body from harm. </span><strong><span>Interferons</span></strong><span> refer to specific glycoproteins synthesized by higher animal cells induced by viruses, inactivated viruses, viral nucleic acids, or artificially synthesized double-stranded RNA, with high activity and broad-spectrum antiviral capabilities to protect the body and inhibit viral proliferation and assembly.</span></li><li><strong><span>Regulatory Function</span></strong><span>	</span><span>There are many </span><strong><span>peptide hormones</span></strong><span> in animals, such as insulin, glucagon, etc., which are physiologically active substances that regulate the body&#39;s substance and energy metabolism. In addition to hormones, there are also </span><strong><span>regulatory proteins</span></strong><span> encoded by regulatory genes, which can be classified as inhibitory proteins and activating proteins. They control the expression of structural genes by acting on the operon structure of prokaryotes.</span></li><li><strong><span>Transport Function</span></strong><span>	</span><span>The body contains a large number of </span><strong><span>carrier proteins</span></strong><span> responsible for the specific transport of certain substances, such as hemoglobin responsible for transporting and delivering O</span><sub><span>2</span></sub><span>, lipoproteins responsible for lipid transport, transferrin, ceruloplasmin responsible for metal ion transport. The body also contains </span><strong><span>membrane transport proteins</span></strong><span>, which are the basis for the transport of substances into and out of cells through facilitated diffusion or active transport, such as aquaporins, glycerol channels, glucose transport proteins, etc.</span></li><li><strong><span>Movement Function</span></strong><span>	</span><span>The contraction force of muscles is generated by two proteins—</span><strong><span>actin and myosin</span></strong><span>—through transient interaction and sliding, which triggers contraction. During this process, ATP provides energy and converts chemical energy into mechanical energy for muscle contraction and stretching. There is also a class of </span><strong><span>motor proteins</span></strong><span>, such as kinesin, dynein, which are the basis for muscle contraction, bacterial flagellar rotation, and other movements.</span></li></ul><p><img src="media/4/肌肉.jpg" style="zoom: 40%;" /></p><ul><li><strong><span>Storage Function</span></strong><span>	</span><span>Proteins themselves can serve as a nitrogen source to provide nitrogen for living organisms. For example, plant seed globulins can provide a nitrogen source for seed germination, and myoglobin also has the function of storing O</span><sub><span>2</span></sub><span>.</span></li><li><strong><span>Structural Function</span></strong><span>	</span><span>Structural proteins can serve as the cell&#39;s skeleton, providing support and protection, such as collagen, α-keratin, which are abundant in hair, scales, connective tissues, and cartilage.</span></li><li><strong><span>Signal Recognition</span></strong><span>	</span><span>Glycoproteins on biological membranes can be used to recognize extracellular signals and convert them into corresponding intracellular responses. Some peptide hormones and growth factors are responsible for transmitting extracellular signals. Membrane-bound sugar chains also participate in cell recognition, cell adhesion, and cell immunity processes.</span></li><li><strong><span>Toxicity</span></strong><span>	</span><span>Toxic proteins can cause poisoning or even death in organisms, such as diphtheria toxin produced by bacteria, snake venom, scorpion venom, bee venom, ricin from plants, etc.</span></li><li><strong><span>Fluorescence</span></strong><span>	</span><span>Fluorescent proteins and ATP react under the action of luciferase, causing fireflies to light up.</span></li></ul><p>&nbsp;</p><h3 id='431homologous-proteins'><strong><span>4.3.1.Homologous Proteins</span></strong></h3><p><strong><span>Homologous proteins</span></strong><span>	</span><span>refer to a class of proteins that originate from different organisms but perform the same or similar physiological functions. The primary structure determines the higher-level structure, and the primary structures of homologous proteins have sequence homology involving invariant amino acids alternating with variable residues.</span></p><p><span>For example, hemoglobin, insulin, cytochrome C, etc., are typical homologous proteins. The following image shows the sequence of human cytochrome C, with yellow positions representing conserved amino acids.</span></p><p><img src="media/4/细胞色素C序列.png" style="zoom: 100%;" /></p><p>&nbsp;</p><h3 id='432fibrous-proteins'><strong><span>4.3.2.Fibrous Proteins</span></strong></h3><p><strong><span>Fibrous proteins</span></strong><span> refer to a class of proteins with linear or layered structural polypeptide chains. These proteins often contain a </span><strong><span>large number of single repetitive forms of secondary structure</span></strong><span>. Compared to globular proteins, fibrous proteins have poor water solubility due to the distribution of hydrophobic amino acids on their surfaces and interiors. Typical fibrous proteins include α-keratin, fibroin, collagen, elastin, etc. These proteins exemplify the relationship between structure and biological function, as fibrous proteins play a </span><strong><span>supportive and protective role in organisms.</span></strong></p><p><strong><span>α-Keratin</span></strong><span>	</span><span>Abundant in mammalian hair, fur, feathers, scales, claws, spines, and horns, serving as the cell&#39;s skeleton. α-Keratin is a right-handed helical structure, with a large amount of </span><strong><span>α-helix</span></strong><span> in its secondary structure, which entwines and twists into more complex complexes. The helices are connected by disulfide bonds (-S-S-), providing high hardness.</span></p><blockquote><p><strong><span>Biochemical Mechanism of Hair Perming: Disruption and Reconnection of Disulfide Bonds:</span></strong></p><p><img src="media/4/烫头机理.jpg" style="zoom: 53%;" /></p><p><span>As mentioned earlier, the secondary structure of α-keratin is composed almost entirely of α-helices, which are intertwined by disulfide bonds to form a &quot;steel cable&quot; structure with extremely high mechanical strength. α-Keratin is abundant in animal hair (including human hair).</span></p><p><span>During hair perming, the hair is first curled and then coated with a reducing agent (usually a compound containing a thiol group, such as beta-mercaptoethanol), which can open the disulfide bonds between the polypeptide chains of α-keratin in the hair fiber and break the &quot;steel cable&quot; structure. At the same time, the wet and hot perming process can destroy non-covalent forces such as hydrogen bonds, causing the α-helix structure to extend. At this point, the rigid structure of the hair has been destroyed, and it is time to reshape the structure.</span></p><p><span>After perming, the reducing agent is removed, an oxidizing agent is applied, and new disulfide bonds are established between Cys pairs (which are no longer Cys residues as before, but alternating residue pairs) in adjacent polypeptide chains. Finally, after washing and drying, the polypeptide chains return to their original α-helical conformation. At this point, the hair will be curled in the desired style because the new disulfide bonds force some α-helical bundles in the hair fiber to curl.</span></p></blockquote><p>&nbsp;</p><p><strong><span>Collagen</span></strong><span>	</span><span>Found in tendons, cartilage, corneas, and other connective tissues. The polypeptide chain of collagen forms a large left-handed helix, which is twisted from three right-handed helical chains. The most abundant amino acid in collagen is </span><strong><span>Gly</span></strong><span>, accounting for approximately 35%. It also contains two non-protein amino acids—</span><strong><span>hydroxyproline (HyPro)</span></strong><span> and </span><strong><span>hydroxylysine (HyLys)</span></strong><span>—synthesized by Pro and Lys under the action of hydroxylase, both of which require vitamin C as a cofactor. The amino acid sequence of collagen is generally a repeating unit of tripeptides, Gly-X-Pro or Gly-X-HyPro (X represents any other amino acid). Collagen is also a glycoprotein.</span></p><p><strong><span>Silk Fibroin</span></strong><span>	</span><span>Abundant in spider webs and silkworm silk. Its polypeptide chain is primarily composed of β-folds (or almost entirely), with a large number of Ala and Gly residues, allowing the R groups of adjacent peptide chains to intertwine and stack closely, providing high stability.</span></p><blockquote><p><span>Wool garments, such as sweaters🧥, tend to shrink when washed in hot water and then dried. On the other hand, silk products, like silk scarves, undergo the same treatment without shrinking.</span></p><p><span>This is because the fibrous protein in wool, mainly composed of α-helices, undergoes temporary extension and stretching during the heat treatment. However, upon cooling and drying, it reverts back to its original spiral shape, resulting in some degree of shrinkage. In contrast, the polypeptide chains of fibroin, the core protein in silk, are already highly extended in a β-folded conformation, which gives silk its tensile strength.</span></p><p><span>However, this type of fiber, like silk, cannot withstand further stretching.</span></p></blockquote><p>&nbsp;</p><p>&nbsp;</p><h3 id='433myoglobin'><strong><span>4.3.3.Myoglobin</span></strong></h3><p><span>Billions of years ago, the Earth underwent a transition from anaerobic to aerobic conditions, and as a result, living organisms evolved to carry out various metabolic activities based on oxygen. For instance, in aerobic respiration, the reduction of substrates leads to the transfer of reduced hydrogen to oxygen molecules at the end of the respiratory chain, resulting in much higher energy efficiency compared to anaerobic respiration. Additionally, the appearance of oxygen-carrying proteins such as myoglobin and hemoglobin further demonstrates the highly adaptive nature of living organisms to their environment.</span></p><p><strong><span>Myoglobin (Mb)</span></strong><span>	</span><span>refers to a type of oligomeric protein found in mammalian muscle tissue that is responsible for the transfer and storage of O</span><sub><span>2</span></sub><span>. It consists of a single polypeptide chain of 153 amino acid residues, with </span><strong><span>a heme prosthetic group</span></strong><span> and an oxygen-binding site. Myoglobin is a typical globular protein with good water solubility and contains a large amount of α-helical structures within its molecular framework.</span></p><p><span>Since proteins cannot spontaneously bind with O</span><sub><span>2</span></sub><span>, they require a mediator to assist in the process. The </span><strong><span>heme prosthetic group (iron protoporphyrin IX)</span></strong><span> is composed of Fe</span><sup><span>2+</span></sup><span> and protoporphyrin IX, where Fe</span><sup><span>2+</span></sup><span> serves as the oxygen-binding site and is fixed by protoporphyrin IX. Iron ions can exist in two oxidation states, Fe</span><sup><span>2+</span></sup><span> and Fe</span><sup><span>3+</span></sup><span>, leading to the formation of ferrous hemoglobin and ferric hemoglobin. </span><strong><span>However, only ferrous hemoglobin has the ability to bind with O</span><sub><span>2</span></sub><span>, so in order to ensure oxygen-carrying capacity in myoglobin and hemoglobin, it is essential to maintain the reduction of Fe</span><sup><span>2+</span></sup></strong><span>. Both of these protein molecules contain a peptide microenvironment that can stabilize heme, and more importantly, prevent the oxidation of Fe</span><sup><span>2+</span></sup><span>. Heme is composed of Gly, Fe</span><sup><span>2+</span></sup><span> and succinyl-CoA.</span></p><p><span>The following image shows the conformation of myoglobin (Mb), where it is evident that myoglobin is the result of the folding of a single polypeptide chain, with the red structure at the center representing the </span><strong><span>heme</span></strong><span>, located between two His residues. As a result, myoglobin can only bind to one molecule of O</span><sub><span>2</span></sub><span>.</span></p><p><img src="media/4/Mb.jpg" alt="Myoglobin Structure" style="zoom: 33%;" /></p><blockquote><p><span>Myoglobin primarily functions as an O</span><sub><span>2</span></sub><span> storage protein, accepting O</span><sub><span>2</span></sub><span> released from hemoglobin in the blood. Marine organisms such as whales, seals, and dolphins, despite needing to breathe, can stay submerged for extended periods due to the high abundance of myoglobin in their muscle tissues, giving their muscle tissue a reddish-brown color.</span></p><p><span>Muscles with a high myoglobin content possess greater O</span><sub><span>2</span></sub><span> storage and transport capacity, which is crucial for prolonged and sustained physical activity and lactate metabolism. Therefore, the myoglobin content serves as an important indicator of an athlete&#39;s endurance level.</span></p></blockquote><p>&nbsp;</p><h3 id='434hemoglobin'><strong><span>4.3.4.Hemoglobin</span></strong></h3><p><span>In the circulatory system of animals, almost all O</span><sub><span>2</span></sub><span> is transported through the hemoglobin contained in red blood cells.</span></p><p><strong><span>Hemoglobin (Hb)</span></strong><span> </span><span>	</span><span>refers to an oligomeric protein present inside red blood cells, responsible for binding and transporting O</span><sub><span>2</span></sub><span>, as well as other substances such as </span><strong><span>CO</span><sub><span>2</span></sub><span> and H</span><sup><span>+</span></sup></strong><span>. Hemoglobin is formed by the assembly of four polypeptide chains, each containing a heme prosthetic group and an oxygen-binding site. In adults, the hemoglobin HbA consists of two identical α chains and two identical β chains. The tertiary structure of each subunit of hemoglobin is highly similar to that of myoglobin, with a significant presence of α-helices, making it a globular protein.</span></p><p><img src="media/4/Hb.jpg" style="zoom: 33%;" /></p><p><span>Hemoglobin&#39;s binding and transport of O</span><sub><span>2</span></sub><span> are closely related to the interaction and conformational changes of its four subunits:</span></p><p><strong><span>Allosteric effect</span></strong><span>	</span><span>This refers to the non-covalent reversible binding of a ligand to a protein, leading to a change in the protein&#39;s conformation and subsequently altering its biological activity. Proteins that exhibit allosteric effects are known as allosteric proteins, and ligands that enhance protein physiological activity are called allosteric activators, while those that inhibit protein physiological activity are termed allosteric inhibitors. </span><strong><span>Hemoglobin exists in two conformations: the deoxy T-state and the oxy R-state</span></strong><span>. These two conformations are interchangeable, with the R-state having a higher affinity for O</span><sub><span>2</span></sub><span>, making the transition from the T-state to the R-state the process of O</span><sub><span>2</span></sub><span> binding, and conversely, the transition from the R-state to the T-state the process of O</span><sub><span>2</span></sub><span> release.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="87.20000457763672" style="max-width: 467.7031555175781px;" viewBox="0 9.5367431640625e-7 467.7031555175781 87.20000457763672"><style>#mermaidChart0 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart0 .error-icon{fill:#552222;}#mermaidChart0 .error-text{fill:#552222;stroke:#552222;}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#333333;stroke:#333333;}#mermaidChart0 .marker.cross{stroke:#333333;}#mermaidChart0 svg{font-family:sans-serif;font-size:16px;}#mermaidChart0 .label{font-family:sans-serif;color:#333;}#mermaidChart0 .cluster-label text{fill:#333;}#mermaidChart0 .cluster-label span{color:#333;}#mermaidChart0 .label text,#mermaidChart0 span{fill:#333;color:#333;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart0 .node .label{text-align:center;}#mermaidChart0 .node.clickable{cursor:pointer;}#mermaidChart0 .arrowheadPath{fill:#333333;}#mermaidChart0 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart0 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart0 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart0 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart0 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart0 .cluster text{fill:#333;}#mermaidChart0 .cluster span{color:#333;}#mermaidChart0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart0 :root{--mermaid-font-family:sans-serif;}#mermaidChart0 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-T-state_subunit LE-R-state_subunit" id="L-T-state_subunit-R-state_subunit" style="opacity: 1;"><path class="path" d="M145.8125,33.54891914833436L233.21406173706055,20.800000190734863L320.6156234741211,33.497134249525104" marker-end="url(#arrowhead11)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead11" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-R-state_subunit LE-T-state_subunit" id="L-R-state_subunit-T-state_subunit" style="opacity: 1;"><path class="path" d="M320.6156234741211,53.70286651341435L233.21406173706055,66.40000057220459L145.8125,53.65108161460509" marker-end="url(#arrowhead12)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead12" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(233.21406173706055,20.800000190734863)" style="opacity: 1;"><g transform="translate(-62.40156173706055,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="124.8031234741211" height="25.600000381469727"></rect><foreignObject width="124.8031234741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-T-state_subunit-R-state_subunit" class="edgeLabel L-LS-T-state_subunit' L-LE-R-state_subunit">Oxygen_binding</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(233.21406173706055,66.40000057220459)" style="opacity: 1;"><g transform="translate(-59.75,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="119.5" height="25.600000381469727"></rect><foreignObject width="119.5" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-R-state_subunit-T-state_subunit" class="edgeLabel L-LS-R-state_subunit' L-LE-T-state_subunit">Oxygen_release</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-T-state_subunit-3" transform="translate(76.90625,43.60000038146973)" style="opacity: 1;"><rect rx="0" ry="0" x="-68.90625" y="-22.800000190734863" width="137.8125" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-58.90625,-12.800000190734863)"><foreignObject width="117.8125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">T-state_subunit</div></foreignObject></g></g></g><g class="node default" id="flowchart-R-state_subunit-4" transform="translate(390.1593704223633,43.60000038146973)" style="opacity: 1;"><rect rx="0" ry="0" x="-69.54375076293945" y="-22.800000190734863" width="139.0875015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-59.54375076293945,-12.800000190734863)"><foreignObject width="119.0875015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">R-state_subunit</div></foreignObject></g></g></g></g></g></g></svg></div><h4 id='i-positive-cooperative-interaction-of-o2'><strong><span>(I) Positive cooperative interaction of O</span><sub><span>2</span></sub></strong><span>:</span></h4><p><img src="media/4/变构效应模型.jpg" style="zoom: 50%;" /></p><p><span>Biochemists have proposed two models when studying the conformational changes of hemoglobin upon O</span><sub><span>2</span></sub><span> binding: </span><strong><span>the concerted model (a)</span></strong><span> suggests that when hemoglobin begins to bind O</span><sub><span>2</span></sub><span>, all four subunits undergo conformational changes simultaneously, allowing them to bind O</span><sub><span>2</span></sub><span> simultaneously; on the other hand, </span><strong><span>the sequential model (b)</span></strong><span> indicates that the conformational change of one subunit can induce similar changes in adjacent subunits. The mechanism by which hemoglobin carries O</span><sub><span>2</span></sub><span> more closely resembles the second model:</span></p><p><span>When a subunit binds with a molecule of O</span><sub><span>2</span></sub><span>, it transitions from the T-state to the R-state, facilitating the easier binding of the second O</span><sub><span>2</span></sub><span> to another subunit of hemoglobin. The subsequent change in the latter subunit&#39;s conformation promotes the binding of the third O</span><sub><span>2</span></sub><span> to the third subunit, and so on. Meanwhile, after the first subunit releases O</span><sub><span>2</span></sub><span>, it transitions from the R-state to the T-state, promoting the easier release of O</span><sub><span>2</span></sub><span> by the second R-state subunit, and so forth. This phenomenon is known as the allosteric effect.</span></p><p><span>The allosteric effect of a protein exists in two forms: </span><strong><span>homotropic effect</span></strong><span>, where the binding of one effector influences the binding of another identical effector to the protein, and </span><strong><span>heterotropic effect</span></strong><span>, where the binding of one effector influences the binding of a different effector to the protein. It is noteworthy that the term &quot;influence&quot; implies that this effect can be either activation or inhibition. If the binding of one effector promotes the binding of another, it is known as a positive cooperative effect; conversely, inhibiting the binding of another effector is termed a negative cooperative effect. Hence, the mechanism of O</span><sub><span>2</span></sub><span> binding by hemoglobin is referred to as a </span><strong><span>positive cooperative homotropic effect</span></strong><span>.</span></p><p>&nbsp;</p><h4 id='ii-bohr-effect'><strong><span>(II) Bohr effect</span></strong><span>:</span></h4><p><span>Apart from carrying O</span><sub><span>2</span></sub><span>, hemoglobin can also transport H</span><sup><span>+</span></sup><span> and CO</span><sub><span>2</span></sub><span>, both of which act as allosteric inhibitors of hemoglobin. When the partial pressure of CO</span><sub><span>2</span></sub><span> is high in the environment (which typically leads to a decrease in pH and an increase in H</span><sup><span>+</span></sup><span> concentration), the high concentration of H</span><sup><span>+</span></sup><span> and CO</span><sub><span>2</span></sub><span> exhibits a greater affinity for the R-state subunits (CO</span><sub><span>2</span></sub><span> binds to the amino-terminal α-amino group of the peptide chain in the form of carbaminohemoglobin), causing a conformational change and promoting the transition of R-state subunits to T-state, ultimately reducing the affinity for O</span><sub><span>2</span></sub><span> and accelerating O</span><sub><span>2</span></sub><span> release.</span></p><p><span>In the muscle tissues during strenuous exercise, the concentrations of CO</span><sub><span>2</span></sub><span> and H</span><sup><span>+</span></sup><span> increase, promoting the release of a large amount of oxygen by hemoglobin flowing through the muscle tissue, thereby providing oxygen for muscle energy supply. After hemoglobin carries CO</span><sub><span>2</span></sub><span> to the lungs, the high concentration of O</span><sub><span>2</span></sub><span> in the lungs prompts the binding of O</span><sub><span>2</span></sub><span> to hemoglobin and the release of CO</span><sub><span>2&lt;/sub;, the latter is then exhaled through respiration; simultaneously, the binding of H</span><sup><span>+</span></sup><span> also prevents acidosis caused by excessively low pH.</span></p><p>&nbsp;</p><h4 id='ⅲ-23-bpg-effect'><strong><span>(Ⅲ) 2,3-BPG effect</span></strong><span>:</span></h4><p><span>2,3-BPG (2,3-bisphosphoglycerate) is a regulatory substance in red blood cells that, when bound to the R-state subunits of hemoglobin, promotes the transition from the R-state to the T-state, significantly reducing the affinity for O</span><sub><span>2</span></sub><span> and enhancing O</span><sub><span>2</span></sub><span> release. For example, when individuals enter high-altitude regions with lower pO</span><sub><span>2</span></sub><span>, the concentration of 2,3-BPG inside red blood cells gradually increases. As the blood flows through hypoxic tissues, it promotes the release of O</span><sub><span>2</span></sub><span> by hemoglobin to supply oxygen to the tissues.</span></p><p><span>Fetal hemoglobin, </span><strong><span>HbF</span></strong><span>, is composed of two α chains and two γ chains. It has a higher affinity for O</span><sub><span>2</span></sub><span> and a much lower affinity for BPG compared to adult hemoglobin, </span><strong><span>HbA</span></strong><span>. This ensures that the fetus receives an adequate supply of oxygen from the mother through the placenta.</span></p><p>&nbsp;</p><h4 id='ⅳ--oxygen-saturation-curve'><strong><span>(Ⅳ)  Oxygen saturation curve</span></strong><span>:</span></h4><p><span>The oxygen saturation curve is plotted with the partial pressure of oxygen (pO</span><sub><span>2</span></sub><span>) on the x-axis and the oxygen saturation on the y-axis. The curve for myoglobin (Mb) is hyperbolic, while the curve for hemoglobin (Hb) is sigmoidal. This difference arises because when the pO</span><sub><span>2</span></sub><span> concentration increases to trigger the allosteric effect, the affinity of each subunit of hemoglobin for O</span><sub><span>2</span></sub><span> rapidly increases, enhancing the efficiency of O</span><sub><span>2</span></sub><span> transport. When H</span><sup><span>+</span></sup><span>, CO</span><sub><span>2</span></sub><span>, and BPG are present, they can induce an </span><strong><span>allosteric inhibitory effect</span></strong><span> that reduces hemoglobin&#39;s affinity for O</span><sub><span>2</span></sub><span>, causing the curve to shift to the right (requiring a higher pO</span><sub><span>2</span></sub><span> to achieve the same oxygen-carrying effect).</span></p><p><img src="media/4/氧饱和曲线总图.png" style="zoom: 80%;" /></p><h4 id='ⅴ-molecular-disease'><strong><span>(Ⅴ) Molecular Disease</span></strong><span>:</span></h4><p><strong><span>Sickle cell anemia</span></strong><span>	</span><span>is a genetic disorder characterized by a mutation in the HbS hemoglobin, where a valine replaces a glutamic acid at the sixth position from the N-terminus in both β-chains of the HbS molecule. The mutated hemoglobin exhibits altered properties, decreased solubility, and a tendency to aggregate into fibers, leading to local deformation of red blood cells, especially in the deoxygenated state, resulting in more severe symptoms. These cells are prone to rupturing, forming gel-like masses that can block blood vessels, restrict blood flow, cause tissue ischemia, and subsequently affect the normal functioning of organs. In certain regions of Africa, the incidence of this disease is very high, often resulting in death during childhood. Affected individuals experience weakness, lethargy, and cannot engage in strenuous physical activity.</span></p><p><img src="media/4/镰刀形贫血.jpg" style="zoom: 60%;" /></p><p>&nbsp;</p><h3 id='435immunoglobulin'><strong><span>4.3.5.Immunoglobulin</span></strong></h3><p><strong><span>Immunoglobulin (Ig)</span></strong><span>, also known as </span><strong><span>antibody</span></strong><span>, can bind to bacteria, viruses, or other large molecular antigens and clear them. Immunoglobulin is essentially a </span><strong><span>glycoprotein</span></strong><span> produced by plasma cells differentiated from B lymphocytes. Immunoglobulin consists of four peptide chains — 2 heavy chains and 2 light chains. The two short chains in red are the light chains, and the long chain in blue is the heavy chain. The chains are connected by disulfide bonds to form a Y-shaped structure. The region composed of the two variable regions at the top of the Y is the antigen-binding site, which contains two antigen-binding sites.</span></p><p><span>There are five types of immunoglobulins in the body, among which IgG is the most abundant:</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Ig G</span></th><th style='text-align:center;' ><span>Ig M</span></th><th style='text-align:center;' ><span>Ig A</span></th><th style='text-align:center;' ><span>Ig D</span></th><th style='text-align:center;' ><span>Ig E</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="media/4/IgG.png" style="zoom: 60%;" /></td><td style='text-align:center;' ><img src="media/4/IgM.png" style="zoom: 50%;" /></td><td style='text-align:center;' ><img src="media/4/IgA.png" style="zoom: 50%;" /></td><td style='text-align:center;' ><img src="media/4/IgD.png" style="zoom: 50%;" /></td><td style='text-align:center;' ><img src="media/4/IgE.png" style="zoom: 50%;" /></td></tr></tbody></table></figure><p><span>The specific binding between antigen and antibody is the basis for many biochemical reactions and detections. For example, in affinity chromatography, a specific antigen molecule is connected to the chromatographic column to selectively bind target cells and purify them. The antigen content in samples can be determined using </span><strong><span>enzyme-linked immunosorbent assay (ELISA)</span></strong><span>, and specific samples can be detected using </span><strong><span>immunoblot assay</span></strong><span>. The principles of these methods are not discussed here and can be found in </span><em><strong><span>Immunology</span></strong></em><span> and </span><em><strong><span>Cell Engineering</span></strong></em><span>. </span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='44relationship-between-protein-structure-and-function'><strong><span>4.4.Relationship between Protein Structure and Function</span></strong></h2><ol start='' ><li><span>Proteins with homologous primary structures have the same or similar functions, such as insulin, hemoglobin, cytochrome, etc.</span></li><li><span>If the primary structures are different, the functions can vary greatly, such as oxytocin and vasopressin. Both are active peptides composed of 9 amino acids, but due to the difference in amino acids at positions 3 and 8, their functions are completely different.</span></li><li><span>Changes in the primary structure can cause serious molecular diseases. For example, in sickle cell anemia, the two beta chains of hemoglobin in patients are replaced by Val at the sixth amino acid from the N-terminal of Glu, resulting in changes in the properties of hemoglobin and easy deformation and rupture of red blood cells.</span></li><li><span>Partial removal of the primary structure of a protein may enable the enzyme to acquire catalytic activity. For example, when a segment of irrelevant peptide chain is removed from the corresponding proteinase under the action of a proteinase, the active group is exposed or formed, making the zymogen an active enzyme.</span></li><li><span>The tertiary structure of a protein is the basis of its physiological function, and a stable tertiary structure is a prerequisite for function.</span></li><li><span>When the tertiary structure of a protein changes, the physiological activity of the protein may also change. For example, when a protein undergoes reversible non-covalent binding with an allosteric effector, it undergoes conformational changes, thereby changing its physiological activity.</span></li><li><span>When the tertiary structure of a protein is destroyed, such as when the protein is subjected to external physicochemical factors such as high temperature, strong acid, or strong alkali, the secondary bonds that maintain the spatial structure of the protein are damaged, resulting in denaturation and inactivation of the protein.</span></li></ol></div></div>
+
+</div>
+
+
+</div>
+</main>
+
+<script src="bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ed38f6d2bda5881f1e32b079fec99636";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    document.body.oncontextmenu = 
+    document.body.ondragstart = 
+    document.body.onselectstart = 
+    document.body.onbeforecopy = 
+    function () { return false; };
+    document.body.onselect = 
+    document.body.oncopy = 
+    document.body.onmouseup = 
+    function () { document.selection.empty(); };
+</script>
+
+<script>
+var navbar = document.querySelector('.navbar');
+// 初始滚动位置
+var prevScrollPos = window.pageYOffset;
+
+window.addEventListener('scroll', function() {
+  // 当前滚动位置
+  var currentScrollPos = window.pageYOffset;
+
+  // 判断滚动方向
+  if (prevScrollPos > currentScrollPos) {
+    // 上滑，显示导航栏
+    navbar.style.top = '0';
+  } else {
+    // 下滑，隐藏导航栏
+    navbar.style.top = '-100px'; // 根据实际导航栏高度进行调整
+  }
+
+  // 更新滚动位置
+  prevScrollPos = currentScrollPos;
+});
+</script>
+</html>

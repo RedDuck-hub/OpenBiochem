@@ -1,0 +1,762 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link href="gene.ico" rel="SHORTCUT ICON">
+    <title>Docs | 5.Protein Handling and Analysis</title>
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar {background-color:#183055; width: 260px; font-size: 0.8rem; color:white; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content {background-color:#183055; position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 50px; width: 260px; }
+@media screen and (max-width: 1440px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 230px; }
+}
+@media screen and (max-width: 950px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+
+
+:root {
+    --side-bar-bg-color: #F5F5F5;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+
+}
+h2 {
+    font-size: 2em;
+    line-height: 1.225;
+
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Introduction</title>
+
+</head>
+
+
+
+<main class='container col-11'>
+<div class="my-3 p-3 bg-body rounded shadow-lg row" >
+
+
+<div class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#51separation-purification-and-identification-of-amino-acids"><strong>5.1.Separation, Purification, and Identification of Amino Acids</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#511isoelectric-point-precipitation"><strong>5.1.1.Isoelectric Point Precipitation</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#512chromatography"><strong>5.1.2.Chromatography</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-paper-chromatography">(Ⅰ) Paper Chromatography</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-ion-exchange-chromatography">(Ⅱ) Ion Exchange Chromatography</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅲ-gel-filtration-chromatography">(Ⅲ) Gel Filtration Chromatography</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅳ-thin-layer-chromatography">(Ⅳ) Thin-Layer Chromatography</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#513electrophoresis"><strong>5.1.3.Electrophoresis</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#514high-performance-liquid-chromatography-hplc"><strong>5.1.4.High-Performance Liquid Chromatography (HPLC)</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#52protein-separation-and-purification"><strong>5.2.Protein Separation and Purification</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#521separation-and-purification-process"><strong>5.2.1.Separation and Purification Process</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#522rough-separation-and-fine-separation"><strong>5.2.2.Rough Separation and Fine Separation</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-based-on-the-different-solubilities-of-proteins">(Ⅰ) Based on the Different Solubilities of Proteins**</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-based-on-different-protein-sizes">(Ⅱ) Based on Different Protein Sizes</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅲ-based-on-different-protein-charge-properties">(Ⅲ) Based on Different Protein Charge Properties</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅳ-based-on-the-presence-of-specific-ligands-in-proteins">(Ⅳ) Based on the Presence of Specific Ligands in Proteins</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#53protein-content-determination"><strong>5.3.Protein Content Determination</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#54protein-molecular-weight-determination">5.4.Protein Molecular Weight Determination</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#55protein-structure-determination">5.5.Protein Structure Determination</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#551primary-structure-determination">5.5.1.Primary Structure Determination</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#552advanced-structure-determination">5.5.2.Advanced Structure Determination</a></div><ul class="outline-children"></ul></li></ul></li>
+    <br><span style='margin-left:25px; font-size:16px;' >Previous</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='4.Protein Structure and Function.html'>4.Protein Structure and Function</a>
+<br><span style='margin-left:25px; font-size:16px;'>Next</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='6.Amino Acid Metabolism.html'>6.Amino Acid Metabolism</a>
+<br><br>
+    
+    
+</div></div>
+
+    <div id='write'  class=''><div style="background-color:whitesmoke">
+<details style="font-size:12px;">
+    <summary><strong>5.Protein Handling and Analysis</strong></summary>
+    <a href="introduction.html">Return to Introduction</a><br><hr>
+    <strong>Previous</strong>:<a href="4.Protein Structure And Function.html">4.Protein Structure And Function</a><br>
+    <strong>Next</strong>:<a href="6.Amino Acid Metabolism.html">6.Amino Acid Metabolism</a>
+</details>
+</div><h2 id='51separation-purification-and-identification-of-amino-acids'><strong><span>5.1.Separation, Purification, and Identification of Amino Acids</span></strong></h2><h3 id='511isoelectric-point-precipitation'><strong><span>5.1.1.Isoelectric Point Precipitation</span></strong></h3><p><span>Due to the different isoelectric points of different amino acids, at the isoelectric point, the net charge of the amino acid molecules is 0, the double layer is destroyed, and the molecules are easily collided and aggregated during movement, resulting in the lowest solubility of the amino acid molecules. Therefore, by adjusting the pH of the amino acid mixture, different amino acids can be separated sequentially.</span></p><p>&nbsp;</p><h3 id='512chromatography'><strong><span>5.1.2.Chromatography</span></strong></h3><p><strong><span>Chromatography</span></strong><span>	</span><span>refers to the technique of separating components of a mixture based on their different distribution coefficients in the mobile phase and the stationary phase. The distribution coefficient is represented by K</span><sub><span>d</span></sub><span>, which is numerically equal to the ratio of the solubility of a substance in two immiscible phases.</span></p><p><img src="media/5/kd.png" style="zoom: %;" /></p><p>&nbsp;</p><h4 id='ⅰ-paper-chromatography'><span>(Ⅰ) Paper Chromatography</span></h4><p><img src="media/5/纸层析.png" referrerpolicy="no-referrer"></p><p><span>Using filter paper containing hydrophilic groups as the chromatographic medium, water as the stationary phase, and an organic solvent as the mobile phase, the different solubilities of amino acids in the water and organic phases lead to their separation after repeated extraction and distribution. </span><strong><span>Polar amino acids have high solubility in water, hence low migration rates, while non-polar amino acids have high solubility in organic solvents, leading to high migration rates</span></strong><span>. The migration rate can be calculated using the following equation:</span></p><p><img src="media/5/迁移率.png" referrerpolicy="no-referrer"></p><blockquote><ul><li><span>X: The distance from the origin to the migration endpoint of an amino acid</span></li><li><span>Y: The distance from the origin to the migration endpoint of chromatographic solution</span></li></ul></blockquote><p><span>After chromatography, amino acid quantification and qualitative analysis are performed: the separated chromatogram is stained with ninhydrin, and the content of specific amino acids is determined by colorimetric analysis. Under the same chromatographic system, temperature, filter paper type, and operating conditions, the migration rate R</span><sub><span>f</span></sub><span> of each amino acid is constant. By comparing the chromatogram with a standard chromatogram, the types of amino acids can be determined.</span></p><p><span>The above one-dimensional chromatography is suitable for separating mixtures with few types of amino acids and large differences in R</span><sub><span>f</span></sub><span>, while in the case of separating amino acids in protein hydrolysates or mixtures of amino acids with very close R</span><sub><span>f</span></sub><span> values, </span><strong><span>two-dimensional paper chromatography</span></strong><span> can be used. This involves drying the filter paper after the first chromatography, then flipping it 90 degrees for a second round of chromatography, resulting in a two-dimensional chromatogram. Alternatively, paper chromatography can be combined with paper electrophoresis.</span></p><p>&nbsp;</p><h4 id='ⅱ-ion-exchange-chromatography'><span>(Ⅱ) Ion Exchange Chromatography</span></h4><p><img src="media/5/离子交换层析洗脱过程.png" style="zoom: 70%;" /></p><p><span>Using ion exchange resins as the chromatographic medium, different components of the amino acid mixture with different charges and amounts of charge undergo different degrees of exchange adsorption with the resin based on their electronegativity, primarily determined by electrostatic attraction. Eventually, the amino acids can be eluted in sequence using a buffer solution. Negatively charged amino acids can exchange with anion exchangers (groups), while positively charged amino acids can exchange with cation exchangers (groups). The exchanged amino acids are then connected to the resin. Cation exchange resins generally contain -SO</span><sub><span>3</span></sub><span>H (strong acid type) or -COOH (weak acid type) groups, which can dissociate H</span><sup><span>+</span></sup><span>; Anion exchange resins generally contain -N(CH</span><sub><span>3</span></sub><span>)</span><sub><span>3</span></sub><span>OH (strong base type) or -NH</span><sub><span>3</span></sub><span>OH (weak base type) groups, which can dissociate OH</span><sup><span>-</span></sup><span>.</span></p><p><span>Separating amino acids commonly involves using strong acid type cation exchange resins with sulfonic acid groups (-SO</span><sub><span>3</span></sub><span>H). After </span><strong><span>loading with acidic solution</span></strong><span>, amino acids with positive charges due to protonation exchange with H</span><sup><span>+</span></sup><span>, adsorbing on the resin, and acidic amino acids, due to a large difference between pI and pH, have a higher adsorption strength than basic amino acids. Upon elution, acidic amino acids are eluted before basic amino acids. Currently, there are fully automatic amino acid analyzers that use </span><strong><span>ion-exchange resins for sequential elution followed by ninhydrin staining</span></strong><span> to separate amino acid mixtures, used for analyzing amino acid mixtures in various tissue fluids, hydrolysates, extracts, and body fluids.</span></p><figure><table><thead><tr><th>&nbsp;</th><th><span>Strong Acid Type</span></th><th><span>Strong Base Type</span></th></tr></thead><tbody><tr><td><span>Hydrogen Type</span></td><td><span>Resin-SO</span><sub><span>3</span></sub><sup><span>-</span></sup><span> • H</span><sup><span>+</span></sup></td><td>&nbsp;</td></tr><tr><td><span>Sodium Type</span></td><td><span>Resin-SO</span><sub><span>3</span></sub><sup><span>-</span></sup><span> • Na</span><sup><span>+</span></sup></td><td>&nbsp;</td></tr><tr><td><span>Hydroxide Type</span></td><td>&nbsp;</td><td><span>Resin-NR</span><sub><span>3</span></sub><sup><span>+</span></sup><span> • OH</span><sup><span>-</span></sup></td></tr><tr><td><span>Chloride Type</span></td><td>&nbsp;</td><td><span>Resin-NR</span><sub><span>3</span></sub><sup><span>+</span></sup><span> • Cl</span><sup><span>-</span></sup></td></tr></tbody></table></figure><p><span>The following is the basic process for separating amino acid mixtures using strong acid type cation exchange resins:</span></p><p><strong><span>（1）Resin Activation</span></strong><span>	</span><span>Acidic resins are activated by sequentially washing with acid-base-acid to replace the inactive ions on the resin with active H^+ or Na^+; the treatment for basic resins is the opposite.</span></p><p><strong><span>（2）Loading</span></strong><span>	</span><span>Sample loading is done using a buffer solution with a low pH value, at which almost all amino acids are protonated and positively charged, and basic amino acids have more positive charges than acidic amino acids. The affinity of amino acids to the resin (strength of binding) mainly depends on </span><strong><span>electrostatic attraction</span></strong><span>, i.e., amino acids with more charges have a tighter adsorption. Therefore, in cation exchange resins, basic amino acids have greater binding strength than acidic amino acids, while in anion exchange resins, acidic amino acids have greater binding strength than basic amino acids; this is followed by the hydrophobic interaction between the amino acid side chain and the resin group.</span></p><p><strong><span>（3）Elution</span></strong><span>	</span><span>For acidic cation exchange resins, elution requires a gradual increase in pH and ionic strength of the eluent, with acidic amino acids reaching their pI first and eluting from the resin. The elution sequence is reversed for basic anion exchange resins.</span></p><p><span>The elution sequence of amino acids in cation exchange resins is as follows:</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart2" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 1516.862548828125px;" viewBox="0.0000019073486328125 0.0000019073486328125 1516.862548828125 61.599998474121094"><style>#mermaidChart2 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart2 .error-icon{fill:#552222;}#mermaidChart2 .error-text{fill:#552222;stroke:#552222;}#mermaidChart2 .edge-thickness-normal{stroke-width:2px;}#mermaidChart2 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart2 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart2 .marker{fill:#333333;stroke:#333333;}#mermaidChart2 .marker.cross{stroke:#333333;}#mermaidChart2 svg{font-family:sans-serif;font-size:16px;}#mermaidChart2 .label{font-family:sans-serif;color:#333;}#mermaidChart2 .cluster-label text{fill:#333;}#mermaidChart2 .cluster-label span{color:#333;}#mermaidChart2 .label text,#mermaidChart2 span{fill:#333;color:#333;}#mermaidChart2 .node rect,#mermaidChart2 .node circle,#mermaidChart2 .node ellipse,#mermaidChart2 .node polygon,#mermaidChart2 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart2 .node .label{text-align:center;}#mermaidChart2 .node.clickable{cursor:pointer;}#mermaidChart2 .arrowheadPath{fill:#333333;}#mermaidChart2 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart2 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart2 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart2 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart2 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart2 .cluster text{fill:#333;}#mermaidChart2 .cluster span{color:#333;}#mermaidChart2 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart2 :root{--mermaid-font-family:sans-serif;}#mermaidChart2 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Asp LE-Thr" id="L-Asp-Thr" style="opacity: 1;"><path class="path" d="M56.88750076293945,30.799999237060547L81.88750076293945,30.799999237060547L106.88750076293945,30.799999237060547" marker-end="url(#arrowhead183)" style="fill:none"></path><defs><marker id="arrowhead183" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Thr LE-Ser" id="L-Thr-Ser" style="opacity: 1;"><path class="path" d="M152.0250015258789,30.799999237060547L177.0250015258789,30.799999237060547L202.0250015258789,30.799999237060547" marker-end="url(#arrowhead184)" style="fill:none"></path><defs><marker id="arrowhead184" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Ser LE-Glu" id="L-Ser-Glu" style="opacity: 1;"><path class="path" d="M246.453125,30.799999237060547L271.453125,30.799999237060547L296.453125,30.799999237060547" marker-end="url(#arrowhead185)" style="fill:none"></path><defs><marker id="arrowhead185" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Glu LE-Pro" id="L-Glu-Pro" style="opacity: 1;"><path class="path" d="M342.4781265258789,30.799999237060547L367.4781265258789,30.799999237060547L392.4781265258789,30.799999237060547" marker-end="url(#arrowhead186)" style="fill:none"></path><defs><marker id="arrowhead186" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Pro LE-Gly" id="L-Pro-Gly" style="opacity: 1;"><path class="path" d="M438.328125,30.799999237060547L463.328125,30.799999237060547L488.328125,30.799999237060547" marker-end="url(#arrowhead187)" style="fill:none"></path><defs><marker id="arrowhead187" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Gly LE-Ala" id="L-Gly-Ala" style="opacity: 1;"><path class="path" d="M532.953125,30.799999237060547L557.953125,30.799999237060547L582.953125,30.799999237060547" marker-end="url(#arrowhead188)" style="fill:none"></path><defs><marker id="arrowhead188" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Ala LE-CysVal" id="L-Ala-CysVal" style="opacity: 1;"><path class="path" d="M627.3156242370605,30.799999237060547L652.3156242370605,30.799999237060547L677.3156242370605,30.799999237060547" marker-end="url(#arrowhead189)" style="fill:none"></path><defs><marker id="arrowhead189" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-CysVal LE-Met" id="L-CysVal-Met" style="opacity: 1;"><path class="path" d="M746.5781211853027,30.799999237060547L771.5781211853027,30.799999237060547L796.5781211853027,30.799999237060547" marker-end="url(#arrowhead190)" style="fill:none"></path><defs><marker id="arrowhead190" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Met LE-Ile" id="L-Met-Ile" style="opacity: 1;"><path class="path" d="M847.2562446594238,30.799999237060547L872.2562446594238,30.799999237060547L897.2562446594238,30.799999237060547" marker-end="url(#arrowhead191)" style="fill:none"></path><defs><marker id="arrowhead191" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Ile LE-Leu" id="L-Ile-Leu" style="opacity: 1;"><path class="path" d="M935.3093681335449,30.799999237060547L960.3093681335449,30.799999237060547L985.3093681335449,30.799999237060547" marker-end="url(#arrowhead192)" style="fill:none"></path><defs><marker id="arrowhead192" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Leu LE-Tyr" id="L-Leu-Tyr" style="opacity: 1;"><path class="path" d="M1032.4593696594238,30.799999237060547L1057.4593696594238,30.799999237060547L1082.4593696594238,30.799999237060547" marker-end="url(#arrowhead193)" style="fill:none"></path><defs><marker id="arrowhead193" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Tyr LE-Phe" id="L-Tyr-Phe" style="opacity: 1;"><path class="path" d="M1125.262493133545,30.799999237060547L1150.262493133545,30.799999237060547L1175.262493133545,30.799999237060547" marker-end="url(#arrowhead194)" style="fill:none"></path><defs><marker id="arrowhead194" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Phe LE-Lys" id="L-Phe-Lys" style="opacity: 1;"><path class="path" d="M1223.987491607666,30.799999237060547L1248.987491607666,30.799999237060547L1273.987491607666,30.799999237060547" marker-end="url(#arrowhead195)" style="fill:none"></path><defs><marker id="arrowhead195" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Lys LE-His" id="L-Lys-His" style="opacity: 1;"><path class="path" d="M1317.434368133545,30.799999237060547L1342.434368133545,30.799999237060547L1367.434368133545,30.799999237060547" marker-end="url(#arrowhead196)" style="fill:none"></path><defs><marker id="arrowhead196" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-His LE-Arg" id="L-His-Arg" style="opacity: 1;"><path class="path" d="M1411.487491607666,30.799999237060547L1436.487491607666,30.799999237060547L1461.487491607666,30.799999237060547" marker-end="url(#arrowhead197)" style="fill:none"></path><defs><marker id="arrowhead197" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Asp-Thr" class="edgeLabel L-LS-Asp' L-LE-Thr"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Thr-Ser" class="edgeLabel L-LS-Thr' L-LE-Ser"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Ser-Glu" class="edgeLabel L-LS-Ser' L-LE-Glu"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Glu-Pro" class="edgeLabel L-LS-Glu' L-LE-Pro"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Pro-Gly" class="edgeLabel L-LS-Pro' L-LE-Gly"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Gly-Ala" class="edgeLabel L-LS-Gly' L-LE-Ala"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Ala-CysVal" class="edgeLabel L-LS-Ala' L-LE-CysVal"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-CysVal-Met" class="edgeLabel L-LS-CysVal' L-LE-Met"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Met-Ile" class="edgeLabel L-LS-Met' L-LE-Ile"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Ile-Leu" class="edgeLabel L-LS-Ile' L-LE-Leu"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Leu-Tyr" class="edgeLabel L-LS-Leu' L-LE-Tyr"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Tyr-Phe" class="edgeLabel L-LS-Tyr' L-LE-Phe"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Phe-Lys" class="edgeLabel L-LS-Phe' L-LE-Lys"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Lys-His" class="edgeLabel L-LS-Lys' L-LE-His"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-His-Arg" class="edgeLabel L-LS-His' L-LE-Arg"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Asp-68" transform="translate(32.44375038146973,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-24.443750381469727" y="-22.800000190734863" width="48.88750076293945" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-14.443750381469727,-12.800000190734863)"><foreignObject width="28.887500762939453" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Asp</div></foreignObject></g></g></g><g class="node default" id="flowchart-Thr-69" transform="translate(129.45625114440918,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.568750381469727" y="-22.800000190734863" width="45.13750076293945" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.568750381469727,-12.800000190734863)"><foreignObject width="25.137500762939453" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Thr</div></foreignObject></g></g></g><g class="node default" id="flowchart-Ser-70" transform="translate(224.23906326293945,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.214062690734863" y="-22.800000190734863" width="44.42812538146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.214062690734863,-12.800000190734863)"><foreignObject width="24.428125381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Ser</div></foreignObject></g></g></g><g class="node default" id="flowchart-Glu-71" transform="translate(319.46562576293945,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-23.012499809265137" y="-22.800000190734863" width="46.02499961853027" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-13.012499809265137,-12.800000190734863)"><foreignObject width="26.024999618530273" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Glu</div></foreignObject></g></g></g><g class="node default" id="flowchart-Pro-72" transform="translate(415.40312576293945,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.925000190734863" y="-22.800000190734863" width="45.85000038146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.925000190734863,-12.800000190734863)"><foreignObject width="25.850000381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Pro</div></foreignObject></g></g></g><g class="node default" id="flowchart-Gly-73" transform="translate(510.640625,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.3125" y="-22.800000190734863" width="44.625" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.3125,-12.800000190734863)"><foreignObject width="24.625" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Gly</div></foreignObject></g></g></g><g class="node default" id="flowchart-Ala-74" transform="translate(605.1343746185303,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.18125057220459" y="-22.800000190734863" width="44.36250114440918" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.18125057220459,-12.800000190734863)"><foreignObject width="24.36250114440918" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Ala</div></foreignObject></g></g></g><g class="node default" id="flowchart-CysVal-75" transform="translate(711.9468727111816,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-34.63125038146973" y="-22.800000190734863" width="69.26250076293945" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-24.631250381469727,-12.800000190734863)"><foreignObject width="49.26250076293945" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">CysVal</div></foreignObject></g></g></g><g class="node default" id="flowchart-Met-76" transform="translate(821.9171829223633,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-25.339062690734863" y="-22.800000190734863" width="50.67812538146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-15.339062690734863,-12.800000190734863)"><foreignObject width="30.678125381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Met</div></foreignObject></g></g></g><g class="node default" id="flowchart-Ile-77" transform="translate(916.2828063964844,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-19.026562690734863" y="-22.800000190734863" width="38.05312538146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-9.026562690734863,-12.800000190734863)"><foreignObject width="18.053125381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Ile</div></foreignObject></g></g></g><g class="node default" id="flowchart-Leu-78" transform="translate(1008.8843688964844,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-23.574999809265137" y="-22.800000190734863" width="47.14999961853027" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-13.574999809265137,-12.800000190734863)"><foreignObject width="27.149999618530273" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Leu</div></foreignObject></g></g></g><g class="node default" id="flowchart-Tyr-79" transform="translate(1103.8609313964844,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-21.401562690734863" y="-22.800000190734863" width="42.80312538146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-11.401562690734863,-12.800000190734863)"><foreignObject width="22.803125381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Tyr</div></foreignObject></g></g></g><g class="node default" id="flowchart-Phe-80" transform="translate(1199.6249923706055,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-24.362500190734863" y="-22.800000190734863" width="48.72500038146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-14.362500190734863,-12.800000190734863)"><foreignObject width="28.725000381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Phe</div></foreignObject></g></g></g><g class="node default" id="flowchart-Lys-81" transform="translate(1295.7109298706055,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-21.723437309265137" y="-22.800000190734863" width="43.44687461853027" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-11.723437309265137,-12.800000190734863)"><foreignObject width="23.446874618530273" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Lys</div></foreignObject></g></g></g><g class="node default" id="flowchart-His-82" transform="translate(1389.4609298706055,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.026562690734863" y="-22.800000190734863" width="44.05312538146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.026562690734863,-12.800000190734863)"><foreignObject width="24.053125381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">His</div></foreignObject></g></g></g><g class="node default" id="flowchart-Arg-83" transform="translate(1485.174991607666,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-23.6875" y="-22.800000190734863" width="47.375" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-13.6875,-12.800000190734863)"><foreignObject width="27.375" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Arg</div></foreignObject></g></g></g></g></g></g></svg></div><p><strong><span>（4）Regeneration of Resin</span></strong><span>	</span><span>After a period of use, ion exchange resins become saturated with adsorbed ions and lose their exchange capacity. Regeneration of the resin is necessary to restore its exchange capacity. For strong acid type cation exchanger resins, HCl or H</span><sub><span>2</span></sub><span>SO</span><sub><span>4</span></sub><span> can be used as regenerants; for strong base type anion exchanger resins, NaOH or NaCl can be used as regenerants. The regenerants will displace the adsorbed ions on the resin, restoring its exchange capacity.</span></p><p><strong><span>（5）Analysis</span></strong><span>	</span><span>Collect the eluates in batches, perform ninhydrin reaction, plot the elution curve, and determine the types of amino acids based on the position of the elution peak and the content of the corresponding amino acid based on the peak value.</span></p><p>&nbsp;</p><h4 id='ⅲ-gel-filtration-chromatography'><span>(Ⅲ) Gel Filtration Chromatography</span></h4><p><span>Using a gel column with pores as the chromatographic medium, amino acids with molecular diameters larger than the gel pore size flow directly through the interstices, resulting in low migration rates and fast elution, while amino acids with molecular diameters smaller than the gel pore size enter the gel particles, resulting in high migration rates and slow elution. Finally, different volumes of eluent are used to obtain the eluates of different amino acids in batches.</span></p><p>&nbsp;</p><h4 id='ⅳ-thin-layer-chromatography'><span>(Ⅳ) Thin-Layer Chromatography</span></h4><p><span>Principle: Using a glass plate as the chromatographic medium, a layer of adsorbent is coated on the surface, enabling the separation of amino acids based on their different distribution coefficients in the two phases.</span></p><p><span>Analysis: Ninhydrin is used for coloration, and the content of amino acids is determined by colorimetric analysis.</span></p><p>&nbsp;</p><h3 id='513electrophoresis'><strong><span>5.1.3.Electrophoresis</span></strong></h3><p><img src="media/5/氨基酸电泳.jpg" style="zoom: 25%;" /></p><p><span>Different amino acid molecules in a solution at the same pH carry different amounts and properties of charge, and the larger the difference between the pI and the solution pH of an amino acid, the greater the net charge, and the greater the electrostatic attraction between the amino acid and the electrodes, resulting in a greater migration rate during electrophoresis. Thus, it is possible to separate mixtures of different amino acids.</span></p><p>&nbsp;</p><h3 id='514high-performance-liquid-chromatography-hplc'><strong><span>5.1.4.High-Performance Liquid Chromatography (HPLC)</span></strong></h3><p><img src="media/5/液相质谱色谱.png" referrerpolicy="no-referrer"></p><p><span>High-performance liquid chromatography (HPLC) is a modern liquid chromatography technique commonly used for the separation and detection of amino acid mixtures. When an amino acid mixture passes through the column, different amino acids are absorbed or repelled by the stationary phase material based on their specific physicochemical properties, while different mobile phases are used to control the separation of amino acids. The stationary phase material is usually a highly adsorptive material such as dextran or silica gel, while the mobile phase typically consists of organic solvents such as methanol or acetonitrile, and a buffer salt solution such as trifluoroacetic acid or acetate buffer solution.</span></p><p><span>After separating the amino acids, various detection methods can be used:</span></p><ol start='' ><li><span>Ultraviolet Absorbance Detection: Some amino acids have ultraviolet absorbance properties, such as Phe, Tyr, and Trp, or amino acids can be directly converted into substances with absorbance properties within the ultraviolet range. Quantitative analysis is done by measuring the absorbance of samples at specific wavelengths using a UV absorbance detector.</span></li><li><span>Fluorescence Detection: Some amino acids can emit a fluorescent signal, such as Trp and Tyr, or can be directly converted into fluorescent substances. By adding appropriate excitation and fluorescence enhancement agents in HPLC, these amino acids can produce a fluorescent signal, and quantitative analysis is then done by measuring the fluorescence intensity using a fluorescence detector.</span></li><li><span>Mass Spectrometry Detection: HPLC-mass spectrometry (HPLC-MS) directly sends the separated amino acids into a mass spectrometer for analysis.</span></li></ol><p>&nbsp;</p><p>&nbsp;</p><h2 id='52protein-separation-and-purification'><strong><span>5.2.Protein Separation and Purification</span></strong></h2><h3 id='521separation-and-purification-process'><strong><span>5.2.1.Separation and Purification Process</span></strong></h3><ul><li><strong><span>Sampling</span></strong><span>	</span><span>If extracting proteins from fermentation broth, take an appropriate amount of fermentation broth and first perform solid-liquid separation, filtering out some large molecular insoluble solids. If the required protein is secreted extracellularly, it can be directly collected and purified. If extracting the target protein from a cell, first take fresh, vigorously growing cells with a high protein/enzyme content that are easy to extract and operate.</span></li><li><strong><span>Cell disruption</span></strong><span>	</span><span>If the cells have a cell wall, use enzymatic hydrolysis to break down the cell wall, and then use mechanical methods such as high-pressure homogenization or ultrasonic disruption to release the cell contents.</span></li><li><strong><span>Extraction</span></strong><span>	</span><span>Use a suitable buffer to extract the target protein, avoiding protein denaturation. If the target protein is in the cell membrane, a detergent should be added to disrupt the cell membrane. If the target protein is in the organelles, they need to be separated using differential centrifugation before extraction.</span></li><li><strong><span>Rough separation</span></strong><span>	</span><span>Use large-scale, low-cost methods for preliminary separation, such as isoelectric point precipitation, stepwise salting-out, polar organic solvent precipitation, dialysis, ultrafiltration, etc.</span></li><li><strong><span>Fine separation</span></strong><span>	</span><span>Use small-scale, more precise methods to separate the target protein, such as density gradient centrifugation, gel electrophoresis, gel filtration chromatography, affinity chromatography, ion exchange chromatography, etc.</span></li><li><strong><span>Crystallization and recrystallization</span></strong><span>	</span><span>The target protein is repeatedly oversaturated to precipitate crystals, further removing impurities from the crystal surface, and finally obtaining the product after drying.</span></li><li><strong><span>Analysis and identification</span></strong><span>	</span><span>Determine the purity, content, relative molecular weight, and various physicochemical properties of the protein product. Enzymes also need to determine the purification fold and recovery rate.</span></li><li><strong><span>Storage</span></strong><span>	</span><span>After desalting by dialysis, enzymes are freeze-dried into enzyme powder and stored at low temperatures.</span></li></ul><p>&nbsp;</p><h3 id='522rough-separation-and-fine-separation'><strong><span>5.2.2.Rough Separation and Fine Separation</span></strong></h3><h4 id='ⅰ-based-on-the-different-solubilities-of-proteins'><span>(Ⅰ) Based on the Different Solubilities of Proteins**</span></h4><p><strong><span>Isoelectric point precipitation</span></strong><span>	</span><span>Different proteins have different isoelectric points due to different amino acid compositions. At their isoelectric point, the double layer is disrupted, and protein molecules are prone to aggregate and precipitate. By sequentially adjusting the pH of the mixed solution, different proteins can be precipitated and separated.</span></p><p><strong><span>Stepwise salting-out</span></strong><span>	</span><span>High concentrations of neutral salts can disrupt the hydration layer and charged layer of proteins, causing proteins to aggregate and precipitate. Different proteins require different salt concentrations for precipitation. Therefore, by gradually adjusting the salt concentration of the solution, different proteins can be sequentially precipitated and separated.</span></p><p><strong><span>Low-temperature precipitation with polar organic solvents</span></strong><span>	</span><span>Polar organic solvents can disrupt the hydration layer of proteins and reduce the dielectric constant of the solution, disrupting the double layer and causing protein precipitation. However, since organic solvents can easily denature proteins, the operation needs to be completed quickly at low temperatures.</span></p><p>&nbsp;</p><h4 id='ⅱ-based-on-different-protein-sizes'><span>(Ⅱ) Based on Different Protein Sizes</span></h4><p><strong><span>Dialysis</span></strong><span>	</span><span>Based on the colloidal nature of proteins not being able to pass through a semi-permeable membrane, proteins can be separated from other small molecular substances such as monosaccharides, inorganic salts, and coenzymes using a semi-permeable membrane for purification and separation.</span></p><p><img src="media/5/蛋白透析.png" style="zoom:50%;" /></p><p><strong><span>Ultrafiltration</span></strong><span>	</span><span>This method forcefully separates proteins from other small molecular substances through centrifugal force or pressure.</span></p><p><strong><span>Gel filtration chromatography (molecular sieve chromatography)</span></strong><span>	</span><span>Using a gel column with pore size as the chromatographic medium, proteins with a molecular diameter larger than the gel pore size remain in the interstices of the gel with low migration rates and rapid elution. Proteins with a molecular diameter smaller than the gel pore size enter the gel column with high migration rates and slow elution. Therefore, different-sized proteins can be eluted using elution solution.</span></p><p><strong><span>Density gradient centrifugation</span></strong><span>	</span><span>Proteins with different molecular sizes and densities settle to different extents in an ultra-speed centrifugal field. Therefore, first prepare a sucrose gradient solution (for separating nucleic acids, a CsCl gradient solution is prepared). After adding the sample to the upper layer of the solution, centrifuge it in an ultra-speed centrifugal field. Different proteins will undergo different sedimentation, ultimately forming bands floating within gradients of equal density.</span></p><p>&nbsp;</p><h4 id='ⅲ-based-on-different-protein-charge-properties'><span>(Ⅲ) Based on Different Protein Charge Properties</span></h4><p><strong><span>Gel electrophoresis</span></strong><span>	</span><span>Proteins are amphoteric molecules, and different proteins have differences in net charge and electrical characteristics in the same pH system. Under an applied electric field, proteins move towards the oppositely charged electrode and ultimately achieve the separation of different proteins. The electrophoretic mobility of proteins depends on their net charge, molecular size, and shape.</span></p><ul><li><span>Isoelectric focusing electrophoresis (IEF): A pH gradient is prepared on the gel. When proteins are electrophoresed, different proteins stop in the pH gradient with the same pI, achieving separation.</span></li><li><span>Two-dimensional electrophoresis: When proteins are difficult to separate, they can be initially separated by IEF based on different isoelectric points, followed by rotating the electrophoresis system 90° and performing SDS-denaturing gel electrophoresis to achieve a second separation based on different protein molecular weights, ultimately obtaining a two-dimensional electrophoresis map.</span></li></ul><p><strong><span>Hydroxyapatite chromatography (HA)</span></strong><span>	</span><span>Ca</span><sup><span>2+</span></sup><span> in HA can bind to negatively charged groups in proteins, and then proteins can be eluted using a phosphate buffer.</span></p><p><strong><span>Ion exchange chromatography</span></strong><span>	</span><span>Commonly used cation exchange agents (CM-cellulose) or anion exchange agents (DEAE-cellulose) act as chromatographic media. According to the different charge properties of individual protein components, different degrees of exchange adsorption occur with the exchange agents (the larger the difference between pI and pH, the greater the net charge, and the tighter the adsorption). Finally, separation is achieved by sequentially eluting with buffers.</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Gel Filtration Chromatography</span></th><th style='text-align:center;' ><span>Ion Exchange Chromatography</span></th><th style='text-align:center;' ><span>Affinity Chromatography</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="media/5/凝胶过滤层析.jpg" referrerpolicy="no-referrer"></td><td style='text-align:center;' ><img src="media/5/离子交换层析.jpg" referrerpolicy="no-referrer"></td><td style='text-align:center;' ><img src="media/5/亲和层析.jpg" referrerpolicy="no-referrer"></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='ⅳ-based-on-the-presence-of-specific-ligands-in-proteins'><span>(Ⅳ) Based on the Presence of Specific Ligands in Proteins</span></h4><p><strong><span>Affinity chromatography</span></strong><span>	</span><span>A specific ligand is linked in the chromatographic medium, and specific proteins can bind to the ligand, thereby separating the protein from the mixture.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart3" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="444.0000305175781" style="max-width: 582.9750366210938px;" viewBox="0 0.0000019073486328125 582.9750366210938 444.0000305175781"><style>#mermaidChart3 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart3 .error-icon{fill:#552222;}#mermaidChart3 .error-text{fill:#552222;stroke:#552222;}#mermaidChart3 .edge-thickness-normal{stroke-width:2px;}#mermaidChart3 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart3 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart3 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart3 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart3 .marker{fill:#333333;stroke:#333333;}#mermaidChart3 .marker.cross{stroke:#333333;}#mermaidChart3 svg{font-family:sans-serif;font-size:16px;}#mermaidChart3 .label{font-family:sans-serif;color:#333;}#mermaidChart3 .cluster-label text{fill:#333;}#mermaidChart3 .cluster-label span{color:#333;}#mermaidChart3 .label text,#mermaidChart3 span{fill:#333;color:#333;}#mermaidChart3 .node rect,#mermaidChart3 .node circle,#mermaidChart3 .node ellipse,#mermaidChart3 .node polygon,#mermaidChart3 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart3 .node .label{text-align:center;}#mermaidChart3 .node.clickable{cursor:pointer;}#mermaidChart3 .arrowheadPath{fill:#333333;}#mermaidChart3 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart3 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart3 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart3 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart3 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart3 .cluster text{fill:#333;}#mermaidChart3 .cluster span{color:#333;}#mermaidChart3 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart3 :root{--mermaid-font-family:sans-serif;}#mermaidChart3 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Specific_Binding LE-Enzymes_and_specific_substrates_or_cofactors" id="L-Specific_Binding-Enzymes_and_specific_substrates_or_cofactors" style="opacity: 1;"><path class="path" d="M91.88173358358871,199.1999969482422L177.5625,30.799999237060547L202.5625,30.799999237060547" marker-end="url(#arrowhead208)" style="fill:none"></path><defs><marker id="arrowhead208" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Specific_Binding LE-Hormones_and_receptors" id="L-Specific_Binding-Hormones_and_receptors" style="opacity: 1;"><path class="path" d="M103.48221716717744,199.1999969482422L177.5625,126.39999771118164L281.1000061035156,126.39999771118164" marker-end="url(#arrowhead209)" style="fill:none"></path><defs><marker id="arrowhead209" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Specific_Binding LE-mRNA_and_oligo-dT" id="L-Specific_Binding-mRNA_and_oligo-dT" style="opacity: 1;"><path class="path" d="M152.5625,221.99999618530273L177.5625,221.99999618530273L299.5625,221.99999618530273" marker-end="url(#arrowhead210)" style="fill:none"></path><defs><marker id="arrowhead210" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Specific_Binding LE-Antigen_and_antibody" id="L-Specific_Binding-Antigen_and_antibody" style="opacity: 1;"><path class="path" d="M103.48221716717744,244.79999542236328L177.5625,317.5999946594238L292.8625030517578,317.5999946594238" marker-end="url(#arrowhead211)" style="fill:none"></path><defs><marker id="arrowhead211" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Specific_Binding LE-Lectin_and_glycan_chains" id="L-Specific_Binding-Lectin_and_glycan_chains" style="opacity: 1;"><path class="path" d="M91.88173358358871,244.79999542236328L177.5625,413.1999931335449L281.9250030517578,413.1999931335449" marker-end="url(#arrowhead212)" style="fill:none"></path><defs><marker id="arrowhead212" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Specific_Binding-Enzymes_and_specific_substrates_or_cofactors" class="edgeLabel L-LS-Specific_Binding' L-LE-Enzymes_and_specific_substrates_or_cofactors"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Specific_Binding-Hormones_and_receptors" class="edgeLabel L-LS-Specific_Binding' L-LE-Hormones_and_receptors"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Specific_Binding-mRNA_and_oligo-dT" class="edgeLabel L-LS-Specific_Binding' L-LE-mRNA_and_oligo-dT"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Specific_Binding-Antigen_and_antibody" class="edgeLabel L-LS-Specific_Binding' L-LE-Antigen_and_antibody"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Specific_Binding-Lectin_and_glycan_chains" class="edgeLabel L-LS-Specific_Binding' L-LE-Lectin_and_glycan_chains"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Specific_Binding-94" transform="translate(80.28125,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-72.28125" y="-22.800000190734863" width="144.5625" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-62.28125,-12.800000190734863)"><foreignObject width="124.5625" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Specific_Binding</div></foreignObject></g></g></g><g class="node default" id="flowchart-Enzymes_and_specific_substrates_or_cofactors-95" transform="translate(388.7687530517578,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-186.2062530517578" y="-22.800000190734863" width="372.4125061035156" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-176.2062530517578,-12.800000190734863)"><foreignObject width="352.4125061035156" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Enzymes_and_specific_substrates_or_cofactors</div></foreignObject></g></g></g><g class="node default" id="flowchart-Hormones_and_receptors-97" transform="translate(388.7687530517578,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-107.66875457763672" y="-22.800000190734863" width="215.33750915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-97.66875457763672,-12.800000190734863)"><foreignObject width="195.33750915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Hormones_and_receptors</div></foreignObject></g></g></g><g class="node default" id="flowchart-mRNA_and_oligo-dT-99" transform="translate(388.7687530517578,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-89.20625305175781" y="-22.800000190734863" width="178.41250610351562" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-79.20625305175781,-12.800000190734863)"><foreignObject width="158.41250610351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">mRNA_and_oligo-dT</div></foreignObject></g></g></g><g class="node default" id="flowchart-Antigen_and_antibody-101" transform="translate(388.7687530517578,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-95.90625" y="-22.800000190734863" width="191.8125" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-85.90625,-12.800000190734863)"><foreignObject width="171.8125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Antigen_and_antibody</div></foreignObject></g></g></g><g class="node default" id="flowchart-Lectin_and_glycan_chains-103" transform="translate(388.7687530517578,413.1999931335449)" style="opacity: 1;"><rect rx="0" ry="0" x="-106.84375" y="-22.800000190734863" width="213.6875" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-96.84375,-12.800000190734863)"><foreignObject width="193.6875" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Lectin_and_glycan_chains</div></foreignObject></g></g></g></g></g></g></svg></div><p>&nbsp;</p><p>&nbsp;</p><h2 id='53protein-content-determination'><strong><span>5.3.Protein Content Determination</span></strong></h2><p><strong><span>(1) Kjeldahl Method</span></strong></p><ul><li><span>Principle: Protein molecules contain approximately 16% nitrogen. Therefore, by measuring the nitrogen content in the protein, the protein content can be indirectly calculated using the factor × </span><strong><span>protein factor 6.25</span></strong><span>.</span></li><li><span>Characteristics: Tedious and outdated.</span></li></ul><p><strong><span>(2) Biuret Method</span></strong></p><ul><li><span>Principle: Peptides of three amino acids or more can react with CuSO</span><sub><span>4</span></sub><span> solution under alkaline conditions to produce a purple-red substance with maximum absorbance at 540nm, and the protein content in the sample can be determined using colorimetry.</span></li><li><span>Characteristics: Simple, fast, but low precision.</span></li></ul><p><strong><span>(3) Folin Phenol Method</span></strong></p><ul><li><span>Principle: The indole group of Trp or the phenolic OH of Tyr in peptides can react with phosphomolybdate or phosphotungstate to produce molybdenum blue and tungsten blue, with maximum absorbance at 680nm, and the protein content in the sample can be determined using colorimetry.</span></li><li><span>Characteristics: Sensitive, but due to differences in the Trp or Tyr content between the target protein and the standard protein, results may be inaccurate.</span></li></ul><p><strong><span>(4) Coomassie Brilliant Blue Method</span></strong></p><ul><li><span>Principle: Peptides can react with Coomassie Brilliant Blue G-250 to produce a blue substance with maximum light absorption at 595nm, and the protein content in the sample can be determined using colorimetry.</span></li><li><span>Characteristics: Sensitive and accurate.</span></li></ul><p><strong><span>(5) UV Absorbance Method</span></strong></p><ul><li><p><span>Principle: Since almost all peptide chains contain aromatic amino acids, and aromatic amino acids have maximum light absorption at 280nm due to the conjugated double bond of the benzene ring, the protein content can be directly determined using colorimetry.</span></p><p><img src="media/5/分光光度计.png" style="zoom:77%;" /></p></li><li><p><span>Characteristics: Fast, but may lead to errors due to nucleic acids (nucleic acids have maximum OD</span><sub><span>260</span></sub><span>, which can cause inaccuracies in the results).</span></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='54protein-molecular-weight-determination'><span>5.4.Protein Molecular Weight Determination</span></h2><p><strong><span>Ultracentrifugation Method</span></strong><span>	</span><span>Different proteins have different molecular weight and density, so they undergo different degrees of sedimentation in a centrifugal field. The relative molecular weight of the protein can be calculated by measuring the sedimentation process using relevant formulas.</span></p><p><strong><span>Gel Filtration Chromatography</span></strong><span>	</span><span>Using porous gel beads as the chromatographic medium, proteins with different molecular sizes have different migration rates. If the molecular diameter is larger than the diameter of the gel bead, it flows down from the gap between the gel beads, with a small migration rate and fast elution. If the molecular diameter is smaller than the diameter of the gel bead, it flows into the gel and has a large migration rate, with slow elution. First, a series of known standard proteins with relative molecular weight are taken, and the eluted volume V</span><sub><span>e</span></sub><span> is measured from the time of sample injection to complete elution. Using V</span><sub><span>e</span></sub><span> as the abscissa and Log Mr as the ordinate, a standard curve is drawn. Finally, the V</span><sub><span>e</span></sub><span> of the protein to be tested is measured, and the Mr size is determined by comparing it with the standard curve.</span></p><p><img src="media/5/凝胶过滤层析法.png" style="zoom: 80%;" /></p><p>&nbsp;</p><p><strong><span>SDS-polyacrylamide Gel Electrophoresis</span></strong><span>	</span><span>Sodium dodecyl sulfate (SDS) is an anionic detergent that can destroy the protein conformation, forming linear or fibrous polypeptide chains, while attaching a layer of negative charge far higher than its own charge to the surface of the polypeptide. Therefore, the migration rate of the protein depends only on the relative molecular weight of the polypeptide. Beta-mercaptoethanol can also be added to break disulfide bonds. After electrophoresis, the relative molecular weight size is determined by comparison with the standard marker. This method is generally not used for protein separation and purification, especially for oligomeric proteins. For proteins containing subunits of the same molecular weight, the band of each subunit after electrophoresis almost overlaps, and it may be impossible to determine the number of polypeptides.</span></p><p><img src="media/5/SDS电泳.png" style="zoom: 80%;" /></p><p>&nbsp;</p><h2 id='55protein-structure-determination'><span>5.5.Protein Structure Determination</span></h2><h3 id='551primary-structure-determination'><span>5.5.1.Primary Structure Determination</span></h3><blockquote><p><span>Requirements: the Mr of the protein is known, and the purity of the protein is greater than 95%.</span></p></blockquote><p><strong><span>(1) Determination of the Number of Polypeptide Chains</span></strong></p><p><span>The number of polypeptide chains is calculated by measuring the molar amount of amino acids at the ends of the polypeptide chain and comparing it with the molar amount of the known protein.</span></p><p><strong><span>(2) Subunit Separation and Disulfide Bond Breaking</span></strong></p><p><span>8 mol/L urea or 6 mol/L guanidine hydrochloride is added to destroy the spatial structure of the protein and separate each subunit. Beta-mercaptoethanol is then added to break the inter-chain disulfide bond, while adding alkylating agents such as iodoacetic acid to prevent the disulfide bond from being re-oxidized.</span></p><p><strong><span>(3) Determination of Amino Acid Composition and Proportion in Polypeptide Chains</span></strong></p><p><span>After hydrolyzing the polypeptide fragments, they are added to an automatic amino acid analyzer (ion exchange chromatography + ninhydrin colorimetry). The composition and content of amino acids are determined by the elution curve.</span></p><p><strong><span>(4) Determination of the Arrangement of Amino Acids in the Polypeptide Chain</span></strong></p><p><span>(a) Determination of the Types of N-terminal and C-terminal Amino Acids</span></p><ul><li><p><span>N-terminal methods:</span></p><ul><li><span>Sanger (DNFB) Method: 2,4-dinitrofluorobenzene reacts with the N-terminal amino acid of the polypeptide chain to form DNP-polypeptide, which is then hydrolyzed by acid to form numerous amino acids and a yellow DNP-Aa. The type of amino acid is identified by chromatography.</span></li><li><span>DNS Method: Similar to the Sanger method, the N-terminal amino acid is separated and identified by colorimetry.</span></li><li><span>Edman (PITC) Method: Phenyl isothiocyanate reacts with the N-terminal amino acid of the polypeptide chain to form PTC-polypeptide, which is then hydrolyzed by acid to form a PTC-amino acid and a truncated polypeptide chain. The type of amino acid is identified by chromatography, and the truncated polypeptide chain enters the next round of Edman degradation. This method can determine the amino acid sequence of dozens of peptides.</span></li><li><span>Aminopeptidase Method: Aminopeptidase hydrolyzes the peptide bond from the N-terminus to identify the type of amino acid.</span></li></ul></li><li><p><span>C-terminal determination methods:</span></p><ul><li><span>Hydrazine Method: Polypeptide reacts with anhydrous hydrazine to make the C-terminal amino acid fall off, and the type of amino acid is identified by chromatography.</span></li><li><span>Carboxypeptidase Method: Carboxypeptidase hydrolyzes the peptide bond from the C-terminus to identify the type of amino acid.</span></li></ul></li></ul><p><span>(b) Obtaining two or more sets of peptide fragments using two or more methods to hydrolyze the polypeptide.</span></p><ul><li><p><span>Enzymatic hydrolysis methods:</span></p><ul><li><span>Trypsin: Hydrolyzes the peptide bond formed by -COOH of Arg and Lys</span></li><li><span>Chymotrypsin: Hydrolyzes the peptide bond formed by -COOH of Phe, Tyr, and Trp</span></li><li><span>Elastase: Hydrolyzes the peptide bond formed by -COOH of aliphatic amino acids</span></li><li><span>Pepsin: Hydrolyzes the peptide bond formed between hydrophobic amino acids</span></li><li><span>Streptomyces Griseus Protease: Hydrolyzes the peptide bond formed by -COOH of Asp and Glu</span></li></ul></li><li><p><span>Chemical method:</span></p><ul><li><span>CNBr (Cyanogen Bromide): Hydrolyzes the peptide bond formed by -COOH of Met</span></li></ul></li></ul><p><span>(c) Separating and Sequencing Small Peptide Fragments</span></p><ul><li><span>Separation methods: Electrophoresis, gel filtration chromatography</span></li><li><span>Sequencing methods: Amino acid automatic analyzer or Edman degradation</span></li></ul><p><strong><span>(4) Peptide splicing</span></strong></p><p><span>Assembling Several Sets of Small Peptide Fragments into a Complete Polypeptide using a computer.</span></p><p><strong><span>(5) Determination of the Location of Disulfide Bonds</span></strong></p><p><span>If there are Cys in the polypeptide chain, diagonal electrophoresis can be used to determine their location.</span></p><p>&nbsp;</p><h3 id='552advanced-structure-determination'><span>5.5.2.Advanced Structure Determination</span></h3><ul><li><span>X-ray diffraction</span></li><li><span>Nuclear Magnetic Resonance (NMR)</span></li><li><span>Cryo-electron microscopy (Before AlphaFold, Shih Yigong, Yan Ning and other structural biologists used this method to analyze protein spatial structure.)</span></li></ul><p><img src="http://43.143.164.107:8000/生物化学/氨基酸与蛋白质/%E5%86%B7%E5%86%BB%E7%94%B5%E9%95%9C.png" referrerpolicy="no-referrer"></p></div></div>
+
+</div>
+
+</div>
+</main>
+
+<script src="bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ed38f6d2bda5881f1e32b079fec99636";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    document.body.oncontextmenu = 
+    document.body.ondragstart = 
+    document.body.onselectstart = 
+    document.body.onbeforecopy = 
+    function () { return false; };
+    document.body.onselect = 
+    document.body.oncopy = 
+    document.body.onmouseup = 
+    function () { document.selection.empty(); };
+</script>
+
+<script>
+var navbar = document.querySelector('.navbar');
+// 初始滚动位置
+var prevScrollPos = window.pageYOffset;
+
+window.addEventListener('scroll', function() {
+  // 当前滚动位置
+  var currentScrollPos = window.pageYOffset;
+
+  // 判断滚动方向
+  if (prevScrollPos > currentScrollPos) {
+    // 上滑，显示导航栏
+    navbar.style.top = '0';
+  } else {
+    // 下滑，隐藏导航栏
+    navbar.style.top = '-100px'; // 根据实际导航栏高度进行调整
+  }
+
+  // 更新滚动位置
+  prevScrollPos = currentScrollPos;
+});
+</script>
+</html>

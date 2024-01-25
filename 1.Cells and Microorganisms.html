@@ -1,0 +1,740 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link href="gene.ico" rel="SHORTCUT ICON">
+    <title>Docs | 1.Cell and Microorganisms</title>
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar {background-color:#183055; width: 260px; font-size: 0.8rem; color:white; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content {background-color:#183055; position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 50px; width: 260px; }
+@media screen and (max-width: 1440px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 230px; }
+}
+@media screen and (max-width: 950px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+
+
+:root {
+    --side-bar-bg-color: #F5F5F5;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+
+}
+h2 {
+    font-size: 2em;
+    line-height: 1.225;
+
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Introduction</title>
+</head>
+
+
+<main class='container col-11'>
+
+
+
+<div class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#11the-big-bang"><strong>1.1.The Big Bang</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#12cell-structure"><strong>1.2.Cell Structure</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#13prokaryotic-cells-and-eukaryotic-cells"><strong>1.3.Prokaryotic Cells and Eukaryotic Cells</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#131three-domain-theory"><strong>1.3.1.Three-Domain Theory</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#132cellular-differences"><strong>1.3.2.Cellular Differences</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#14biological-evolution"><strong>1.4.Biological Evolution</strong></a></div><ul class="outline-children"></ul></li>
+
+<br><span style='margin-left:25px; font-size:16px;' >Previous</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='Introduction.html'>Introduction</a>
+<br><span style='margin-left:25px; font-size:16px;'>Next</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='2.Biomolecules.html'>2.Biomolecules</a>
+<br><br>
+
+</div></div>
+
+    <div id='write'  class=''><div style="background-color:whitesmoke">
+<details style='font-size:12px;'>
+    <summary><strong>1.Cell and Microorganisms</strong></summary>
+    <a href="introduction.html">Return to Introduction</a><br><hr>
+    <strong>Next</strong>:<a href="2.Biomolecules.html">2.Biomolecules</a>
+</details>
+</div><h2 id='11the-big-bang'><strong><span>1.1.The Big Bang</span></strong></h2><p><img src="media/1/史前生物.jpg" style="zoom:100%;" /></p><p><span>Over 10 billion years ago, the universe🌌 was born with a massive explosion of subatomic particles rich in energy. Within seconds, the simplest atoms such as H and He were formed. Later, under the influence of gravity, matter condensed into planets, releasing the energy needed to fuse some simpler atomic nuclei into more complex elements. After several hundred million years, the Earth and all the chemical elements found on it were formed. These elements make up atoms, and atoms combine to form molecules, and small molecules stack up to eventually form corresponding biological macromolecules. However, at this time, the Earth was still in a non-living state.</span></p><p><span>As the Earth evolved, simple microorganisms that could extract energy from sunlight - life - appeared. Billions of years ago, on a certain day on Earth, blue-green algae were born. Early Earth had no oxygen, but these insignificant single-celled organisms made the anaerobic atmosphere aerobic through their own oxygen-producing photosynthesis and nitrogen fixation. Later, single-cell bacteria and archaea were born. Then, eukaryotic organisms were born, including fungi, plants, and animals. The first vertebrate to evolve was probably fish, and some brave fish swam onto land and evolved into reptiles and mammals; the former flew into the air and became birds, while the latter grew tails and became monkeys; monkeys evolved into apes, and later into various populations of humans. Undoubtedly, humans are the highest evolved beings on this timeline. What is the mechanism behind the emergence and evolution of life? - This question, which has plagued all kinds of life since the beginning of the Big Bang, was finally answered with the arrival of Darwin. To explore the nature of life, the discipline of Biochemistry was born.</span></p><p><img src="media/1/演变.jpg" style="zoom: 50%;" /></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='12cell-structure'><strong><span>1.2.Cell Structure</span></strong></h2><p><span>The cell is the basic structural and functional unit of all living organisms. From single-celled organisms like paramecium to complex organisms like humans, countless small cells form tissues, tissues form organs, and organs coordinate with each other, forming a complex network of life. Although living organisms are so complex, cells still maintain a certain degree of independence.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="252.79998779296875" style="max-width: 700.371826171875px;" viewBox="0 0.0000019073486328125 700.371826171875 252.79998779296875"><style>#mermaidChart0 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart0 .error-icon{fill:#552222;}#mermaidChart0 .error-text{fill:#552222;stroke:#552222;}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#333333;stroke:#333333;}#mermaidChart0 .marker.cross{stroke:#333333;}#mermaidChart0 svg{font-family:sans-serif;font-size:16px;}#mermaidChart0 .label{font-family:sans-serif;color:#333;}#mermaidChart0 .cluster-label text{fill:#333;}#mermaidChart0 .cluster-label span{color:#333;}#mermaidChart0 .label text,#mermaidChart0 span{fill:#333;color:#333;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart0 .node .label{text-align:center;}#mermaidChart0 .node.clickable{cursor:pointer;}#mermaidChart0 .arrowheadPath{fill:#333333;}#mermaidChart0 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart0 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart0 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart0 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart0 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart0 .cluster text{fill:#333;}#mermaidChart0 .cluster span{color:#333;}#mermaidChart0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart0 :root{--mermaid-font-family:sans-serif;}#mermaidChart0 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Cell-composition LE-Water" id="L-Cell-composition-Water" style="opacity: 1;"><path class="path" d="M131.22492747147083,55.79999923706055L183.71250915527344,30.799999237060547L228.5609474182129,30.799999237060547" marker-end="url(#arrowhead20)" style="fill:none"></path><defs><marker id="arrowhead20" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Cell-composition LE-Dry-matter" id="L-Cell-composition-Dry-matter" style="opacity: 1;"><path class="path" d="M131.22492747147083,101.39999771118164L183.71250915527344,126.39999771118164L208.71250915527344,126.39999771118164" marker-end="url(#arrowhead21)" style="fill:none"></path><defs><marker id="arrowhead21" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Dry-matter LE-Organic-matter" id="L-Dry-matter-Organic-matter" style="opacity: 1;"><path class="path" d="M298.3244277828814,103.5999984741211L338.90938568115234,78.5999984741211L363.90938568115234,78.5999984741211" marker-end="url(#arrowhead22)" style="fill:none"></path><defs><marker id="arrowhead22" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Dry-matter LE-Inorganic-salts" id="L-Dry-matter-Inorganic-salts" style="opacity: 1;"><path class="path" d="M298.3244277828814,149.1999969482422L338.90938568115234,174.1999969482422L366.52813720703125,174.1999969482422" marker-end="url(#arrowhead23)" style="fill:none"></path><defs><marker id="arrowhead23" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Inorganic-salts LE-Major-elements" id="L-Inorganic-salts-Major-elements" style="opacity: 1;"><path class="path" d="M477.65389326517766,151.39999771118164L526.7843856811523,126.39999771118164L551.7843856811523,126.39999771118164" marker-end="url(#arrowhead24)" style="fill:none"></path><defs><marker id="arrowhead24" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Inorganic-salts LE-Trace-elements" id="L-Inorganic-salts-Trace-elements" style="opacity: 1;"><path class="path" d="M477.65389326517766,196.99999618530273L526.7843856811523,221.99999618530273L553.8968811035156,221.99999618530273" marker-end="url(#arrowhead25)" style="fill:none"></path><defs><marker id="arrowhead25" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cell-composition-Water" class="edgeLabel L-LS-Cell-composition' L-LE-Water"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cell-composition-Dry-matter" class="edgeLabel L-LS-Cell-composition' L-LE-Dry-matter"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Dry-matter-Organic-matter" class="edgeLabel L-LS-Dry-matter' L-LE-Organic-matter"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Dry-matter-Inorganic-salts" class="edgeLabel L-LS-Dry-matter' L-LE-Inorganic-salts"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Inorganic-salts-Major-elements" class="edgeLabel L-LS-Inorganic-salts' L-LE-Major-elements"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Inorganic-salts-Trace-elements" class="edgeLabel L-LS-Inorganic-salts' L-LE-Trace-elements"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Cell-composition-12" transform="translate(83.35625457763672,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-75.35625457763672" y="-22.800000190734863" width="150.71250915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-65.35625457763672,-12.800000190734863)"><foreignObject width="130.71250915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Cell-composition</div></foreignObject></g></g></g><g class="node default" id="flowchart-Water-13" transform="translate(261.3109474182129,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-32.75" y="-22.800000190734863" width="65.5" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-22.75,-12.800000190734863)"><foreignObject width="45.5" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Water</div></foreignObject></g></g></g><g class="node default" id="flowchart-Dry-matter-15" transform="translate(261.3109474182129,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-52.59843826293945" y="-22.800000190734863" width="105.1968765258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-42.59843826293945,-12.800000190734863)"><foreignObject width="85.1968765258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Dry-matter</div></foreignObject></g></g></g><g class="node default" id="flowchart-Organic-matter-17" transform="translate(432.84688568115234,78.5999984741211)" style="opacity: 1;"><rect rx="0" ry="0" x="-68.9375" y="-22.800000190734863" width="137.875" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-58.9375,-12.800000190734863)"><foreignObject width="117.875" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Organic-matter</div></foreignObject></g></g></g><g class="node default" id="flowchart-Inorganic-salts-19" transform="translate(432.84688568115234,174.1999969482422)" style="opacity: 1;"><rect rx="0" ry="0" x="-66.31875228881836" y="-22.800000190734863" width="132.63750457763672" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-56.31875228881836,-12.800000190734863)"><foreignObject width="112.63750457763672" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Inorganic-salts</div></foreignObject></g></g></g><g class="node default" id="flowchart-Major-elements-21" transform="translate(622.0781326293945,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-70.29375076293945" y="-22.800000190734863" width="140.5875015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-60.29375076293945,-12.800000190734863)"><foreignObject width="120.5875015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Major-elements</div></foreignObject></g></g></g><g class="node default" id="flowchart-Trace-elements-23" transform="translate(622.0781326293945,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-68.1812515258789" y="-22.800000190734863" width="136.3625030517578" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-58.181251525878906,-12.800000190734863)"><foreignObject width="116.36250305175781" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Trace-elements</div></foreignObject></g></g></g></g></g></g></svg></div><p><strong><span>The cell membrane or cell wall</span></strong><span> separates the cell from the external environment. The cell wall contains a large amount of polysaccharides and proteins, giving the cell a certain mechanical strength; the membrane is a phospholipid bilayer structure, formed by countless lipids and proteins aggregated together through hydrophobic interactions, and the </span><strong><span>fluid mosaic model also elucidates the mechanism of biological membranes</span></strong><span>. There are many receptor proteins and transport proteins on the membrane, responsible for transmitting extracellular signals and participating in substance transport. The cell membrane and cell wall also form the structural basis for cell growth and division. For example, during bacterial cell growth, new peptidoglycan monomers are inserted into the growing sites of the peptidoglycan layer. The membrane also completes </span><strong><span>endocytosis</span></strong><span> and </span><strong><span>exocytosis</span></strong><span> of substances into and out of the cell through fusion and division.</span></p><p><span>Once inside the microscopic world of the cell, there are various cell organelles (in eukaryotic cells) and biomolecules. Apart from the nucleus/nucleoid, the part surrounded by the membrane is called </span><strong><span>cytoplasm</span></strong><span>, also known as cell sol. Typical eukaryotic cells are much larger than prokaryotic cells. A significant feature that distinguishes eukaryotic cells from prokaryotic cells is the presence of a membrane-bound cell nucleus and numerous membrane-bound organelles.</span></p><figure><table><thead><tr><th style='text-align:center;' ><strong><span>Cell Wall and Cell Membrane</span></strong></th><th style='text-align:center;' ><strong><span>Cell Nucleus</span></strong></th><th style='text-align:center;' ><strong><span>Cytoskeleton</span></strong></th><th><span>Lysosome</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="media/1/细胞壁.png" style="zoom: 50%;" /></td><td style='text-align:center;' ><img src="media/1/细胞核.png" style="zoom: 50%;" /></td><td style='text-align:center;' ><img src="media/1/细胞骨架.png" style="zoom: 50%;" /></td><td><img src="media/1/溶酶体.png" style="zoom: 50%;" /></td></tr><tr><td style='text-align:center;' ><strong><span>Rough Endoplasmic Reticulum</span></strong></td><td style='text-align:center;' ><strong><span>Golgi Apparatus</span></strong></td><td style='text-align:center;' ><strong><span>Mitochondria</span></strong></td><td><strong><span>Chloroplast</span></strong></td></tr><tr><td style='text-align:center;' ><img src="media/1/内质网.png" style="zoom: 50%;" /></td><td style='text-align:center;' ><img src="media/1/高尔基体.png" style="zoom: 50%;" /></td><td style='text-align:center;' ><img src="media/1/线粒体.png" style="zoom: 50%;" /></td><td><img src="media/1/叶绿体.png" style="zoom: 50%;" /></td></tr></tbody></table></figure><p><strong><span>Ribosomes</span></strong><span> are cellular organelles composed of proteins and RNA. They are responsible for the assembly of polypeptide chains and protein synthesis. Ribosomes are membrane-less organelles. In prokaryotic cells, the size of ribosomes is 70s, consisting of a 50s large subunit and a 30s small subunit. In eukaryotic cells, the size of ribosomes is 80s, consisting of a 60s large subunit and a 40s small subunit. Sometimes multiple ribosomes can be connected together to form a structure called </span><strong><span>polysomes</span></strong><span>, which simultaneously initiate the process of polypeptide translation. Free ribosomes in the cytoplasm are mainly responsible for synthesizing proteins that remain in the cytoplasm.</span></p><p><strong><span>Endoplasmic reticulum (ER)</span></strong><span> is a three-dimensional network of membrane-enclosed spaces. Based on whether ribosomes are attached to the ER, it can be divided into </span><strong><span>rough ER</span></strong><span> and </span><strong><span>smooth ER</span></strong><span>. Ribosomes attached to the rough ER are responsible for synthesizing secreted proteins, digestive enzymes in lysosomes, membrane proteins, etc. The smooth ER, which lacks ribosomes, is primarily involved in lipid synthesis. The </span><strong><span>Golgi apparatus</span></strong><span> is responsible for sorting, processing, and modifying proteins transported from the rough ER. Processed proteins are then transported to their correct destinations in vesicles.</span></p><p><strong><span>Lysosomes</span></strong><span> contain numerous enzymes that can degrade proteins, polysaccharides, nucleic acids, and lipids. When certain biomacromolecules or damaged cells enter lysosomes, they are degraded into simple small molecular substances, such as amino acids and fatty acids, which can be reused in cellular metabolism. The enzymes inside lysosomes are deactivated in the slightly alkaline cytoplasm with a pH of around 7, which protects the cell from self-degradation. Lysosomes are only present in animal cells, while plant cells have </span><strong><span>vacuoles</span></strong><span> that perform degradation functions as well as storage of pigments and providing structural support.</span></p><p><strong><span>Mitochondria</span></strong><span> are the powerhouses of the cell. They contain three major bioenergetic systems: the tricarboxylic acid (TCA) cycle, fatty acid beta-oxidation, and the respiratory chain and oxidative phosphorylation system. The oxidation reactions in mitochondria release a large amount of chemical energy, which is converted into biological energy, adenosine triphosphate (ATP), to provide energy for cellular activities. Mitochondria have a double-membrane structure, and the respiratory chain is located on the inner membrane.</span></p><p><strong><span>Chloroplasts</span></strong><span> are also double-membrane organelles and can be considered as energy factories. Unlike mitochondria, chloroplasts capture light energy through photosynthetic pigments and use it to synthesize ATP through photosynthetic phosphorylation. They also convert CO</span><sub><span>2</span></sub><span> into organic carbon compounds.</span></p><p><span>Compared to the simple circular naked nucleoid in prokaryotic cells, eukaryotic cells have a complex </span><strong><span>nucleus</span></strong><span>. The nucleus is surrounded by a nuclear membrane and contains nucleoplasm, nucleoli, as well as RNA and proteins. The most important component is the linear </span><strong><span>chromatin (chromosomes)</span></strong><span>. The nucleus is the site for DNA replication, repair, transcription, and post-transcriptional processing. Mature mRNA enters the cytoplasm through nuclear pores and binds to ribosomes to initiate translation. Therefore, unlike prokaryotic cells that simultaneously transcribe and translate genes, gene replication and expression in eukaryotic cells have strict spatial and temporal specificity.</span></p><p><span>In eukaryotic cells, </span><strong><span>microtubules</span></strong><span>, </span><strong><span>microfilaments</span></strong><span>, and </span><strong><span>intermediate filaments</span></strong><span> form the cytoskeleton, which plays a crucial role in maintaining cell shape and structure. Microtubules and microfilaments are also involved in cell movement.</span></p><p><span>In addition, there are other important components in the cell that are not listed here. For more information, please refer to </span><em><span>Cell Biology</span></em><span>.</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='13prokaryotic-cells-and-eukaryotic-cells'><strong><span>1.3.Prokaryotic Cells and Eukaryotic Cells</span></strong></h2><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="539.6000366210938" style="max-width: 1304.371826171875px;" viewBox="0 0.0000019073486328125 1304.371826171875 539.6000366210938"><style>#mermaidChart1 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart1 .error-icon{fill:#552222;}#mermaidChart1 .error-text{fill:#552222;stroke:#552222;}#mermaidChart1 .edge-thickness-normal{stroke-width:2px;}#mermaidChart1 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart1 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart1 .marker{fill:#333333;stroke:#333333;}#mermaidChart1 .marker.cross{stroke:#333333;}#mermaidChart1 svg{font-family:sans-serif;font-size:16px;}#mermaidChart1 .label{font-family:sans-serif;color:#333;}#mermaidChart1 .cluster-label text{fill:#333;}#mermaidChart1 .cluster-label span{color:#333;}#mermaidChart1 .label text,#mermaidChart1 span{fill:#333;color:#333;}#mermaidChart1 .node rect,#mermaidChart1 .node circle,#mermaidChart1 .node ellipse,#mermaidChart1 .node polygon,#mermaidChart1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart1 .node .label{text-align:center;}#mermaidChart1 .node.clickable{cursor:pointer;}#mermaidChart1 .arrowheadPath{fill:#333333;}#mermaidChart1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart1 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart1 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart1 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart1 .cluster text{fill:#333;}#mermaidChart1 .cluster span{color:#333;}#mermaidChart1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart1 :root{--mermaid-font-family:sans-serif;}#mermaidChart1 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Organism LE-Cell-structure" id="L-Organism-Cell-structure" style="opacity: 1;"><path class="path" d="M89.7308059629465,246.99999618530273L127.5250015258789,221.99999618530273L185.15625,221.99999618530273" marker-end="url(#arrowhead68)" style="fill:none"></path><defs><marker id="arrowhead68" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Cell-structure LE-Prokaryotes" id="L-Cell-structure-Prokaryotes" style="opacity: 1;"><path class="path" d="M275.2927834546561,199.1999969482422L366.1500015258789,126.39999771118164L391.1500015258789,126.39999771118164" marker-end="url(#arrowhead69)" style="fill:none"></path><defs><marker id="arrowhead69" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Prokaryotes LE-Spirochete,Chlamydia,Rickettsia" id="L-Prokaryotes-Spirochete,Chlamydia,Rickettsia" style="opacity: 1;"><path class="path" d="M465.89325527269926,103.5999984741211L527.2218780517578,30.799999237060547L573.5390625,30.799999237060547" marker-end="url(#arrowhead70)" style="fill:none"></path><defs><marker id="arrowhead70" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Prokaryotes LE-bacteria,actinomycetes,cyanobacteria" id="L-Prokaryotes-bacteria,actinomycetes,cyanobacteria" style="opacity: 1;"><path class="path" d="M502.2218780517578,126.39999771118164L527.2218780517578,126.39999771118164L552.2218780517578,126.39999771118164" marker-end="url(#arrowhead71)" style="fill:none"></path><defs><marker id="arrowhead71" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Prokaryotes LE-Archaea" id="L-Prokaryotes-Archaea" style="opacity: 1;"><path class="path" d="M465.89325527269926,149.1999969482422L527.2218780517578,221.99999618530273L663.7968788146973,221.99999618530273" marker-end="url(#arrowhead72)" style="fill:none"></path><defs><marker id="arrowhead72" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Cell-structure LE-Eukaryotes" id="L-Cell-structure-Eukaryotes" style="opacity: 1;"><path class="path" d="M275.2927834546561,244.79999542236328L366.1500015258789,317.5999946594238L394.74219131469727,317.5999946594238" marker-end="url(#arrowhead73)" style="fill:none"></path><defs><marker id="arrowhead73" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Eukaryotes LE-Eukaryotic-microorganisms" id="L-Eukaryotes-Eukaryotic-microorganisms" style="opacity: 1;"><path class="path" d="M498.62968826293945,317.5999946594238L527.2218780517578,317.5999946594238L590.1281280517578,317.5999946594238" marker-end="url(#arrowhead74)" style="fill:none"></path><defs><marker id="arrowhead74" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Eukaryotic-microorganisms LE-Protists" id="L-Eukaryotic-microorganisms-Protists" style="opacity: 1;"><path class="path" d="M747.0158103654104,294.7999954223633L882.1593780517578,221.99999618530273L907.1593780517578,221.99999618530273" marker-end="url(#arrowhead75)" style="fill:none"></path><defs><marker id="arrowhead75" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Eukaryotic-microorganisms LE-Algae" id="L-Eukaryotic-microorganisms-Algae" style="opacity: 1;"><path class="path" d="M819.2531280517578,317.5999946594238L882.1593780517578,317.5999946594238L913.7390670776367,317.5999946594238" marker-end="url(#arrowhead76)" style="fill:none"></path><defs><marker id="arrowhead76" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Eukaryotic-microorganisms LE-Fungi" id="L-Eukaryotic-microorganisms-Fungi" style="opacity: 1;"><path class="path" d="M747.0158103654104,340.3999938964844L882.1593780517578,413.1999931335449L914.2218780517578,413.1999931335449" marker-end="url(#arrowhead77)" style="fill:none"></path><defs><marker id="arrowhead77" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Fungi LE-True-fungi" id="L-Fungi-True-fungi" style="opacity: 1;"><path class="path" d="M955.6614446591132,390.3999938964844L1008.9968795776367,269.7999954223633L1038.4968795776367,269.7999954223633" marker-end="url(#arrowhead78)" style="fill:none"></path><defs><marker id="arrowhead78" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-True-fungi LE-Yeast" id="L-True-fungi-Yeast" style="opacity: 1;"><path class="path" d="M1100.7893488607442,246.99999618530273L1167.3968811035156,126.39999771118164L1214.6656303405762,126.39999771118164" marker-end="url(#arrowhead79)" style="fill:none"></path><defs><marker id="arrowhead79" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-True-fungi LE-Mold" id="L-True-fungi-Mold" style="opacity: 1;"><path class="path" d="M1125.97428590108,246.99999618530273L1167.3968811035156,221.99999618530273L1214.2328186035156,221.99999618530273" marker-end="url(#arrowhead80)" style="fill:none"></path><defs><marker id="arrowhead80" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-True-fungi LE-Mushroom" id="L-True-fungi-Mushroom" style="opacity: 1;"><path class="path" d="M1125.97428590108,292.5999946594238L1167.3968811035156,317.5999946594238L1192.3968811035156,317.5999946594238" marker-end="url(#arrowhead81)" style="fill:none"></path><defs><marker id="arrowhead81" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Fungi LE-False-fungi" id="L-Fungi-False-fungi" style="opacity: 1;"><path class="path" d="M976.9343795776367,413.1999931335449L1008.9968795776367,413.1999931335449L1036.1343803405762,413.1999931335449" marker-end="url(#arrowhead82)" style="fill:none"></path><defs><marker id="arrowhead82" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Fungi LE-Slime-mold" id="L-Fungi-Slime-mold" style="opacity: 1;"><path class="path" d="M960.703102581321,435.99999237060547L1008.9968795776367,508.799991607666L1033.9968795776367,508.799991607666" marker-end="url(#arrowhead83)" style="fill:none"></path><defs><marker id="arrowhead83" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Organism LE-Non-cellular-structure" id="L-Organism-Non-cellular-structure" style="opacity: 1;"><path class="path" d="M89.7308059629465,292.5999946594238L127.5250015258789,317.5999946594238L152.5250015258789,317.5999946594238" marker-end="url(#arrowhead84)" style="fill:none"></path><defs><marker id="arrowhead84" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Organism-Cell-structure" class="edgeLabel L-LS-Organism' L-LE-Cell-structure"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cell-structure-Prokaryotes" class="edgeLabel L-LS-Cell-structure' L-LE-Prokaryotes"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Prokaryotes-Spirochete,Chlamydia,Rickettsia" class="edgeLabel L-LS-Prokaryotes' L-LE-Spirochete,Chlamydia,Rickettsia"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Prokaryotes-bacteria,actinomycetes,cyanobacteria" class="edgeLabel L-LS-Prokaryotes' L-LE-bacteria,actinomycetes,cyanobacteria"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Prokaryotes-Archaea" class="edgeLabel L-LS-Prokaryotes' L-LE-Archaea"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Cell-structure-Eukaryotes" class="edgeLabel L-LS-Cell-structure' L-LE-Eukaryotes"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Eukaryotes-Eukaryotic-microorganisms" class="edgeLabel L-LS-Eukaryotes' L-LE-Eukaryotic-microorganisms"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Eukaryotic-microorganisms-Protists" class="edgeLabel L-LS-Eukaryotic-microorganisms' L-LE-Protists"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Eukaryotic-microorganisms-Algae" class="edgeLabel L-LS-Eukaryotic-microorganisms' L-LE-Algae"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Eukaryotic-microorganisms-Fungi" class="edgeLabel L-LS-Eukaryotic-microorganisms' L-LE-Fungi"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Fungi-True-fungi" class="edgeLabel L-LS-Fungi' L-LE-True-fungi"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-True-fungi-Yeast" class="edgeLabel L-LS-True-fungi' L-LE-Yeast"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-True-fungi-Mold" class="edgeLabel L-LS-True-fungi' L-LE-Mold"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-True-fungi-Mushroom" class="edgeLabel L-LS-True-fungi' L-LE-Mushroom"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Fungi-False-fungi" class="edgeLabel L-LS-Fungi' L-LE-False-fungi"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Fungi-Slime-mold" class="edgeLabel L-LS-Fungi' L-LE-Slime-mold"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Organism-Non-cellular-structure" class="edgeLabel L-LS-Organism' L-LE-Non-cellular-structure"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Organism-56" transform="translate(55.26250076293945,269.7999954223633)" style="opacity: 1;"><rect rx="0" ry="0" x="-47.26250076293945" y="-22.800000190734863" width="94.5250015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-37.26250076293945,-12.800000190734863)"><foreignObject width="74.5250015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Organism</div></foreignObject></g></g></g><g class="node default" id="flowchart-Cell-structure-57" transform="translate(246.8375015258789,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-61.681251525878906" y="-22.800000190734863" width="123.36250305175781" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-51.681251525878906,-12.800000190734863)"><foreignObject width="103.36250305175781" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Cell-structure</div></foreignObject></g></g></g><g class="node default" id="flowchart-Prokaryotes-58" transform="translate(446.68593978881836,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-55.53593826293945" y="-22.800000190734863" width="111.0718765258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-45.53593826293945,-12.800000190734863)"><foreignObject width="91.0718765258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Prokaryotes</div></foreignObject></g></g></g><g class="node default" id="flowchart-Spirochete,Chlamydia,Rickettsia-60" transform="translate(704.6906280517578,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-131.1515655517578" y="-22.800000190734863" width="262.3031311035156" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-121.15156555175781,-12.800000190734863)"><foreignObject width="242.30313110351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Spirochete,Chlamydia,Rickettsia</div></foreignObject></g></g></g><g class="node default" id="flowchart-bacteria,actinomycetes,cyanobacteria-62" transform="translate(704.6906280517578,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-152.46875" y="-22.800000190734863" width="304.9375" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-142.46875,-12.800000190734863)"><foreignObject width="284.9375" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">bacteria,actinomycetes,cyanobacteria</div></foreignObject></g></g></g><g class="node default" id="flowchart-Archaea-64" transform="translate(704.6906280517578,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-40.89375114440918" y="-22.800000190734863" width="81.78750228881836" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-30.89375114440918,-12.800000190734863)"><foreignObject width="61.78750228881836" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Archaea</div></foreignObject></g></g></g><g class="node default" id="flowchart-Eukaryotes-66" transform="translate(446.68593978881836,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-51.94375228881836" y="-22.800000190734863" width="103.88750457763672" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-41.94375228881836,-12.800000190734863)"><foreignObject width="83.88750457763672" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Eukaryotes</div></foreignObject></g></g></g><g class="node default" id="flowchart-Eukaryotic-microorganisms-67" transform="translate(704.6906280517578,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-114.5625" y="-22.800000190734863" width="229.125" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-104.5625,-12.800000190734863)"><foreignObject width="209.125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Eukaryotic-microorganisms</div></foreignObject></g></g></g><g class="node default" id="flowchart-Protists-69" transform="translate(945.5781288146973,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.41875076293945" y="-22.800000190734863" width="76.8375015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.418750762939453,-12.800000190734863)"><foreignObject width="56.837501525878906" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Protists</div></foreignObject></g></g></g><g class="node default" id="flowchart-Algae-71" transform="translate(945.5781288146973,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.83906364440918" y="-22.800000190734863" width="63.67812728881836" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.83906364440918,-12.800000190734863)"><foreignObject width="43.67812728881836" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Algae</div></foreignObject></g></g></g><g class="node default" id="flowchart-Fungi-73" transform="translate(945.5781288146973,413.1999931335449)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.356250762939453" y="-22.800000190734863" width="62.712501525878906" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.356250762939453,-12.800000190734863)"><foreignObject width="42.712501525878906" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Fungi</div></foreignObject></g></g></g><g class="node default" id="flowchart-True-fungi-75" transform="translate(1088.1968803405762,269.7999954223633)" style="opacity: 1;"><rect rx="0" ry="0" x="-49.70000076293945" y="-22.800000190734863" width="99.4000015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-39.70000076293945,-12.800000190734863)"><foreignObject width="79.4000015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">True-fungi</div></foreignObject></g></g></g><g class="node default" id="flowchart-Yeast-77" transform="translate(1244.3843803405762,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-29.71875" y="-22.800000190734863" width="59.4375" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-19.71875,-12.800000190734863)"><foreignObject width="39.4375" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Yeast</div></foreignObject></g></g></g><g class="node default" id="flowchart-Mold-79" transform="translate(1244.3843803405762,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.15156364440918" y="-22.800000190734863" width="60.30312728881836" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.15156364440918,-12.800000190734863)"><foreignObject width="40.30312728881836" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Mold</div></foreignObject></g></g></g><g class="node default" id="flowchart-Mushroom-81" transform="translate(1244.3843803405762,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-51.98749923706055" y="-22.800000190734863" width="103.9749984741211" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-41.98749923706055,-12.800000190734863)"><foreignObject width="83.9749984741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Mushroom</div></foreignObject></g></g></g><g class="node default" id="flowchart-False-fungi-83" transform="translate(1088.1968803405762,413.1999931335449)" style="opacity: 1;"><rect rx="0" ry="0" x="-52.0625" y="-22.800000190734863" width="104.125" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-42.0625,-12.800000190734863)"><foreignObject width="84.125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">False-fungi</div></foreignObject></g></g></g><g class="node default" id="flowchart-Slime-mold-85" transform="translate(1088.1968803405762,508.799991607666)" style="opacity: 1;"><rect rx="0" ry="0" x="-54.20000076293945" y="-22.800000190734863" width="108.4000015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-44.20000076293945,-12.800000190734863)"><foreignObject width="88.4000015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Slime-mold</div></foreignObject></g></g></g><g class="node default" id="flowchart-Non-cellular-structure-87" transform="translate(246.8375015258789,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-94.3125" y="-22.800000190734863" width="188.625" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-84.3125,-12.800000190734863)"><foreignObject width="168.625" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Non-cellular-structure</div></foreignObject></g></g></g></g></g></g></svg></div><p>&nbsp;</p><h3 id='131three-domain-theory'><strong><span>1.3.1.Three-Domain Theory</span></strong></h3><p><strong><span>Woese</span></strong><span> determined that all existing organisms evolved from three lineages through the sequencing of 16S rRNA and 18S rRNA: Bacteria domain, Archaea domain, and Eukaryote domain, also known as the </span><strong><span>three-domain theory</span></strong><span>. Prokaryotic cells, often referred to as prokaryotic microorganisms, include true bacteria (three bacteria and three bodies) and archaea. Although archaea are taxonomically closer to eukaryotes, they are still classified as prokaryotic microorganisms based on their cellular structure and physiological metabolism characteristics.</span></p><blockquote><p><span>Phylogenetic analysis based on 16S (18S) rRNA:</span></p><ul><li><span>rRNA sequencing: Extract the genome of the organism to be tested, design appropriate primers to amplify the 16S (18S) rRNA gene, sequence the gene, input the sequence results into the database, and analyze and align the sequences to roughly determine the taxonomic status of the strain.</span></li><li><span>Construction of phylogenetic trees: Input the sequence into a computer, use the computer to perform BLAST sequence alignment analysis, and construct a phylogenetic tree.</span></li></ul></blockquote><p><span>I hope this translation is helpful! Let me know if you need further assistance or have other content to translate.</span></p><p><img src="media/1/三域学说.jpg" style="zoom: 45%;" /></p><p>&nbsp;</p><h3 id='132cellular-differences'><strong><span>1.3.2.Cellular Differences</span></strong></h3><p><span>As mentioned earlier, the main difference between prokaryotic cells (microorganisms) and eukaryotic cells (microorganisms) is whether they have a complete nucleus or not. Prokaryotic organisms have a naked nuclear area instead, so DNA transcription and translation occur simultaneously. Prokaryotic cells use membrane proteins or intramembrane systems to replace missing membrane-enclosed organelles and perform corresponding physiological activities, such as </span><strong><span>mesosomes</span></strong><span> acting as mitochondria in prokaryotic organisms, and </span><strong><span>plastids and chromoplasts</span></strong><span> acting as photosynthetic organs in blue-green algae and photosynthetic bacteria. There are also some intracellular substances in prokaryotic cells, such as heterochromatin particles, poly-β-hydroxybutyrate, lipid granules, and starch granules, which are responsible for storing corresponding chemical substances and reducing osmotic pressure.</span></p><ul><li><span>The following table lists some common differences between </span><strong><span>bacteria, archaea, and eukaryotes</span></strong><span>:</span></li></ul><figure><table><thead><tr><th>&nbsp;</th><th><span>True Bacteria</span></th><th><span>Archaea</span></th><th><span>Eukaryotes</span></th></tr></thead><tbody><tr><td><span>Cell Nucleus</span></td><td><span>✖</span></td><td><span>✖</span></td><td><span>✔</span></td></tr><tr><td><span>Circular DNA</span></td><td><span>✔</span></td><td><span>✔</span></td><td><span>✖</span></td></tr><tr><td><span>Membrane-bound organelles</span></td><td><span>✖</span></td><td><span>✖</span></td><td><span>✔</span></td></tr><tr><td><span>Cell Wall</span></td><td><span>Peptidoglycan</span></td><td><span>Polysaccharides (Pseudopeptidoglycan)</span></td><td><span>Polysaccharides (chitin, cellulose, glucan, mannan)</span></td></tr><tr><td><span>Ribosome</span></td><td><span>70S</span></td><td><span>70S</span></td><td><span>80S</span></td></tr><tr><td><span>Initiation Amino Acid</span></td><td><span>Met</span></td><td><span>fMet</span></td><td><span>fMet</span></td></tr><tr><td><span>Multiple Codon</span></td><td><span>✔</span></td><td><span>✔</span></td><td><span>✖</span></td></tr><tr><td><span>mRNA Capping and Tail</span></td><td><span>✖</span></td><td><span>✖</span></td><td><span>✔</span></td></tr><tr><td><span>Nitrogen fixation</span></td><td><span>✔</span></td><td><span>✔</span></td><td><span>✖</span></td></tr><tr><td><span>Photosynthesis</span></td><td><span>Based on pigments</span></td><td><span>✖</span></td><td><span>✔</span></td></tr><tr><td><span>Methanogenesis</span></td><td><span>✖</span></td><td><span>✔</span></td><td><span>✖</span></td></tr></tbody></table></figure><p>&nbsp;</p><p>&nbsp;</p><h2 id='14biological-evolution'><strong><span>1.4.Biological Evolution</span></strong></h2><p><span>Prokaryotic microorganisms represented by bacteria and archaea were the first life forms to appear on Earth. Bacteria are mostly found in soil, water, air, and decaying corpses, while archaea, due to the special nature of their cell walls and membranes, have strong resistance to adversity and mostly live in high-temperature, high-acid, and high-salt environments. The study of bacterial microscopic structure greatly promoted the development of microbiology, among which Escherichia coli is one of the most thoroughly studied strains of bacteria, with the advantages of simple structure, mostly single-celled or haploid strains, simple nutritional requirements, easy artificial cultivation, rapid growth, the ability to produce various mutant strains, and strong operability. At the same time, E. coli has a clear genetic background and is an important model strain for prokaryotes, so it has always been a key research object in genetic engineering and metabolic engineering.</span></p><p><span>Bacteria exhibit a wide variety of morphologies, including cocci, bacilli, and spirilla, with bacilli being the most widely distributed. Based on their metabolic characteristics and nutritional requirements, bacteria (or microorganisms) can be roughly classified into four types of nutritional categories: </span><strong><span>photoautotrophs</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup><span>, photoheterotrophs</span><sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup><span>, chemoautotrophs</span><sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup><span>, and chemoheterotrophs</span><sup class='md-footnote'><a href='#dfref-footnote-4' name='ref-footnote-4'>4</a></sup></strong><span>. Additionally, based on their oxygen requirements, microorganisms can be further categorized as: </span><strong><span>obligate aerobes, facultative anaerobes, microaerophiles, aerotolerant anaerobes, and obligate anaerobes</span></strong><span>.</span></p><p><img src="media/1/能量来源.jpg" style="zoom: 45%;" /></p><p>&nbsp;</p><p><span>The process of prokaryotic evolution to eukaryotes can be demonstrated through the following points:</span></p><ul><li><p><strong><span>From cell morphology perspective</span></strong></p><ul><li><span>Eukaryotic cells are larger than prokaryotic cells and have a complete system of internal membrane</span></li><li><span>Eukaryotic organisms have specialized nutritional and locomotive organs on their cell surface, allowing for more complex interactions with their environment</span></li></ul></li><li><p><strong><span>From cell structure perspective</span></strong></p><ul><li><span>Eukaryotic cell walls do not contain peptidoglycan, but instead contain polysaccharides such as cellulose, chitin, and glucan, which are more cross-linked and resistant to chemical and mechanical degradation compared to the peptidoglycan or pseudopeptidoglycan in prokaryotic cell walls (applies only to microbial cells)</span></li><li><span>Eukaryotic cell membranes contain sterols, which increase the mechanical strength of the membrane, whereas prokaryotic cell membranes, except for mycoplasma, do not contain sterols; eukaryotic cell membranes also have more complex substance transport and signal transduction systems compared to prokaryotic cell membranes</span></li><li><span>Eukaryotic cells contain membrane-bound organelles in their cytoplasm, which compartmentalize the cell into subcellular structures where enzymes and metabolic pathways are located, ensuring coordinated and interconnected metabolism; prokaryotic cells lack membrane-bound organelles and perform similar functions through membrane proteins or internal membrane systems</span></li></ul></li><li><p><strong><span>From genetics and gene expression perspective</span></strong></p><ul><li><span>Eukaryotic cells have a complete nucleus structure, which allows for strict spatial and temporal regulation of gene expression - the synthesis of RNA and protein synthesis processes are separated</span></li><li><span>With the increasing DNA content of cells, </span><strong><span>chromosomes</span></strong><span>, complexes of DNA and proteins, become more tightly linked to mechanisms that ensure their even distribution to daughter cells during cell division</span></li><li><span>Eukaryotic genomes are diploid, containing two or more chromosomes with histones and carrying more genetic information, while prokaryotic genomes are haploid, consisting of a single chromosome without histones</span></li><li><span>Eukaryotic cells have larger cytoplasmic ribosomes (80S) compared to prokaryotic cells (70S), indicating greater complexity</span></li><li><span>Eukaryotes reproduce sexually, while prokaryotes do not; eukaryotes undergo mitosis, during which the chromatin is seen as a line of chromosomes under a light microscope</span></li></ul></li></ul><p><span>As life evolves, more complex animal and plant cells appear. For more information on these topics, please refer to </span><em><strong><span>Cell Biology</span></strong></em><span>.</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Animal Cell</span></th><th style='text-align:center;' ><span>Plant Cell</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="media/1/动物细胞.png" style="zoom: 45%;" /></td><td style='text-align:center;' ><img src="media/1/植物细胞.png" style="zoom: 45%;" /></td></tr></tbody></table></figure><p>&nbsp;</p><p>&nbsp;</p><div class='footnotes-area'  ><hr/>
+<div class='footnote-line'><span class='md-fn-count'>1</span> <strong><span>Photoautotrophic Microorganisms</span></strong><span>: A group of microorganisms that use light as an energy source to produce ATP through photosynthesis and use inorganic substances (H</span><sub><span>2</span></sub><span>O, H</span><sub><span>2</span></sub><span>S, Fe, S, etc.) as hydrogen donors to fix CO</span><sub><span>2</span></sub><span> into organic carbon skeletons. Examples include cyanobacteria, algae, and some photosynthetic bacteria. </span> <a name='dfref-footnote-1' href='#ref-footnote-1' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>2</span> <strong><span>Photoheterotrophic Microorganisms</span></strong><span>: A group of microorganisms that use light as an energy source to produce ATP through photosynthesis and use organic substances as hydrogen donors to fix CO</span><sub><span>2</span></sub><span> into organic carbon skeletons. Examples include Rhodospirillum (using isopropanol as the hydrogen donor, which is dehydrogenated to form acetone) </span> <a name='dfref-footnote-2' href='#ref-footnote-2' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>3</span> <strong><span>Chemoautotrophic Microorganisms</span></strong><span>: A group of microorganisms that use certain inorganic substances (NH</span><sub><span>3</span></sub><span>, NO</span><sub><span>2</span></sub><span>-~, H</span><sub><span>2</span></sub><span>O, H</span><sub><span>2</span></sub><span>S, etc.) as hydrogen donors and use the chemical energy released during their oxidation process, which is transferred to the respiratory chain, as their energy source. They also fix CO</span><sub><span>2</span></sub><span> and other carbon sources to form their own carbon skeletons. Examples include hydrogen bacteria, sulfur bacteria, iron bacteria, nitrifying bacteria, etc. </span> <a name='dfref-footnote-3' href='#ref-footnote-3' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>4</span> <strong><span>Chemoheterotrophic Microorganisms</span></strong><span>: A group of microorganisms that use multiple organic substances such as sugars and fats as their carbon and hydrogen sources. The hydrogen atoms released during oxidation are either accepted by oxygen or directly accepted by intermediate metabolites, which release chemical energy for their own use.</span> <a name='dfref-footnote-4' href='#ref-footnote-4' title='回到文档' class='reversefootnote' >↩</a></div></div></div></div>
+
+</div>
+
+
+</main>
+
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ed38f6d2bda5881f1e32b079fec99636";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    document.body.oncontextmenu = 
+    document.body.ondragstart = 
+    document.body.onselectstart = 
+    document.body.onbeforecopy = 
+    function () { return false; };
+    document.body.onselect = 
+    document.body.oncopy = 
+    document.body.onmouseup = 
+    function () { document.selection.empty(); };
+</script>
+</html>
