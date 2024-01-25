@@ -679,7 +679,7 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
-</style><title>Introduction</title>
+</style>
 
 </head>
 
@@ -704,7 +704,7 @@ header, .context-menu, .megamenu-content, footer{
     <div id='write'  class=''><div style="background-color:whitesmoke">
 <details style='font-size:12px;'>
     <summary><strong>3.Amino acids and peptides</strong></summary>
-    <a href="introduction.html">Return to Introduction</a><br><hr>
+    <a href="index.html">Return to Introduction</a><br><hr>
     <strong>Previous</strong>:<a href="2.Biomolecules.html">2.Biomolecules</a><br>
     <strong>Next</strong>:<a href="4.Protein Structure and Function.html">4.Protein Structure and Function</a>
 </details>
@@ -741,26 +741,4 @@ header, .context-menu, .megamenu-content, footer{
     function () { document.selection.empty(); };
 </script>
 
-<script>
-var navbar = document.querySelector('.navbar');
-// 初始滚动位置
-var prevScrollPos = window.pageYOffset;
-
-window.addEventListener('scroll', function() {
-  // 当前滚动位置
-  var currentScrollPos = window.pageYOffset;
-
-  // 判断滚动方向
-  if (prevScrollPos > currentScrollPos) {
-    // 上滑，显示导航栏
-    navbar.style.top = '0';
-  } else {
-    // 下滑，隐藏导航栏
-    navbar.style.top = '-100px'; // 根据实际导航栏高度进行调整
-  }
-
-  // 更新滚动位置
-  prevScrollPos = currentScrollPos;
-});
-</script>
 </html>
