@@ -1,0 +1,760 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link href="gene.ico" rel="SHORTCUT ICON">
+    <title>Docs | 9.Vitamin</title>
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar {background-color:#183055; width: 260px; font-size: 0.8rem; color:white; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content {background-color:#183055; position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 50px; width: 260px; }
+@media screen and (max-width: 1440px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 230px; }
+}
+@media screen and (max-width: 950px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+
+
+:root {
+    --side-bar-bg-color: #F5F5F5;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+
+}
+h2 {
+    font-size: 2em;
+    line-height: 1.225;
+
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<main class='container col-11'>
+<div class="my-3 p-3 bg-body rounded shadow-lg row" >
+
+
+<div class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#91profile-of-vitamins"><strong>9.1.Profile of Vitamins</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#911basic-nutrients"><strong>9.1.1.Basic Nutrients</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#912characteristics-of-vitamins"><strong>9.1.2.Characteristics of Vitamins</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#92coenzyme-and-prosthetic-group"><strong>9.2.Coenzyme and Prosthetic Group</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#93water-soluble-vitamins"><strong>9.3.Water Soluble Vitamins</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-vb1"><strong>(Ⅰ) V<sub>B1</sub></strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-vb2"><strong>(Ⅱ) V<sub>B2</sub></strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅲ-vb3vpp"><strong>(Ⅲ) V<sub>B3</sub>\V<sub>pp</sub></strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅳ-vb5"><strong>(Ⅳ) V<sub>B5</sub></strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅴ-vb6"><strong>(Ⅴ) V<sub>B6</sub></strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅵ-vb7vbh"><strong>(Ⅵ) V<sub>B7</sub>\V<sub>BH</sub></strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅶ-vb11">(Ⅶ) V<sub>B11</sub></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅷ-vitamin-b12">(Ⅷ) Vitamin B<sub>12</sub></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅸ-lipoic-acid"><strong>(Ⅸ) Lipoic Acid</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅹ-vc">(Ⅹ) V<sub>C</sub></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#94fat-soluble-vitamins"><strong>9.4.Fat soluble Vitamins</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-va">(Ⅰ) V<sub>A</sub></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-vd">(Ⅱ) V<sub>D</sub></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅲ-vitamin-e">(Ⅲ) Vitamin E</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅳ-vk">(Ⅳ) V<sub>K</sub></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#95coenzyme-regeneration"><strong>9.5.Coenzyme Regeneration</strong></a></div><ul class="outline-children"></ul></li>
+
+<br><span style='margin-left:25px; font-size:16px;' >Previous</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='8.Regulation of Enzymes.html'>8.Regulation of Enzymes</a>
+<br><span style='margin-left:25px; font-size:16px;'>Next</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='9.Vitamin.html'>10.Biological Oxidation</a>
+<br><br>
+
+</div></div>
+<div id='write'  class=''><div style="background-color:whitesmoke">
+<details style="font-size:12px;">
+    <summary><strong>9.Vitamin</strong></summary>
+    <a href="index.html">Return to Introduction</a><br><hr>
+    <strong>Previous</strong>:<a href="8.Regulation of Enzymes.html">8.Regulation of Enzymes</a><br>
+    <strong>Next</strong>:<a href="10.Biological Oxidation.html">10.Biological Oxidation</a>
+</details>
+</div><h2 id='91profile-of-vitamins'><strong><span>9.1.Profile of Vitamins</span></strong></h2><p><strong><span>Vitamins</span></strong><span>	</span><span> refer to a class of small organic compounds that are essential for maintaining normal life activities in humans and animals. They cannot be synthesized in the body or synthesized in sufficient quantities, so they need to be obtained from the external environment (food). Vitamins do not participate in the formation of various tissues and organs in the body, nor do they provide energy to the body. Instead, they participate in the metabolism of substances and energy as coenzymes or cofactors. Lack of vitamins can lead to metabolic disorders and corresponding diseases. The study of vitamins can be roughly divided into three stages.</span></p><p><span>In the first stage, specific foods were used to treat certain diseases. For example, in China, bran rice rich in V</span><sub><span>B1</span></sub><span> was used to treat beriberi, and pig liver rich in V</span><sub><span>A</span></sub><span> was used to treat &quot;night blindness.&quot; In the 18th century, European sailors knew that eating fresh fruits and vegetables could treat scurvy. In the second stage, animal models were used to induce deficiency diseases. For example, scientists found that feeding chicks polished rice would cause neuropathy similar to beriberi in humans. In the third stage, essential nutrients were discovered. Scientists found that feed containing only carbohydrates, milk protein, lipids, salts, and water cannot meet the nutritional needs of animals. Certain nutrients are also needed to maintain life activities, namely vitamins.</span></p><p>&nbsp;</p><h3 id='911basic-nutrients'><strong><span>9.1.1.Basic Nutrients</span></strong></h3><p><span>Humans must obtain various nutrients from food to maintain normal life activities. These nutrients are collectively referred to as nutrients. Food nutrients include seven major categories: carbohydrates, lipids, proteins, vitamins, water, dietary fiber, and minerals. These nutrients provide energy (carbohydrates, lipids), regulate substance metabolism (vitamins, minerals), and constitute structural components of the body (proteins). Minerals, also known as inorganic salts, include essential elements and trace elements needed by the body. More than 50 chemical elements have been discovered in the human body, of which C, O, N, and H are mainly present in the form of organic compounds, and Ca, Mg, Na, K, Cl, P, and S are major elements, accounting for 60-80% of the total ash content of the human body.</span></p><p><img src="media/9/水果与蔬菜.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><h3 id='912characteristics-of-vitamins'><strong><span>9.1.2.Characteristics of Vitamins</span></strong></h3><p><span>Although vitamins are indispensable for growth and metabolism, the overall demand is small. The daily requirement for vitamins in humans is only a few milligrams or micrograms. Excessive intake may cause vitamin toxicity.</span></p><ul><li><span>V</span><sub><span>A</span></sub><span>: Overuse can cause acute poisoning, resulting in symptoms such as loss of appetite, diarrhea, fever, and may lead to dry skin, hair loss, rashes, and bleeding from the mouth and nose. In severe cases, there may be a slight increase in transaminases, increased inflammation cells in the liver and spleen, and even hyperuricemia and migratory bone pain.</span></li><li><span>V</span><sub><span>C</span></sub><span>: Supplementing more than 2 grams per day can cause symptoms such as abdominal pain, diarrhea, and gastrointestinal bleeding. In severe cases, it can even affect kidney function and lead to the formation of stones.</span></li><li><span>V</span><sub><span>D</span></sub><span>: Excessive intake can cause hypercalcemia, kidney damage, and arrhythmias.</span></li><li><span>V</span><sub><span>E</span></sub><span>: Excessive use generally leads to muscle weakness, headaches, etc. In severe cases, it can cause stroke, heart disease, etc.</span></li></ul><p><span>Vitamins have different functions in cells compared to carbohydrates, lipids, and proteins. Vitamins do not serve as carbon sources, nitrogen sources, or energy substances, nor do they constitute structural components of the body. Most vitamins are components of coenzymes or cofactors. </span><strong><span>B-complex vitamins and V</span><sub><span>C</span></sub><span> participate in various enzyme reactions in the form of coenzymes or cofactors, while V</span><sub><span>A</span></sub><span>, V</span><sub><span>E</span></sub><span>, and V</span><sub><span>D</span></sub><span> do not have coenzyme functions</span></strong><span>. The three essential components in metabolic networks—energy, enzymes and cofactors, carbon skeletons are indispensable. If one of them is lacking, the metabolic network will collapse.</span></p><p><span>Different organisms have different physiological and metabolic characteristics, and their requirements for vitamins also differ. For example, V</span><sub><span>D</span></sub><span> is important for bone formation in animals but not necessary for plants. Some animals, such as rats, can synthesize V</span><sub><span>C</span></sub><span> themselves, but humans cannot and need to supplement it from food. Certain diseases can also lead to vitamin deficiencies. For example, liver disease can hinder vitamin absorption; long-term use of antibiotics can inhibit the growth of intestinal microorganisms, leading to deficiencies of V</span><sub><span>K</span></sub><span>, biotin, folic acid, and pantothenic acid; during pregnancy, lactation, and high-intensity exercise, increased intake of V</span><sub><span>B1</span></sub><span> and V</span><sub><span>B2</span></sub><span> is needed. In medicine, vitamins are commonly used to prevent and treat diseases caused by vitamin deficiencies, such as using V</span><sub><span>A</span></sub><span> to treat night blindness, V</span><sub><span>C</span></sub><span> to treat scurvy, and V</span><sub><span>D</span></sub><span> to treat rickets.</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='92coenzyme-and-prosthetic-group'><strong><span>9.2.Coenzyme and Prosthetic Group</span></strong></h2><p><span>Cofactors are tightly bound to enzymes through covalent or non-covalent forces. Examples include flavin mononucleotide (FMN), flavin adenine dinucleotide (FAD), as well as transition metals such as iron, cobalt, copper, magnesium, manganese, and zinc. Metal ions involved in redox reactions are often bound in the form of organic metal complexes. Cofactors like heme can reversibly bind to enzymes or substrates. Coenzymes, similar to cofactors, loosely bind to their corresponding enzymes or substrates, forming complexes that can dissociate. Coenzymes serve as substrate shuttles, transporting many substrates from one point within the cell to another.</span></p><p><strong><span>Many coenzymes and cofactors are derivatives of B-group vitamins, and water-soluble B vitamins provide important components for many coenzymes</span></strong><span>. Niacin is a component of NAD and NADP, riboflavin is a component of FMN and FAD, and pantothenic acid is a component of coenzyme A. Thiamine pyrophosphate is involved in decarboxylation reactions of α-keto acids, while folic acid and cobalamin participate in one-carbon metabolism.</span></p><p>&nbsp;</p><h2 id='93water-soluble-vitamins'><strong><span>9.3.Water Soluble Vitamins</span></strong></h2><p><strong><span>Water soluble vitamins</span></strong><span> refer to a class of vitamins that are soluble in water, including B-group vitamins and vitamin C. In addition to the B vitamins discussed below, there is currently one type of vitamin, V</span><sub><span>B13</span></sub><span>, which is actually lactic acid and can be synthesized in the human body, participating in the synthesis of pyrimidine nucleotides.</span></p><figure><table><thead><tr><th style='text-align:left;' ><span>Properties</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>Highly water-soluble, able to dissolve in body fluids, excreted from the body with urine and sweat, and can be taken in appropriate amounts for long periods of time</span></td></tr><tr><td style='text-align:left;' ><span>All function as coenzymes or cofactors in enzyme-catalyzed reactions to maintain metabolism</span></td></tr><tr><td style='text-align:left;' ><span>CoA, CoⅠ, CoⅡ, FAD, and 5&#39;-Deoxyadenosylcobalamin all contain adenine (deoxy) nucleotides</span></td></tr><tr><td style='text-align:left;' ><mark><span>Not all coenzymes are derived solely from vitamins</span></mark><span>, such as </span><strong><span>CoQ</span></strong><span> in the respiratory chain</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='ⅰ-vb1'><strong><span>(Ⅰ) V</span><sub><span>B1</span></sub></strong></h3><p><span>Vitamin B1 was the first vitamin to be purified and consists of a pyrimidine ring containing an amino group and a thiazole ring containing sulfur, also known as </span><strong><span>thiamine</span></strong><span>. V</span><sub><span>B1</span></sub><span> can increase appetite and maintain normal nerve function. When deficient, loss of appetite, numbness in the skin, weakness in the limbs, and damage to the nervous system may occur, clinically known as beriberi.</span></p><p><img src="media/9/硫胺素.png" referrerpolicy="no-referrer"></p><p><span>The main function of V</span><sub><span>B1</span></sub><span> is to participate in </span><strong><span>carbohydrate metabolism</span></strong><span> in the form of a coenzyme. In the body, V</span><sub><span>B1</span></sub><span> exists in its active form as thiamine pyrophosphate (TPP), participating as a coenzyme in decarboxylation reactions. Therefore, vitamin B1 is closely related to carbohydrate metabolism, and individuals who consume excessive amounts of sugar should supplement more vitamin B1.</span></p><ul><li><p><span>As a coenzyme for pyruvate decarboxylase:</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 541.168701171875px;" viewBox="0 0.0000019073486328125 541.168701171875 61.599998474121094"><style>#mermaidChart0 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart0 .error-icon{fill:#552222;}#mermaidChart0 .error-text{fill:#552222;stroke:#552222;}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#333333;stroke:#333333;}#mermaidChart0 .marker.cross{stroke:#333333;}#mermaidChart0 svg{font-family:sans-serif;font-size:16px;}#mermaidChart0 .label{font-family:sans-serif;color:#333;}#mermaidChart0 .cluster-label text{fill:#333;}#mermaidChart0 .cluster-label span{color:#333;}#mermaidChart0 .label text,#mermaidChart0 span{fill:#333;color:#333;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart0 .node .label{text-align:center;}#mermaidChart0 .node.clickable{cursor:pointer;}#mermaidChart0 .arrowheadPath{fill:#333333;}#mermaidChart0 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart0 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart0 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart0 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart0 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart0 .cluster text{fill:#333;}#mermaidChart0 .cluster span{color:#333;}#mermaidChart0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart0 :root{--mermaid-font-family:sans-serif;}#mermaidChart0 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Pyruvate LE-Acetaldehyde+CO2" id="L-Pyruvate-Acetaldehyde+CO2" style="opacity: 1;"><path class="path" d="M94.0625,30.799999237060547L229.0890655517578,30.799999237060547L364.1156311035156,30.799999237060547" marker-end="url(#arrowhead8)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead8" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(229.0890655517578,30.799999237060547)" style="opacity: 1;"><g transform="translate(-110.02656555175781,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="220.05313110351562" height="25.600000381469727"></rect><foreignObject width="220.05313110351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Pyruvate-Acetaldehyde+CO2" class="edgeLabel L-LS-Pyruvate' L-LE-Acetaldehyde+CO2">Pyruvate decarboxylase+TPP</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Pyruvate-2" transform="translate(51.03125,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-43.03125" y="-22.800000190734863" width="86.0625" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-33.03125,-12.800000190734863)"><foreignObject width="66.0625" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Pyruvate</div></foreignObject></g></g></g><g class="node default" id="flowchart-Acetaldehyde+CO2-3" transform="translate(448.64219665527344,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-84.52656555175781" y="-22.800000190734863" width="169.05313110351562" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-74.52656555175781,-12.800000190734863)"><foreignObject width="149.05313110351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Acetaldehyde+CO2</div></foreignObject></g></g></g></g></g></g></svg></div></li><li><p><span>As a coenzyme for pyruvate dehydrogenase complex and α-ketoglutarate dehydrogenase complex:</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 909.5625610351562px;" viewBox="0 0.0000019073486328125 909.5625610351562 61.599998474121094"><style>#mermaidChart1 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart1 .error-icon{fill:#552222;}#mermaidChart1 .error-text{fill:#552222;stroke:#552222;}#mermaidChart1 .edge-thickness-normal{stroke-width:2px;}#mermaidChart1 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart1 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart1 .marker{fill:#333333;stroke:#333333;}#mermaidChart1 .marker.cross{stroke:#333333;}#mermaidChart1 svg{font-family:sans-serif;font-size:16px;}#mermaidChart1 .label{font-family:sans-serif;color:#333;}#mermaidChart1 .cluster-label text{fill:#333;}#mermaidChart1 .cluster-label span{color:#333;}#mermaidChart1 .label text,#mermaidChart1 span{fill:#333;color:#333;}#mermaidChart1 .node rect,#mermaidChart1 .node circle,#mermaidChart1 .node ellipse,#mermaidChart1 .node polygon,#mermaidChart1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart1 .node .label{text-align:center;}#mermaidChart1 .node.clickable{cursor:pointer;}#mermaidChart1 .arrowheadPath{fill:#333333;}#mermaidChart1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart1 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart1 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart1 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart1 .cluster text{fill:#333;}#mermaidChart1 .cluster span{color:#333;}#mermaidChart1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart1 :root{--mermaid-font-family:sans-serif;}#mermaidChart1 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Pyruvate\α-Ketoglutarate+TPP LE-CO2+Hydroxyethyl_TPP" id="L-Pyruvate\α-Ketoglutarate+TPP-CO2+Hydroxyethyl_TPP" style="opacity: 1;"><path class="path" d="M262.9375,30.799999237060547L481.43125915527344,30.799999237060547L699.9250183105469,30.799999237060547" marker-end="url(#arrowhead16)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead16" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(481.43125915527344,30.799999237060547)" style="opacity: 1;"><g transform="translate(-193.49375915527344,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="386.9875183105469" height="25.600000381469727"></rect><foreignObject width="386.9875183105469" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Pyruvate\α-Ketoglutarate+TPP-CO2+Hydroxyethyl_TPP" class="edgeLabel L-LS-Pyruvate\α-Ketoglutarate+TPP' L-LE-CO2+Hydroxyethyl_TPP">Pyruvate\α-Ketoglutarate dehydrogenase complex</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Pyruvate\α-Ketoglutarate+TPP-6" transform="translate(135.46875,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-127.46875" y="-22.800000190734863" width="254.9375" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-117.46875,-12.800000190734863)"><foreignObject width="234.9375" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Pyruvate\α-Ketoglutarate+TPP</div></foreignObject></g></g></g><g class="node default" id="flowchart-CO2+Hydroxyethyl_TPP-7" transform="translate(800.743766784668,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-100.8187484741211" y="-22.800000190734863" width="201.6374969482422" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-90.8187484741211,-12.800000190734863)"><foreignObject width="181.6374969482422" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">CO2+Hydroxyethyl_TPP</div></foreignObject></g></g></g></g></g></g></svg></div></li><li><p><span>As a coenzyme for transketolase:</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart2" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="157.20001220703125" style="max-width: 1055.637451171875px;" viewBox="0 0.0000019073486328125 1055.637451171875 157.20001220703125"><style>#mermaidChart2 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart2 .error-icon{fill:#552222;}#mermaidChart2 .error-text{fill:#552222;stroke:#552222;}#mermaidChart2 .edge-thickness-normal{stroke-width:2px;}#mermaidChart2 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart2 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart2 .marker{fill:#333333;stroke:#333333;}#mermaidChart2 .marker.cross{stroke:#333333;}#mermaidChart2 svg{font-family:sans-serif;font-size:16px;}#mermaidChart2 .label{font-family:sans-serif;color:#333;}#mermaidChart2 .cluster-label text{fill:#333;}#mermaidChart2 .cluster-label span{color:#333;}#mermaidChart2 .label text,#mermaidChart2 span{fill:#333;color:#333;}#mermaidChart2 .node rect,#mermaidChart2 .node circle,#mermaidChart2 .node ellipse,#mermaidChart2 .node polygon,#mermaidChart2 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart2 .node .label{text-align:center;}#mermaidChart2 .node.clickable{cursor:pointer;}#mermaidChart2 .arrowheadPath{fill:#333333;}#mermaidChart2 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart2 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart2 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart2 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart2 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart2 .cluster text{fill:#333;}#mermaidChart2 .cluster span{color:#333;}#mermaidChart2 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart2 :root{--mermaid-font-family:sans-serif;}#mermaidChart2 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Ribulose-5-phosphate+Ribose-5-phosphate LE-Sedoheptulose-7-phosphate+Glyceraldehyde-3-phosphate" id="L-Ribulose-5-phosphate+Ribose-5-phosphate-Sedoheptulose-7-phosphate+Glyceraldehyde-3-phosphate" style="opacity: 1;"><path class="path" d="M376.0453186035156,30.799999237060547L479.8093795776367,30.799999237060547L574.0656280517578,30.799999237060547" marker-end="url(#arrowhead26)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead26" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Xylulose-5-phosphate+Erythrose-4-phosphate LE-Fructose-6-phosphate+Glyceraldehyde-3-phosphate" id="L-Xylulose-5-phosphate+Erythrose-4-phosphate-Fructose-6-phosphate+Glyceraldehyde-3-phosphate" style="opacity: 1;"><path class="path" d="M385.5531311035156,126.39999771118164L479.8093795776367,126.39999771118164L598.8781280517578,126.39999771118164" marker-end="url(#arrowhead27)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead27" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(479.8093795776367,30.799999237060547)" style="opacity: 1;"><g transform="translate(-69.2562484741211,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="138.5124969482422" height="25.600000381469727"></rect><foreignObject width="138.5124969482422" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Ribulose-5-phosphate+Ribose-5-phosphate-Sedoheptulose-7-phosphate+Glyceraldehyde-3-phosphate" class="edgeLabel L-LS-Ribulose-5-phosphate+Ribose-5-phosphate' L-LE-Sedoheptulose-7-phosphate+Glyceraldehyde-3-phosphate">Transketolase/TPP</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(479.8093795776367,126.39999771118164)" style="opacity: 1;"><g transform="translate(-69.2562484741211,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="138.5124969482422" height="25.600000381469727"></rect><foreignObject width="138.5124969482422" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Xylulose-5-phosphate+Erythrose-4-phosphate-Fructose-6-phosphate+Glyceraldehyde-3-phosphate" class="edgeLabel L-LS-Xylulose-5-phosphate+Erythrose-4-phosphate' L-LE-Fructose-6-phosphate+Glyceraldehyde-3-phosphate">Transketolase/TPP</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Ribulose-5-phosphate+Ribose-5-phosphate-12" transform="translate(196.7765655517578,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-179.2687530517578" y="-22.800000190734863" width="358.5375061035156" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-169.2687530517578,-12.800000190734863)"><foreignObject width="338.5375061035156" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Ribulose-5-phosphate+Ribose-5-phosphate</div></foreignObject></g></g></g><g class="node default" id="flowchart-Sedoheptulose-7-phosphate+Glyceraldehyde-3-phosphate-13" transform="translate(810.8515625,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-236.7859344482422" y="-22.800000190734863" width="473.5718688964844" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-226.7859344482422,-12.800000190734863)"><foreignObject width="453.5718688964844" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Sedoheptulose-7-phosphate+Glyceraldehyde-3-phosphate</div></foreignObject></g></g></g><g class="node default" id="flowchart-Xylulose-5-phosphate+Erythrose-4-phosphate-14" transform="translate(196.7765655517578,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-188.7765655517578" y="-22.800000190734863" width="377.5531311035156" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-178.7765655517578,-12.800000190734863)"><foreignObject width="357.5531311035156" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Xylulose-5-phosphate+Erythrose-4-phosphate</div></foreignObject></g></g></g><g class="node default" id="flowchart-Fructose-6-phosphate+Glyceraldehyde-3-phosphate-15" transform="translate(810.8515625,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-211.9734344482422" y="-22.800000190734863" width="423.9468688964844" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-201.9734344482422,-12.800000190734863)"><foreignObject width="403.9468688964844" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Fructose-6-phosphate+Glyceraldehyde-3-phosphate</div></foreignObject></g></g></g></g></g></g></svg></div></li></ul><p>&nbsp;</p><h3 id='ⅱ-vb2'><strong><span>(Ⅱ) V</span><sub><span>B2</span></sub></strong></h3><p><span>Vitamin B2, also known as </span><strong><span>riboflavin</span></strong><span>, is abundant in foods such as grains, vegetables, dairy products, and fish. When deficient, it can lead to weakened tissue respiration and decreased metabolic intensity. The main symptoms include angular stomatitis, glossitis, and conjunctivitis. Animals cannot synthesize it on their own and must obtain it from food.</span></p><p><span>Riboflavin exists in two active forms in the body: flavin mononucleotide </span><strong><span>(FMN)</span></strong><span> and flavin adenine dinucleotide </span><strong><span>(FAD)</span></strong><span>. Both serve as </span><strong><span>prosthetic group</span></strong><span> for flavoproteins and play a significant role in the transfer of [H] during oxidation-reduction reactions. Both forms have oxidized and reduced states. The oxidized forms are FMN and FAD, while the reduced forms are FMNH</span><sub><span>2</span></sub><span> and FADH</span><sub><span>2</span></sub><span>. Enzymes that use FAM as a prosthetic group include NADH dehydrogenase, while enzymes that use FAD as a prosthetic group include succinate dehydrogenase, acyl-CoA dehydrogenase, dihydrolipoamide dehydrogenase, and alpha-glycerophosphate dehydrogenase.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart3" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 413.59686279296875px;" viewBox="0 0.0000019073486328125 413.59686279296875 61.599998474121094"><style>#mermaidChart3 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart3 .error-icon{fill:#552222;}#mermaidChart3 .error-text{fill:#552222;stroke:#552222;}#mermaidChart3 .edge-thickness-normal{stroke-width:2px;}#mermaidChart3 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart3 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart3 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart3 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart3 .marker{fill:#333333;stroke:#333333;}#mermaidChart3 .marker.cross{stroke:#333333;}#mermaidChart3 svg{font-family:sans-serif;font-size:16px;}#mermaidChart3 .label{font-family:sans-serif;color:#333;}#mermaidChart3 .cluster-label text{fill:#333;}#mermaidChart3 .cluster-label span{color:#333;}#mermaidChart3 .label text,#mermaidChart3 span{fill:#333;color:#333;}#mermaidChart3 .node rect,#mermaidChart3 .node circle,#mermaidChart3 .node ellipse,#mermaidChart3 .node polygon,#mermaidChart3 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart3 .node .label{text-align:center;}#mermaidChart3 .node.clickable{cursor:pointer;}#mermaidChart3 .arrowheadPath{fill:#333333;}#mermaidChart3 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart3 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart3 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart3 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart3 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart3 .cluster text{fill:#333;}#mermaidChart3 .cluster span{color:#333;}#mermaidChart3 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart3 :root{--mermaid-font-family:sans-serif;}#mermaidChart3 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Riboflavin LE-FMN" id="L-Riboflavin-FMN" style="opacity: 1;"><path class="path" d="M103.9468765258789,30.799999237060547L143.4406270980835,30.799999237060547L182.9343776702881,30.799999237060547" marker-end="url(#arrowhead41)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead41" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-FMN LE-FAD+PPi" id="L-FMN-FAD+PPi" style="opacity: 1;"><path class="path" d="M240.084379196167,30.799999237060547L279.5781297683716,30.799999237060547L319.0718803405762,30.799999237060547" marker-end="url(#arrowhead42)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead42" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(143.4406270980835,30.799999237060547)" style="opacity: 1;"><g transform="translate(-14.49375057220459,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="28.98750114440918" height="25.600000381469727"></rect><foreignObject width="28.98750114440918" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Riboflavin-FMN" class="edgeLabel L-LS-Riboflavin' L-LE-FMN">ATP</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(279.5781297683716,30.799999237060547)" style="opacity: 1;"><g transform="translate(-14.49375057220459,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="28.98750114440918" height="25.600000381469727"></rect><foreignObject width="28.98750114440918" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-FMN-FAD+PPi" class="edgeLabel L-LS-FMN' L-LE-FAD+PPi">ATP</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Riboflavin-19" transform="translate(55.97343826293945,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-47.97343826293945" y="-22.800000190734863" width="95.9468765258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-37.97343826293945,-12.800000190734863)"><foreignObject width="75.9468765258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Riboflavin</div></foreignObject></g></g></g><g class="node default" id="flowchart-FMN-20" transform="translate(211.50937843322754,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-28.575000762939453" y="-22.800000190734863" width="57.150001525878906" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-18.575000762939453,-12.800000190734863)"><foreignObject width="37.150001525878906" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">FMN</div></foreignObject></g></g></g><g class="node default" id="flowchart-FAD+PPi-21" transform="translate(362.3343811035156,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-43.26250076293945" y="-22.800000190734863" width="86.5250015258789" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-33.26250076293945,-12.800000190734863)"><foreignObject width="66.5250015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">FAD+PPi</div></foreignObject></g></g></g></g></g></g></svg></div><p>&nbsp;</p><h3 id='ⅲ-vb3vpp'><strong><span>(Ⅲ) V</span><sub><span>B3</span></sub><span>\V</span><sub><span>pp</span></sub></strong></h3><p><span>Vitamin PP, also known as Vitamin B</span><sub><span>3</span></sub><span>, is widely present in animals and plants. It is abundant in yeast, liver, lean meat, milk, and peanuts. It is also found in high levels in the bran and germ of grains. V</span><sub><span>B3</span></sub><span> includes two forms: niacin (nicotinic acid) and niacinamide (nicotinamide), with niacin being the precursor of niacinamide. The active forms of niacinamide in organisms are nicotinamide adenine dinucleotide (NAD) and nicotinamide adenine dinucleotide phosphate (NADP). NAD exists in an oxidized form as NAD</span><sup><span>+</span></sup><span> and an reduced form as NADH+H</span><sup><span>+</span></sup><span>. Similarly, NADP</span><sup><span>+</span></sup><span> exists in an oxidized form as NADP</span><sup><span>+</span></sup><span> and a reduced form as NADPH+H</span><sup><span>+</span></sup><span>. Both NAD</span><sup><span>+</span></sup><span> and NADP</span><sup><span>+</span></sup><span> serve as coenzymes for numerous dehydrogenases, participating as donors and acceptors of [H] in oxidation-reduction reactions and playing important roles in biological oxidation.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart4" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="157.20001220703125" style="max-width: 338.125px;" viewBox="0 0.0000019073486328125 338.125 157.20001220703125"><style>#mermaidChart4 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart4 .error-icon{fill:#552222;}#mermaidChart4 .error-text{fill:#552222;stroke:#552222;}#mermaidChart4 .edge-thickness-normal{stroke-width:2px;}#mermaidChart4 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart4 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart4 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart4 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart4 .marker{fill:#333333;stroke:#333333;}#mermaidChart4 .marker.cross{stroke:#333333;}#mermaidChart4 svg{font-family:sans-serif;font-size:16px;}#mermaidChart4 .label{font-family:sans-serif;color:#333;}#mermaidChart4 .cluster-label text{fill:#333;}#mermaidChart4 .cluster-label span{color:#333;}#mermaidChart4 .label text,#mermaidChart4 span{fill:#333;color:#333;}#mermaidChart4 .node rect,#mermaidChart4 .node circle,#mermaidChart4 .node ellipse,#mermaidChart4 .node polygon,#mermaidChart4 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart4 .node .label{text-align:center;}#mermaidChart4 .node.clickable{cursor:pointer;}#mermaidChart4 .arrowheadPath{fill:#333333;}#mermaidChart4 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart4 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart4 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart4 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart4 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart4 .cluster text{fill:#333;}#mermaidChart4 .cluster span{color:#333;}#mermaidChart4 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart4 :root{--mermaid-font-family:sans-serif;}#mermaidChart4 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Niacin+PRPP+ATP LE-NAD+ADP" id="L-Niacin+PRPP+ATP-NAD+ADP" style="opacity: 1;"><path class="path" d="M168.77500915527344,30.799999237060547L193.77500915527344,30.799999237060547L223.66875839233398,30.799999237060547" marker-end="url(#arrowhead50)" style="fill:none"></path><defs><marker id="arrowhead50" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-NAD+ATP LE-NADP+ADP" id="L-NAD+ATP-NADP+ADP" style="opacity: 1;"><path class="path" d="M137.03906631469727,126.39999771118164L193.77500915527344,126.39999771118164L218.77500915527344,126.39999771118164" marker-end="url(#arrowhead51)" style="fill:none"></path><defs><marker id="arrowhead51" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Niacin+PRPP+ATP-NAD+ADP" class="edgeLabel L-LS-Niacin+PRPP+ATP' L-LE-NAD+ADP"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-NAD+ATP-NADP+ADP" class="edgeLabel L-LS-NAD+ATP' L-LE-NADP+ADP"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Niacin+PRPP+ATP-26" transform="translate(88.38750457763672,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-80.38750457763672" y="-22.800000190734863" width="160.77500915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-70.38750457763672,-12.800000190734863)"><foreignObject width="140.77500915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Niacin+PRPP+ATP</div></foreignObject></g></g></g><g class="node default" id="flowchart-NAD+ADP-27" transform="translate(274.450008392334,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-50.78125" y="-22.800000190734863" width="101.5625" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-40.78125,-12.800000190734863)"><foreignObject width="81.5625" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NAD+ADP</div></foreignObject></g></g></g><g class="node default" id="flowchart-NAD+ATP-28" transform="translate(88.38750457763672,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-48.65156173706055" y="-22.800000190734863" width="97.3031234741211" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-38.65156173706055,-12.800000190734863)"><foreignObject width="77.3031234741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NAD+ATP</div></foreignObject></g></g></g><g class="node default" id="flowchart-NADP+ADP-29" transform="translate(274.450008392334,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-55.67499923706055" y="-22.800000190734863" width="111.3499984741211" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-45.67499923706055,-12.800000190734863)"><foreignObject width="91.3499984741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NADP+ADP</div></foreignObject></g></g></g></g></g></g></svg></div><p><strong><span>NAD</span><sup><span>+</span></sup><span> serves as a coenzyme for dehydrogenases involved in catabolic metabolism generally</span></strong><span>, such as glycerol-3-phosphate dehydrogenase, isocitrate dehydrogenase, L-(+)-β-hydroxyacyl-CoA dehydrogenase, malate dehydrogenase, and α-glycerophosphate dehydrogenase. It accepts [H] during oxidation and is converted to NADH+H</span><sup><span>+</span></sup><span>. In most cases, NADH+H</span><sup><span>+</span></sup><span> transfers [H] to the respiratory chain, ultimately being accepted by O</span><sub><span>2</span></sub><span> to produce energy. NADPH is synthesized in the oxidative stage of the HMP pathway and the citric acid-pyruvic acid shuttle system. </span><strong><span>It commonly provides reducing power for biosynthetic processes</span></strong><span>, such as fatty acid and cholesterol synthesis, Glu synthesis from NH</span><sub><span>3</span></sub><span>, reduction of FH</span><sub><span>2</span></sub><span> to FH</span><sub><span>4</span></sub><span>, reduction of NDP to dNDP, maintenance of Fe</span><sup><span>2+</span></sup><span> in the heme prosthetic group of hemoglobin, and maintenance of reduced glutathione（GSH）.</span></p><p><span>The human body generally doesn&#39;t lack V</span><sub><span>B3</span></sub><span>, as it can be converted from tryptophan. However, long-term consumption of maize as the main food source may lead to V</span><sub><span>B3</span></sub><span> deficiency due to the lack of tryptophan, leading to pellagra.</span></p><p>&nbsp;</p><h3 id='ⅳ-vb5'><strong><span>(Ⅳ) V</span><sub><span>B5</span></sub></strong></h3><p><span>Vitamin B5, also known as pantothenic acid or pantothenate, is widely found in nature. One of its structural components is β-Ala, making it the </span><strong><span>only non-heterocyclic vitamin</span></strong><span> in the B-group vitamins. Pantothenic acid can be synthesized by bacteria in the human&#39; gut.</span></p><p><span>In the body, pantothenic acid serves as a carrier of acyl groups and is converted into its active form, </span><strong><span>Coenzyme A (CoA)</span></strong><span>, which participates in various metabolic pathways. CoA acts as a coenzyme for acyl transferases and contains a thiol group (-SH), thereby being represented as CoASH. When carrying an acetyl group, it is referred to as acetyl-CoA, and when carrying an acyl group, it is referred to as acyl-CoA. For example, prior to the TCA, pyruvate undergoes oxidative decarboxylation and acylation to form acetyl-CoA. Pantothenic acid can also participate in fatty acid synthesis metabolism by transferring acyl groups as </span><strong><span>acyl carrier protein (ACP)</span></strong><span>.</span></p><p><img src="media/9/CoA.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><h3 id='ⅴ-vb6'><strong><span>(Ⅴ) V</span><sub><span>B6</span></sub></strong></h3><p><span>Vitamin B6, also known as pyridoxine, is a derivative of pyridine and includes three structurally similar substances: pyridoxal, pyridoxol, and pyridoxamine, which can be converted into each other. In the body, V</span><sub><span>B6</span></sub><span> exists in its active forms: pyridoxal phosphate (</span><strong><span>PLP</span></strong><span>), pyridoxamine phosphate (</span><strong><span>PMP</span></strong><span>), and pyridoxine phosphate (</span><strong><span>PNP</span></strong><span>). PLP and PMP are closely involved in amino </span><strong><span>acid metabolism</span></strong><span>, participating in transamination, decarboxylation, and racemization of amino acids as coenzymes for transaminases and decarboxylases. Therefore, individuals who consume high amounts of protein should supplement their intake of V</span><sub><span>B6</span></sub><span>.</span></p><p><img src="media/9/维生素B6.png" style="zoom:80%;" /></p><p><span>V</span><sub><span>B6</span></sub><span> is widely distributed in the animal and plant kingdoms, and it can also be synthesized by intestinal bacteria. Therefore, deficiency of V</span><sub><span>B6</span></sub><span> is generally not common in the human body.</span></p><p>&nbsp;</p><h3 id='ⅵ-vb7vbh'><strong><span>(Ⅵ) V</span><sub><span>B7</span></sub><span>\V</span><sub><span>BH</span></sub></strong></h3><p><span>Vitamin B7, also known as vitamin H or biotin, is a S-containing vitamin. It serves as a coenzyme for carboxylases, such as </span><strong><span>pyruvate carboxylase</span></strong><span> and </span><strong><span>acetyl-CoA carboxylase</span></strong><span>, and participates in intracellular CO</span><sub><span>2</span></sub><span> fixation and carboxylation reactions. In carboxylation reactions, the -COOH group is initially transiently attached to the nitrogen atom of its own molecule ring and then transferred to the substrate.</span></p><p><img src="media/9/生物素.png" referrerpolicy="no-referrer"></p><p><span>In certain amino acid fermentations, such as glutamate fermentation by Gluconobacter oxydans, the level of biotin is closely related to the production of Glu. When the biotin level is high, it enhances the activity of pyruvate carboxylase and strengthens the EMP pathway. However, at this time, the metabolic flow tends to enter lactate production rather than enter the TCA cycle, resulting in inadequate accumulation of α-ketoglutarate and reduced production of Glu. When the biotin level is low, the metabolic flow is weak, leading to lower glutamate production. When biotin is present at a </span><strong><span>suboptimal level</span></strong><span>, the ability of pyruvate carboxylation is weakened, but it reduces acetic acid production, and acetic acid is an activator of isocitrate lyase. With less acetic acid, the activity of isocitrate lyase is weakened, leading to the closure of the glyoxylate cycle, and more metabolic flow enters the pathway of glutamate synthesis, resulting in an increase in Glu production.</span></p><p><span>Some microorganisms in the intestinal tract of animals can synthesize biotin, so deficiency is generally not common. However, long-term consumption of raw egg white or excessive use of bacteriostatic antibiotics can hinder the absorption of exogenous biotin and the synthesis of endogenous biotin.</span></p><p>&nbsp;</p><h3 id='ⅶ-vb11'><span>(Ⅶ) V</span><sub><span>B11</span></sub></h3><p><span>Vitamin B11, also known as folate (FH), is composed of pteridine, L-Glu, and p-aminobenzoic acid. Folate primarily exists in the form of tetrahydrofolate in organisms. Folate is first reduced by the action of folate reductase, using NADPH as a reducing agent, to form dihydrofolate (FH</span><sub><span>2</span></sub><span>), which is then further reduced to tetrahydrofolate (FH</span><sub><span>4</span></sub><span>). FH</span><sub><span>4</span></sub><span>, also known as THFA or CoF, serves as a coenzyme for one-carbon unit transfer enzymes, playing a role in the transfer and utilization of one-carbon units in biosynthetic reactions. These reactions include </span><strong><span>purine synthesis</span></strong><span>, </span><strong><span>interconversion between deoxyuridine monophosphate (dUMP) and deoxythymidine monophosphate (dTMP)</span></strong><span>, and </span><strong><span>interconversion between Ser and Gly</span></strong><span>. Within the FH</span><sub><span>4</span></sub><span> molecule, N</span><sub><span>5</span></sub><span> and N</span><sub><span>10</span></sub><span> are binding sites for one-carbon units, which can bind methyl (CH3), methylene (-CH2-), methenyl (=CH-), formyl (-H-C=O), hydroxymethyl (-CH2OH), and other groups. His can be converted to N</span><sup><span>5</span></sup><span>,N</span><sup><span>10</span></sup><span>-methenyl tetrahydrofolate, Ser and Gly can be converted to N</span><sup><span>5</span></sup><span>,N</span><sub><span>10</span></sub><span>-methylene tetrahydrofolate.</span></p><p><img src="media/9/一碳单位代谢.png" referrerpolicy="no-referrer"></p><p><span>Folate is involved in nucleic acid metabolism and indirectly affects protein metabolism. Therefore, a deficiency in folate can lead to various diseases, such as </span><strong><span>megaloblastic anemia</span></strong><span>. Folate deficiency results in a deficiency of FH</span><sub><span>4</span></sub><span>, leading to insufficient one-carbon units participating in nucleic acid synthesis. As a result, DNA synthesis in red blood cells is impaired, causing them to enlarge and leading to hemolysis. However, due to the abundant presence of folate in green leafy vegetables, liver, and yeast, folate deficiency is generally not common in the human body.</span></p><p>&nbsp;</p><h3 id='ⅷ-vitamin-b12'><span>(Ⅷ) Vitamin B</span><sub><span>12</span></sub></h3><p><span>Vitamin B</span><sub><span>12</span></sub><span>, also known as hydroxocobalamin, is the </span><strong><span>only</span></strong><span> vitamin that contains a metal element (Co). The active forms of V</span><sub><span>B12</span></sub><span> in the body are methylcobalamin and 5&#39;-deoxyadenosylcobalamin. Among these, methylcobalamin acts as a coenzyme for </span><strong><span>methylmalonyl-CoA mutase</span></strong><span> and participates in the regeneration process of Met and FH</span><sub><span>4</span></sub><span> in methionine metabolism, closely related to nucleic acid and protein metabolism.</span></p><p><img src="media/9/羟钴胺素.png" style="zoom: 67%;" /></p><p><span>V</span><sub><span>B12</span></sub><span> plays a crucial role in the maturation of red blood cells. Its deficiency can lead to </span><strong><span>pernicious anemia</span></strong><span>. This is because the activity of methylmalonyl-CoA mutase is inhibited, preventing the regeneration of Met and FH</span><sub><span>4</span></sub><span>, which in turn hinders DNA synthesis in red blood cells, affecting their maturation and causing an increase in cell volume, ultimately leading to anemia.</span></p><p><img src="media/9/甲硫氨酸代谢.png" style="zoom: 80%;" /></p><p>&nbsp;</p><h3 id='ⅸ-lipoic-acid'><strong><span>(Ⅸ) Lipoic Acid</span></strong></h3><p><span>Although not classified as a vitamin, lipoic acid is considered part of the B-group vitamin. Lipoic acid serves as a coenzyme for the pyruvate dehydrogenase complex and the alpha-ketoglutarate dehydrogenase complex. It forms a thioester bond with the epsilon-amino group of Lysine residues in enzyme proteins, and participates in the </span><strong><span>transfer of H and acetyl groups</span></strong><span> in the form of lipoamide, often in synergy with thiamine pyrophosphate (TPP). Lipoic acid has the ability to combat fatty liver and lower cholesterol levels. Reduced form of lipoic acid is commonly used in clinical settings for the detoxification of organic mercury and organic arsenic compounds. It also exhibits protective effects on enzymes containing sulfhydryl groups.</span></p><p>&nbsp;</p><h3 id='ⅹ-vc'><span>(Ⅹ) V</span><sub><span>C</span></sub></h3><p><span>Vitamin C, also known as ascorbic acid (ascorbate), is a substance that can prevent scurvy. It is actually a derivative of hexose, with D and L forms, but only the L form is active. It is a polyhydroxy lactone substance containing 6 hydroxyl groups, and the hydrogen on the hydroxyl group connecting C</span><sub><span>2</span></sub><span> and C</span><sub><span>3</span></sub><span> easily dissociates, giving it acidic properties.</span></p><p><img src="media/9/抗坏血酸.png" referrerpolicy="no-referrer"></p><p><span>V</span><sub><span>C</span></sub><span> is easily oxidized, making it an important </span><strong><span>antioxidant</span></strong><span> in the human body (other antioxidants include β-carotene, GSH, V</span><sub><span>E</span></sub><span>, etc.). It can protect the activity of sulfhydryl enzymes and maintain the reduced state of many compounds in cells. V</span><sub><span>C</span></sub><span> promotes the synthesis of collagen and mucopolysaccharides, which is beneficial for wound healing. It can act as a coenzyme for hydroxylases and participate in certain hydroxylation reactions. For example, hydroxylation of Lys and Pro in procollagen is necessary for the formation of active collagen, so the production and maintenance of connective tissue require V</span><sub><span>C</span></sub><span>. V</span><sub><span>C</span></sub><span> can reduce Fe</span><sup><span>3+</span></sup><span> to Fe</span><sup><span>2+</span></sup><span>, facilitating its absorption, and is often used together with iron supplements to treat iron-deficiency anemia. It has been shown that V</span><sub><span>C</span></sub><span> is an effective intervention for the aging and degeneration of spinal motor neurons.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart5" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="157.20001220703125" style="max-width: 296.13751220703125px;" viewBox="0.0000019073486328125 0.0000019073486328125 296.13751220703125 157.20001220703125"><style>#mermaidChart5 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart5 .error-icon{fill:#552222;}#mermaidChart5 .error-text{fill:#552222;stroke:#552222;}#mermaidChart5 .edge-thickness-normal{stroke-width:2px;}#mermaidChart5 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart5 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart5 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart5 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart5 .marker{fill:#333333;stroke:#333333;}#mermaidChart5 .marker.cross{stroke:#333333;}#mermaidChart5 svg{font-family:sans-serif;font-size:16px;}#mermaidChart5 .label{font-family:sans-serif;color:#333;}#mermaidChart5 .cluster-label text{fill:#333;}#mermaidChart5 .cluster-label span{color:#333;}#mermaidChart5 .label text,#mermaidChart5 span{fill:#333;color:#333;}#mermaidChart5 .node rect,#mermaidChart5 .node circle,#mermaidChart5 .node ellipse,#mermaidChart5 .node polygon,#mermaidChart5 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart5 .node .label{text-align:center;}#mermaidChart5 .node.clickable{cursor:pointer;}#mermaidChart5 .arrowheadPath{fill:#333333;}#mermaidChart5 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart5 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart5 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart5 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart5 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart5 .cluster text{fill:#333;}#mermaidChart5 .cluster span{color:#333;}#mermaidChart5 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart5 :root{--mermaid-font-family:sans-serif;}#mermaidChart5 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Pro LE-HyPro" id="L-Pro-HyPro" style="opacity: 1;"><path class="path" d="M53.849998474121094,30.799999237060547L137.64999771118164,30.799999237060547L221.4499969482422,30.799999237060547" marker-end="url(#arrowhead61)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead61" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Lys LE-HyLys" id="L-Lys-HyLys" style="opacity: 1;"><path class="path" d="M52.6484375,126.39999771118164L137.64999771118164,126.39999771118164L222.64218521118164,126.39999771118164" marker-end="url(#arrowhead62)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead62" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(137.64999771118164,30.799999237060547)" style="opacity: 1;"><g transform="translate(-58.79999923706055,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="117.5999984741211" height="25.600000381469727"></rect><foreignObject width="117.5999984741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Pro-HyPro" class="edgeLabel L-LS-Pro' L-LE-HyPro">Hydroxylase/Vc</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(137.64999771118164,126.39999771118164)" style="opacity: 1;"><g transform="translate(-58.79999923706055,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="117.5999984741211" height="25.600000381469727"></rect><foreignObject width="117.5999984741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Lys-HyLys" class="edgeLabel L-LS-Lys' L-LE-HyLys">Hydroxylase/Vc</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Pro-34" transform="translate(30.924999237060547,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.925000190734863" y="-22.800000190734863" width="45.85000038146973" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.925000190734863,-12.800000190734863)"><foreignObject width="25.850000381469727" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Pro</div></foreignObject></g></g></g><g class="node default" id="flowchart-HyPro-35" transform="translate(254.7937469482422,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-33.34375" y="-22.800000190734863" width="66.6875" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-23.34375,-12.800000190734863)"><foreignObject width="46.6875" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">HyPro</div></foreignObject></g></g></g><g class="node default" id="flowchart-Lys-36" transform="translate(30.924999237060547,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-21.723437309265137" y="-22.800000190734863" width="43.44687461853027" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-11.723437309265137,-12.800000190734863)"><foreignObject width="23.446874618530273" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Lys</div></foreignObject></g></g></g><g class="node default" id="flowchart-HyLys-37" transform="translate(254.7937469482422,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-32.15156364440918" y="-22.800000190734863" width="64.30312728881836" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-22.15156364440918,-12.800000190734863)"><foreignObject width="44.30312728881836" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">HyLys</div></foreignObject></g></g></g></g></g></g></svg></div><p><span>A deficiency in V</span><sub><span>C</span></sub><span> can lead to scurvy, and other symptoms include changes in the skin, fragile blood vessels, gum decay, tooth loss, and bone fractures. There is little conclusive evidence that high doses of V</span><sub><span>C</span></sub><span> can prevent the common cold, although they may reduce the duration and severity of symptoms.</span></p><p><span>V</span><sub><span>C</span></sub><span> is mainly found in fruits and vegetables, with rich amounts in kiwi, tomatoes, and peppers. The human body needs less than 100mg of V</span><sub><span>C</span></sub><span> per day, and if the intake exceeds this amount, the body&#39;s ability to metabolize them is saturated, and the excess will be excreted through urine. V</span><sub><span>C</span></sub><span> can be converted into oxalate, and high-dose intake may increase the formation of oxalate, increasing the risk of kidney stones.</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='94fat-soluble-vitamins'><strong><span>9.4.Fat soluble Vitamins</span></strong></h2><p><strong><span>Fat soluble vitamins</span></strong><span> </span><span>	</span><span>refer to a group of vitamins that are soluble in non-polar lipid solvents, including vitamin A, D, E, and K. They are all lipid derivatives, which are absorbed by the human body through the intake and digestion of fats, and are transported and stored in the body together with fats.</span></p><figure><table><thead><tr><th style='text-align:left;' ><span>Characteristics</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>They are fat-soluble and can be stored in the body for a long time, </span><strong><span>without the need for long-term supplementation</span></strong></td></tr><tr><td style='text-align:left;' ><strong><span>Vitamin K</span></strong><span> serves as a coenzyme for the carboxylation of clotting factors, while the other three vitamins do not serve as coenzymes</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='ⅰ-va'><span>(Ⅰ) V</span><sub><span>A</span></sub></h3><p><span>Vitamin A, also known as retinol, is the </span><strong><span>earliest discovered</span></strong><span> vitamin. It contains unsaturated bonds and has active chemical properties. It is easily oxidized in the air and can be destroyed by exposure to ultraviolet light. Therefore, V</span><sub><span>A</span></sub><span> preparations should be stored in brown bottles to avoid light.</span></p><p><span>V</span><sub><span>A</span></sub><span> only exists in animal foods, and it is abundant in fish liver oil and animal liver. Carrots, tomatoes, and vegetables are rich in β-carotene, which can be converted into V</span><sub><span>A</span></sub><span> in the body. V</span><sub><span>A</span></sub><span> in food or V</span><sub><span>A</span></sub><span> generated from the cleavage of β-carotene binds with fatty acids in the intestinal mucosal cells, incorporates into chylomicrons (CM), and is absorbed by the human body through the lymphatic system, mainly stored in the liver.</span></p><p><span>V</span><sub><span>A</span></sub><span> has many physiological functions:</span></p><ol start='' ><li><p><span>Maintaining vision</span></p><p><span>V</span><sub><span>A</span></sub><span> is the </span><strong><span>most light-sensitive vitamin</span></strong><span>, which promotes the formation of photosensitive pigments in visual cells. Retinol, the active form of V</span><sub><span>A</span></sub><span> in the body, is converted into </span><strong><span>rhodopsin</span></strong><span>, which serves as the photosensitive substance in rod cells of the retina and is responsible for night vision. Therefore, a deficiency can lead to night blindness.</span></p><p><img src="http://43.143.164.107:8000/生物化学/维生素/视网膜.png" style="zoom:57%;" /></p></li><li><p><span>Promoting growth and development</span></p><p><span>Retinol has effects similar to steroid hormones and can promote the synthesis of glycoproteins. It promotes growth and development, strengthens bones, and maintains the health of hair, teeth, and gums.</span></p></li><li><p><span>Maintaining the integrity and health of epithelial structures</span></p><p><span>V</span><sub><span>A</span></sub><span> can regulate the growth of epithelial tissue cells, maintain normal morphology and function of epithelial tissues, keep the skin moisturized, increase skin elasticity, prevent dryness and keratinization of the skin, and help treat acne, abscesses, acne, and skin ulcers.</span></p></li><li><p><span>Enhancing immune function</span></p><p><span>V</span><sub><span>A</span></sub><span> can enhance the body&#39;s resistance to infectious diseases, especially respiratory tract infections and parasitic infections.</span></p></li><li><p><span>Eliminating free radicals</span></p><p><span>V</span><sub><span>A</span></sub><span> has certain antioxidant properties and can neutralize harmful free radicals.</span></p></li></ol><p>&nbsp;</p><h3 id='ⅱ-vd'><span>(Ⅱ) V</span><sub><span>D</span></sub></h3><p><span>Vitamin D, also known as the anti-rachitic vitamin, has a preventive effect against </span><strong><span>rickets</span></strong><span>. The known forms of vitamin D include D</span><sub><span>2</span></sub><span>, D</span><sub><span>3</span></sub><span>, D</span><sub><span>4</span></sub><span>, and D</span><sub><span>5</span></sub><span>, with D</span><sub><span>2</span></sub><span> and D</span><sub><span>3</span></sub><span> being the most active. D</span><sub><span>2</span></sub><span> is ergocalciferol, while D</span><sub><span>3</span></sub><span> is cholecalciferol. In the human body, cholesterol is converted to 7-dehydrocholesterol, which, in the skin, can be transformed into V</span><sub><span>D3</span></sub><span> through exposure to ultraviolet rays. It is then absorbed by the blood and undergoes a series of reactions to be converted to V</span><sub><span>D</span></sub><span> in the liver and kidneys. In temperate climates, the plasma concentration of V</span><sub><span>D</span></sub><span> is highest at the end of  summer and lowest at the end of winter. Beyond latitudes about 40° north or south, there is very little ultraviolet radiation of the appropriate wavelength in winter.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart16" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 515.7000122070312px;" viewBox="0.000003814697265625 0.0000019073486328125 515.7000122070312 61.599998474121094"><style>#mermaidChart16 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart16 .error-icon{fill:#552222;}#mermaidChart16 .error-text{fill:#552222;stroke:#552222;}#mermaidChart16 .edge-thickness-normal{stroke-width:2px;}#mermaidChart16 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart16 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart16 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart16 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart16 .marker{fill:#333333;stroke:#333333;}#mermaidChart16 .marker.cross{stroke:#333333;}#mermaidChart16 svg{font-family:sans-serif;font-size:16px;}#mermaidChart16 .label{font-family:sans-serif;color:#333;}#mermaidChart16 .cluster-label text{fill:#333;}#mermaidChart16 .cluster-label span{color:#333;}#mermaidChart16 .label text,#mermaidChart16 span{fill:#333;color:#333;}#mermaidChart16 .node rect,#mermaidChart16 .node circle,#mermaidChart16 .node ellipse,#mermaidChart16 .node polygon,#mermaidChart16 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart16 .node .label{text-align:center;}#mermaidChart16 .node.clickable{cursor:pointer;}#mermaidChart16 .arrowheadPath{fill:#333333;}#mermaidChart16 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart16 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart16 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart16 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart16 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart16 .cluster text{fill:#333;}#mermaidChart16 .cluster span{color:#333;}#mermaidChart16 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart16 :root{--mermaid-font-family:sans-serif;}#mermaidChart16 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-cholesterol LE-7-dehydrocholesterol" id="L-cholesterol-7-dehydrocholesterol" style="opacity: 1;"><path class="path" d="M112.01249694824219,30.799999237060547L148.39999675750732,30.799999237060547L184.78749656677246,30.799999237060547" marker-end="url(#arrowhead192)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead192" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-7-dehydrocholesterol LE-vitaminD" id="L-7-dehydrocholesterol-vitaminD" style="opacity: 1;"><path class="path" d="M368.9375057220459,30.799999237060547L393.9375057220459,30.799999237060547L418.9375057220459,30.799999237060547" marker-end="url(#arrowhead193)" style="fill:none"></path><defs><marker id="arrowhead193" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(148.39999675750732,30.799999237060547)" style="opacity: 1;"><g transform="translate(-11.387499809265137,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="22.774999618530273" height="25.600000381469727"></rect><foreignObject width="22.774999618530273" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-cholesterol-7-dehydrocholesterol" class="edgeLabel L-LS-cholesterol' L-LE-7-dehydrocholesterol">UV</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-7-dehydrocholesterol-vitaminD" class="edgeLabel L-LS-7-dehydrocholesterol' L-LE-vitaminD"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-cholesterol-99" transform="translate(60.006248474121094,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-52.00625228881836" y="-22.800000190734863" width="104.01250457763672" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-42.00625228881836,-12.800000190734863)"><foreignObject width="84.01250457763672" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">cholesterol</div></foreignObject></g></g></g><g class="node default" id="flowchart-7-dehydrocholesterol-100" transform="translate(276.8625011444092,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-92.07500457763672" y="-22.800000190734863" width="184.15000915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-82.07500457763672,-12.800000190734863)"><foreignObject width="164.15000915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">7-dehydrocholesterol</div></foreignObject></g></g></g><g class="node default" id="flowchart-vitaminD-101" transform="translate(463.31875801086426,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-44.38125228881836" y="-22.800000190734863" width="88.76250457763672" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-34.38125228881836,-12.800000190734863)"><foreignObject width="68.76250457763672" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">vitaminD</div></foreignObject></g></g></g></g></g></g></svg></div><p><span>The active form of V</span><sub><span>D</span></sub><span> in the human body is 1,25-dihydroxycholecalciferol. Its main function is to regulate the absorption of calcium and phosphorus, maintain normal levels of calcium and phosphorus in the blood, and promote normal skeletal development. V</span><sub><span>D</span></sub><span> is abundant in animal livers, egg yolks, milk, and fish liver oil. Infants who lack V</span><sub><span>D</span></sub><span> may experience impaired bone development, which can lead to rickets, while adults deficient in V</span><sub><span>D</span></sub><span> may develop osteomalacia. There is growing evidence that higher V</span><sub><span>D</span></sub><span> status is protective against various cancers, including prostate and colorectal  cancer, and also against prediabetes and the metabolic syndrome.  Desirable levels of intake may be considerably higher than current reference intakes, and certainly could not be met from unfortified foods. While increased sunlight exposure would meet the need, it carries the risk of developing skin cancer</span></p><p>&nbsp;</p><h3 id='ⅲ-vitamin-e'><span>(Ⅲ) Vitamin E</span></h3><p><span>Vitamin E, also known as tocopherol, exists in various natural forms. It can be classified into α, β, γ, δ, ζ, and η forms based on the different substituents on the phenyl ring. Among them, α-tocopherol has the highest biological activity.</span></p><p><img src="media/9/生育酚.png" referrerpolicy="no-referrer"></p><p><span>V</span><sub><span>E</span></sub><span> is easily oxidized in the air, making it an important fat-soluble antioxidant in the human body. It can prevent the oxidation of unsaturated fatty acids in phospholipid molecules and protect biological membranes. It has the ability to eliminate free radicals and has anti-cancer, anti-pigmentation, and anti-aging effects.</span></p><p><span>V</span><sub><span>E</span></sub><span> is essential for animal reproduction, and its deficiency can lead to infertility. In experimental animals, V</span><sub><span>E</span></sub><span> deficiency results in resorption of fetuses and testicular atrophy, premature infants are born with inadequate reserves of V</span><sub><span>E</span></sub><span>.</span></p><p>&nbsp;</p><h3 id='ⅳ-vk'><span>(Ⅳ) V</span><sub><span>K</span></sub></h3><p><span>Vitamin K, also known as the clotting vitamin, plays a role in promoting blood clotting. It belongs to a class of quinone compounds with an isoprenoid side chain and is divided into two types: K</span><sub><span>1</span></sub><span> and K</span><sub><span>2</span></sub><span>. K</span><sub><span>1</span></sub><span> (Phylloquinone) is mainly found in plants and animal livers and is consumed by the body through food intake. K</span><sub><span>2</span></sub><span> (Menaquinone) is produced by intestinal bacteria metabolism.</span></p><p><span>The main function of V</span><sub><span>K</span></sub><span> is to participate in blood clotting. It promotes the synthesis of clotting factors and converts prothrombin into thrombin. Thrombin, in turn, promotes the conversion of fibrinogen into fibrin, thereby accelerating blood clotting. If there is a deficiency of V</span><sub><span>K</span></sub><span>, the level of prothrombin in the blood decreases, leading to prolonged clotting time and impaired blood coagulation after bleeding.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart29" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 808.6781616210938px;" viewBox="0.000003814697265625 0.0000019073486328125 808.6781616210938 61.599998474121094"><style>#mermaidChart29 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart29 .error-icon{fill:#552222;}#mermaidChart29 .error-text{fill:#552222;stroke:#552222;}#mermaidChart29 .edge-thickness-normal{stroke-width:2px;}#mermaidChart29 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart29 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart29 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart29 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart29 .marker{fill:#333333;stroke:#333333;}#mermaidChart29 .marker.cross{stroke:#333333;}#mermaidChart29 svg{font-family:sans-serif;font-size:16px;}#mermaidChart29 .label{font-family:sans-serif;color:#333;}#mermaidChart29 .cluster-label text{fill:#333;}#mermaidChart29 .cluster-label span{color:#333;}#mermaidChart29 .label text,#mermaidChart29 span{fill:#333;color:#333;}#mermaidChart29 .node rect,#mermaidChart29 .node circle,#mermaidChart29 .node ellipse,#mermaidChart29 .node polygon,#mermaidChart29 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart29 .node .label{text-align:center;}#mermaidChart29 .node.clickable{cursor:pointer;}#mermaidChart29 .arrowheadPath{fill:#333333;}#mermaidChart29 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart29 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart29 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart29 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart29 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart29 .cluster text{fill:#333;}#mermaidChart29 .cluster span{color:#333;}#mermaidChart29 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart29 :root{--mermaid-font-family:sans-serif;}#mermaidChart29 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Prothrombin LE-Thrombin" id="L-Prothrombin-Thrombin" style="opacity: 1;"><path class="path" d="M125.0531234741211,30.799999237060547L185.78437423706055,30.799999237060547L246.515625,30.799999237060547" marker-end="url(#arrowhead293)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead293" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Thrombin LE-fibrin" id="L-Thrombin-fibrin" style="opacity: 1;"><path class="path" d="M340.9281234741211,30.799999237060547L405.72812271118164,30.799999237060547L470.5281219482422,30.799999237060547" marker-end="url(#arrowhead294)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead294" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 0 0 L 0 0 z" style="fill: #333"></path></marker></defs></g><g class="edgePath LS-fibrin LE-Fibrin_Clots" id="L-fibrin-Fibrin_Clots" style="opacity: 1;"><path class="path" d="M530.7781219482422,30.799999237060547L611.2906227111816,30.799999237060547L691.8031234741211,30.799999237060547" marker-end="url(#arrowhead295)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead295" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(185.78437423706055,30.799999237060547)" style="opacity: 1;"><g transform="translate(-35.73125076293945,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="71.4625015258789" height="25.600000381469727"></rect><foreignObject width="71.4625015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Prothrombin-Thrombin" class="edgeLabel L-LS-Prothrombin' L-LE-Thrombin">vitamin K</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(405.72812271118164,30.799999237060547)" style="opacity: 1;"><g transform="translate(-39.79999923706055,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="79.5999984741211" height="25.600000381469727"></rect><foreignObject width="79.5999984741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Thrombin-fibrin" class="edgeLabel L-LS-Thrombin' L-LE-fibrin">fibrinogen</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(611.2906227111816,30.799999237060547)" style="opacity: 1;"><g transform="translate(-55.51250076293945,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="111.0250015258789" height="25.600000381469727"></rect><foreignObject width="111.0250015258789" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-fibrin-Fibrin_Clots" class="edgeLabel L-LS-fibrin' L-LE-Fibrin_Clots">Blood Clotting</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Prothrombin-166" transform="translate(66.52656173706055,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-58.52656173706055" y="-22.800000190734863" width="117.0531234741211" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48.52656173706055,-12.800000190734863)"><foreignObject width="97.0531234741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Prothrombin</div></foreignObject></g></g></g><g class="node default" id="flowchart-Thrombin-167" transform="translate(293.72187423706055,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-47.20624923706055" y="-22.800000190734863" width="94.4124984741211" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-37.20624923706055,-12.800000190734863)"><foreignObject width="74.4124984741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Thrombin</div></foreignObject></g></g></g><g class="node default" id="flowchart-fibrin-168" transform="translate(500.6531219482422,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.125" y="-22.800000190734863" width="60.25" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.125,-12.800000190734863)"><foreignObject width="40.25" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">fibrin</div></foreignObject></g></g></g><g class="node default" id="flowchart-Fibrin_Clots-169" transform="translate(746.2406234741211,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-54.4375" y="-22.800000190734863" width="108.875" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-44.4375,-12.800000190734863)"><foreignObject width="88.875" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Fibrin_Clots</div></foreignObject></g></g></g></g></g></g></svg></div><p>&nbsp;</p><p>&nbsp;</p><h2 id='95coenzyme-regeneration'><strong><span>9.5.Coenzyme Regeneration</span></strong></h2><p><span>As mentioned earlier, vitamins do not participate in energy supply or the structural composition of the body. Instead, they participate in enzymatic reactions as coenzymes to maintain the normal progress of these reactions. Coenzymes play a role in transferring electrons, atoms, and functional groups during enzymatic reactions. Therefore, for conjugated enzymes, once they lose their coenzymes, they also become </span><strong><span>inactive</span></strong><span> (this is different from enzyme activators). In order to ensure the activity of certain key enzymes (usually conjugated enzymes) in metabolic pathways, the corresponding coenzymes must be supplied in a timely manner. For example, in glucose metabolism, NAD</span><sup><span>+</span></sup><span> acts as a substrate for glyceraldehyde-3-phosphate dehydrogenase, accepting the [H] and being reduced to NADH+H</span><sup><span>+</span></sup><span>, which then enters the oxidative dehydrogenation process in the mitochondrial inner membrane. As a result, NAD</span><sup><span>+</span></sup><span> is regenerated and returns to the cytoplasm to accept the [H] released by glyceraldehyde-3-phosphate dehydrogenase. This cycle allows for continuous progression.</span></p><p><span>In the glycolysis, one molecule of glucose undergoes 10 enzymatic reactions to produce two molecules of pyruvic acid, two molecules of ATP, and two molecules of NADH+H</span><sup><span>+</span></sup><span> under aerobic or anaerobic conditions. In tissues with sufficient oxygen supply, pyruvic acid directly undergoes oxidative decarboxylation to form acetyl-CoA in the next step. However, in conditions where oxygen is lacking, such as in vigorously exercising muscle tissue, pyruvic acid is reduced to lactic acid under the action of lactate dehydrogenase. This process requires the provision of [H] from NADH+H</span><sup><span>+</span></sup><span> synthesized in glycolysis. NADH+H</span><sup><span>+</span></sup><span> is oxidized back to NAD</span><sup><span>+</span></sup><span>, which then returns to the glycolysis as the [H] acceptor for glyceraldehyde-3-phosphate. The lactic acid enters the liver via the bloodstream and is converted back to glucose through gluconeogenesis. This process is also known as the </span><strong><span>lactate cycle</span></strong><span>, which not only controls the concentration of lactate in the blood to prevent acidosis but also </span><mark><span>regenerates coenzymes to ensure the normal progression of glycolysis</span></mark><span>.</span></p><p><span>In the pentose phosphate pathway, a large amount of NADPH is generated. However, since it cannot pass through the mitochondrial membrane, it cannot directly enter mitochondrial oxidative phosphorylation to produce ATP. Instead, under the action of transhydrogenase, NADPH and NADH can be interconverted. The generated NADH can enter the inner mitochondrial membrane via the shuttle system to participate in oxidative phosphorylation, while the regenerated NADP</span><sup><span>+</span></sup><span> reenters the pentose phosphate pathway.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart30" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 457.0875244140625px;" viewBox="0 0.0000019073486328125 457.0875244140625 61.599998474121094"><style>#mermaidChart30 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart30 .error-icon{fill:#552222;}#mermaidChart30 .error-text{fill:#552222;stroke:#552222;}#mermaidChart30 .edge-thickness-normal{stroke-width:2px;}#mermaidChart30 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart30 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart30 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart30 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart30 .marker{fill:#333333;stroke:#333333;}#mermaidChart30 .marker.cross{stroke:#333333;}#mermaidChart30 svg{font-family:sans-serif;font-size:16px;}#mermaidChart30 .label{font-family:sans-serif;color:#333;}#mermaidChart30 .cluster-label text{fill:#333;}#mermaidChart30 .cluster-label span{color:#333;}#mermaidChart30 .label text,#mermaidChart30 span{fill:#333;color:#333;}#mermaidChart30 .node rect,#mermaidChart30 .node circle,#mermaidChart30 .node ellipse,#mermaidChart30 .node polygon,#mermaidChart30 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart30 .node .label{text-align:center;}#mermaidChart30 .node.clickable{cursor:pointer;}#mermaidChart30 .arrowheadPath{fill:#333333;}#mermaidChart30 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart30 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart30 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart30 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart30 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart30 .cluster text{fill:#333;}#mermaidChart30 .cluster span{color:#333;}#mermaidChart30 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart30 :root{--mermaid-font-family:sans-serif;}#mermaidChart30 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-NAD+NADPH LE-NADH+NADP" id="L-NAD+NADPH-NADH+NADP" style="opacity: 1;"><path class="path" d="M134.9375,30.799999237060547L228.54375457763672,30.799999237060547L322.15000915527344,30.799999237060547" marker-end="url(#arrowhead303)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead303" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(228.54375457763672,30.799999237060547)" style="opacity: 1;"><g transform="translate(-68.60625457763672,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="137.21250915527344" height="25.600000381469727"></rect><foreignObject width="137.21250915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-NAD+NADPH-NADH+NADP" class="edgeLabel L-LS-NAD+NADPH' L-LE-NADH+NADP">transhydrogenase</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-NAD+NADPH-172" transform="translate(71.46875,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-63.46875" y="-22.800000190734863" width="126.9375" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-53.46875,-12.800000190734863)"><foreignObject width="106.9375" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NAD+NADPH</div></foreignObject></g></g></g><g class="node default" id="flowchart-NADH+NADP-173" transform="translate(385.61875915527344,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-63.46875" y="-22.800000190734863" width="126.9375" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-53.46875,-12.800000190734863)"><foreignObject width="106.9375" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NADH+NADP</div></foreignObject></g></g></g></g></g></g></svg></div><p><span>The concentration of ADP is also related to the rate of coenzyme regeneration. When the concentration of ADP is high, the energy charge is low. At this time, ADP can act as an activator for certain key enzymes in catabolic pathways, promoting catabolism and inhibiting anabolism. This accelerates coenzyme regeneration and promotes the transfer of electrons in the respiratory chain and the process of ADP phosphorylation, thereby rapidly generating ATP.</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</div>
+
+</div>
+</main>
+
+<script src="bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ed38f6d2bda5881f1e32b079fec99636";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    document.body.oncontextmenu = 
+    document.body.ondragstart = 
+    document.body.onselectstart = 
+    document.body.onbeforecopy = 
+    function () { return false; };
+    document.body.onselect = 
+    document.body.oncopy = 
+    document.body.onmouseup = 
+    function () { document.selection.empty(); };
+</script>
+
+<script>
+var navbar = document.querySelector('.navbar');
+// 初始滚动位置
+var prevScrollPos = window.pageYOffset;
+
+window.addEventListener('scroll', function() {
+  // 当前滚动位置
+  var currentScrollPos = window.pageYOffset;
+
+  // 判断滚动方向
+  if (prevScrollPos > currentScrollPos) {
+    // 上滑，显示导航栏
+    navbar.style.top = '0';
+  } else {
+    // 下滑，隐藏导航栏
+    navbar.style.top = '-100px'; // 根据实际导航栏高度进行调整
+  }
+
+  // 更新滚动位置
+  prevScrollPos = currentScrollPos;
+});
+</script>
+</html>
