@@ -1,0 +1,760 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link href="gene.ico" rel="SHORTCUT ICON">
+    <title>Docs | 10.Metabolism and Bioenergetics</title>
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar {background-color:#183055; width: 260px; font-size: 0.8rem; color:white; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content {background-color:#183055; position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 50px; width: 260px; }
+@media screen and (max-width: 1440px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 230px; }
+}
+@media screen and (max-width: 950px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+
+
+:root {
+    --side-bar-bg-color: #F5F5F5;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+
+}
+h2 {
+    font-size: 2em;
+    line-height: 1.225;
+
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<main class='container col-11'>
+<div class="my-3 p-3 bg-body rounded shadow-lg row" >
+
+
+<div class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#101metabolism"><strong>10.1.Metabolism</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1011material-metabolism-and-energy-metabolism"><strong>10.1.1.Material Metabolism and Energy Metabolism</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1012assimilation-and-dissimilation"><strong>10.1.2.Assimilation and Dissimilation</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1013nutritional-types-of-organisms"><strong>10.1.3.Nutritional Types of Organisms</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1014characteristics-of-material-metabolism"><strong>10.1.4.Characteristics of Material Metabolism</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1015research-methods-for-metabolism"><strong>10.1.5.Research Methods for Metabolism</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#102bioenergetics"><strong>10.2.Bioenergetics</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1021free-energy"><strong>10.2.1.Free Energy</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1022coupling-of-energy-absorbing-and-releasing-processes">10.2.2.Coupling of Energy Absorbing and Releasing Processes</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1023high-energy-bonds-and-high-energy-phosphates">10.2.3.High-Energy Bonds and High-Energy Phosphates</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#103atp"><strong>10.3.ATP</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1031energy-currency"><strong>10.3.1.Energy Currency</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1032energy-storer"><strong>10.3.2.Energy Storer</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1033energy-charge"><strong>10.3.3.Energy Charge</strong></a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1034functions-of-atp"><strong>10.3.4.Functions of ATP</strong></a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#104the-interrelationship-of-substance-metabolism"><strong>10.4.The Interrelationship of Substance Metabolism</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1041the-interconversion-of-metabolites"><strong>10.4.1.The interconversion of metabolites</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅰ-interconversion-between-sugar-and-fat">(Ⅰ) Interconversion between Sugar and Fat</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅱ-interconversion-between-amino-acids-and-fat">(Ⅱ) Interconversion between Amino Acids and Fat</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅲ-relationship-between-sugar-and-amino-acids">(Ⅲ) Relationship between Sugar and Amino Acids</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ⅳ-relationship-between-nucleotides-and-the-others">(Ⅳ) Relationship between Nucleotides and the Others</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1042intermediary-metabolites-connecting-different-pathways"><strong>10.4.2.Intermediary Metabolites Connecting Different Pathways</strong></a></div><ul class="outline-children"></ul></li></ul></li>
+
+<br><span style='margin-left:25px; font-size:16px;' >Previous</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='9.Vitamin.html'>9.Vitamin</a>
+<br><span style='margin-left:25px; font-size:16px;'>Next</span><br>
+<a style='margin-left:35px;  font-size:10px;' href='11.Biological Oxidation.html'>11.Biological Oxidation</a>
+<br><br>
+
+</div></div>
+<div id='write'  class=''><div style="background-color:whitesmoke">
+<details style="font-size:12px;">
+    <summary><strong>10.Metabolism and Bioenergetics</strong></summary>
+    <a href="index.html">Return to Introduction</a><br><hr>
+    <strong>Previous</strong>:<a href="9.Vitamin.html">9.Vitamin</a><br>
+    <strong>Next</strong>:<a href="11.Biological Oxidation.html">11.Biological Oxidation</a>
+</details>
+</div><h2 id='101metabolism'><strong><span>10.1.Metabolism</span></strong></h2><p><span>Metabolism, refers to all the biochemical reactions that occur within living cells. Narrowly defined, metabolism refers to the organized enzyme-catalyzed reactions that take place inside cells. Broadly defined, metabolism refers to the continuous exchange of substances and energy within and outside the organism, including processes such as digestion, absorption, metabolic transformations, and excretion. All physiological phenomena of an organism, such as growth, development, reproduction, mechanical movement, thinking, and respiration, are the result of metabolic reactions. Metabolism is the most fundamental characteristic of life; where there is life, there is metabolism. When metabolism ceases, it indicates the end of life.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart4" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="539.6000366210938" style="max-width: 925.175048828125px;" viewBox="0 0.0000019073486328125 925.175048828125 539.6000366210938"><style>#mermaidChart4 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart4 .error-icon{fill:#552222;}#mermaidChart4 .error-text{fill:#552222;stroke:#552222;}#mermaidChart4 .edge-thickness-normal{stroke-width:2px;}#mermaidChart4 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart4 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart4 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart4 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart4 .marker{fill:#333333;stroke:#333333;}#mermaidChart4 .marker.cross{stroke:#333333;}#mermaidChart4 svg{font-family:sans-serif;font-size:16px;}#mermaidChart4 .label{font-family:sans-serif;color:#333;}#mermaidChart4 .cluster-label text{fill:#333;}#mermaidChart4 .cluster-label span{color:#333;}#mermaidChart4 .label text,#mermaidChart4 span{fill:#333;color:#333;}#mermaidChart4 .node rect,#mermaidChart4 .node circle,#mermaidChart4 .node ellipse,#mermaidChart4 .node polygon,#mermaidChart4 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart4 .node .label{text-align:center;}#mermaidChart4 .node.clickable{cursor:pointer;}#mermaidChart4 .arrowheadPath{fill:#333333;}#mermaidChart4 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart4 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart4 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart4 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart4 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart4 .cluster text{fill:#333;}#mermaidChart4 .cluster span{color:#333;}#mermaidChart4 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart4 :root{--mermaid-font-family:sans-serif;}#mermaidChart4 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Assimilation LE-Environmental-substances" id="L-Assimilation-Environmental-substances" style="opacity: 1;"><path class="path" d="M317.323387465491,103.5999984741211L381.33750915527344,30.799999237060547L415.41876220703125,30.799999237060547" marker-end="url(#arrowhead140)" style="fill:none"></path><defs><marker id="arrowhead140" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Environmental-substances LE-Internal-substances" id="L-Environmental-substances-Internal-substances" style="opacity: 1;"><path class="path" d="M636.6312561035156,30.799999237060547L670.7125091552734,30.799999237060547L721.6937561035156,30.799999237060547" marker-end="url(#arrowhead141)" style="fill:none"></path><defs><marker id="arrowhead141" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Assimilation LE-Small-molecules" id="L-Assimilation-Small-molecules" style="opacity: 1;"><path class="path" d="M353.74375915527344,126.39999771118164L381.33750915527344,126.39999771118164L453.20626068115234,126.39999771118164" marker-end="url(#arrowhead142)" style="fill:none"></path><defs><marker id="arrowhead142" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Small-molecules LE-large-molecules" id="L-Small-molecules-large-molecules" style="opacity: 1;"><path class="path" d="M598.8437576293945,126.39999771118164L670.7125091552734,126.39999771118164L735.2687530517578,126.39999771118164" marker-end="url(#arrowhead143)" style="fill:none"></path><defs><marker id="arrowhead143" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Assimilation LE-Energy_absorption_reactions" id="L-Assimilation-Energy_absorption_reactions" style="opacity: 1;"><path class="path" d="M317.323387465491,149.1999969482422L381.33750915527344,221.99999618530273L406.33750915527344,221.99999618530273" marker-end="url(#arrowhead144)" style="fill:none"></path><defs><marker id="arrowhead144" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Dissimilation LE-Energy_release_reactions" id="L-Dissimilation-Energy_release_reactions" style="opacity: 1;"><path class="path" d="M317.323387465491,390.3999938964844L381.33750915527344,317.5999946594238L421.13751220703125,317.5999946594238" marker-end="url(#arrowhead145)" style="fill:none"></path><defs><marker id="arrowhead145" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Dissimilation LE-large_molecules" id="L-Dissimilation-large_molecules" style="opacity: 1;"><path class="path" d="M356.33750915527344,413.1999931335449L381.33750915527344,413.1999931335449L454.7250061035156,413.1999931335449" marker-end="url(#arrowhead146)" style="fill:none"></path><defs><marker id="arrowhead146" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-large_molecules LE-Small_molecules" id="L-large_molecules-Small_molecules" style="opacity: 1;"><path class="path" d="M597.3250122070312,413.1999931335449L670.7125091552734,413.1999931335449L733.5000076293945,413.1999931335449" marker-end="url(#arrowhead147)" style="fill:none"></path><defs><marker id="arrowhead147" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Dissimilation LE-Internal_substances" id="L-Dissimilation-Internal_substances" style="opacity: 1;"><path class="path" d="M317.323387465491,435.99999237060547L381.33750915527344,508.799991607666L441.15000915527344,508.799991607666" marker-end="url(#arrowhead148)" style="fill:none"></path><defs><marker id="arrowhead148" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Internal_substances LE-Environmental_substances" id="L-Internal_substances-Environmental_substances" style="opacity: 1;"><path class="path" d="M610.9000091552734,508.799991607666L670.7125091552734,508.799991607666L695.7125091552734,508.799991607666" marker-end="url(#arrowhead149)" style="fill:none"></path><defs><marker id="arrowhead149" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Energy_absorption_reactions LE-Energy_metabolism" id="L-Energy_absorption_reactions-Energy_metabolism" style="opacity: 1;"><path class="path" d="M645.7125091552734,221.99999618530273L670.7125091552734,221.99999618530273L741.7016561817687,246.99999618530273" marker-end="url(#arrowhead150)" style="fill:none"></path><defs><marker id="arrowhead150" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Energy_release_reactions LE-Energy_metabolism" id="L-Energy_release_reactions-Energy_metabolism" style="opacity: 1;"><path class="path" d="M630.9125061035156,317.5999946594238L670.7125091552734,317.5999946594238L741.7016561817687,292.5999946594238" marker-end="url(#arrowhead151)" style="fill:none"></path><defs><marker id="arrowhead151" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Material_metabolism LE-Assimilation" id="L-Material_metabolism-Assimilation" style="opacity: 1;"><path class="path" d="M116.40766711905668,246.99999618530273L213.21250915527344,126.39999771118164L240.80625915527344,126.39999771118164" marker-end="url(#arrowhead152)" style="fill:none"></path><defs><marker id="arrowhead152" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Material_metabolism LE-Dissimilation" id="L-Material_metabolism-Dissimilation" style="opacity: 1;"><path class="path" d="M116.40766711905668,292.5999946594238L213.21250915527344,413.1999931335449L238.21250915527344,413.1999931335449" marker-end="url(#arrowhead153)" style="fill:none"></path><defs><marker id="arrowhead153" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Assimilation-Environmental-substances" class="edgeLabel L-LS-Assimilation' L-LE-Environmental-substances"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Environmental-substances-Internal-substances" class="edgeLabel L-LS-Environmental-substances' L-LE-Internal-substances"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Assimilation-Small-molecules" class="edgeLabel L-LS-Assimilation' L-LE-Small-molecules"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Small-molecules-large-molecules" class="edgeLabel L-LS-Small-molecules' L-LE-large-molecules"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Assimilation-Energy_absorption_reactions" class="edgeLabel L-LS-Assimilation' L-LE-Energy_absorption_reactions"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Dissimilation-Energy_release_reactions" class="edgeLabel L-LS-Dissimilation' L-LE-Energy_release_reactions"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Dissimilation-large_molecules" class="edgeLabel L-LS-Dissimilation' L-LE-large_molecules"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-large_molecules-Small_molecules" class="edgeLabel L-LS-large_molecules' L-LE-Small_molecules"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Dissimilation-Internal_substances" class="edgeLabel L-LS-Dissimilation' L-LE-Internal_substances"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Internal_substances-Environmental_substances" class="edgeLabel L-LS-Internal_substances' L-LE-Environmental_substances"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Energy_absorption_reactions-Energy_metabolism" class="edgeLabel L-LS-Energy_absorption_reactions' L-LE-Energy_metabolism"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Energy_release_reactions-Energy_metabolism" class="edgeLabel L-LS-Energy_release_reactions' L-LE-Energy_metabolism"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Material_metabolism-Assimilation" class="edgeLabel L-LS-Material_metabolism' L-LE-Assimilation"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Material_metabolism-Dissimilation" class="edgeLabel L-LS-Material_metabolism' L-LE-Dissimilation"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Assimilation-132" transform="translate(297.27500915527344,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-56.46875" y="-22.800000190734863" width="112.9375" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-46.46875,-12.800000190734863)"><foreignObject width="92.9375" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Assimilation</div></foreignObject></g></g></g><g class="node default" id="flowchart-Environmental-substances-133" transform="translate(526.0250091552734,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-110.60625457763672" y="-22.800000190734863" width="221.21250915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-100.60625457763672,-12.800000190734863)"><foreignObject width="201.21250915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Environmental-substances</div></foreignObject></g></g></g><g class="node default" id="flowchart-Internal-substances-134" transform="translate(806.4437561035156,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-84.75" y="-22.800000190734863" width="169.5" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-74.75,-12.800000190734863)"><foreignObject width="149.5" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Internal-substances</div></foreignObject></g></g></g><g class="node default" id="flowchart-Small-molecules-136" transform="translate(526.0250091552734,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-72.81875228881836" y="-22.800000190734863" width="145.63750457763672" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-62.81875228881836,-12.800000190734863)"><foreignObject width="125.63750457763672" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Small-molecules</div></foreignObject></g></g></g><g class="node default" id="flowchart-large-molecules-137" transform="translate(806.4437561035156,126.39999771118164)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.17499923706055" y="-22.800000190734863" width="142.3499984741211" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.17499923706055,-12.800000190734863)"><foreignObject width="122.3499984741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">large-molecules</div></foreignObject></g></g></g><g class="node default" id="flowchart-Energy_absorption_reactions-139" transform="translate(526.0250091552734,221.99999618530273)" style="opacity: 1;"><rect rx="0" ry="0" x="-119.6875" y="-22.800000190734863" width="239.375" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-109.6875,-12.800000190734863)"><foreignObject width="219.375" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Energy_absorption_reactions</div></foreignObject></g></g></g><g class="node default" id="flowchart-Dissimilation-140" transform="translate(297.27500915527344,413.1999931335449)" style="opacity: 1;"><rect rx="0" ry="0" x="-59.0625" y="-22.800000190734863" width="118.125" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.0625,-12.800000190734863)"><foreignObject width="98.125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Dissimilation</div></foreignObject></g></g></g><g class="node default" id="flowchart-Energy_release_reactions-141" transform="translate(526.0250091552734,317.5999946594238)" style="opacity: 1;"><rect rx="0" ry="0" x="-104.88750457763672" y="-22.800000190734863" width="209.77500915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-94.88750457763672,-12.800000190734863)"><foreignObject width="189.77500915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Energy_release_reactions</div></foreignObject></g></g></g><g class="node default" id="flowchart-large_molecules-143" transform="translate(526.0250091552734,413.1999931335449)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.29999923706055" y="-22.800000190734863" width="142.5999984741211" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.29999923706055,-12.800000190734863)"><foreignObject width="122.5999984741211" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">large_molecules</div></foreignObject></g></g></g><g class="node default" id="flowchart-Small_molecules-144" transform="translate(806.4437561035156,413.1999931335449)" style="opacity: 1;"><rect rx="0" ry="0" x="-72.94375228881836" y="-22.800000190734863" width="145.88750457763672" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-62.94375228881836,-12.800000190734863)"><foreignObject width="125.88750457763672" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Small_molecules</div></foreignObject></g></g></g><g class="node default" id="flowchart-Internal_substances-146" transform="translate(526.0250091552734,508.799991607666)" style="opacity: 1;"><rect rx="0" ry="0" x="-84.875" y="-22.800000190734863" width="169.75" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-74.875,-12.800000190734863)"><foreignObject width="149.75" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Internal_substances</div></foreignObject></g></g></g><g class="node default" id="flowchart-Environmental_substances-147" transform="translate(806.4437561035156,508.799991607666)" style="opacity: 1;"><rect rx="0" ry="0" x="-110.73125457763672" y="-22.800000190734863" width="221.46250915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-100.73125457763672,-12.800000190734863)"><foreignObject width="201.46250915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Environmental_substances</div></foreignObject></g></g></g><g class="node default" id="flowchart-Energy_metabolism-149" transform="translate(806.4437561035156,269.7999954223633)" style="opacity: 1;"><rect rx="0" ry="0" x="-84.83906555175781" y="-22.800000190734863" width="169.67813110351562" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-74.83906555175781,-12.800000190734863)"><foreignObject width="149.67813110351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Energy_metabolism</div></foreignObject></g></g></g><g class="node default" id="flowchart-Material_metabolism-152" transform="translate(98.10625457763672,269.7999954223633)" style="opacity: 1;"><rect rx="0" ry="0" x="-90.10625457763672" y="-22.800000190734863" width="180.21250915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-80.10625457763672,-12.800000190734863)"><foreignObject width="160.21250915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Material_metabolism</div></foreignObject></g></g></g></g></g></g></svg></div><p>&nbsp;</p><h3 id='1011material-metabolism-and-energy-metabolism'><strong><span>10.1.1.Material Metabolism and Energy Metabolism</span></strong></h3><p><span>Metabolism includes two aspects: </span><strong><span>material metabolism</span></strong><span> and </span><strong><span>energy metabolism</span></strong><span>. Material metabolism focuses on the pathways and regulatory mechanisms of various bioactive substances, such as sugars, fats, and proteins, undergoing enzyme-catalyzed reactions inside cells, including molecular breakdown and synthesis. Energy metabolism focuses on the conversion of chemical or light energy into biological energy within cells and the utilization of energy in life activities. Energy metabolism and material metabolism coexist, depend on each other, and cannot be separated. </span></p><p><span>Metabolism requires three major components: </span><strong><span>energy, reducing equivalents, and carbon skeletons</span></strong><span>. All metabolic processes rely on energy as the driving force, and within cells, adenosine triphosphate (ATP) serves as the energy carrier, while guanosine triphosphate (GTP) is involved in protein synthesis, cytidine triphosphate (CTP) participates in phospholipid synthesis, and uridine triphosphate (UTP) is involved in glycogen synthesis. Reducing equivalents are represented by nicotinamide adenine dinucleotide (NADH) and nicotinamide adenine dinucleotide phosphate (NADPH), which are synthesized during catabolism. These molecules serve as carriers of [H], which can be transferred into the respiratory chain or directly accepted by intermediate metabolites. NADPH also provides reducing power for biosynthesis. Carbon skeletons refer to the small molecular carbon frameworks that remain after the breakdown of macromolecules, such as glucose, fatty acids, amino acids, nucleotides, as well as waste products like CO</span><sub><span>2</span></sub><span>, and various intermediate metabolites including organic acids, antibiotics, and vitamins. The maintenance of metabolic processes requires the presence of all three components.</span></p><p>&nbsp;</p><h3 id='1012assimilation-and-dissimilation'><strong><span>10.1.2.Assimilation and Dissimilation</span></strong></h3><p><span>Metabolism can be further divided into two aspects: </span><strong><span>assimilation</span></strong><span> and </span><strong><span>dissimilation</span></strong><span>. Assimilation refers to the process in which an organism converts substances taken from the environment into its own substances through a series of chemical reactions, involving the synthesis of large molecules from small molecules. Assimilation requires energy consumption. Dissimilation refers to the process in which substances in the organism undergo a series of chemical reactions and eventually become excreted waste products, involving the breakdown of large molecules into small molecules. Dissimilation releases energy. Material metabolism is divided into synthetic metabolism and degradative metabolism, with synthetic metabolism belonging to assimilation and degradative metabolism belonging to dissimilation. The process of substance exchange between the organism and the environment includes three stages: digestion and absorption, intermediary metabolism, and waste elimination. Nutrients absorbed by animals are utilized without distinction from the body&#39;s existing substances. On the one hand, they undergo degradative metabolism to produce energy, and on the other hand, they undergo tissue renewal and construction.</span></p><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart5" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 995.4781494140625px;" viewBox="0 0.0000019073486328125 995.4781494140625 61.599998474121094"><style>#mermaidChart5 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart5 .error-icon{fill:#552222;}#mermaidChart5 .error-text{fill:#552222;stroke:#552222;}#mermaidChart5 .edge-thickness-normal{stroke-width:2px;}#mermaidChart5 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart5 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart5 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart5 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart5 .marker{fill:#333333;stroke:#333333;}#mermaidChart5 .marker.cross{stroke:#333333;}#mermaidChart5 svg{font-family:sans-serif;font-size:16px;}#mermaidChart5 .label{font-family:sans-serif;color:#333;}#mermaidChart5 .cluster-label text{fill:#333;}#mermaidChart5 .cluster-label span{color:#333;}#mermaidChart5 .label text,#mermaidChart5 span{fill:#333;color:#333;}#mermaidChart5 .node rect,#mermaidChart5 .node circle,#mermaidChart5 .node ellipse,#mermaidChart5 .node polygon,#mermaidChart5 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart5 .node .label{text-align:center;}#mermaidChart5 .node.clickable{cursor:pointer;}#mermaidChart5 .arrowheadPath{fill:#333333;}#mermaidChart5 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart5 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart5 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart5 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart5 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart5 .cluster text{fill:#333;}#mermaidChart5 .cluster span{color:#333;}#mermaidChart5 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart5 :root{--mermaid-font-family:sans-serif;}#mermaidChart5 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-Large_molecules+ADP+NAD LE-Small_molecules+ATP+NADH" id="L-Large_molecules+ADP+NAD-Small_molecules+ATP+NADH" style="opacity: 1;"><path class="path" d="M247.97500610351562,30.799999237060547L315.59375762939453,30.799999237060547L383.21250915527344,30.799999237060547" marker-end="url(#arrowhead167)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead167" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Small_molecules+ATP+NADH LE-Large_molecules+ATP+NAD" id="L-Small_molecules+ATP+NADH-Large_molecules+ATP+NAD" style="opacity: 1;"><path class="path" d="M630.6406402587891,30.799999237060547L691.2031402587891,30.799999237060547L751.7656402587891,30.799999237060547" marker-end="url(#arrowhead168)" style="fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead168" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(315.59375762939453,30.799999237060547)" style="opacity: 1;"><g transform="translate(-42.618751525878906,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="85.23750305175781" height="25.600000381469727"></rect><foreignObject width="85.23750305175781" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Large_molecules+ADP+NAD-Small_molecules+ATP+NADH" class="edgeLabel L-LS-Large_molecules+ADP+NAD' L-LE-Small_molecules+ATP+NADH">Breakdown</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(691.2031402587891,30.799999237060547)" style="opacity: 1;"><g transform="translate(-35.5625,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="71.125" height="25.600000381469727"></rect><foreignObject width="71.125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Small_molecules+ATP+NADH-Large_molecules+ATP+NAD" class="edgeLabel L-LS-Small_molecules+ATP+NADH' L-LE-Large_molecules+ATP+NAD">Synthesis</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Large_molecules+ADP+NAD-159" transform="translate(127.98750305175781,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-119.98750305175781" y="-22.800000190734863" width="239.97500610351562" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-109.98750305175781,-12.800000190734863)"><foreignObject width="219.97500610351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Large_molecules+ADP+NAD</div></foreignObject></g></g></g><g class="node default" id="flowchart-Small_molecules+ATP+NADH-160" transform="translate(506.92657470703125,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-123.71406555175781" y="-22.800000190734863" width="247.42813110351562" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-113.71406555175781,-12.800000190734863)"><foreignObject width="227.42813110351562" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Small_molecules+ATP+NADH</div></foreignObject></g></g></g><g class="node default" id="flowchart-Large_molecules+ATP+NAD-161" transform="translate(869.6218872070312,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-117.85625457763672" y="-22.800000190734863" width="235.71250915527344" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-107.85625457763672,-12.800000190734863)"><foreignObject width="215.71250915527344" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Large_molecules+ATP+NAD</div></foreignObject></g></g></g></g></g></g></svg></div><p>&nbsp;</p><h3 id='1013nutritional-types-of-organisms'><strong><span>10.1.3.Nutritional Types of Organisms</span></strong></h3><p><span>Organisms in nature can be classified into several types based on their carbon source, energy source, and dependence on O</span><sub><span>2</span></sub><span>:</span></p><ol start='' ><li><p><strong><span>Photoautotrophs, photoheterotrophs, chemoautotrophs, chemoheterotrophs</span></strong></p><p><span>Organisms can utilize either light energy or chemical energy as their energy source, referred to as photoautotrophs (plants, cyanobacteria, algae, certain photosynthetic bacteria) and chemoautotrophs (animals, most microorganisms), respectively. Photoautotrophs produce ATP through photosynthesis, while chemoautotrophs produce ATP by oxidizing reduced organic or inorganic compounds. Organisms can utilize either organic substances or CO</span><sub><span>2</span></sub><span> as their carbon source, referred to as chemoheterotrophs and photoheterotrophs, respectively. Chemoheterotrophs mainly use various organic compounds such as sugars and lipids as their carbon sources and hydrogen donors, while photoheterotrophs mainly use CO</span><sub><span>2</span></sub><span> as their carbon source and fix it into their own cellular carbon skeletons.</span></p></li><li><p><strong><span>Obligate aerobes, obligate anaerobes, facultative anaerobes</span></strong></p><p><span>Obligate aerobes can only maintain metabolism under aerobic conditions and are further divided into obligate aerobic and microaerophilic types, such as humans, most animals, and microorganisms. Obligate anaerobes can only maintain metabolism under anaerobic conditions. Obligate aerobes have a complete respiratory chain, superoxide dismutase (SOD), and catalase in their bodies. Oxygen in the body may be converted into superoxide anions (O</span><sub><span>2</span></sub><sup><span>-</span></sup><span>), which can cause damage to biological membranes and macromolecules. Superoxide dismutase and catalase can convert toxic superoxide anions into non-toxic H</span><sub><span>2</span></sub><span>O. However, anaerobes do not contain these two enzymes, so oxygen is toxic to them. Facultative anaerobes can maintain metabolism under both aerobic and anaerobic conditions, such as Escherichia coli and yeast.</span></p><p>&nbsp;</p></li></ol><h3 id='1014characteristics-of-material-metabolism'><strong><span>10.1.4.Characteristics of Material Metabolism</span></strong></h3><ul><li><strong><span>Common metabolic pool</span></strong><span>: Whether it is external nutrients or nutrients stored in the body, they will participate in a common metabolic pool during intermediary metabolism. For example, both amino acids converted into sugars and glycerol converted into sugars can participate in the same pool of carbohydrate metabolism.</span></li><li><strong><span>Dynamic balance</span></strong><span>: In the body, carbohydrate metabolism, lipid metabolism, amino acid metabolism, and nucleotide metabolism are always in a dynamic equilibrium state, following cellular economy. Although various substances have multiple metabolic pathways, they can be replenished or consumed at appropriate times.</span></li><li><strong><span>Integrity</span></strong><span>: Material metabolism in the body is not isolated but rather a tightly interconnected, mutually convertible, and mutually constrained metabolic network. For example, sugars, fats, and amino acids all generate acetyl-CoA, which can be completely oxidized through the TCA cycle. When fatty acid catabolism is vigorous, the large amount of acetyl-CoA generated can inhibit pyruvate dehydrogenase, thus restricting the catabolism of sugars.</span></li><li><strong><span>Commonality of energy and reducing equivalents</span></strong><span>: ATP synthesized during catabolism can directly provide energy for anabolic metabolism, while NADPH produced can directly provide reducing power for anabolic metabolism.</span></li><li><strong><span>Metabolic regulation</span></strong><span>: There are various complex regulatory mechanisms within organisms, such as hormonal regulation, neural regulation, and cellular regulation, which together maintain the order and stability of metabolism.</span></li></ul><p>&nbsp;</p><h3 id='1015research-methods-for-metabolism'><strong><span>10.1.5.Research Methods for Metabolism</span></strong></h3><ul><li><p><strong><span>Isotope Tracing Method</span></strong></p><p><span>The isotope tracing method, also known as in vivo metabolism research, involves using isotopes, which are elements with the same atomic number and chemical properties but different masses. Radioactive isotopes of all elements can be obtained by artificial means. After adding labeled radioactive isotopes to metabolites, they participate in metabolic processes and react chemically with natural isotopes. By measuring the abundance or ratio of specific isotopes in a sample, various reaction rates, pathways, and tissue distributions in metabolic processes can be inferred.</span></p></li><li><p><strong><span>Enzyme Inhibition Method</span></strong></p><p><span>Enzyme inhibition, also known as ex vivo metabolism research, is used to observe the results of inhibiting a specific reaction by using enzyme inhibitors. Almost all metabolic reactions are enzyme-catalyzed. By using a certain enzyme inhibitor, the change in metabolism can be inferred.</span></p></li><li><p><strong><span>Whole-body Level Research</span></strong></p><p><span>Knoop used live dogs as experimental subjects, fed them different fatty acids with different numbers of carbon atoms, and analyzed their excrement to propose the β-oxidation theory of fatty acids.</span></p></li><li><p><strong><span>Organ Level Research</span></strong></p><p><span>In the study of urea synthesis in animals that excrete urea, when the liver was removed from the animal, the levels of amino acids and blood ammonia in the animal&#39;s blood increased while the urea content in urine decreased. The animal soon died. However, when the kidney was removed, this phenomenon did not occur. Therefore, it was concluded that the process of urea cycle occurs in the liver.</span></p></li><li><p><strong><span>Cellular Level Research</span></strong></p><p><span>By using differential centrifugation or density gradient centrifugation on tissue homogenates, different organelles can be separated and the enzyme systems and metabolic pathways in each organelle can be studied separately.</span></p></li></ul><p>&nbsp;</p><h2 id='102bioenergetics'><strong><span>10.2.Bioenergetics</span></strong></h2><p><span>Bioenergetics, or biochemical thermodynamics, is the study of the energy changes accompanying biochemical reactions. Biologic systems are essentially isothermic and use chemical energy to power living processes. The way in which an animal obtains suitable fuel from its food to provide this energy is basic to the understanding of normal nutrition and metabolism.</span></p><p>&nbsp;</p><h3 id='1021free-energy'><strong><span>10.2.1.Free Energy</span></strong></h3><p><strong><span>Free energy</span></strong><span> </span><span>	</span><span>refers to the inherent energy in a compound molecule structure, which is the energy available to do work at constant temperature and pressure. Gibbs free energy change (Δ</span><em><span>G</span></em><span>) is the part of the total energy change in a system that can be used to do work, known as available energy or chemical potential. Biological systems follow the general laws of thermodynamics. The first law of thermodynamics states that the total energy of a system, including its surroundings, remains constant. It means that energy is neither lost nor gained in the entire system during any process of change. However, energy can be transferred from one part of the system to another or converted into another form of energy. In biological systems, chemical energy can be converted into thermal energy, electrical energy, radiant energy, or mechanical energy.</span></p><p><span>The second law of thermodynamics states that </span><strong><span>for a process to occur spontaneously, the total entropy of the system must increase</span></strong><span>. Entropy is the degree of disorder or randomness in a system, reaching its maximum value when approaching equilibrium. Under constant temperature and pressure conditions, the relationship between the free energy change (Δ</span><em><span>G</span></em><span>) and the entropy change (Δ</span><em><span>S</span></em><span>) of a reaction system is as follows:</span></p><p><img src="media/10/G与S.png" style="zoom:67%;" /></p><p><span>where Δ</span><em><span>H</span></em><span> is the change in enthalpy (heat) and </span><em><span>T</span></em><span> is the absolute temperature. In biochemical reactions, since Δ</span><em><span>H</span></em><span> is approximately equal to the total energy change of the reaction (Δ</span><em><span>E</span></em><span>), the above relationship can be expressed as follows:</span></p><p><img src="media/10/G与E.png" style="zoom:67%;" /></p><p><span>If Δ</span><em><span>G</span></em><span> is negative, the reaction will proceed spontaneously and lose free energy, which means it releases energy. If Δ</span><em><span>G</span></em><span> is positive, the reaction will only occur if it can gain free energy, which means it absorbs energy. If Δ</span><em><span>G</span></em><span> is zero, the system is in equilibrium and no net change occurs. When the reactant concentration is 1.0mol/L, Δ</span><em><span>G</span></em><sup><span>0</span></sup><span> is the standard free energy change. For biochemical reactions, the standard state pH is 7.0. The standard free energy change at this standard state is represented by Δ</span><em><span>G</span></em><sup><span>0&#39;</span></sup><span>. The standard free energy change can be calculated from the equilibrium constant (</span><em><span>K</span></em><sub><span>eq</span></sub><span>):</span></p><p><img src="media/10/G与K.png" style="zoom:67%;" /></p><p><span>where </span><em><span>R</span></em><span> is the gas constant and </span><em><span>T</span></em><span> is the absolute temperature. It should be noted that the actual Δ</span><em><span>G</span></em><span> may be larger or smaller than Δ</span><em><span>G</span></em><sup><span>0&#39;</span></sup><span>, depending on the concentrations of various reactants, including solvents, ions, and proteins. In biochemical systems, enzymes only accelerate the process towards equilibrium and never alter the final concentration of reactants at equilibrium.</span></p><p>&nbsp;</p><h3 id='1022coupling-of-energy-absorbing-and-releasing-processes'><span>10.2.2.Coupling of Energy Absorbing and Releasing Processes</span></h3><p><span>Life processes, such as synthesis reactions, muscle contraction, nerve impulse conduction, and active transport, acquire energy through chemical coupling. In the simplest chemical reaction, this coupling can be represented as:</span></p><p><img src="media/10/吸能与放能.png" style="zoom:67%;" /></p><p><span>A metabolite A is converted to metabolite B, releasing free energy, and is coupled with another reaction that requires free energy to convert metabolite C to metabolite D. This process is accompanied by the loss or gain of free energy, also known as energy-absorbing and energy-releasing processes. In fact, energy-absorbing processes cannot exist independently but must be coupled with energy-releasing processes, where the overall net energy change is releasing energy. Energy-releasing reactions are called catabolism (usually the breakdown or oxidation of fuel molecules), while synthesis reactions that build substances are called anabolism. The entire reaction process in the above diagram is accompanied by a loss of free energy and is dissipated as heat.</span></p><p>&nbsp;</p><h3 id='1023high-energy-bonds-and-high-energy-phosphates'><span>10.2.3.High-Energy Bonds and High-Energy Phosphates</span></h3><p><span>A high-energy bond refers to a chemical bond that is unstable and easily undergoes hydrolysis or group transfer while releasing more than 20.9 kJ/mol of free energy (Δ</span><em><span>G</span></em><sup><span>0&#39;</span></sup><span> &lt; -20.9 kJ/mol). It is denoted by the symbol &quot;~&quot;. The more free energy is released upon hydrolysis of a high-energy bond, the more unstable the bond is and the more easily it is hydrolyzed. High-energy bonds play a significant role in biological systems, with the most important ones being </span><strong><span>high-energy phosphate bonds</span></strong><span> and </span><strong><span>high-energy thioester bonds</span></strong><span>.</span></p><p><img src="C:\Users\dell\Desktop\Ostrich\media\10\自由能释放.png" alt="自由能释放" style="zoom: 80%;" /></p><p><span>Compounds containing high-energy bonds are called high-energy compounds. Most of the high-energy compounds contain phosphate groups, but not all compounds containing phosphate groups are high-energy phosphates. The table below lists some standard free energy releases upon hydrolysis of phosphate compounds:</span></p><figure><table><thead><tr><th><span>Compound</span></th><th style='text-align:left;' ><span>Δ</span><em><span>G</span></em><sup><span>0&#39;</span></sup><span>(kJ/mol)</span></th></tr></thead><tbody><tr><td><span>Phosphoenolpyruvate</span></td><td style='text-align:left;' ><span>-61.9</span></td></tr><tr><td><span>Carbamoyl phosphate</span></td><td style='text-align:left;' ><span>-51.4</span></td></tr><tr><td><span>1,3-Bisphosphoglycerate</span></td><td style='text-align:left;' ><span>-49.3</span></td></tr><tr><td><span>Creatine phosphate</span></td><td style='text-align:left;' ><span>-43.1</span></td></tr><tr><td><span>ATP → AMP + PPi</span></td><td style='text-align:left;' ><span>-32.2</span></td></tr><tr><td><span>ATP → ADP + Pi</span></td><td style='text-align:left;' ><span>-30.5</span></td></tr><tr><td><span>Glucose-1-phosphate</span></td><td style='text-align:left;' ><span>-20.9</span></td></tr><tr><td><span>PPi</span></td><td style='text-align:left;' ><span>-19.2</span></td></tr><tr><td><span>Fructose-6-phosphate</span></td><td style='text-align:left;' ><span>-15.9</span></td></tr><tr><td><span>Glucose-6-phosphate</span></td><td style='text-align:left;' ><span>-13.8</span></td></tr><tr><td><span>Glycerol-3-phosphate</span></td><td style='text-align:left;' ><span>-9.2</span></td></tr></tbody></table></figure><p><span>Based on the characteristics of bond types, high-energy compounds can be classified into four categories:</span></p><ul><li><strong><span>Phosphoester bond type</span></strong><span>: Phosphoenolpyruvate, 1,3-bisphosphoglycerate, acetyl phosphate, ATP, ADP, formyl phosphate</span></li><li><strong><span>Phosphoramidate bond type</span></strong><span>: Phosphocreatine, phosphoarginine</span></li><li><strong><span>Thioester bond type</span></strong><span>: Succinyl-CoA, acetyl-CoA</span></li><li><strong><span>Methylthio bond type</span></strong><span>: S-Adenosyl methionine (SAM)</span></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='103atp'><strong><span>10.3.ATP</span></strong></h2><p><strong><span>Adenosine Triphosphate (ATP)</span></strong><span> is a typical high-energy phosphate compound. The ATP structure contains two high-energy phosphate bonds (β, γ), which can release 32.2 kJ/mol and 30.5 kJ/mol of energy upon hydrolysis. Hydrolysis at the γ-end generates Adenosine Diphosphate (ADP) and Adenosine Monophosphate (AMP). Therefore, ADP is also a high-energy phosphate compound. However, since the hydrolysis of the α-phosphate bond only releases 14.2 kJ/mol of energy, it is not considered a high-energy bond, and AMP is not a high-energy phosphate compound.</span></p><p><img src="media/10/ATP.png" referrerpolicy="no-referrer"></p><h3 id='1031energy-currency'><strong><span>10.3.1.Energy Currency</span></strong></h3><p><span>ATP has a high potential for phosphate transfer, allowing it to serve as a donor of high-energy phosphates to form phosphorylated compounds. Similarly, ADP can accept a phosphate group to form ATP. The ATP/ADP cycle occurs rapidly, and the ~P involved in energy storage or capture has three main sources:</span></p><p><img src="media/10/ATP转移过程.png" style="zoom:77%;" /></p><ol start='' ><li><span>Oxidative phosphorylation is the primary source of ~P in aerobic organisms. In the mitochondrial matrix, when oxygen is reduced to H</span><sub><span>2</span></sub><span>O through the respiratory chain, ATP is produced.</span></li><li><span>During glycolysis, one molecule of glucose produces lactate, resulting in a net production of two ~P, generated by 1,3-diphosphoglyceric acid and phosphoenolpyruvic acid.</span></li><li><span>In the TCA cycle, succinic acid generates one ~P under the catalysis of succinyl-CoA synthetase.</span></li></ol><p>&nbsp;</p><h3 id='1032energy-storer'><strong><span>10.3.2.Energy Storer</span></strong></h3><p><strong><span>ATP is a carrier and transporter of energy, but not a storer of energy</span></strong><span>. Phosphates are a storage form of phosphate groups, including phosphocreatine in vertebrate skeletal muscle, heart, sperm, and brain, as well as phosphoarginine in invertebrate muscle. When ATP concentration is high, creatine accepts the high-energy phosphate group from ATP under the action of enzymes to form phosphocreatine. When ATP concentration is low, phosphocreatine transfers the high-energy phosphate group to ADP. While ATP is rapidly utilized as an energy source for muscle contraction, phosphates allow the concentration of ATP and ADP to be maintained. But when the ATP/ADP ratio is high, their concentrations can increase to serve as energy reserves.</span></p><p><img src="media/10/磷酸肌酸.png" style="zoom:77%;" /></p><p>&nbsp;</p><h3 id='1033energy-charge'><strong><span>10.3.3.Energy Charge</span></strong></h3><p><span>There are three nucleotides in the cell: AMP, ADP, and ATP, collectively referred to as the </span><strong><span>nucleotide pool</span></strong><span>. In the cell, the relative quantities of ATP, ADP, and AMP at a given time control cellular metabolic activities.</span></p><p><strong><span>Energy charge</span></strong><span> refers to the measurement of the high-energy phosphate state within the cell. It also refers to the number of high-energy phosphate groups carried by the nucleotide pool. The energy charge represents the energy status of the nucleotide system in an organism and is represented by the following equation. The value of the energy charge ranges from 0 to 1. When all AMP and ADP in the cell are converted to ATP, the energy charge is 1, indicating the maximum number of available high-energy phosphate bonds. When all molecules are ADP, the energy charge is 0.5. When all ATP and ADP are converted to AMP, the energy charge is 0.</span></p><p><img src="media/10/能荷公式.png" style="zoom:87%;" /></p><p><span>The utilization and generation of ATP in organisms have the ability to self-regulate and control, manifested as the regulation of metabolic networks, known as </span><strong><span>energy charge regulation</span></strong><span>. The essence of energy charge regulation is the allosteric regulation of certain key enzymes in the nucleotide system.</span></p><ul><li><span>When the energy charge is high, the high concentration of ATP inhibits the activity of certain key enzymes in the catabolic pathway, such as phosphofructokinase and pyruvate kinase, thereby reducing catabolism, enhancing anabolism, weakening ATP synthesis, accelerating ATP utilization, and lowering the energy charge level to prevent energy waste.</span></li><li><span>When the energy charge is low, the high concentrations of ADP and AMP activate the activity of certain enzymes in the catabolic pathway, such as hexokinase, phosphofructokinase, and citrate synthase, thereby enhancing catabolism, inhibiting anabolism, promoting coenzyme regeneration, promoting electron transfer and oxidative phosphorylation in the respiratory chain, accelerating ATP synthesis, weakening ATP utilization, and increasing the energy charge.</span></li></ul><p>&nbsp;</p><h3 id='1034functions-of-atp'><strong><span>10.3.4.Functions of ATP</span></strong></h3><ul><li><strong><span>Coupling energy metabolism in catabolism and anabolism</span></strong><span>: The energy released during catabolism, except for heat dissipation, is carried in the form of ATP. ATP can directly participate in synthesis reactions to provide energy. It can also be converted into electrical, light, mechanical, and thermal energy to maintain basic physiological metabolism in living organisms. For example, it provides energy for muscle contraction and transmembrane transport of nutrients and ensures the correct transmission of genetic information during DNA, RNA, and protein synthesis.</span></li><li><strong><span>Activation of metabolites or enzyme molecules through phosphorylation</span></strong><span>: Under the action of kinases, ATP catalyzes the transfer of phosphate groups to metabolites or certain enzymes in pathways. For example, glucose is phosphorylated to form 6-phosphogluconate, which then enters the Embden-Meyerhof pathway for decomposition and oxidation. Some enzymes are activated by phosphorylation, such as glycogen phosphorylase and hormone-sensitive lipase, while others are inhibited by phosphorylation, such as glycogen synthase and acetyl-CoA carboxylase, thereby regulating metabolic processes.</span></li><li><strong><span>Triggering energy charge regulation</span></strong><span>: When the energy charge in the organism is high, the high concentration of ATP allosterically inhibits the activity of certain key enzymes in the pathways, such as phosphofructokinase and pyruvate kinase, reducing catabolism, enhancing anabolism, and lowering the energy charge level to prevent energy waste.</span></li><li><strong><span>Conversion into other active substances</span></strong><span>: ATP can be converted into UTP for glycogen synthesis, CTP for phospholipid synthesis, GTP for protein synthesis. It can also be converted into AMP, which participates in nucleic acid formation, converts into second messengers (cAMP, cGMP), converts into some coenzymes (CoⅠ, CoⅡ, CoA), and transforms into certain active substances such as UDPG and SAM.</span></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='104the-interrelationship-of-substance-metabolism'><strong><span>10.4.The Interrelationship of Substance Metabolism</span></strong></h2><p><img src="media/10/代谢总通路.png" style="zoom:50%;" /></p><h3 id='1041the-interconversion-of-metabolites'><strong><span>10.4.1.The interconversion of metabolites</span></strong></h3><h4 id='ⅰ-interconversion-between-sugar-and-fat'><span>(Ⅰ) Interconversion between Sugar and Fat</span></h4><p><span>In organisms, the conversion of sugar to lipids first involves the glycolysis process to produce two intermediates, </span><strong><span>3-phosphoglyceraldehyde and pyruvic acid</span></strong><span>. 3-phosphoglyceraldehyde can be hydrogenated to form glycerol, and acetyl-CoA, formed by the oxidative decarboxylation of pyruvic acid, serves as the building block for the synthesis of fatty acids and cholesterol. When the body takes in excessive sugar, a large amount of lipids is synthesized and accumulated.</span></p><p><span>In plants and some microorganisms, fatty acids undergo β-oxidation to produce acetyl-CoA, which then generates succinic acid through the TCA cycle. Succinic acid enters the TCA cycle and is converted to oxaloacetic acid, which can be used for gluconeogenesis. However, in animals, the lack of the glyoxylate cycle makes it difficult for acetyl-CoA produced by fatty acid β-oxidation to be converted to oxaloacetic acid for gluconeogenesis. (In the absence of an external carbon skeleton, the TCA cycle, essential for maintaining stability, is essentially uninterrupted). After glycerol is phosphorylated, the oxidized dihydroxyacetone phosphate can be used for gluconeogenesis to synthesize glucose.</span></p><p><span>The regulation of sugar metabolism is closely related to the regulation of lipid metabolism: when the body experiences severe diabetes or prolonged starvation, sugar metabolism is hindered, leading to the mobilization of a large amount of fat to produce fatty acids through β-oxidation, providing a significant amount of energy to supplement the body.</span></p><p>&nbsp;</p><h4 id='ⅱ-interconversion-between-amino-acids-and-fat'><span>(Ⅱ) Interconversion between Amino Acids and Fat</span></h4><p><span>The α-keto acids generated after the deamination of amino acids can be converted to acetyl-CoA, which, after reduction and condensation, forms fatty acids. Acetyl-CoA is also a raw material for the synthesis of cholesterol. Serine (Ser) can participate in the synthesis of phospholipids, as it is decarboxylated to form ethanolamine, which, after receiving a methyl group from S-adenosylmethionine, produces choline. Serine, ethanolamine, and choline are the raw materials for phosphatidylserine, sphingomyelin, and phosphatidylcholine, respectively.</span></p><p><span>Glycerol can be converted into pyruvic acid, oxaloacetic acid, and α-ketoglutaric acid, which can each accept an amino group and be converted into Ala, Asp, and Glu, respectively. In the cells of plants and some microorganisms, there exists the glyoxylate cycle, where acetyl-CoA produced by fatty acid β-oxidation enters the glyoxylate cycle and the resulting succinic acid can be transformed into the carbon skeleton of amino acids. However, in animals, due to the lack of the glyoxylate cycle, it is difficult for acetyl-CoA produced by fatty acid β-oxidation to be converted into amino acids.</span></p><p>&nbsp;</p><h4 id='ⅲ-relationship-between-sugar-and-amino-acids'><span>(Ⅲ) Relationship between Sugar and Amino Acids</span></h4><p><span>Most of the 20 amino acids that make up proteins undergo deamination to generate the corresponding α-keto acids, which can be converted into sugars and glycogen through gluconeogenesis after being transformed into intermediate metabolites such as pyruvic acid, oxaloacetic acid, and α-ketoglutaric acid. The carbon flow in the process can also enter the glycerol synthesis pathway. These amino acids are also known as </span><strong><span>gluconeogenic amino acids</span></strong><span>.</span></p><p><span>Certain carbon skeletons produced during glycolysis and the subsequent TCA cycle can serve as precursors for amino acid synthesis. For example, 3-phosphoglyceric acid synthesizes Ser, Gly, and Cys; α-ketoglutaric acid synthesizes Glu, Gln, Leu, and Pro; oxaloacetic acid synthesizes Asp, Asn, Thr, Lys, Met, and Ile; and pyruvic acid synthesizes Ala, Leu, and Val. Higher animals are capable of synthesizing 12 non-essential amino acids, while the remaining amino acids must be obtained from food.</span></p><p>&nbsp;</p><h4 id='ⅳ-relationship-between-nucleotides-and-the-others'><span>(Ⅳ) Relationship between Nucleotides and the Others</span></h4><p><span>The 5-phosphoribose needed for nucleotide synthesis is provided by the pentose phosphate pathway, and after nucleotide degradation, it also enters the pentose phosphate pathway for metabolism. Amino acids and their metabolic products provide the elemental sources for the bases in nucleotide composition. For example, purine synthesis requires Gly, Asp, Glu, and N</span><sup><span>10</span></sup><span>-formyltetrahydrofolate as substrates, while pyrimidine synthesis requires Asp and Gln. N</span><sup><span>5</span></sup><span>,N</span><sup><span>10</span></sup><span>-methylenetetrahydrofolate is also used for dTMP synthesis. Gln can participate in the synthesis of phosphoribosyl pyrophosphate (PRPP), providing amino groups for the synthesis of UTP into CTP and XMP into GMP.</span></p><p><span>Nucleotides are the building blocks of nucleic acids but generally do not serve as carbon or nitrogen sources for the synthesis of other substances in the body. Nucleotides can be converted to ATP, which serves as an energy currency for cellular energy supply. CTP is involved in phospholipid synthesis, GTP is involved in protein synthesis, and UTP is involved in glycogen synthesis. Nucleotides can also be converted to second messenger cyclic adenosine monophosphate (cAMP) and cyclic guanosine monophosphate (cGMP), participating in hormone-mediated metabolic regulation processes. Nucleotides are used for the synthesis of certain coenzymes, such as AMP participating in the synthesis of CoⅠ, CoⅡ, CoA, and FAD, which are necessary for maintaining metabolism.</span></p><p>&nbsp;</p><h3 id='1042intermediary-metabolites-connecting-different-pathways'><strong><span>10.4.2.Intermediary Metabolites Connecting Different Pathways</span></strong></h3><p><span>In living organisms, different substances undergo different metabolic pathways, and the same substance is often metabolized through multiple pathways. These various metabolic pathways can be connected through intermediary metabolites, such as glucose-6-phosphate, glyceraldehyde-3-phosphate, and pyruvate.</span></p><p><span>Glucose-6-phosphate is a common intermediary metabolite in glycolysis, the pentose phosphate pathway, gluconeogenesis, glycogen synthesis, and glycogen degradation. Glyceraldehyde-3-phosphate is a common intermediary metabolite in glycolysis, the pentose phosphate pathway, and gluconeogenesis. Glycerol, produced during fat breakdown, can be converted to glyceraldehyde-3-phosphate by the action of glycerol kinase. Additionally, certain amino acids involved in gluconeogenesis can be converted to glyceraldehyde-3-phosphate through deamination. Pyruvate is a common intermediary metabolite in glycolysis, aerobic oxidation of glucose, and oxidative degradation of amino acids involved in gluconeogenesis. Under aerobic conditions, pyruvate is oxidatively decarboxylated to form acetyl-CoA, while under anaerobic conditions, pyruvate is reduced to lactate or decarboxylated to oxaloacetate by carboxylase.</span></p><p><span>The intermediary metabolite acetyl-CoA, derived from the breakdown of carbohydrates, fats, and amino acids, can enter the TCA cycle and undergo oxidative phosphorylation, producing CO</span><sub><span>2</span></sub><span>, H</span><sub><span>2</span></sub><span>O, and ATP. Acetyl-CoA can also serve as a precursor for the synthesis of fatty acids, cholesterol, and ketone bodies. Intermediate metabolites of the TCA cycle, such as oxaloacetate and α-ketoglutarate, can also serve as carbon skeletons for certain substances in the organism. For example, oxaloacetate and α-ketoglutarate can be converted to aspartate and glutamate, respectively. Citrate can be used for fatty acid synthesis, and succinyl-CoA can combine with glycine to synthesize heme. Certain amino acids, through metabolic transformations, can also generate intermediate metabolites such as oxaloacetate and α-ketoglutarate.</span></p><p>&nbsp;</p></div></div>
+</div>
+
+</div>
+</main>
+
+<script src="bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ed38f6d2bda5881f1e32b079fec99636";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    document.body.oncontextmenu = 
+    document.body.ondragstart = 
+    document.body.onselectstart = 
+    document.body.onbeforecopy = 
+    function () { return false; };
+    document.body.onselect = 
+    document.body.oncopy = 
+    document.body.onmouseup = 
+    function () { document.selection.empty(); };
+</script>
+
+<script>
+var navbar = document.querySelector('.navbar');
+// 初始滚动位置
+var prevScrollPos = window.pageYOffset;
+
+window.addEventListener('scroll', function() {
+  // 当前滚动位置
+  var currentScrollPos = window.pageYOffset;
+
+  // 判断滚动方向
+  if (prevScrollPos > currentScrollPos) {
+    // 上滑，显示导航栏
+    navbar.style.top = '0';
+  } else {
+    // 下滑，隐藏导航栏
+    navbar.style.top = '-100px'; // 根据实际导航栏高度进行调整
+  }
+
+  // 更新滚动位置
+  prevScrollPos = currentScrollPos;
+});
+</script>
+</html>
